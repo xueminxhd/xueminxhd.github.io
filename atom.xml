@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-01-18T03:46:48.939Z</updated>
+  <updated>2020-07-12T09:58:25.418Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,16 +17,30 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>test title</title>
-    <link href="http://yoursite.com/2020/01/18/test-title/"/>
-    <id>http://yoursite.com/2020/01/18/test-title/</id>
-    <published>2020-01-18T03:46:48.000Z</published>
-    <updated>2020-01-18T03:46:48.939Z</updated>
+    <title>第四章：如何运用贪心思想玩跳跃游戏</title>
+    <link href="http://yoursite.com/2020/07/12/di-si-zhang-ru-he-yun-yong-tan-xin-si-xiang-wan-tiao-yue-you-xi/"/>
+    <id>http://yoursite.com/2020/07/12/di-si-zhang-ru-he-yun-yong-tan-xin-si-xiang-wan-tiao-yue-you-xi/</id>
+    <published>2020-07-12T09:52:59.000Z</published>
+    <updated>2020-07-12T09:58:25.418Z</updated>
     
     <summary type="html">
     
+      
+      
+        
+        
+          &lt;p&gt;labuladong 之 &lt;a href=&quot;https://labuladong.gitbook.io/algo/gao-pin-mian-shi-xi-lie/tiao-yue-you-xi&quot; target=&quot;_blank&quot;
+        
+      
+    
     </summary>
     
+      <category term="LeetCode" scheme="http://yoursite.com/categories/LeetCode/"/>
+    
+    
+      <category term="labuladong" scheme="http://yoursite.com/tags/labuladong/"/>
+    
+      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
     
   </entry>
   

@@ -4,13 +4,27 @@
   
     
     <entry>
-      <title>test title</title>
-      <link href="/2020/01/18/test-title/"/>
-      <url>/2020/01/18/test-title/</url>
+      <title>第四章：如何运用贪心思想玩跳跃游戏</title>
+      <link href="/2020/07/12/di-si-zhang-ru-he-yun-yong-tan-xin-si-xiang-wan-tiao-yue-you-xi/"/>
+      <url>/2020/07/12/di-si-zhang-ru-he-yun-yong-tan-xin-si-xiang-wan-tiao-yue-you-xi/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>labuladong 之 <a href="https://labuladong.gitbook.io/algo/gao-pin-mian-shi-xi-lie/tiao-yue-you-xi" target="_blank" rel="noopener">如何运用贪心思想玩跳跃游戏</a></p><p>两道题都注意，在 for i in range <strong>(len(nums)-1)</strong>    处就停止，不考虑最后一个元素的下标及元素的大小。因为nums[-1] 不会再用到，若加入，反而会干扰部分结果，产生错误 （如<code>[2,0,0]</code>）。</p><ol start="55"><li>跳跃游戏1</li></ol><p><code>farthest</code>表示到达最远距离的下标</p><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>    <span class="token keyword">def</span> <span class="token function">canJump</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">)</span><span class="token punctuation">:</span>        <span class="token triple-quoted-string string">"""        :type nums: List[int]        :rtype: bool        """</span>        <span class="token keyword">if</span> <span class="token operator">not</span> nums<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token boolean">True</span>        <span class="token comment" spellcheck="true"># 到达最远距离的下标</span>        farthest<span class="token operator">=</span><span class="token number">0</span>        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>            farthest<span class="token operator">=</span>max<span class="token punctuation">(</span>farthest<span class="token punctuation">,</span>i<span class="token operator">+</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>            <span class="token comment" spellcheck="true"># 到达不了</span>            <span class="token keyword">if</span> farthest<span class="token operator">&lt;=</span>i<span class="token punctuation">:</span>                <span class="token keyword">return</span> <span class="token boolean">False</span>        <span class="token keyword">return</span> farthest<span class="token operator">>=</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ol start="45"><li>跳跃游戏2</li></ol><p><code>end</code>表示当前元素对应的可跳的最大元素下标</p><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>    <span class="token keyword">def</span> <span class="token function">jump</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">)</span><span class="token punctuation">:</span>        <span class="token triple-quoted-string string">"""        :type nums: List[int]        :rtype: int        """</span>        <span class="token keyword">if</span> <span class="token operator">not</span> nums<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token number">0</span>        farthest<span class="token punctuation">,</span>end<span class="token punctuation">,</span>step<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span>        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>            farthest<span class="token operator">=</span>max<span class="token punctuation">(</span>farthest<span class="token punctuation">,</span>i<span class="token operator">+</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>            <span class="token keyword">if</span> i<span class="token operator">==</span>end<span class="token punctuation">:</span>                end<span class="token operator">=</span>farthest                step<span class="token operator">+=</span><span class="token number">1</span>        <span class="token keyword">return</span> step<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
       
       
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> labuladong </tag>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
       
     </entry>
     
