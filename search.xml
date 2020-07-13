@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>第四章：如何k个一组反转链表</title>
+      <link href="/2020/07/13/di-si-zhang-ru-he-k-ge-yi-zu-fan-zhuan-lian-biao/"/>
+      <url>/2020/07/13/di-si-zhang-ru-he-k-ge-yi-zu-fan-zhuan-lian-biao/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>第四章：如何运用贪心思想玩跳跃游戏</title>
       <link href="/2020/07/12/di-si-zhang-ru-he-yun-yong-tan-xin-si-xiang-wan-tiao-yue-you-xi/"/>
       <url>/2020/07/12/di-si-zhang-ru-he-yun-yong-tan-xin-si-xiang-wan-tiao-yue-you-xi/</url>
@@ -14,6 +27,8 @@
       <categories>
           
           <category> LeetCode </category>
+          
+          <category> labuladong </category>
           
       </categories>
       
