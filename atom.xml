@@ -65,9 +65,9 @@
       <category term="labuladong" scheme="http://yoursite.com/categories/labuladong/"/>
     
     
-      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
-    
       <category term="labuladong" scheme="http://yoursite.com/tags/labuladong/"/>
+    
+      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
     
   </entry>
   
@@ -93,9 +93,9 @@
       <category term="labuladong" scheme="http://yoursite.com/categories/labuladong/"/>
     
     
-      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
-    
       <category term="labuladong" scheme="http://yoursite.com/tags/labuladong/"/>
+    
+      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
     
   </entry>
   
