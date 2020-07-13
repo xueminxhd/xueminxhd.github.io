@@ -4,19 +4,15 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="第四章：如何k个一组反转链表, It&#39;s the job that&#39;s never started as takes longest to finish.”― J.R.R. Tolkien">
+    <meta name="keywords" content="第四章：如何判定括号合法性, It&#39;s the job that&#39;s never started as takes longest to finish.”― J.R.R. Tolkien">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="labuladong如何k个一组反转链表
-利用栈先进后出，反转k个一组的链表
+    <meta name="description" content="labuladong 如何判定括号合法性
+解题思路：遇到左括号就入栈，遇到右括号就去栈中寻找最近的左括号（栈顶元素），看是否匹配。
+Krahets的极简思路及实现
 
-stack中存放的是ListNode
-虽然存放在stack中，但ListNode之间的指向关系仍然保留
-
-
-
-以 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt">
+栈 stack 为空： 此时 stack.pop() 操作会报错；因此，我">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -24,7 +20,7 @@ stack中存放的是ListNode
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>第四章：如何k个一组反转链表 | Min&#39;s Blog</title>
+    <title>第四章：如何判定括号合法性 | Min&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -324,13 +320,13 @@ stack中存放的是ListNode
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/26.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/24.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        第四章：如何k个一组反转链表
+                        第四章：如何判定括号合法性
                     </div>
                 </div>
             </div>
@@ -445,10 +441,6 @@ stack中存放的是ListNode
                             <span class="chip bg-color">labuladong</span>
                         </a>
                         
-                        <a href="/tags/LeetCode/" target="_blank">
-                            <span class="chip bg-color">LeetCode</span>
-                        </a>
-                        
                     </div>
                     
                 </div>
@@ -483,7 +475,7 @@ stack中存放的是ListNode
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    298
+                    148
                 </div>
                 
 
@@ -506,48 +498,29 @@ stack中存放的是ListNode
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>labuladong<a href="https://labuladong.gitbook.io/algo/gao-pin-mian-shi-xi-lie/k-ge-yi-zu-fan-zhuan-lian-biao" target="_blank" rel="noopener">如何k个一组反转链表</a></p>
-<p>利用栈先进后出，反转k个一组的链表</p>
-<ul>
-<li>stack中存放的是ListNode<ul>
-<li>虽然存放在stack中，但ListNode之间的指向关系仍然保留</li>
-</ul>
-</li>
-</ul>
-<p>以 1-&gt;2-&gt;3-&gt;4-&gt;5 为例，</p>
-<ul>
-<li>先在最左边加一个dummy头(-1)便于操作。</li>
-<li>注意：大循环 <code>while cur</code>里面的while n&gt;0 <strong>and cur</strong> 一定要有，确保不够k个Node时n&gt;0，及时跳出。</li>
-<li>第一次while时，stack中存放 [3,2,1],pre产生的结果是： -1-&gt;3-&gt;2-&gt;1 。此时cur 指向4，pre指向3。<code>pre.next=cur</code>后现在的结果是-1-&gt;3-&gt;2-&gt;1-&gt;4-&gt;5</li>
-<li>第二次while时，stack中存放[5,4],但是由于n！=0，直接break出循环（即<code>pre.next=cur</code>不执行）。此时cur已经指向5后面的None，但是现在已经跳出while循环了，<strong>不必理会cur</strong>。</li>
-</ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for singly-linked list.</span>
-<span class="token comment" spellcheck="true"># class ListNode(object):</span>
-<span class="token comment" spellcheck="true">#     def __init__(self, x):</span>
-<span class="token comment" spellcheck="true">#         self.val = x</span>
-<span class="token comment" spellcheck="true">#         self.next = None</span>
-
-<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">reverseKGroup</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>head<span class="token punctuation">,</span> k<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        dummy<span class="token operator">=</span>ListNode<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
-        dummy<span class="token punctuation">.</span>next<span class="token operator">=</span>head
-        pre<span class="token operator">=</span>dummy
-        cur<span class="token operator">=</span>head
-        stack<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
-        <span class="token keyword">while</span> cur<span class="token punctuation">:</span>
-            n<span class="token operator">=</span>k
-            <span class="token keyword">while</span> n<span class="token operator">></span><span class="token number">0</span> <span class="token operator">and</span> cur<span class="token punctuation">:</span>
-                stack<span class="token punctuation">.</span>append<span class="token punctuation">(</span>cur<span class="token punctuation">)</span>
-                cur<span class="token operator">=</span>cur<span class="token punctuation">.</span>next
-                n<span class="token operator">-=</span><span class="token number">1</span>
-            <span class="token keyword">if</span> n<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">:</span>
-                <span class="token keyword">while</span> stack<span class="token punctuation">:</span>
-                    pre<span class="token punctuation">.</span>next<span class="token operator">=</span>stack<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
-                    pre<span class="token operator">=</span>pre<span class="token punctuation">.</span>next
+                <p>labuladong <a href="https://labuladong.gitbook.io/algo/gao-pin-mian-shi-xi-lie/he-fa-kuo-hao-pan-ding" target="_blank" rel="noopener">如何判定括号合法性</a></p>
+<p><strong>解题思路</strong>：遇到左括号就入栈，遇到右括号就去栈中寻找最近的左括号（栈顶元素），看是否匹配。</p>
+<p>Krahets的<a href="https://leetcode-cn.com/problems/valid-parentheses/solution/valid-parentheses-fu-zhu-zhan-fa-by-jin407891080/" target="_blank" rel="noopener">极简思路及实现</a></p>
+<blockquote>
+<p><strong>栈 stack 为空： 此时 stack.pop() 操作会报错</strong>；因此，我们采用一个取巧方法，给 stack 赋初值 ?? ，并在哈希表 dic 中建立 key: ‘?’，value:’?’key: ′ ? ′ ，value: ′ ? ′  的对应关系予以配合。</p>
+</blockquote>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">isValid</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :type s: str
+        :rtype: bool
+        """</span>
+        dic<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">'('</span><span class="token punctuation">:</span><span class="token string">')'</span><span class="token punctuation">,</span><span class="token string">'{'</span><span class="token punctuation">:</span><span class="token string">'}'</span><span class="token punctuation">,</span><span class="token string">'['</span><span class="token punctuation">:</span><span class="token string">']'</span><span class="token punctuation">,</span><span class="token string">'?'</span><span class="token punctuation">:</span><span class="token string">'?'</span><span class="token punctuation">}</span>
+        stack<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'?'</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> c <span class="token keyword">in</span> s<span class="token punctuation">:</span>
+            <span class="token keyword">if</span> c <span class="token keyword">in</span> dic<span class="token punctuation">:</span>
+                stack<span class="token punctuation">.</span>append<span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+            <span class="token keyword">elif</span> c<span class="token operator">==</span>dic<span class="token punctuation">[</span>stack<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+                stack<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
             <span class="token keyword">else</span><span class="token punctuation">:</span>
-                <span class="token keyword">break</span>
-            pre<span class="token punctuation">.</span>next<span class="token operator">=</span>cur
-        <span class="token keyword">return</span> dummy<span class="token punctuation">.</span>next<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                <span class="token keyword">return</span> <span class="token boolean">False</span>
+        <span class="token keyword">return</span> len<span class="token punctuation">(</span>stack<span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">1</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -706,9 +679,9 @@ stack中存放的是ListNode
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《第四章：如何k个一组反转链表》
+                    《第四章：如何判定括号合法性》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/07/13/di-si-zhang-ru-he-k-ge-yi-zu-fan-zhuan-lian-biao/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/07/13/di-si-zhang-ru-he-pan-ding-gua-hao-he-fa-xing/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Min
             </a> 采用
@@ -748,9 +721,64 @@ stack中存放的是ListNode
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2020/07/13/di-si-zhang-ru-he-pan-ding-gua-hao-he-fa-xing/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="第四章：如何判定括号合法性">
+                        
+                        <span class="card-title">第四章：如何判定括号合法性</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            labuladong 如何判定括号合法性
+解题思路：遇到左括号就入栈，遇到右括号就去栈中寻找最近的左括号（栈顶元素），看是否匹配。
+Krahets的极简思路及实现
+
+栈 stack 为空： 此时 stack.pop() 操作会报错；因此，我
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-13
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/LeetCode/" class="post-category" target="_blank">
+                                    LeetCode
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/labuladong/" target="_blank">
+                        <span class="chip bg-color">labuladong</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2020/07/13/di-si-zhang-ru-he-xun-zhao-zui-chang-hui-wen-zi-chuan/">
                     <div class="card-image">
@@ -773,58 +801,8 @@ class Solution(object):
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-13
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/LeetCode/" class="post-category" target="_blank">
-                                    LeetCode
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/labuladong/" target="_blank">
-                        <span class="chip bg-color">labuladong</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/07/12/di-si-zhang-ru-he-yun-yong-tan-xin-si-xiang-wan-tiao-yue-you-xi/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="第四章：如何运用贪心思想玩跳跃游戏">
-                        
-                        <span class="card-title">第四章：如何运用贪心思想玩跳跃游戏</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            labuladong 之 如何运用贪心思想玩跳跃游戏
-两道题都注意，在 for i in range (len(nums)-1)    处就停止，不考虑最后一个元素的下标及元素的大小。因为nums[-1] 不会再用到，若加入，反而会干扰部分
-                        
-                    </div>
-                    <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-12
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-13
                             </span>
                         <span class="publish-author">
                             
@@ -843,10 +821,6 @@ class Solution(object):
                     
                     <a href="/tags/labuladong/" target="_blank">
                         <span class="chip bg-color">labuladong</span>
-                    </a>
-                    
-                    <a href="/tags/LeetCode/" target="_blank">
-                        <span class="chip bg-color">LeetCode</span>
                     </a>
                     
                 </div>

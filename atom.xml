@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-07-13T06:41:57.494Z</updated>
+  <updated>2020-07-13T09:37:08.709Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>第四章：如何判定括号合法性</title>
+    <link href="http://yoursite.com/2020/07/13/di-si-zhang-ru-he-pan-ding-gua-hao-he-fa-xing/"/>
+    <id>http://yoursite.com/2020/07/13/di-si-zhang-ru-he-pan-ding-gua-hao-he-fa-xing/</id>
+    <published>2020-07-13T09:33:50.000Z</published>
+    <updated>2020-07-13T09:37:08.709Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/gao-pin-mian-shi-xi-lie/he-fa-kuo-hao-pan-ding&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="http://yoursite.com/categories/LeetCode/"/>
+    
+    
+      <category term="labuladong" scheme="http://yoursite.com/tags/labuladong/"/>
+    
+  </entry>
   
   <entry>
     <title>第四章：如何寻找最长回文子串</title>
@@ -64,9 +90,9 @@
       <category term="LeetCode" scheme="http://yoursite.com/categories/LeetCode/"/>
     
     
-      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
-    
       <category term="labuladong" scheme="http://yoursite.com/tags/labuladong/"/>
+    
+      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
     
   </entry>
   
@@ -92,9 +118,9 @@
       <category term="LeetCode" scheme="http://yoursite.com/categories/LeetCode/"/>
     
     
-      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
-    
       <category term="labuladong" scheme="http://yoursite.com/tags/labuladong/"/>
+    
+      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
     
   </entry>
   

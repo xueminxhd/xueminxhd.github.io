@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>第四章：如何判定括号合法性</title>
+      <link href="/2020/07/13/di-si-zhang-ru-he-pan-ding-gua-hao-he-fa-xing/"/>
+      <url>/2020/07/13/di-si-zhang-ru-he-pan-ding-gua-hao-he-fa-xing/</url>
+      
+        <content type="html"><![CDATA[<p>labuladong <a href="https://labuladong.gitbook.io/algo/gao-pin-mian-shi-xi-lie/he-fa-kuo-hao-pan-ding" target="_blank" rel="noopener">如何判定括号合法性</a></p><p><strong>解题思路</strong>：遇到左括号就入栈，遇到右括号就去栈中寻找最近的左括号（栈顶元素），看是否匹配。</p><p>Krahets的<a href="https://leetcode-cn.com/problems/valid-parentheses/solution/valid-parentheses-fu-zhu-zhan-fa-by-jin407891080/" target="_blank" rel="noopener">极简思路及实现</a></p><blockquote><p><strong>栈 stack 为空： 此时 stack.pop() 操作会报错</strong>；因此，我们采用一个取巧方法，给 stack 赋初值 ?? ，并在哈希表 dic 中建立 key: ‘?’，value:’?’key: ′ ? ′ ，value: ′ ? ′  的对应关系予以配合。</p></blockquote><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>    <span class="token keyword">def</span> <span class="token function">isValid</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">)</span><span class="token punctuation">:</span>        <span class="token triple-quoted-string string">"""        :type s: str        :rtype: bool        """</span>        dic<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">'('</span><span class="token punctuation">:</span><span class="token string">')'</span><span class="token punctuation">,</span><span class="token string">'{'</span><span class="token punctuation">:</span><span class="token string">'}'</span><span class="token punctuation">,</span><span class="token string">'['</span><span class="token punctuation">:</span><span class="token string">']'</span><span class="token punctuation">,</span><span class="token string">'?'</span><span class="token punctuation">:</span><span class="token string">'?'</span><span class="token punctuation">}</span>        stack<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'?'</span><span class="token punctuation">]</span>        <span class="token keyword">for</span> c <span class="token keyword">in</span> s<span class="token punctuation">:</span>            <span class="token keyword">if</span> c <span class="token keyword">in</span> dic<span class="token punctuation">:</span>                stack<span class="token punctuation">.</span>append<span class="token punctuation">(</span>c<span class="token punctuation">)</span>            <span class="token keyword">elif</span> c<span class="token operator">==</span>dic<span class="token punctuation">[</span>stack<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">:</span>                stack<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>            <span class="token keyword">else</span><span class="token punctuation">:</span>                <span class="token keyword">return</span> <span class="token boolean">False</span>        <span class="token keyword">return</span> len<span class="token punctuation">(</span>stack<span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> labuladong </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>第四章：如何寻找最长回文子串</title>
       <link href="/2020/07/13/di-si-zhang-ru-he-xun-zhao-zui-chang-hui-wen-zi-chuan/"/>
       <url>/2020/07/13/di-si-zhang-ru-he-xun-zhao-zui-chang-hui-wen-zi-chuan/</url>
@@ -45,9 +70,9 @@
       
         <tags>
             
-            <tag> LeetCode </tag>
-            
             <tag> labuladong </tag>
+            
+            <tag> LeetCode </tag>
             
         </tags>
       
@@ -72,9 +97,9 @@
       
         <tags>
             
-            <tag> LeetCode </tag>
-            
             <tag> labuladong </tag>
+            
+            <tag> LeetCode </tag>
             
         </tags>
       
