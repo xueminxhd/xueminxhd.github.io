@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/contact/index.html</loc>
+    
+    <lastmod>2020-07-13T03:35:15.708Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/friends/index.html</loc>
+    
+    <lastmod>2020-07-13T03:21:58.744Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/about/index.html</loc>
+    
+    <lastmod>2020-07-13T03:17:23.877Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/07/12/di-si-zhang-ru-he-yun-yong-tan-xin-si-xiang-wan-tiao-yue-you-xi/</loc>
     
     <lastmod>2020-07-12T09:58:25.418Z</lastmod>
@@ -16,20 +37,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/friends/index.html</loc>
-    
-    <lastmod>2020-01-18T03:11:27.879Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/contact/index.html</loc>
-    
-    <lastmod>2020-01-18T03:11:27.878Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/categories/index.html</loc>
     
     <lastmod>2020-01-18T03:11:27.877Z</lastmod>
@@ -40,13 +47,6 @@
     <loc>http://yoursite.com/archives/index.html</loc>
     
     <lastmod>2020-01-18T03:11:27.876Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/about/index.html</loc>
-    
-    <lastmod>2020-01-18T03:11:27.875Z</lastmod>
     
   </url>
   
