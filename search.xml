@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>第四章：如何寻找最长回文子串</title>
+      <link href="/2020/07/13/di-si-zhang-ru-he-xun-zhao-zui-chang-hui-wen-zi-chuan/"/>
+      <url>/2020/07/13/di-si-zhang-ru-he-xun-zhao-zui-chang-hui-wen-zi-chuan/</url>
+      
+        <content type="html"><![CDATA[<p>labuladong之 <a href="https://labuladong.gitbook.io/algo/gao-pin-mian-shi-xi-lie/zui-chang-hui-wen-zi-chuan" target="_blank" rel="noopener">如何寻找最长回文子串</a></p><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>    <span class="token keyword">def</span> <span class="token function">longestPalindrome</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">)</span><span class="token punctuation">:</span>        <span class="token triple-quoted-string string">"""        :type s: str        :rtype: str        """</span>        <span class="token keyword">def</span> <span class="token function">palindrome</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span>l<span class="token punctuation">,</span>r<span class="token punctuation">)</span><span class="token punctuation">:</span>            <span class="token keyword">while</span> l<span class="token operator">>=</span><span class="token number">0</span> <span class="token operator">and</span> r<span class="token operator">&lt;</span>len<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token operator">and</span> s<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token operator">==</span>s<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">:</span>                    l<span class="token operator">-=</span><span class="token number">1</span>                    r<span class="token operator">+=</span><span class="token number">1</span>            <span class="token keyword">return</span> s<span class="token punctuation">[</span>l<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">:</span>r<span class="token punctuation">]</span>        res<span class="token operator">=</span><span class="token string">""</span>        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>            s1<span class="token operator">=</span>palindrome<span class="token punctuation">(</span>s<span class="token punctuation">,</span>i<span class="token punctuation">,</span>i<span class="token punctuation">)</span>            s2<span class="token operator">=</span>palindrome<span class="token punctuation">(</span>s<span class="token punctuation">,</span>i<span class="token punctuation">,</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#这里越界无所谓，因为调用palindrome时已经不满足while条件，可直接跳出</span>            res<span class="token operator">=</span>res <span class="token keyword">if</span> len<span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token operator">></span>len<span class="token punctuation">(</span>s1<span class="token punctuation">)</span> <span class="token keyword">else</span> s1            res<span class="token operator">=</span>res <span class="token keyword">if</span> len<span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token operator">></span>len<span class="token punctuation">(</span>s2<span class="token punctuation">)</span> <span class="token keyword">else</span> s2        <span class="token keyword">return</span> res<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> labuladong </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> labuladong </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>第四章：如何k个一组反转链表</title>
       <link href="/2020/07/13/di-si-zhang-ru-he-k-ge-yi-zu-fan-zhuan-lian-biao/"/>
       <url>/2020/07/13/di-si-zhang-ru-he-k-ge-yi-zu-fan-zhuan-lian-biao/</url>
