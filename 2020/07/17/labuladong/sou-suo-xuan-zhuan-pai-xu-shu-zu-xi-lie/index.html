@@ -474,14 +474,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    1.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    7 分
                 </div>
                 
                 
@@ -504,16 +504,15 @@
 <li>若[6,7,1,<strong>2</strong>,3,4,5] 左&gt;中，<strong>中&lt;右</strong>。最小值在mid左边，所以更新 <strong>右指针</strong></li>
 <li>若[4,5,6,<strong>7</strong>,1,2,3] 左&lt;中，<em>中&gt;右</em>。最小值在mid右边，所以更新 <em>左指针</em></li>
 </ol>
-<ul>
-<li>可见，当中&lt;右时（情况1,2），都是更新右指针，中&gt;右时(情况3)，都是更新左指针（<strong>因为是找最小值，最小值偏左，所以mid和右指针进行比较，更有区分度</strong>）。 但是左&lt;中时（情况1,3）,指针更新不统一，讨论起来较麻烦。</li>
-</ul>
+</li>
+<li><p>可见，当中&lt;右时（情况1,2），都是更新右指针，中&gt;右时 （情况3），都是更新左指针（<strong>因为是找最小值，最小值偏左，所以mid和右指针进行比较，更有区分度</strong>）。 但是左&lt;中时 （情况1,3）,指针更新不统一，讨论起来较麻烦。</p>
 </li>
 </ul>
 <blockquote>
 <p>循环条件<strong>l&lt;r</strong>:</p>
 <ul>
-<li>若<code>nums[mid]&gt;nums[r]</code>,说明mid在第一个递增序列，最小值在mid右边，所以l=mid+1 (情况3)</li>
-<li>若<code>nums[mid]&lt;=nums[r]</code>,说明mid在第二个递增序列，最小值在mid处或mid左边，所以r=mid (情况2, 或者如[3,4,0,1,2])</li>
+<li>若<code>nums[mid]&gt;nums[r]</code>,说明mid在第一个递增序列，最小值在mid右边，所以l=mid+1 （情况3）</li>
+<li>若<code>nums[mid]&lt;=nums[r]</code>,说明mid在第二个递增序列，最小值在mid处或mid左边，所以r=mid （情况2, 或者如[3,4,0,1,2]）</li>
 </ul>
 </blockquote>
 <pre class="line-numbers language-python"><code class="language-python">  <span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -531,9 +530,9 @@
 <blockquote>
 <p>循环条件<strong>l&lt;r</strong>:</p>
 <ul>
-<li>若<code>nums[mid]&gt;nums[r]</code>,说明mid在第一个递增序列，最小值在mid右边，所以l=mid+1 (情况3)</li>
-<li>若<code>nums[mid]&lt;nums[r]</code>,说明mid在第二个递增序列，最小值在mid处或mid左边，所以r=mid (情况2, 或者如[3,4,0,1,2])</li>
-<li>若<code>nums[mid]=nums[r]</code>,r 向左慢慢跳，所以r-=1 (如[1,0,1,1,1])</li>
+<li>若<code>nums[mid]&gt;nums[r]</code>,说明mid在第一个递增序列，最小值在mid右边，所以l=mid+1 （情况3）</li>
+<li>若<code>nums[mid]&lt;nums[r]</code>,说明mid在第二个递增序列，最小值在mid处或mid左边，所以r=mid （情况2, 或者如[3,4,0,1,2]）</li>
+<li>若<code>nums[mid]=nums[r]</code>,r 向左慢慢跳，所以r-=1 （如[1,0,1,1,1]）</li>
 </ul>
 </blockquote>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -566,18 +565,61 @@
 </li>
 </ul>
 </blockquote>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">search</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">,</span> target<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :type nums: List[int]
+        :type target: int
+        :rtype: int
+        """</span>
+        <span class="token comment" spellcheck="true"># 找到最小值的下标</span>
+        <span class="token keyword">def</span> <span class="token function">findMin</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            l<span class="token operator">=</span><span class="token number">0</span>
+            r<span class="token operator">=</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span>
+            <span class="token keyword">while</span> l<span class="token operator">&lt;</span>r<span class="token punctuation">:</span>
+                mid<span class="token operator">=</span>l<span class="token operator">+</span><span class="token punctuation">(</span>r<span class="token operator">-</span>l<span class="token punctuation">)</span><span class="token operator">//</span><span class="token number">2</span>
+                <span class="token keyword">if</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token operator">></span>nums<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                    l<span class="token operator">=</span>mid<span class="token operator">+</span><span class="token number">1</span>
+                <span class="token keyword">else</span><span class="token punctuation">:</span>
+                    r<span class="token operator">=</span>mid
+            <span class="token keyword">return</span> l
+
+        <span class="token comment" spellcheck="true"># 普通的二分查找，用于确定目标值下标</span>
+        <span class="token keyword">def</span>  <span class="token function">binarySearch</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span>target<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            l<span class="token operator">=</span><span class="token number">0</span>
+            r<span class="token operator">=</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span>
+            <span class="token keyword">while</span> l<span class="token operator">&lt;=</span>r<span class="token punctuation">:</span>
+                mid<span class="token operator">=</span>l<span class="token operator">+</span><span class="token punctuation">(</span>r<span class="token operator">-</span>l<span class="token punctuation">)</span><span class="token operator">//</span><span class="token number">2</span>
+                <span class="token keyword">if</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token operator">==</span>target<span class="token punctuation">:</span>
+                    <span class="token keyword">return</span> mid
+                <span class="token keyword">elif</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token operator">></span>target<span class="token punctuation">:</span>
+                    r<span class="token operator">=</span>mid<span class="token number">-1</span>
+                <span class="token keyword">else</span><span class="token punctuation">:</span>
+                    l<span class="token operator">=</span>mid<span class="token operator">+</span><span class="token number">1</span>
+            <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span>
+
+        minIdx<span class="token operator">=</span>findMin<span class="token punctuation">(</span>nums<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> minIdx<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true">#单调递增，在整个范围内寻找</span>
+            <span class="token keyword">return</span> binarySearch<span class="token punctuation">(</span>nums<span class="token punctuation">,</span>target<span class="token punctuation">)</span>
+        <span class="token keyword">elif</span> target<span class="token operator">>=</span>nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 在第一个递增序列内找</span>
+            <span class="token keyword">return</span> binarySearch<span class="token punctuation">(</span>nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span>minIdx<span class="token punctuation">]</span><span class="token punctuation">,</span>target<span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># target&lt;nums[0]: # 在第二个递增序列内找</span>
+            <span class="token comment" spellcheck="true"># 如果目标值不在第二递增序列中，则返回-1，否则返回 minIdx+tmp</span>
+            tmp<span class="token operator">=</span>binarySearch<span class="token punctuation">(</span>nums<span class="token punctuation">[</span>minIdx<span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">,</span>target<span class="token punctuation">)</span>
+            <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token keyword">if</span> tmp<span class="token operator">==</span><span class="token operator">-</span><span class="token number">1</span> <span class="token keyword">else</span> minIdx<span class="token operator">+</span>tmp
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>方法2：直接二分查找,在<strong>严格的递增序列内</strong>找target，其余情况取反</p>
 <ul>
 <li>设置左右指针</li>
 <li><code>nums[mid]==target</code>时，说明已找到目标值，返回 mid （也是while的结束条件）</li>
 <li><code>当nums[mid]&gt;=nums[l]</code> 时（注意这里要取等号，使得满足递增序列只有一个元素的情况也符合(如<code>[3,1]</code>)），说明左边是递增序列，<ul>
 <li>若<strong>target在递增序列内</strong>，则更新右指针</li>
-<li>其他情况更新左指针 (target 在mid的右边，所以更新左指针)</li>
+<li>其他情况更新左指针 （target 在mid的右边，所以更新左指针）</li>
 </ul>
 </li>
 <li>否则当<code>nums[mid]&lt;nums[l]</code>时，说明右边是递增序列<ul>
 <li>若<strong>target在递增序列内</strong>，则更新左指针</li>
-<li>其他情况更新右指针 (target 在mid的左边，所以更新右指针)</li>
+<li>其他情况更新右指针 （target 在mid的左边，所以更新右指针）</li>
 </ul>
 </li>
 </ul>
@@ -612,7 +654,7 @@
                     r<span class="token operator">=</span>mid<span class="token number">-1</span>
         <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token comment" spellcheck="true"># 不满足条件时，返回-1</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="81-搜索旋转排序数组-II"><a href="#81-搜索旋转排序数组-II" class="headerlink" title="81. 搜索旋转排序数组 II"></a><a href="https://leetcode-cn.com/problems/search-in-rotated-sorted-array-ii/solution/er-fen-by-powcai/" target="_blank" rel="noopener">81. 搜索旋转排序数组 II</a></h1><p>与上题相比，本题增加了重复元素。因此，若检测到重复元素，则左(右)指针要跳，直到不重复：</p>
+<h1 id="81-搜索旋转排序数组-II"><a href="#81-搜索旋转排序数组-II" class="headerlink" title="81. 搜索旋转排序数组 II"></a><a href="https://leetcode-cn.com/problems/search-in-rotated-sorted-array-ii/solution/er-fen-by-powcai/" target="_blank" rel="noopener">81. 搜索旋转排序数组 II</a></h1><p>与上题相比，本题增加了重复元素。因此，若检测到重复元素，则左（右）指针要跳，直到不重复：</p>
 <blockquote>
 <p>如[1,1,1,1,2,1], 可保证跳过相邻的相同元素<br>与上题相比，增加如下判断：</p>
 <pre><code>        if nums[mid]==nums[l]==nums[r]:
@@ -1131,7 +1173,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">3.6k</span>
+            <span class="white-color">3.8k</span>
             
 
             <br>
