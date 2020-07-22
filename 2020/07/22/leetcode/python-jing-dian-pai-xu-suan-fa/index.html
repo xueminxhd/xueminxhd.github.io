@@ -4,17 +4,20 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="第四章：如何寻找缺失的元素, It&#39;s the job that&#39;s never started as takes longest to finish.”― J.R.R. Tolkien">
+    <meta name="keywords" content="Python经典排序算法, It&#39;s the job that&#39;s never started as takes longest to finish.”― J.R.R. Tolkien">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="labuladong如何寻找缺失的元素
+    <meta name="description" content="Python经典排序算法
 
-先遍历列表，并加到set中。利用 HashSet 去重
-若元素不在列表中，则表示该元素缺失
+选择排序
+对每一个nums[i], 寻找 range(i,n) 范围内比nums[i]大的数，并与之交换
+以此类推，位置 i 处就是 第i 小的数
 
-class Solution(object):
-    def findDisappearedNumbe">
+
+两次for循环，时间复杂度为 $O(n^2)$
+
+def s">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -22,7 +25,7 @@ class Solution(object):
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>第四章：如何寻找缺失的元素 | Min&#39;s Blog</title>
+    <title>Python经典排序算法 | Min&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -322,13 +325,13 @@ class Solution(object):
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        第四章：如何寻找缺失的元素
+                        Python经典排序算法
                     </div>
                 </div>
             </div>
@@ -439,8 +442,8 @@ class Solution(object):
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/labuladong/" target="_blank">
-                            <span class="chip bg-color">labuladong</span>
+                        <a href="/tags/Sort/" target="_blank">
+                            <span class="chip bg-color">Sort</span>
                         </a>
                         
                     </div>
@@ -463,7 +466,7 @@ class Solution(object):
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-13
+                    2020-07-22
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -477,14 +480,14 @@ class Solution(object):
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    83
+                    967
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
                 
@@ -500,25 +503,145 @@ class Solution(object):
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>labuladong<a href="https://labuladong.gitbook.io/algo/gao-pin-mian-shi-xi-lie/xiao-shi-de-yuan-su" target="_blank" rel="noopener">如何寻找缺失的元素</a></p>
-<ul>
-<li>先遍历列表，并加到set中。利用 HashSet 去重</li>
-<li>若元素不在列表中，则表示该元素缺失</li>
+                <p><a href="https://leetcode-cn.com/problems/sort-an-array/solution/python-shi-xian-de-shi-da-jing-dian-pai-xu-suan-fa/" target="_blank" rel="noopener">Python经典排序算法</a></p>
+<p><img src="https://img-blog.csdnimg.cn/20200722182404772.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L29wZW5jdnpzZWZ2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h1 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h1><ul>
+<li>对每一个nums[i], 寻找 range(i,n) 范围内比nums[i]大的数，并与之交换</li>
+<li>以此类推，位置 i 处就是 第i 小的数</li>
+</ul>
+<blockquote>
+<p>两次for循环，时间复杂度为 $O(n^2)$</p>
+</blockquote>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">selection_sort</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    n <span class="token operator">=</span> len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>i<span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">></span> nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+    <span class="token keyword">return</span> nums<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="==冒泡排序=="></a>==冒泡排序==</h1><ul>
+<li>最坏的情况是: 原始的nums是倒序，从倒序转顺序</li>
+<li>对每一个nums[i], 需要比较n-i次<strong>相邻元素</strong><blockquote>
+<p>两次for循环，时间复杂度为 $O(n^2)$</p>
+</blockquote>
+</li>
 </ul>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">findDisappearedNumbers</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token triple-quoted-string string">"""
-        :type nums: List[int]
-        :rtype: List[int]
-        """</span>
+    <span class="token keyword">def</span> <span class="token function">sortArray</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        n<span class="token operator">=</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>n<span class="token operator">-</span>i<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">if</span> nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">&lt;</span>nums<span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+                    nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span>nums<span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span><span class="token operator">=</span>nums<span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
+        <span class="token keyword">return</span> nums<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="插入排序"><a href="#插入排序" class="headerlink" title="==插入排序=="></a>==插入排序==</h1><ul>
+<li>对每一个nums[i], 将其插入到符合大小顺序的位置处</li>
+<li>随着i的增加，需要比较的次数也增加。比较时，从最近的相邻元素开始，倒序比<blockquote>
+<p>时间复杂度为 $O(n^2)$</p>
+</blockquote>
+</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">sortArray</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        n<span class="token operator">=</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">while</span> i<span class="token operator">></span><span class="token number">0</span> <span class="token operator">and</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&lt;</span>nums<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+                nums<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span>nums<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span>
+                i<span class="token operator">-=</span><span class="token number">1</span>
+        <span class="token keyword">return</span> nums<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>或者</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">sortArray</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        n<span class="token operator">=</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>i<span class="token number">-1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">if</span> nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">></span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                    nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span>nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
+                    i<span class="token operator">-=</span><span class="token number">1</span>
+        <span class="token keyword">return</span> nums<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="希尔排序-了解"><a href="#希尔排序-了解" class="headerlink" title="希尔排序(了解)"></a>希尔排序(了解)</h1><ul>
+<li>希尔排序是插入排序的优化，通过<code>gap</code>减少排序过程中交换的次数<blockquote>
+<p>时间复杂度为 $O(n^2)$</p>
+</blockquote>
+</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">sortArray</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        n<span class="token operator">=</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span>
+        gap<span class="token operator">=</span>n<span class="token operator">//</span><span class="token number">2</span>
+        <span class="token keyword">while</span> gap<span class="token punctuation">:</span>
+            <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>gap<span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">while</span> i<span class="token operator">-</span>gap<span class="token operator">>=</span><span class="token number">0</span> <span class="token operator">and</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&lt;</span>nums<span class="token punctuation">[</span>i<span class="token operator">-</span>gap<span class="token punctuation">]</span><span class="token punctuation">:</span>            
+                    nums<span class="token punctuation">[</span>i<span class="token operator">-</span>gap<span class="token punctuation">]</span><span class="token punctuation">,</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span>nums<span class="token punctuation">[</span>i<span class="token operator">-</span>gap<span class="token punctuation">]</span>
+                    i<span class="token operator">-=</span>gap
+            gap<span class="token operator">=</span>gap<span class="token operator">//</span><span class="token number">2</span>
+        <span class="token keyword">return</span> nums<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="归并排序"><a href="#归并排序" class="headerlink" title="==归并排序=="></a>==归并排序==</h1><p>归并排序是理解<strong>递归方法</strong>的一个很好的例子</p>
+<ul>
+<li><strong>不要跳进</strong>递归里面去 （<del>跳进去没任何用处，反而会更混乱</del> ）。归并排序就是先把数组分左右两个子数组并<strong>对子数组排序</strong>，然后<strong>合并</strong></li>
+<li>递归是逐步缩小子问题，主要是理解<strong>函数的作用及返回的内容</strong><ul>
+<li><code>sortArray()</code> 函数的作用是排序，返回排好序的列表<ul>
+<li>如 [7,5,3] -&gt; 返回[3,5,7]    </li>
+</ul>
+</li>
+<li><code>merge()</code> 函数的作用是对两个有序数组按照由小到大的顺序合并<ul>
+<li>如 left=[2,4,6],right=[3,5,7]-&gt; 合并后返回[2,3,4,5,6,7]</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>时间复杂度为 $O(n^2)$，空间复杂度为O(n)。参考<a href="https://blog.csdn.net/touch_2011/article/details/6785881" target="_blank" rel="noopener">漫谈经典排序算法</a></p>
+</blockquote>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># 函数的作用是排序，不要跳进递归中</span>
+    <span class="token keyword">def</span> <span class="token function">sortArray</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token operator">&lt;=</span><span class="token number">1</span><span class="token punctuation">:</span> <span class="token keyword">return</span> nums
+        mid<span class="token operator">=</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token operator">//</span><span class="token number">2</span>
+        <span class="token comment" spellcheck="true"># 分成有序的左右两个子列</span>
+        left<span class="token operator">=</span>self<span class="token punctuation">.</span>sortArray<span class="token punctuation">(</span>nums<span class="token punctuation">[</span><span class="token punctuation">:</span>mid<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        right<span class="token operator">=</span>self<span class="token punctuation">.</span>sortArray<span class="token punctuation">(</span>nums<span class="token punctuation">[</span>mid<span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># 合并</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>merge<span class="token punctuation">(</span>left<span class="token punctuation">,</span>right<span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true"># 按照大小顺序，合并两个子数组</span>
+    <span class="token keyword">def</span> <span class="token function">merge</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>left<span class="token punctuation">,</span>right<span class="token punctuation">)</span><span class="token punctuation">:</span>
         res<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
-        se<span class="token operator">=</span>set<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> nums<span class="token punctuation">:</span>
-            se<span class="token punctuation">.</span>add<span class="token punctuation">(</span>i<span class="token punctuation">)</span>
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> i <span class="token operator">not</span> <span class="token keyword">in</span> se<span class="token punctuation">:</span>
-                res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>i<span class="token punctuation">)</span>
-        <span class="token keyword">return</span> res<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        <span class="token keyword">while</span> len<span class="token punctuation">(</span>left<span class="token punctuation">)</span><span class="token operator">></span><span class="token number">0</span> <span class="token operator">and</span> len<span class="token punctuation">(</span>right<span class="token punctuation">)</span><span class="token operator">></span><span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> left<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">&lt;</span>right<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+                res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>left<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>right<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># 从while条件中跳出后，左右子数组中可能仍有未pop出的元素</span>
+        <span class="token comment" spellcheck="true"># 所以将其连接到res后面即可</span>
+        res<span class="token operator">+=</span>left
+        res<span class="token operator">+=</span>right
+        <span class="token keyword">return</span> res<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="快速排序"><a href="#快速排序" class="headerlink" title="==快速排序=="></a>==快速排序==</h1><ul>
+<li>将列表的第一个（或最后一个）元素设为pivot，然后在<code>range(1,len(nums))</code>中，小于等于pivot的元素放l，大于pivot的元素放r</li>
+<li>对l和r列表分别递归调用排序函数，并通过<code>left+[pivot]+right</code> 将其连起开，返回最终结果</li>
+<li>注意递归终止的条件及特判<code>if len(nums)&lt;=0:return nums</code><blockquote>
+<p>时间复杂度为 $O(n^2)$</p>
+</blockquote>
+</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">sortArray</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 递归终止的条件及特判</span>
+        <span class="token keyword">if</span> len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token operator">&lt;=</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token keyword">return</span> nums
+        <span class="token comment" spellcheck="true"># 将列表的第一个元素设为pivot，后面的元素中，小于pivot</span>
+        l<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+        r<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+        pivot<span class="token operator">=</span>nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&lt;=</span>pivot<span class="token punctuation">:</span>
+                l<span class="token punctuation">.</span>append<span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                r<span class="token punctuation">.</span>append<span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        left<span class="token operator">=</span>self<span class="token punctuation">.</span>sortArray<span class="token punctuation">(</span>l<span class="token punctuation">)</span>
+        right<span class="token operator">=</span>self<span class="token punctuation">.</span>sortArray<span class="token punctuation">(</span>r<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> left<span class="token operator">+</span><span class="token punctuation">[</span>pivot<span class="token punctuation">]</span><span class="token operator">+</span>right<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -677,9 +800,9 @@ class Solution(object):
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《第四章：如何寻找缺失的元素》
+                    《Python经典排序算法》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/07/13/labuladong/di-si-zhang-ru-he-xun-zhao-que-shi-de-yuan-su/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/07/22/leetcode/python-jing-dian-pai-xu-suan-fa/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Min
             </a> 采用
@@ -719,35 +842,39 @@ class Solution(object):
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/07/13/labuladong/di-si-zhang-ru-he-tong-shi-xun-zhao-que-shi-he-chong-fu-de-yuan-su/">
+                <a href="/2020/07/22/leetcode/python-jing-dian-pai-xu-suan-fa/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="第四章：如何同时寻找缺失和重复的元素">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Python经典排序算法">
                         
-                        <span class="card-title">第四章：如何同时寻找缺失和重复的元素</span>
+                        <span class="card-title">Python经典排序算法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            labuladong如何同时寻找缺失和重复的元素
+                            Python经典排序算法
 
-利用set去重，并记录重复的元素
-遍历一遍range(1,len(nums)+1),找到并记录不存在的于set中的元素
+选择排序
+对每一个nums[i], 寻找 range(i,n) 范围内比nums[i]大的数，并与之交换
+以此类推，位置 i 处就是 第i 小的数
 
-class Solution(object):
-    def f
+
+两次for循环，时间复杂度为 $O(n^2)$
+
+def s
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-22
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -760,11 +887,12 @@ class Solution(object):
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/labuladong/" target="_blank">
-                        <span class="chip bg-color">labuladong</span>
+                    <a href="/tags/Sort/" target="_blank">
+                        <span class="chip bg-color">Sort</span>
                     </a>
                     
                 </div>
@@ -778,28 +906,27 @@ class Solution(object):
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/13/labuladong/di-si-zhang-ru-he-pan-ding-gua-hao-he-fa-xing/">
+                <a href="/2020/07/17/leetcode/sou-suo-xuan-zhuan-pai-xu-shu-zu-xi-lie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="第四章：如何判定括号合法性">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="搜索旋转排序数组系列">
                         
-                        <span class="card-title">第四章：如何判定括号合法性</span>
+                        <span class="card-title">搜索旋转排序数组系列</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            labuladong 如何判定括号合法性
-解题思路：遇到左括号就入栈，遇到右括号就去栈中寻找最近的左括号（栈顶元素），看是否匹配。
-Krahets的极简思路及实现
+                            153. 寻找旋转排序数组中的最小值
+二分查找过程中，比较mid与right（而非left）的原因：以 [1,2,3,4,5,6,7] 为例，分以下情况
 
-栈 stack 为空： 此时 stack.pop() 操作会报错；因此，我
+若[1,2,3,4,5,6,7] 左&lt;中，中&lt;右。最小值在最左边， 所以
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-13
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-17
                             </span>
                         <span class="publish-author">
                             
@@ -816,8 +943,8 @@ Krahets的极简思路及实现
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/labuladong/" target="_blank">
-                        <span class="chip bg-color">labuladong</span>
+                    <a href="/tags/BinarySearch/" target="_blank">
+                        <span class="chip bg-color">BinarySearch</span>
                     </a>
                     
                 </div>
