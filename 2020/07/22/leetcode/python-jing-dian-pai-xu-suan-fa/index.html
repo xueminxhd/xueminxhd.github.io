@@ -11,13 +11,13 @@
     <meta name="description" content="Python经典排序算法
 
 选择排序
-对每一个nums[i], 寻找 range(i,n) 范围内比nums[i]大的数，并与之交换
+对每一个nums[i], 寻找 $range(i,n)$ 范围内比nums[i]大的数，并与之交换
 以此类推，位置 i 处就是 第i 小的数
 
 
 两次for循环，时间复杂度为 $O(n^2)$
 
-def s">
+def">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -506,7 +506,7 @@ def s">
                 <p><a href="https://leetcode-cn.com/problems/sort-an-array/solution/python-shi-xian-de-shi-da-jing-dian-pai-xu-suan-fa/" target="_blank" rel="noopener">Python经典排序算法</a></p>
 <p><img src="https://img-blog.csdnimg.cn/20200722182404772.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L29wZW5jdnpzZWZ2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <h1 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h1><ul>
-<li>对每一个nums[i], 寻找 range(i,n) 范围内比nums[i]大的数，并与之交换</li>
+<li>对每一个nums[i], 寻找 $range(i,n)$ 范围内比nums[i]大的数，并与之交换</li>
 <li>以此类推，位置 i 处就是 第i 小的数</li>
 </ul>
 <blockquote>
@@ -519,7 +519,7 @@ def s">
             <span class="token keyword">if</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">></span> nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">:</span>
                 nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
     <span class="token keyword">return</span> nums<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="==冒泡排序=="></a>==冒泡排序==</h1><ul>
+<h1 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h1><ul>
 <li>最坏的情况是: 原始的nums是倒序，从倒序转顺序</li>
 <li>对每一个nums[i], 需要比较n-i次<strong>相邻元素</strong><blockquote>
 <p>两次for循环，时间复杂度为 $O(n^2)$</p>
@@ -559,7 +559,7 @@ def s">
                     nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span>nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
                     i<span class="token operator">-=</span><span class="token number">1</span>
         <span class="token keyword">return</span> nums<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="希尔排序-了解"><a href="#希尔排序-了解" class="headerlink" title="希尔排序(了解)"></a>希尔排序(了解)</h1><ul>
+<h1 id="希尔排序（了解）"><a href="#希尔排序（了解）" class="headerlink" title="希尔排序（了解）"></a>希尔排序（了解）</h1><ul>
 <li>希尔排序是插入排序的优化，通过<code>gap</code>减少排序过程中交换的次数<blockquote>
 <p>时间复杂度为 $O(n^2)$</p>
 </blockquote>
@@ -592,7 +592,7 @@ def s">
 </li>
 </ul>
 <blockquote>
-<p>时间复杂度为 $O(n^2)$，空间复杂度为O(n)。参考<a href="https://blog.csdn.net/touch_2011/article/details/6785881" target="_blank" rel="noopener">漫谈经典排序算法</a></p>
+<p>时间复杂度为 $O(n^2)$，空间复杂度为 $O(n)$。参考<a href="https://blog.csdn.net/touch_2011/article/details/6785881" target="_blank" rel="noopener">漫谈经典排序算法</a></p>
 </blockquote>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token comment" spellcheck="true"># 函数的作用是排序，不要跳进递归中</span>
@@ -862,13 +862,13 @@ def s">
                             Python经典排序算法
 
 选择排序
-对每一个nums[i], 寻找 range(i,n) 范围内比nums[i]大的数，并与之交换
+对每一个nums[i], 寻找 $range(i,n)$ 范围内比nums[i]大的数，并与之交换
 以此类推，位置 i 处就是 第i 小的数
 
 
 两次for循环，时间复杂度为 $O(n^2)$
 
-def s
+def
                         
                     </div>
                     <div class="publish-info">
