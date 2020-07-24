@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xueminxhd.github.io/"/>
-  <updated>2020-07-23T09:55:09.593Z</updated>
+  <updated>2020-07-24T04:11:37.208Z</updated>
   <id>https://xueminxhd.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>第零章：动态规划解题套路框架</title>
+    <link href="https://xueminxhd.github.io/2020/07/24/di-ling-zhang-dong-tai-gui-hua-jie-ti-tao-lu-kuang-jia/"/>
+    <id>https://xueminxhd.github.io/2020/07/24/di-ling-zhang-dong-tai-gui-hua-jie-ti-tao-lu-kuang-jia/</id>
+    <published>2020-07-24T04:05:54.000Z</published>
+    <updated>2020-07-24T04:11:37.208Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;labuladong&lt;a href=&quot;https://labuladong.gitbook.io/algo/di-ling-zhang-bi-du-xi-lie/dong-tai-gui-hua-xiang-jie-jin-jie&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
+    
+  </entry>
   
   <entry>
     <title>第零章：学习算法和刷题的框架思维</title>
