@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xueminxhd.github.io/"/>
-  <updated>2020-07-24T04:11:37.208Z</updated>
+  <updated>2020-07-24T09:18:36.922Z</updated>
   <id>https://xueminxhd.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>第零章：回溯算法解题套路框架</title>
+    <link href="https://xueminxhd.github.io/2020/07/24/di-ling-zhang-hui-su-suan-fa-jie-ti-tao-lu-kuang-jia/"/>
+    <id>https://xueminxhd.github.io/2020/07/24/di-ling-zhang-hui-su-suan-fa-jie-ti-tao-lu-kuang-jia/</id>
+    <published>2020-07-24T09:16:37.000Z</published>
+    <updated>2020-07-24T09:18:36.922Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;labuladong&lt;a href=&quot;https://labuladong.gitbook.io/algo/di-ling-zhang-bi-du-xi-lie/hui-su-suan-fa-xiang-jie-xiu-ding-ban&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
+    
+  </entry>
   
   <entry>
     <title>第零章：动态规划解题套路框架</title>
