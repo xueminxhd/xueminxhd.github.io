@@ -4,14 +4,14 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="第零章：学习算法和刷题的框架思维, It&#39;s the job that&#39;s never started as takes longest to finish.”― J.R.R. Tolkien">
+    <meta name="keywords" content="第零章：我写了首诗，让你闭着眼睛也能写对二分搜索, It&#39;s the job that&#39;s never started as takes longest to finish.”― J.R.R. Tolkien">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="labuladong学习算法和刷题的框架思维
-124. 二叉树中的最大路径和_后序遍历
-maxVal 记录的是全局最大路径和（可以不返回，因为它始终在递归过程中更新即可）。
-dfs()函数返回的是包含root在内的单边最大路径和。这样做的好">
+    <meta name="description" content="labuladong 我写了首诗，让你闭着眼睛也能写对二分搜索
+
+二分查找的一个技巧是：不要出现 else，而是把所有情况用 elif 列出来，这样可以清楚地展现所有细节
+mid=left + (right - left) // 2 可防止">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +19,7 @@ dfs()函数返回的是包含root在内的单边最大路径和。这样做的�
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>第零章：学习算法和刷题的框架思维 | Min&#39;s Blog</title>
+    <title>第零章：我写了首诗，让你闭着眼睛也能写对二分搜索 | Min&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -319,13 +319,13 @@ dfs()函数返回的是包含root在内的单边最大路径和。这样做的�
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        第零章：学习算法和刷题的框架思维
+                        第零章：我写了首诗，让你闭着眼睛也能写对二分搜索
                     </div>
                 </div>
             </div>
@@ -436,8 +436,8 @@ dfs()函数返回的是包含root在内的单边最大路径和。这样做的�
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/labuladong/" target="_blank">
-                            <span class="chip bg-color">labuladong</span>
+                        <a href="/tags/labuladong-BinarySearch/" target="_blank">
+                            <span class="chip bg-color">labuladong BinarySearch</span>
                         </a>
                         
                     </div>
@@ -460,7 +460,7 @@ dfs()函数返回的是包含root在内的单边最大路径和。这样做的�
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-23
+                    2020-07-25
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -474,14 +474,14 @@ dfs()函数返回的是包含root在内的单边最大路径和。这样做的�
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    810
+                    372
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    1 分
                 </div>
                 
                 
@@ -497,130 +497,71 @@ dfs()函数返回的是包含root在内的单边最大路径和。这样做的�
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>labuladong<a href="https://labuladong.gitbook.io/algo/di-ling-zhang-bi-du-xi-lie/xue-xi-shu-ju-jie-gou-he-suan-fa-de-gao-xiao-fang-fa" target="_blank" rel="noopener">学习算法和刷题的框架思维</a></p>
-<h1 id="124-二叉树中的最大路径和-后序遍历"><a href="#124-二叉树中的最大路径和-后序遍历" class="headerlink" title="124. 二叉树中的最大路径和_后序遍历"></a><a href="https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/solution/er-cha-shu-zhong-de-zui-da-lu-jing-he-by-ikaruga/" target="_blank" rel="noopener">124. 二叉树中的最大路径和_后序遍历</a></h1><ul>
-<li><code>maxVal</code> 记录的是全局最大路径和（可以不返回，因为它始终在递归过程中更新即可）。</li>
-<li><code>dfs()</code>函数<strong>返回</strong>的是<strong>包含root</strong>在内的<strong>单边</strong>最大路径和。这样做的好处是<code>self.maxVal=max(self.maxVal,root.val+l+r)</code>可以包括全部的路径和情况（（1）根，（2）根+左，（3）根+右，（4）根+左+右），<code>l</code>或<code>r</code>可能为0）</li>
-<li>若root的左节点对应的最大路径和是负数（在拖后腿，所以抛弃），则最大路径和为0，因此有<code>l=max(0,dfs(root.left))</code>。右节点同理</li>
-<li>记得写<strong>递归结束</strong>的条件</li>
-</ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for a binary tree node.</span>
-<span class="token comment" spellcheck="true"># class TreeNode(object):</span>
-<span class="token comment" spellcheck="true">#     def __init__(self, x):</span>
-<span class="token comment" spellcheck="true">#         self.val = x</span>
-<span class="token comment" spellcheck="true">#         self.left = None</span>
-<span class="token comment" spellcheck="true">#         self.right = None</span>
-
-<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">maxPathSum</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token triple-quoted-string string">"""
-        :type root: TreeNode
-        :rtype: int
-        """</span>
-        <span class="token keyword">def</span> <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> <span class="token operator">not</span> root<span class="token punctuation">:</span><span class="token keyword">return</span> <span class="token number">0</span>
-            l<span class="token operator">=</span>max<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>dfs<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">)</span><span class="token punctuation">)</span>
-            r<span class="token operator">=</span>max<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>dfs<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span><span class="token punctuation">)</span>
-            self<span class="token punctuation">.</span>maxVal<span class="token operator">=</span>max<span class="token punctuation">(</span>self<span class="token punctuation">.</span>maxVal<span class="token punctuation">,</span>root<span class="token punctuation">.</span>val<span class="token operator">+</span>l<span class="token operator">+</span>r<span class="token punctuation">)</span>
-            <span class="token keyword">return</span> root<span class="token punctuation">.</span>val<span class="token operator">+</span>max<span class="token punctuation">(</span>l<span class="token punctuation">,</span>r<span class="token punctuation">)</span>
-
-        self<span class="token punctuation">.</span>maxVal<span class="token operator">=</span>float<span class="token punctuation">(</span><span class="token string">"-inf"</span><span class="token punctuation">)</span>
-        dfs<span class="token punctuation">(</span>root<span class="token punctuation">)</span>
-        <span class="token keyword">return</span> self<span class="token punctuation">.</span>maxVal<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="类似题目104-二叉树的最大深度-后序遍历"><a href="#类似题目104-二叉树的最大深度-后序遍历" class="headerlink" title="类似题目104. 二叉树的最大深度_后序遍历"></a>类似题目<a href="https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/" target="_blank" rel="noopener">104. 二叉树的最大深度_后序遍历</a></h2><ul>
-<li><code>dfs()</code>函数返回包含<code>root</code>在内的二叉树最大深度</li>
-</ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for a binary tree node.</span>
-<span class="token comment" spellcheck="true"># class TreeNode(object):</span>
-<span class="token comment" spellcheck="true">#     def __init__(self, x):</span>
-<span class="token comment" spellcheck="true">#         self.val = x</span>
-<span class="token comment" spellcheck="true">#         self.left = None</span>
-<span class="token comment" spellcheck="true">#         self.right = None</span>
-
-<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">maxDepth</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token triple-quoted-string string">"""
-        :type root: TreeNode
-        :rtype: int
-        """</span>
-        <span class="token keyword">def</span> <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> <span class="token operator">not</span> root<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token number">0</span>
-            l<span class="token operator">=</span>dfs<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">)</span>
-            r<span class="token operator">=</span>dfs<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
-            <span class="token keyword">return</span> max<span class="token punctuation">(</span>l<span class="token punctuation">,</span>r<span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span>
-        <span class="token keyword">return</span> dfs<span class="token punctuation">(</span>root<span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="105-从前序与中序遍历序列构造二叉树-前序遍历"><a href="#105-从前序与中序遍历序列构造二叉树-前序遍历" class="headerlink" title="105. 从前序与中序遍历序列构造二叉树_前序遍历"></a><a href="https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/solution/dong-hua-yan-shi-105-cong-qian-xu-yu-zhong-xu-bian/" target="_blank" rel="noopener">105. 从前序与中序遍历序列构造二叉树_前序遍历</a></h1><ul>
-<li>前序遍历的第一个元素是根节点</li>
-<li>在中序遍历中找到根节点的位置，其左边的元素就是左子树，右边的元素就是右子树</li>
-<li>然后递归处理左右子树</li>
-<li>注意写上递归结束条件（左右子树为空时）</li>
-</ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for a binary tree node.</span>
-<span class="token comment" spellcheck="true"># class TreeNode(object):</span>
-<span class="token comment" spellcheck="true">#     def __init__(self, x):</span>
-<span class="token comment" spellcheck="true">#         self.val = x</span>
-<span class="token comment" spellcheck="true">#         self.left = None</span>
-<span class="token comment" spellcheck="true">#         self.right = None</span>
-
-<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">buildTree</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> preorder<span class="token punctuation">,</span> inorder<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token triple-quoted-string string">"""
-        :type preorder: List[int]
-        :type inorder: List[int]
-        :rtype: TreeNode
-        """</span>
-        <span class="token keyword">if</span> <span class="token operator">not</span> <span class="token punctuation">(</span>preorder <span class="token operator">and</span> inorder<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">return</span> None
-        root<span class="token operator">=</span>TreeNode<span class="token punctuation">(</span>preorder<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 根节点</span>
-        midIdx<span class="token operator">=</span>inorder<span class="token punctuation">.</span>index<span class="token punctuation">(</span>root<span class="token punctuation">.</span>val<span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true"># 递归处理左右子树</span>
-        root<span class="token punctuation">.</span>left<span class="token operator">=</span>self<span class="token punctuation">.</span>buildTree<span class="token punctuation">(</span>preorder<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span>midIdx<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>inorder<span class="token punctuation">[</span><span class="token punctuation">:</span>midIdx<span class="token punctuation">]</span><span class="token punctuation">)</span>
-        root<span class="token punctuation">.</span>right<span class="token operator">=</span>self<span class="token punctuation">.</span>buildTree<span class="token punctuation">(</span>preorder<span class="token punctuation">[</span>midIdx<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">,</span>inorder<span class="token punctuation">[</span>midIdx<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-        <span class="token keyword">return</span> root
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="99-恢复二叉搜索树-中序遍历"><a href="#99-恢复二叉搜索树-中序遍历" class="headerlink" title="99. 恢复二叉搜索树_中序遍历"></a><a href="https://leetcode-cn.com/problems/recover-binary-search-tree/solution/san-chong-jie-fa-xiang-xi-tu-jie-99-hui-fu-er-cha-/" target="_blank" rel="noopener">99. 恢复二叉搜索树_中序遍历</a></h1><p>题目说二叉搜索树，中序遍历后应该是升序排列。否则若出现非递增的元素，说明这个地方有错误</p>
+                <p>labuladong <a href="https://labuladong.gitbook.io/algo/di-ling-zhang-bi-du-xi-lie/er-fen-cha-zhao-xiang-jie" target="_blank" rel="noopener">我写了首诗，让你闭着眼睛也能写对二分搜索</a></p>
 <ul>
-<li>先中序遍历二叉搜索树，保存在nodes列表中（列表中的元素是节点）</li>
-<li>x保存第一个错误节点，y保存第二个错误节点，pre保存遍历过程中的前一个节点</li>
-<li>找到错误节点x、y后，交换x与y的值</li>
+<li>二分查找的一个技巧是：不要出现 else，而是<strong>把所有情况用 <code>elif</code> 列出来</strong>，这样可以清楚地展现所有细节</li>
+<li><code>mid=left + (right - left) // 2</code> 可防止溢出</li>
+<li>对于左右侧边界的二分查找，<code>elif nums[mid]==target</code> 时<strong>更新的边界</strong>不一样。<code>while</code>循环结束后要通过<strong>打补丁</strong>的方式返回结果<h1 id="基本二分查找"><a href="#基本二分查找" class="headerlink" title="基本二分查找"></a><a href="https://leetcode-cn.com/problems/binary-search/" target="_blank" rel="noopener">基本二分查找</a></h1></li>
 </ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for a binary tree node.</span>
-<span class="token comment" spellcheck="true"># class TreeNode(object):</span>
-<span class="token comment" spellcheck="true">#     def __init__(self, x):</span>
-<span class="token comment" spellcheck="true">#         self.val = x</span>
-<span class="token comment" spellcheck="true">#         self.left = None</span>
-<span class="token comment" spellcheck="true">#         self.right = None</span>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">search</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">,</span> target<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        left<span class="token operator">=</span><span class="token number">0</span>
+        right<span class="token operator">=</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span>
+        <span class="token keyword">while</span> left<span class="token operator">&lt;=</span>right<span class="token punctuation">:</span>
+            mid<span class="token operator">=</span>left<span class="token operator">+</span><span class="token punctuation">(</span>right<span class="token operator">-</span>left<span class="token punctuation">)</span><span class="token operator">//</span><span class="token number">2</span>
+            <span class="token keyword">if</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token operator">&lt;</span>target<span class="token punctuation">:</span>
+                left<span class="token operator">=</span>mid<span class="token operator">+</span><span class="token number">1</span>
+            <span class="token keyword">elif</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token operator">></span>target<span class="token punctuation">:</span>
+                right<span class="token operator">=</span>mid<span class="token number">-1</span>
+            <span class="token keyword">elif</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token operator">==</span>target<span class="token punctuation">:</span>
+                <span class="token keyword">return</span> mid
+        <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="寻找左右侧边界的二分查找"><a href="#寻找左右侧边界的二分查找" class="headerlink" title="寻找左右侧边界的二分查找"></a><a href="https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/" target="_blank" rel="noopener">寻找左右侧边界的二分查找</a></h1><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">searchRange</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">,</span> target<span class="token punctuation">)</span><span class="token punctuation">:</span>
 
-<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">recoverTree</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token triple-quoted-string string">"""
-        :type root: TreeNode
-        :rtype: List[int]
-        """</span>
-        nodes<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token comment" spellcheck="true"># nodes 中保存节点</span>
-        <span class="token comment" spellcheck="true"># 中序遍历二叉树,得到递增序列</span>
-        <span class="token keyword">def</span> <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> <span class="token operator">not</span> root<span class="token punctuation">:</span> <span class="token keyword">return</span>
-            dfs<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">)</span>
-            nodes<span class="token punctuation">.</span>append<span class="token punctuation">(</span>root<span class="token punctuation">)</span>
-            dfs<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
-        dfs<span class="token punctuation">(</span>root<span class="token punctuation">)</span>
+        <span class="token keyword">def</span> <span class="token function">leftSearch</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span>target<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            left<span class="token operator">=</span><span class="token number">0</span>
+            right<span class="token operator">=</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span>
+            <span class="token keyword">while</span> left<span class="token operator">&lt;=</span>right<span class="token punctuation">:</span>
+                mid<span class="token operator">=</span>left<span class="token operator">+</span><span class="token punctuation">(</span>right<span class="token operator">-</span>left<span class="token punctuation">)</span><span class="token operator">//</span><span class="token number">2</span>
+                <span class="token keyword">if</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token operator">&lt;</span>target<span class="token punctuation">:</span>
+                    left<span class="token operator">=</span>mid<span class="token operator">+</span><span class="token number">1</span>
+                <span class="token keyword">elif</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token operator">></span>target<span class="token punctuation">:</span>
+                    right<span class="token operator">=</span>mid<span class="token number">-1</span>
+                <span class="token keyword">elif</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token operator">==</span>target<span class="token punctuation">:</span>
+                    right<span class="token operator">=</span>mid<span class="token number">-1</span>
+            <span class="token comment" spellcheck="true"># 注意此处的打补丁，因为是左边界，所以是 nums[left]!=target</span>
+            <span class="token keyword">if</span> left<span class="token operator">>=</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token operator">or</span> nums<span class="token punctuation">[</span>left<span class="token punctuation">]</span><span class="token operator">!=</span>target<span class="token punctuation">:</span>
+                <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span>
+            <span class="token keyword">return</span> left
+            <span class="token comment" spellcheck="true"># # 或者</span>
+            <span class="token comment" spellcheck="true"># if left&lt;=len(nums)-1 and nums[left]==target:</span>
+            <span class="token comment" spellcheck="true">#     return left</span>
+            <span class="token comment" spellcheck="true"># return -1</span>
 
-        <span class="token comment" spellcheck="true"># 如果出现非递增的元素，说明这个地方有错误</span>
-        x<span class="token operator">=</span>None
-        y<span class="token operator">=</span>None
-        pre<span class="token operator">=</span>nodes<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>len<span class="token punctuation">(</span>nodes<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> pre<span class="token punctuation">.</span>val<span class="token operator">></span>nodes<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>val<span class="token punctuation">:</span>
-                y<span class="token operator">=</span>nodes<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
-                <span class="token keyword">if</span> <span class="token operator">not</span> x<span class="token punctuation">:</span>
-                    x<span class="token operator">=</span>pre
-            pre<span class="token operator">=</span>nodes<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+        <span class="token keyword">def</span> <span class="token function">rightSearch</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span>target<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            left<span class="token operator">=</span><span class="token number">0</span>
+            right<span class="token operator">=</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span>
+            <span class="token keyword">while</span> left<span class="token operator">&lt;=</span>right<span class="token punctuation">:</span>
+                mid<span class="token operator">=</span>left<span class="token operator">+</span><span class="token punctuation">(</span>right<span class="token operator">-</span>left<span class="token punctuation">)</span><span class="token operator">//</span><span class="token number">2</span>
+                <span class="token keyword">if</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token operator">&lt;</span>target<span class="token punctuation">:</span>
+                    left<span class="token operator">=</span>mid<span class="token operator">+</span><span class="token number">1</span>
+                <span class="token keyword">elif</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token operator">></span>target<span class="token punctuation">:</span>
+                    right<span class="token operator">=</span>mid<span class="token number">-1</span>
+                <span class="token keyword">elif</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token operator">==</span>target<span class="token punctuation">:</span>
+                    left<span class="token operator">=</span>mid<span class="token operator">+</span><span class="token number">1</span>
+            <span class="token comment" spellcheck="true"># 注意此处的打补丁，因为是右边界，所以是 nums[right]!=target</span>
+            <span class="token keyword">if</span> right<span class="token operator">&lt;</span><span class="token number">0</span>  <span class="token operator">or</span> nums<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token operator">!=</span>target<span class="token punctuation">:</span>
+                <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span>
+            <span class="token keyword">return</span> right
+            <span class="token comment" spellcheck="true"># 或者</span>
+            <span class="token comment" spellcheck="true"># if right>=0 and nums[right]==target:</span>
+            <span class="token comment" spellcheck="true">#     return right</span>
+            <span class="token comment" spellcheck="true"># return -1</span>
 
-        <span class="token comment" spellcheck="true"># 交换x与y的值</span>
-        <span class="token keyword">if</span> x <span class="token operator">and</span> y<span class="token punctuation">:</span>
-            x<span class="token punctuation">.</span>val<span class="token punctuation">,</span>y<span class="token punctuation">.</span>val<span class="token operator">=</span>y<span class="token punctuation">.</span>val<span class="token punctuation">,</span>x<span class="token punctuation">.</span>val
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        l<span class="token operator">=</span>leftSearch<span class="token punctuation">(</span>nums<span class="token punctuation">,</span>target<span class="token punctuation">)</span>
+        r<span class="token operator">=</span>rightSearch<span class="token punctuation">(</span>nums<span class="token punctuation">,</span>target<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token punctuation">[</span>l<span class="token punctuation">,</span>r<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -779,9 +720,9 @@ dfs()函数返回的是包含root在内的单边最大路径和。这样做的�
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《第零章：学习算法和刷题的框架思维》
+                    《第零章：我写了首诗，让你闭着眼睛也能写对二分搜索》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/07/23/labuladong/di-ling-zhang-xue-xi-suan-fa-he-shua-ti-de-kuang-jia-si-wei/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/07/25/di-ling-zhang-wo-xie-liao-shou-shi-rang-ni-bi-zhao-yan-jing-ye-neng-xie-dui-er-fen-sou-suo/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Min
             </a> 采用
@@ -821,34 +762,89 @@ dfs()函数返回的是包含root在内的单边最大路径和。这样做的�
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/07/24/di-ling-zhang-dong-tai-gui-hua-jie-ti-tao-lu-kuang-jia/">
+                <a href="/2020/07/25/di-ling-zhang-wo-xie-liao-shou-shi-rang-ni-bi-zhao-yan-jing-ye-neng-xie-dui-er-fen-sou-suo/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="第零章：动态规划解题套路框架">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="第零章：我写了首诗，让你闭着眼睛也能写对二分搜索">
                         
-                        <span class="card-title">第零章：动态规划解题套路框架</span>
+                        <span class="card-title">第零章：我写了首诗，让你闭着眼睛也能写对二分搜索</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            labuladong动态规划解题套路框架
-求解动态规划的核心问题是穷举,但是穷举过程中会存在重叠子问题，所以加上备忘录来优化过程dp 三要素：
+                            labuladong 我写了首诗，让你闭着眼睛也能写对二分搜索
 
-明确 base case
-明确「状态」-&gt; 明确「选择」, 即状态转移方程
-确定「状态」
+二分查找的一个技巧是：不要出现 else，而是把所有情况用 elif 列出来，这样可以清楚地展现所有细节
+mid=left + (right - left) // 2 可防止
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-24
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-25
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/LeetCode/" class="post-category" target="_blank">
+                                    LeetCode
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/labuladong-BinarySearch/" target="_blank">
+                        <span class="chip bg-color">labuladong BinarySearch</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/07/24/di-ling-zhang-bfs-suan-fa-jie-ti-tao-lu-kuang-jia-zan/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/27.jpg" class="responsive-img" alt="第零章：BFS 算法解题套路框架（暂）">
+                        
+                        <span class="card-title">第零章：BFS 算法解题套路框架（暂）</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            labuladongBFS 算法解题套路框架
+111. 二叉树的最小深度这里先用递归解决
+
+递归结束的条件或者特判：若是空节点，则返回0
+若左右孩子都为空：返回1
+若左右孩子有一个为空：返回非空孩子的递归结果+1
+否则都不为空，返回左右孩子
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-24
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -866,64 +862,6 @@ dfs()函数返回的是包含root在内的单边最大路径和。这样做的�
                     
                     <a href="/tags/labuladong/" target="_blank">
                         <span class="chip bg-color">labuladong</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/07/22/leetcode/python-jing-dian-pai-xu-suan-fa/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Python经典排序算法">
-                        
-                        <span class="card-title">Python经典排序算法</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            Python经典排序算法
-
-选择排序
-对每一个nums[i], 寻找 $range(i,n)$ 范围内比nums[i]大的数，并与之交换
-以此类推，位置 i 处就是 第i 小的数
-
-
-两次for循环，时间复杂度为 $O(n^2)$
-
-def
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-22
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/LeetCode/" class="post-category" target="_blank">
-                                    LeetCode
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Sort/" target="_blank">
-                        <span class="chip bg-color">Sort</span>
                     </a>
                     
                 </div>

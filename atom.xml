@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xueminxhd.github.io/"/>
-  <updated>2020-07-24T13:15:08.111Z</updated>
+  <updated>2020-07-25T06:07:17.890Z</updated>
   <id>https://xueminxhd.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>第零章：我写了首诗，让你闭着眼睛也能写对二分搜索</title>
+    <link href="https://xueminxhd.github.io/2020/07/25/di-ling-zhang-wo-xie-liao-shou-shi-rang-ni-bi-zhao-yan-jing-ye-neng-xie-dui-er-fen-sou-suo/"/>
+    <id>https://xueminxhd.github.io/2020/07/25/di-ling-zhang-wo-xie-liao-shou-shi-rang-ni-bi-zhao-yan-jing-ye-neng-xie-dui-er-fen-sou-suo/</id>
+    <published>2020-07-25T06:05:04.000Z</published>
+    <updated>2020-07-25T06:07:17.890Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/di-ling-zhang-bi-du-xi-lie/er-fen-cha-zhao-xiang-jie&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="labuladong BinarySearch" scheme="https://xueminxhd.github.io/tags/labuladong-BinarySearch/"/>
+    
+  </entry>
   
   <entry>
     <title>第零章：BFS 算法解题套路框架（暂）</title>
