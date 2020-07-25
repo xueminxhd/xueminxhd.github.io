@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xueminxhd.github.io/"/>
-  <updated>2020-07-25T06:12:56.178Z</updated>
+  <updated>2020-07-25T06:19:21.835Z</updated>
   <id>https://xueminxhd.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://xueminxhd.github.io/2020/07/25/labuladong/di-ling-zhang-wo-xie-liao-shou-shi-rang-ni-bi-zhao-yan-jing-ye-neng-xie-dui-er-fen-sou-suo/"/>
     <id>https://xueminxhd.github.io/2020/07/25/labuladong/di-ling-zhang-wo-xie-liao-shou-shi-rang-ni-bi-zhao-yan-jing-ye-neng-xie-dui-er-fen-sou-suo/</id>
     <published>2020-07-25T06:05:04.000Z</published>
-    <updated>2020-07-25T06:12:56.178Z</updated>
+    <updated>2020-07-25T06:19:21.835Z</updated>
     
     <summary type="html">
     
@@ -38,7 +38,9 @@
       <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
     
     
-      <category term="labuladong, BinarySearch" scheme="https://xueminxhd.github.io/tags/labuladong-BinarySearch/"/>
+      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
+    
+      <category term="BinarySearch" scheme="https://xueminxhd.github.io/tags/BinarySearch/"/>
     
   </entry>
   
