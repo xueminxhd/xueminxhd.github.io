@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xueminxhd.github.io/"/>
-  <updated>2020-07-27T07:39:47.982Z</updated>
+  <updated>2020-07-27T10:14:58.067Z</updated>
   <id>https://xueminxhd.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>第零章：经典动态规划：子集背包问题</title>
+    <link href="https://xueminxhd.github.io/2020/07/27/di-ling-zhang-jing-dian-dong-tai-gui-hua-zi-ji-bei-bao-wen-ti/"/>
+    <id>https://xueminxhd.github.io/2020/07/27/di-ling-zhang-jing-dian-dong-tai-gui-hua-zi-ji-bei-bao-wen-ti/</id>
+    <published>2020-07-27T10:07:54.000Z</published>
+    <updated>2020-07-27T10:14:58.067Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;labuladong&lt;a href=&quot;https://labuladong.gitbook.io/algo/di-ling-zhang-bi-du-xi-lie/bei-bao-zi-ji&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
+    
+  </entry>
   
   <entry>
     <title>第一章：经典动态规划：0-1 背包问题</title>
