@@ -4,14 +4,24 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="第四章：如何判断回文链表, It&#39;s the job that&#39;s never started as takes longest to finish.”― J.R.R. Tolkien">
+    <meta name="keywords" content="第零章：经典动态规划：完全背包问题, It&#39;s the job that&#39;s never started as takes longest to finish.”― J.R.R. Tolkien">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="labuladong如何判断回文链表
-方法1：链表转列表，双指针逼近将链表转化为列表，然后利用左右双指针技巧，从两端到中间逼近
-# Definition for singly-linked list.
-# class ListNode(ob">
+    <meta name="description" content="labuladong经典动态规划：完全背包问题
+
+
+
+0-1背包
+完全背包
+
+
+
+当前的物品放还是不放
+当前的物品放还是不放，如果放，放几个（每种物品有无数个，可以无限次选取）
+
+
+dp[i][j]数组的含义：dp[i][j] 表示对前i个">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +29,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>第四章：如何判断回文链表 | Min&#39;s Blog</title>
+    <title>第零章：经典动态规划：完全背包问题 | Min&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -319,13 +329,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        第四章：如何判断回文链表
+                        第零章：经典动态规划：完全背包问题
                     </div>
                 </div>
             </div>
@@ -460,7 +470,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-13
+                    2020-07-27
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -474,7 +484,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    496
+                    545
                 </div>
                 
 
@@ -497,86 +507,49 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>labuladong<a href="https://labuladong.gitbook.io/algo/gao-pin-mian-shi-xi-lie/pan-duan-hui-wen-lian-biao" target="_blank" rel="noopener">如何判断回文链表</a></p>
-<h1 id="方法1：链表转列表，双指针逼近"><a href="#方法1：链表转列表，双指针逼近" class="headerlink" title="方法1：链表转列表，双指针逼近"></a>方法1：链表转列表，双指针逼近</h1><p>将链表转化为列表，然后利用左右双指针技巧，从两端到中间逼近</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for singly-linked list.</span>
-<span class="token comment" spellcheck="true"># class ListNode(object):</span>
-<span class="token comment" spellcheck="true">#     def __init__(self, x):</span>
-<span class="token comment" spellcheck="true">#         self.val = x</span>
-<span class="token comment" spellcheck="true">#         self.next = None</span>
-
-<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">isPalindrome</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> head<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token triple-quoted-string string">"""
-        :type head: ListNode
-        :rtype: bool
-        """</span>
-        <span class="token comment" spellcheck="true"># 转成列表</span>
-        stack<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
-        <span class="token keyword">while</span> head<span class="token punctuation">:</span>
-            stack<span class="token punctuation">.</span>append<span class="token punctuation">(</span>head<span class="token punctuation">.</span>val<span class="token punctuation">)</span>
-            head<span class="token operator">=</span>head<span class="token punctuation">.</span>next
-
-        <span class="token comment" spellcheck="true"># 左右双指针逼近</span>
-        l<span class="token operator">=</span><span class="token number">0</span>
-        r<span class="token operator">=</span>len<span class="token punctuation">(</span>stack<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span>
-        <span class="token keyword">while</span> l<span class="token operator">&lt;=</span>r<span class="token punctuation">:</span>
-            <span class="token keyword">if</span>  stack<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token operator">!=</span>stack<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">:</span>
-                <span class="token keyword">return</span> <span class="token boolean">False</span>
-            <span class="token keyword">else</span><span class="token punctuation">:</span>
-                l<span class="token operator">+=</span><span class="token number">1</span>
-                r<span class="token operator">-=</span><span class="token number">1</span>
-        <span class="token keyword">return</span> <span class="token boolean">True</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="方法2：反转后半部分链表后，逐个比较节点值"><a href="#方法2：反转后半部分链表后，逐个比较节点值" class="headerlink" title="方法2：反转后半部分链表后，逐个比较节点值"></a>方法2：反转后半部分链表后，逐个比较节点值</h1><p><strong>思路</strong></p>
+                <p>labuladong<a href="https://labuladong.gitbook.io/algo/di-ling-zhang-bi-du-xi-lie/bei-bao-ling-qian" target="_blank" rel="noopener">经典动态规划：完全背包问题</a></p>
+<table>
+<thead>
+<tr>
+<th>0-1背包</th>
+<th>完全背包</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>当前的物品放还是不放</td>
+<td>当前的物品放还是不放，如果放，放几个（<strong>每种物品有无数个，可以无限次选取</strong>）</td>
+</tr>
+</tbody></table>
+<p>dp[i][j]数组的含义：dp[i][j] 表示对前i个物品，背包容量为j时，可以凑的硬币组合数（dp数组可以加一行一列表示0物品或0容量时的状态，更便于进行状态转移）</p>
 <ul>
-<li>边界条件（如[] 或者 [2]）直接返回</li>
-<li>快慢指针找中点</li>
-<li>反转以slow为开头的链表</li>
-<li>只需判断p2存在时，p1是否等于p2</li>
+<li>0-1 背包时，对第i行的硬币<code>coins[i-1]</code> ,若选择该硬币，则dp[i][j]=dp[i-1][j-coins[i-1]] (因为每种硬币只有一枚，<strong>所以状态是从上一枚硬币转到当前硬币</strong>)</li>
+<li>完全背包时，对第i行的硬币<code>coins[i-1]</code> ,若选择该硬币，则dp[i][j]=dp[i][j-coins[i-1]] （因为硬币有无数枚，<strong>选完当前硬币可以再选当前硬币</strong>）。<ul>
+<li>选的时候为<code>dp[i][j-coins[i-1]]</code>，选<code>coins[i-1]</code>时，总的金额减少到<code>j-coins[i-1]</code>,但由于是完全背包问题，每个物品可以选无限次，所以，剩下的可以选的<em>*</em>还是应该是<code>coins[0...i-1]</code>前<code>i</code>个</li>
 </ul>
-<p><strong>步骤</strong></p>
-<p>以偶数为例（奇数类似）</p>
-<p>链表：<code>1-&gt;2-&gt;2-&gt;1</code><br>下标：[0] [1] [2] [3]</p>
-<ol>
-<li>快慢指针后，slow指向第二个2(下标为[2])，fast已跳出链表</li>
-<li>此时slow后面的链表为<code>2-&gt;1</code>。反转时，2(下标为[2])指向prev的None,1指向2。最后有<code>None&lt;-2&lt;-1</code>（此时prev在下标[3]处）。（注意：此时前半段中，<strong>下标为[1]的节点2仍然指向下标为[2]的节点2</strong>）</li>
-<li>此时，以head开头的p1为<code>1-&gt;2-&gt;2-&gt;None</code>,以prev开头的p2为<code>None&lt;-2&lt;-1</code>,所以只需判断p2存在时，p1是否等于p2。</li>
-</ol>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for singly-linked list.</span>
-<span class="token comment" spellcheck="true"># class ListNode(object):</span>
-<span class="token comment" spellcheck="true">#     def __init__(self, x):</span>
-<span class="token comment" spellcheck="true">#         self.val = x</span>
-<span class="token comment" spellcheck="true">#         self.next = None</span>
+</li>
+</ul>
+<h1 id="518-零钱兑换-II"><a href="#518-零钱兑换-II" class="headerlink" title="518. 零钱兑换 II"></a><a href="https://leetcode-cn.com/problems/coin-change-2/solution/bei-bao-si-xiang-jie-jue-ling-qian-dui-huan-wen-ti/" target="_blank" rel="noopener">518. 零钱兑换 II</a></h1><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">change</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> amount<span class="token punctuation">,</span> coins<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        n<span class="token operator">=</span>len<span class="token punctuation">(</span>coins<span class="token punctuation">)</span>
 
-<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">isPalindrome</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> head<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token triple-quoted-string string">"""
-        :type head: ListNode
-        :rtype: bool
-        """</span>
-        <span class="token comment" spellcheck="true"># 边界条件，直接跳出,如[] 或者 [2]</span>
-        <span class="token comment" spellcheck="true"># if not head or not head.next: return True</span>
-        <span class="token keyword">if</span> <span class="token operator">not</span> <span class="token punctuation">(</span>head <span class="token operator">and</span> head<span class="token punctuation">.</span>next<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token boolean">True</span> <span class="token comment" spellcheck="true"># 必须有括号，and后取其反</span>
-        <span class="token comment" spellcheck="true"># 快慢指针找中点</span>
-        slow<span class="token operator">=</span>head
-        fast<span class="token operator">=</span>head
-        <span class="token keyword">while</span> fast <span class="token operator">and</span> fast<span class="token punctuation">.</span>next<span class="token punctuation">:</span>
-            slow<span class="token operator">=</span>slow<span class="token punctuation">.</span>next
-            fast<span class="token operator">=</span>fast<span class="token punctuation">.</span>next<span class="token punctuation">.</span>next
-        <span class="token comment" spellcheck="true"># 反转以slow开始的后半部分链表</span>
-        prev <span class="token operator">=</span> None
-        cur<span class="token operator">=</span>slow
-        <span class="token keyword">while</span> cur<span class="token punctuation">:</span>
-            cur<span class="token punctuation">.</span>next<span class="token punctuation">,</span>prev<span class="token punctuation">,</span>cur<span class="token operator">=</span>prev<span class="token punctuation">,</span>cur<span class="token punctuation">,</span>cur<span class="token punctuation">.</span>next
-        p1<span class="token operator">=</span>head
-        p2<span class="token operator">=</span>prev
-        <span class="token comment" spellcheck="true"># 只需判断p2存在时，p1是否等于p2</span>
-        <span class="token keyword">while</span> p2<span class="token punctuation">:</span>
-            <span class="token keyword">if</span> p1<span class="token punctuation">.</span>val<span class="token operator">!=</span>p2<span class="token punctuation">.</span>val<span class="token punctuation">:</span>
-                <span class="token keyword">return</span> <span class="token boolean">False</span>
-            p1<span class="token operator">=</span>p1<span class="token punctuation">.</span>next
-            p2<span class="token operator">=</span>p2<span class="token punctuation">.</span>next
-        <span class="token keyword">return</span> <span class="token boolean">True</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        <span class="token comment" spellcheck="true"># 行和列都分别增加1，第0列表示背包容量为0，第一行表示（虚拟）物品重量为0</span>
+        <span class="token comment" spellcheck="true"># 这样做，方便初始化dp数组以及后续dp状态转移</span>
+        dp<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>amount<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> t <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>coins<span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            dp<span class="token punctuation">[</span>t<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span>
+
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>amount<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token comment" spellcheck="true"># 如果该物品重量超过容量，肯定不能放</span>
+                <span class="token keyword">if</span> j<span class="token operator">&lt;</span>coins<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+                    dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span>dp<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span>
+                <span class="token comment" spellcheck="true"># 如果没有超过重量，则有两种情况</span>
+                <span class="token comment" spellcheck="true"># 1. （不放当前的商品）之前的物品已经凑齐:dp[i-1][j]</span>
+                <span class="token comment" spellcheck="true"># 2. (放当前的商品) 比如用[1,2]凑5，已经知道了[1,2]凑（5-3）的方法，</span>
+                <span class="token comment" spellcheck="true">#     则把现在的2放进去就可以：dp[i][j-coins[i-1]]. (2可以多次使用)</span>
+                <span class="token keyword">else</span><span class="token punctuation">:</span>
+                    dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span>dp<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">+</span>dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token operator">-</span>coins<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+        <span class="token keyword">return</span> dp<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -735,9 +708,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《第四章：如何判断回文链表》
+                    《第零章：经典动态规划：完全背包问题》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/07/13/labuladong/di-si-zhang-ru-he-pan-duan-hui-wen-lian-biao/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/07/27/di-ling-zhang-jing-dian-dong-tai-gui-hua-wan-quan-bei-bao-wen-ti/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Min
             </a> 采用
@@ -777,32 +750,43 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/07/16/labuladong/yi-ge-han-shu-miao-sha-2sum-3sum-wen-ti/">
+                <a href="/2020/07/27/di-ling-zhang-jing-dian-dong-tai-gui-hua-wan-quan-bei-bao-wen-ti/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="一个函数秒杀 2Sum 3Sum 问题">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="第零章：经典动态规划：完全背包问题">
                         
-                        <span class="card-title">一个函数秒杀 2Sum 3Sum 问题</span>
+                        <span class="card-title">第零章：经典动态规划：完全背包问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            labuladong一个函数秒杀 2Sum 3Sum 4Sum 问题
-方法1：利用字典去重的2Sum和3Sum2Sum 问题
-利用字典保存遍历过程变量，若满足条件，则返回结果class Solution(object):
-  def two
+                            labuladong经典动态规划：完全背包问题
+
+
+
+0-1背包
+完全背包
+
+
+
+当前的物品放还是不放
+当前的物品放还是不放，如果放，放几个（每种物品有无数个，可以无限次选取）
+
+
+dp[i][j]数组的含义：dp[i][j] 表示对前i个
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-16
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-27
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -815,6 +799,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -833,30 +818,30 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/13/labuladong/di-si-zhang-ru-he-tong-shi-xun-zhao-que-shi-he-chong-fu-de-yuan-su/">
+                <a href="/2020/07/27/di-ling-zhang-jing-dian-dong-tai-gui-hua-zi-ji-bei-bao-wen-ti/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="第四章：如何同时寻找缺失和重复的元素">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="第零章：经典动态规划：子集背包问题">
                         
-                        <span class="card-title">第四章：如何同时寻找缺失和重复的元素</span>
+                        <span class="card-title">第零章：经典动态规划：子集背包问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            labuladong如何同时寻找缺失和重复的元素
+                            labuladong经典动态规划：子集背包问题
+该背包问题相当于0-1背包问题的变体  （0-1 背包问题解决思路）
+416. 分割等和子集给定一个只包含正整数的非空数组。是否可以将这个数组分割成两个子集，使得两个子集的元素和相等。
 
-利用set去重，并记录重复的元素
-遍历一遍range(1,len(nums)+1),找到并记录不存在的于set中的元素
 
-class Solution(object):
-    def f
+
+
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-13
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-27
                             </span>
                         <span class="publish-author">
                             
