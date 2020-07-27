@@ -4,14 +4,19 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="搜索旋转排序数组系列, It&#39;s the job that&#39;s never started as takes longest to finish.”― J.R.R. Tolkien">
+    <meta name="keywords" content="第零章：我写了首诗，把滑动窗口算法变成了默写题, It&#39;s the job that&#39;s never started as takes longest to finish.”― J.R.R. Tolkien">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="153. 寻找旋转排序数组中的最小值
-二分查找过程中，比较mid与right（而非left）的原因：以 [1,2,3,4,5,6,7] 为例，分以下情况
+    <meta name="description" content="labuladong 我写了首诗，把滑动窗口算法变成了默写题
 
-若[1,2,3,4,5,6,7] 左&amp;lt;中，中&amp;lt;右。最小值在最左边， 所以">
+增大窗口 
+找到可行解后缩小窗口
+注意维护valid及window中的内容（若包含需要找的元素，才更新window）
+
+
+ 滑动窗口算法的思路是这样：
+1、我们在字符串S中使用">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +24,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>搜索旋转排序数组系列 | Min&#39;s Blog</title>
+    <title>第零章：我写了首诗，把滑动窗口算法变成了默写题 | Min&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -319,13 +324,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        搜索旋转排序数组系列
+                        第零章：我写了首诗，把滑动窗口算法变成了默写题
                     </div>
                 </div>
             </div>
@@ -436,8 +441,8 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/BinarySearch/" target="_blank">
-                            <span class="chip bg-color">BinarySearch</span>
+                        <a href="/tags/labuladong/" target="_blank">
+                            <span class="chip bg-color">labuladong</span>
                         </a>
                         
                     </div>
@@ -460,7 +465,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-17
+                    2020-07-25
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -474,14 +479,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    1.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    6 分
                 </div>
                 
                 
@@ -497,212 +502,191 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="153-寻找旋转排序数组中的最小值"><a href="#153-寻找旋转排序数组中的最小值" class="headerlink" title="153. 寻找旋转排序数组中的最小值"></a><a href="https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/solution/er-fen-cha-zhao-wei-shi-yao-zuo-you-bu-dui-cheng-z/" target="_blank" rel="noopener">153. 寻找旋转排序数组中的最小值</a></h1><ul>
-<li><p>二分查找过程中，比较mid与right（而非left）的原因：<br><strong>以 [1,2,3,4,5,6,7] 为例</strong>，分以下<strong>情况</strong></p>
+                <p>labuladong <a href="https://mp.weixin.qq.com/s/ioKXTMZufDECBUwRRp3zaA" target="_blank" rel="noopener">我写了首诗，把滑动窗口算法变成了默写题</a></p>
 <ol>
-<li>若[1,2,3,<strong>4</strong>,5,6,7] 左&lt;中，<strong>中&lt;右</strong>。最小值在最左边， 所以更新 <strong>右指针</strong></li>
-<li>若[6,7,1,<strong>2</strong>,3,4,5] 左&gt;中，<strong>中&lt;右</strong>。最小值在mid左边，所以更新 <strong>右指针</strong></li>
-<li>若[4,5,6,<strong>7</strong>,1,2,3] 左&lt;中，<em>中&gt;右</em>。最小值在mid右边，所以更新 <em>左指针</em></li>
+<li>增大窗口 </li>
+<li>找到可行解后缩小窗口</li>
+<li><strong>注意维护valid及window中的内容</strong>（若包含需要找的元素，才更新window）</li>
 </ol>
-</li>
-<li><p>可见，当中&lt;右时（情况1,2），都是更新右指针，中&gt;右时 （情况3），都是更新左指针（<strong>因为是找最小值，最小值偏左，所以mid和右指针进行比较，更有区分度</strong>）。 但是左&lt;中时 （情况1,3）,指针更新不统一，讨论起来较麻烦。</p>
-</li>
-</ul>
 <blockquote>
-<p>循环条件<strong>l&lt;r</strong>:</p>
-<ul>
-<li>若<code>nums[mid]&gt;nums[r]</code>,说明mid在第一个递增序列，最小值在mid右边，所以l=mid+1 （情况3）</li>
-<li>若<code>nums[mid]&lt;=nums[r]</code>,说明mid在第二个递增序列，最小值在mid处或mid左边，所以r=mid （情况2, 或者如[3,4,0,1,2]）</li>
-</ul>
+<p> <strong>滑动窗口算法的思路</strong>是这样：</p>
+<p>1、我们在字符串S中使用双指针中的左右指针技巧，初始化left = right = 0，把索引<strong>左闭右开区间</strong>[left, right)称为一个「窗口」。</p>
+<p>2、我们先不断地增加right指针扩大窗口[left, right)，直到窗口中的字符串符合要求（包含了T中的所有字符）。</p>
+<p>3、此时，我们停止增加right，转而不断增加left指针缩小窗口[left, right)，直到窗口中的字符串不再符合要求（不包含T中的所有字符了）。同时，每次增加left，我们都要更新一轮结果。</p>
+<p>4、重复第 2 和第 3 步，直到right到达字符串S的尽头。</p>
+<p>这个思路其实也不难，第 2 步相当于<strong>在寻找一个「可行解」</strong>，然后第 3 步再<strong>优化这个「可行解」</strong>，最终找到最优解，也就是最短的覆盖子串。左右指针轮流前进，窗口大小增增减减，窗口不断向右滑动，这就是「滑动窗口」这个名字的来历。</p>
 </blockquote>
-<pre class="line-numbers language-python"><code class="language-python">  <span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">findMin</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        left<span class="token operator">=</span><span class="token number">0</span>
-        right<span class="token operator">=</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span>
-        <span class="token keyword">while</span> left<span class="token operator">&lt;</span>right<span class="token punctuation">:</span>
-            mid<span class="token operator">=</span>left<span class="token operator">+</span><span class="token punctuation">(</span>right<span class="token operator">-</span>left<span class="token punctuation">)</span><span class="token operator">//</span><span class="token number">2</span>
-            <span class="token keyword">if</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token operator">></span>nums<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token punctuation">:</span>
-                left<span class="token operator">=</span>mid<span class="token operator">+</span><span class="token number">1</span>
-            <span class="token keyword">else</span><span class="token punctuation">:</span>
-                right<span class="token operator">=</span>mid
-        <span class="token keyword">return</span> nums<span class="token punctuation">[</span>left<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="154-寻找旋转排序数组中的最小值-II"><a href="#154-寻找旋转排序数组中的最小值-II" class="headerlink" title="154. 寻找旋转排序数组中的最小值 II"></a><a href="https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array-ii/solution/er-fen-fa-python3-by-zhu_shi_fu/" target="_blank" rel="noopener">154. 寻找旋转排序数组中的最小值 II</a></h1><p>此题与上一题的区别是，增加了重复元素,所以循环条件略有区别，增加了<code>nums[mid]==nums[r]</code>等于时的特判，用right-=1跳过重复元素，使得right慢慢向左跳</p>
-<blockquote>
-<p>循环条件<strong>l&lt;r</strong>:</p>
-<ul>
-<li>若<code>nums[mid]&gt;nums[r]</code>,说明mid在第一个递增序列，最小值在mid右边，所以l=mid+1 （情况3）</li>
-<li>若<code>nums[mid]&lt;nums[r]</code>,说明mid在第二个递增序列，最小值在mid处或mid左边，所以r=mid （情况2, 或者如[3,4,0,1,2]）</li>
-<li>若<code>nums[mid]=nums[r]</code>,r 向左慢慢跳，所以r-=1 （如[1,0,1,1,1]）</li>
-</ul>
-</blockquote>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">findMin</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token triple-quoted-string string">"""
-        :type nums: List[int]
-        :rtype: int
-        """</span>
-        left<span class="token operator">=</span><span class="token number">0</span>
-        right<span class="token operator">=</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span>
-        <span class="token keyword">while</span> left<span class="token operator">&lt;</span>right<span class="token punctuation">:</span>
-            mid<span class="token operator">=</span>left<span class="token operator">+</span><span class="token punctuation">(</span>right<span class="token operator">-</span>left<span class="token punctuation">)</span><span class="token operator">//</span><span class="token number">2</span>
-            <span class="token keyword">if</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token operator">></span>nums<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token punctuation">:</span>
-                left<span class="token operator">=</span>mid<span class="token operator">+</span><span class="token number">1</span>
-            <span class="token keyword">elif</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token operator">&lt;</span>nums<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token punctuation">:</span>
-                right<span class="token operator">=</span>mid
-            <span class="token keyword">else</span><span class="token punctuation">:</span>
-                right<span class="token operator">-=</span><span class="token number">1</span>
-        <span class="token keyword">return</span> nums<span class="token punctuation">[</span>left<span class="token punctuation">]</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="33-搜索旋转排序数组"><a href="#33-搜索旋转排序数组" class="headerlink" title="33. 搜索旋转排序数组"></a><a href="https://leetcode-cn.com/problems/search-in-rotated-sorted-array/solution/duo-tu-yan-shi-33-sou-suo-xuan-zhuan-pai-xu-shu-zu/" target="_blank" rel="noopener">33. 搜索旋转排序数组</a></h1><p>方法1：找到数组中的最小值后，在第一或第二递增区域内找目标值</p>
-<p>根据上题”153. 寻找旋转排序数组中的最小值” 可以得到最小值，若将最小值<code>minIdx</code>作为旋转点，则有</p>
-<blockquote>
-<ul>
-<li>若最小值下标为0，说明序列是单调递增的，所以在<code>0 - n-1</code> 范围内进行二分查找</li>
-<li>若<code>target&gt;=nums[0]</code>,说明target在第一段递增序列内，所以在<code>nums[0:minIdx]</code> 范围内进行二分查找</li>
-<li>若<code>target&lt;nums[0]</code>,说明target需要在第二段递增序列内找，所以在<code>nums[minIdx:]</code> 范围内进行二分查找<ul>
-<li>如果目标值不在第二递增序列中，则返回-1（如<code>[4,5,6,7,0,1,2]</code>中找target 3），否则返回 <code>minIdx+binarySearch(nums[minIdx:],target)</code>的结果</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">search</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">,</span> target<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token triple-quoted-string string">"""
-        :type nums: List[int]
-        :type target: int
-        :rtype: int
-        """</span>
-        <span class="token comment" spellcheck="true"># 找到最小值的下标</span>
-        <span class="token keyword">def</span> <span class="token function">findMin</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            l<span class="token operator">=</span><span class="token number">0</span>
-            r<span class="token operator">=</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span>
-            <span class="token keyword">while</span> l<span class="token operator">&lt;</span>r<span class="token punctuation">:</span>
-                mid<span class="token operator">=</span>l<span class="token operator">+</span><span class="token punctuation">(</span>r<span class="token operator">-</span>l<span class="token punctuation">)</span><span class="token operator">//</span><span class="token number">2</span>
-                <span class="token keyword">if</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token operator">></span>nums<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">:</span>
-                    l<span class="token operator">=</span>mid<span class="token operator">+</span><span class="token number">1</span>
-                <span class="token keyword">else</span><span class="token punctuation">:</span>
-                    r<span class="token operator">=</span>mid
-            <span class="token keyword">return</span> l
+<h1 id="76-最小覆盖子串"><a href="#76-最小覆盖子串" class="headerlink" title="76.最小覆盖子串"></a><a href="https://leetcode-cn.com/problems/minimum-window-substring/solution/hua-dong-chuang-kou-suan-fa-tong-yong-si-xiang-by-/" target="_blank" rel="noopener">76.最小覆盖子串</a></h1><ol>
+<li>遍历t，得到need字典</li>
+<li>窗口<strong>左闭右开</strong>。先增大右窗口，更新window 和valid</li>
+<li>找全以后，开始缩小左窗口，相应地，也要更新window和valid。</li>
+<li>在<strong>更新左窗口前</strong>，<strong>先用<code>ans</code>记录并更新左右指针位置</strong>，然后再更新window和valid。这样的话，当窗口的字符串因左窗口的缩小而不再符合要求时（退出while循环），ans中保存的是仍然正好符合要求的左右指针</li>
+<li>如果左指针从未更新过（仍为-1），说明没有在s中找到符合要求的字符串，返回””,否则返回左右指针对应的字符串</li>
+</ol>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">minWindow</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">,</span>t<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">from</span> collections <span class="token keyword">import</span> defaultdict
+        window<span class="token operator">=</span>defaultdict<span class="token punctuation">(</span>int<span class="token punctuation">)</span>
+        need<span class="token operator">=</span>defaultdict<span class="token punctuation">(</span>int<span class="token punctuation">)</span>
+        <span class="token keyword">for</span> c <span class="token keyword">in</span> t<span class="token punctuation">:</span>
+            need<span class="token punctuation">[</span>c<span class="token punctuation">]</span><span class="token operator">+=</span><span class="token number">1</span>
+        l<span class="token punctuation">,</span>r<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span>
+        ans<span class="token operator">=</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span>len<span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">]</span>
+        valid<span class="token operator">=</span><span class="token number">0</span> <span class="token comment" spellcheck="true"># 合法元素的个数</span>
+        <span class="token keyword">while</span> r<span class="token operator">&lt;</span>len<span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            c<span class="token operator">=</span>s<span class="token punctuation">[</span>r<span class="token punctuation">]</span>
+            <span class="token comment" spellcheck="true"># 增大窗口 ：相应的要改变window和valid</span>
+            r<span class="token operator">+=</span><span class="token number">1</span>
+            <span class="token keyword">if</span> c <span class="token keyword">in</span> need<span class="token punctuation">:</span>
+                window<span class="token punctuation">[</span>c<span class="token punctuation">]</span><span class="token operator">+=</span><span class="token number">1</span>
+                <span class="token keyword">if</span> window<span class="token punctuation">[</span>c<span class="token punctuation">]</span><span class="token operator">==</span>need<span class="token punctuation">[</span>c<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                    valid<span class="token operator">+=</span><span class="token number">1</span>
 
-        <span class="token comment" spellcheck="true"># 普通的二分查找，用于确定目标值下标</span>
-        <span class="token keyword">def</span>  <span class="token function">binarySearch</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span>target<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            l<span class="token operator">=</span><span class="token number">0</span>
-            r<span class="token operator">=</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span>
-            <span class="token keyword">while</span> l<span class="token operator">&lt;=</span>r<span class="token punctuation">:</span>
-                mid<span class="token operator">=</span>l<span class="token operator">+</span><span class="token punctuation">(</span>r<span class="token operator">-</span>l<span class="token punctuation">)</span><span class="token operator">//</span><span class="token number">2</span>
-                <span class="token keyword">if</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token operator">==</span>target<span class="token punctuation">:</span>
-                    <span class="token keyword">return</span> mid
-                <span class="token keyword">elif</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token operator">></span>target<span class="token punctuation">:</span>
-                    r<span class="token operator">=</span>mid<span class="token number">-1</span>
-                <span class="token keyword">else</span><span class="token punctuation">:</span>
-                    l<span class="token operator">=</span>mid<span class="token operator">+</span><span class="token number">1</span>
-            <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span>
-
-        minIdx<span class="token operator">=</span>findMin<span class="token punctuation">(</span>nums<span class="token punctuation">)</span>
-        <span class="token keyword">if</span> minIdx<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true">#单调递增，在整个范围内寻找</span>
-            <span class="token keyword">return</span> binarySearch<span class="token punctuation">(</span>nums<span class="token punctuation">,</span>target<span class="token punctuation">)</span>
-        <span class="token keyword">elif</span> target<span class="token operator">>=</span>nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 在第一个递增序列内找</span>
-            <span class="token keyword">return</span> binarySearch<span class="token punctuation">(</span>nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span>minIdx<span class="token punctuation">]</span><span class="token punctuation">,</span>target<span class="token punctuation">)</span>
-        <span class="token keyword">else</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># target&lt;nums[0]: # 在第二个递增序列内找</span>
-            <span class="token comment" spellcheck="true"># 如果目标值不在第二递增序列中，则返回-1，否则返回 minIdx+tmp</span>
-            tmp<span class="token operator">=</span>binarySearch<span class="token punctuation">(</span>nums<span class="token punctuation">[</span>minIdx<span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">,</span>target<span class="token punctuation">)</span>
-            <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token keyword">if</span> tmp<span class="token operator">==</span><span class="token operator">-</span><span class="token number">1</span> <span class="token keyword">else</span> minIdx<span class="token operator">+</span>tmp
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>方法2：直接二分查找,在<strong>严格的递增序列内</strong>找target，其余情况取反</p>
-<ul>
-<li>设置左右指针</li>
-<li><code>nums[mid]==target</code>时，说明已找到目标值，返回 mid （也是while的结束条件）</li>
-<li><code>当nums[mid]&gt;=nums[l]</code> 时（注意这里要取等号，使得满足递增序列只有一个元素的情况也符合(如<code>[3,1]</code>)），说明左边是递增序列，<ul>
-<li>若<strong>target在递增序列内</strong>，则更新右指针</li>
-<li>其他情况更新左指针 （target 在mid的右边，所以更新左指针）</li>
-</ul>
-</li>
-<li>否则当<code>nums[mid]&lt;nums[l]</code>时，说明右边是递增序列<ul>
-<li>若<strong>target在递增序列内</strong>，则更新左指针</li>
-<li>其他情况更新右指针 （target 在mid的左边，所以更新右指针）</li>
-</ul>
-</li>
-</ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">search</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">,</span> target<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token triple-quoted-string string">"""
-        :type nums: List[int]
-        :type target: int
-        :rtype: int
-        """</span>
-        n<span class="token operator">=</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span>
-        l<span class="token operator">=</span><span class="token number">0</span>
-        r<span class="token operator">=</span>n<span class="token number">-1</span>
-        <span class="token keyword">while</span> l<span class="token operator">&lt;=</span>r<span class="token punctuation">:</span>
-            mid<span class="token operator">=</span>l<span class="token operator">+</span><span class="token punctuation">(</span>r<span class="token operator">-</span>l<span class="token punctuation">)</span><span class="token operator">//</span><span class="token number">2</span>
-            <span class="token comment" spellcheck="true"># 找到后，结束循环，跳出</span>
-            <span class="token keyword">if</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token operator">==</span>target<span class="token punctuation">:</span>
-                <span class="token keyword">return</span> mid
-            <span class="token comment" spellcheck="true"># 左边是递增序列</span>
-            <span class="token keyword">if</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token operator">>=</span>nums<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token punctuation">:</span>
-                <span class="token comment" spellcheck="true"># target 若在递增序列内，则更新右指针</span>
-                <span class="token keyword">if</span> nums<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token operator">&lt;=</span>target<span class="token operator">&lt;</span>nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token punctuation">:</span>
-                    r<span class="token operator">=</span>mid<span class="token number">-1</span>
-                <span class="token keyword">else</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 剩余情况更新左指针</span>
-                    l<span class="token operator">=</span>mid<span class="token operator">+</span><span class="token number">1</span>
-            <span class="token comment" spellcheck="true"># 右边是递增序列</span>
-            <span class="token keyword">elif</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token operator">&lt;</span>nums<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token punctuation">:</span>
-                <span class="token comment" spellcheck="true"># target 若在递增序列内，则更新左指针</span>
-                <span class="token keyword">if</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token operator">&lt;</span>target<span class="token operator">&lt;=</span>nums<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">:</span>
-                    l<span class="token operator">=</span>mid<span class="token operator">+</span><span class="token number">1</span>
-                <span class="token keyword">else</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 剩余情况更新右指针</span>
-                    r<span class="token operator">=</span>mid<span class="token number">-1</span>
-        <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token comment" spellcheck="true"># 不满足条件时，返回-1</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="81-搜索旋转排序数组-II"><a href="#81-搜索旋转排序数组-II" class="headerlink" title="81. 搜索旋转排序数组 II"></a><a href="https://leetcode-cn.com/problems/search-in-rotated-sorted-array-ii/solution/er-fen-by-powcai/" target="_blank" rel="noopener">81. 搜索旋转排序数组 II</a></h1><p>与上题相比，本题增加了重复元素。因此，若检测到重复元素，则左（右）指针要跳，直到不重复：</p>
-<blockquote>
-<p>如[1,1,1,1,2,1], 可保证跳过相邻的相同元素<br>与上题相比，增加如下判断：</p>
-<pre><code>        if nums[mid]==nums[l]==nums[r]:
-            l+=1
-            r-=1</code></pre></blockquote>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">search</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">,</span> target<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token triple-quoted-string string">"""
-        :type nums: List[int]
-        :type target: int
-        :rtype: int
-        """</span>
-        n<span class="token operator">=</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span>
-        l<span class="token operator">=</span><span class="token number">0</span>
-        r<span class="token operator">=</span>n<span class="token number">-1</span>
-        <span class="token keyword">while</span> l<span class="token operator">&lt;=</span>r<span class="token punctuation">:</span>
-            mid<span class="token operator">=</span>l<span class="token operator">+</span><span class="token punctuation">(</span>r<span class="token operator">-</span>l<span class="token punctuation">)</span><span class="token operator">//</span><span class="token number">2</span>
-            <span class="token comment" spellcheck="true"># 找到后，结束循环，跳出</span>
-            <span class="token keyword">if</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token operator">==</span>target<span class="token punctuation">:</span>
-                <span class="token keyword">return</span> <span class="token boolean">True</span>
-
-
-            <span class="token comment" spellcheck="true"># ******与上题相比，增加的部分****** #</span>
-            <span class="token triple-quoted-string string">"""
-            如[1,1,1,1,2,1], 可保证跳过相邻的相同元素
-            """</span>
-            <span class="token keyword">if</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token operator">==</span>nums<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token operator">==</span>nums<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true"># 找到可行解后要缩小窗口：相应的要改变window和valid</span>
+            <span class="token keyword">while</span> valid<span class="token operator">==</span>len<span class="token punctuation">(</span>need<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">if</span> r<span class="token operator">-</span>l<span class="token operator">&lt;</span>ans<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">-</span>ans<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+                    ans<span class="token operator">=</span><span class="token punctuation">(</span>l<span class="token punctuation">,</span>r<span class="token punctuation">)</span>
+                c<span class="token operator">=</span>s<span class="token punctuation">[</span>l<span class="token punctuation">]</span>
                 l<span class="token operator">+=</span><span class="token number">1</span>
-                r<span class="token operator">-=</span><span class="token number">1</span>
-            <span class="token comment" spellcheck="true"># ******与上题相比，增加的部分****** #</span>
+                <span class="token keyword">if</span> c <span class="token keyword">in</span> need<span class="token punctuation">:</span>
+                    <span class="token keyword">if</span> window<span class="token punctuation">[</span>c<span class="token punctuation">]</span><span class="token operator">==</span>need<span class="token punctuation">[</span>c<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                        valid<span class="token operator">-=</span><span class="token number">1</span>
+                    window<span class="token punctuation">[</span>c<span class="token punctuation">]</span><span class="token operator">-=</span><span class="token number">1</span>
+        <span class="token keyword">return</span> <span class="token string">""</span> <span class="token keyword">if</span> ans<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">==</span><span class="token operator">-</span><span class="token number">1</span> <span class="token keyword">else</span> s<span class="token punctuation">[</span>ans<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">:</span>ans<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="567-字符串的排列"><a href="#567-字符串的排列" class="headerlink" title="567. 字符串的排列"></a><a href="https://leetcode-cn.com/problems/permutation-in-string/" target="_blank" rel="noopener">567. 字符串的排列</a></h1><p>窗口大小等于s1长度，则判断窗口的内容是否符合条件。若符合，返回<code>True</code>。否则，继续更新左窗口。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">checkInclusion</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s1<span class="token punctuation">,</span> s2<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :type s1: str
+        :type s2: str
+        :rtype: bool
+        """</span>
+        <span class="token comment" spellcheck="true"># 准备初始值及统计信息</span>
+        <span class="token keyword">from</span> collections <span class="token keyword">import</span> defaultdict
+        need<span class="token operator">=</span>defaultdict<span class="token punctuation">(</span>int<span class="token punctuation">)</span>
+        window<span class="token operator">=</span>defaultdict<span class="token punctuation">(</span>int<span class="token punctuation">)</span>
+        valid<span class="token operator">=</span><span class="token number">0</span>
+        <span class="token keyword">for</span> c <span class="token keyword">in</span> s1<span class="token punctuation">:</span>
+            need<span class="token punctuation">[</span>c<span class="token punctuation">]</span><span class="token operator">+=</span><span class="token number">1</span>
+        l<span class="token punctuation">,</span>r<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span>
 
+        <span class="token comment" spellcheck="true"># 维护valid及window</span>
+        <span class="token keyword">while</span> r<span class="token operator">&lt;</span>len<span class="token punctuation">(</span>s2<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true"># 维护及增大右窗口</span>
+            c<span class="token operator">=</span>s2<span class="token punctuation">[</span>r<span class="token punctuation">]</span>
+            r<span class="token operator">+=</span><span class="token number">1</span>
+            <span class="token keyword">if</span> c <span class="token keyword">in</span> need<span class="token punctuation">:</span>
+                window<span class="token punctuation">[</span>c<span class="token punctuation">]</span><span class="token operator">+=</span><span class="token number">1</span>
+                <span class="token keyword">if</span> window<span class="token punctuation">[</span>c<span class="token punctuation">]</span><span class="token operator">==</span>need<span class="token punctuation">[</span>c<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                    valid<span class="token operator">+=</span><span class="token number">1</span>
 
-            <span class="token comment" spellcheck="true"># 左边是递增序列</span>
-            <span class="token keyword">elif</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token operator">>=</span>nums<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token punctuation">:</span>
-                <span class="token comment" spellcheck="true"># target 若在递增序列内，则更新右指针</span>
-                <span class="token keyword">if</span> nums<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token operator">&lt;=</span>target<span class="token operator">&lt;</span>nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token punctuation">:</span>
-                    r<span class="token operator">=</span>mid<span class="token number">-1</span>
-                <span class="token keyword">else</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 剩余情况更新左指针</span>
-                    l<span class="token operator">=</span>mid<span class="token operator">+</span><span class="token number">1</span>
-            <span class="token comment" spellcheck="true"># 右边是递增序列</span>
-            <span class="token keyword">elif</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token operator">&lt;</span>nums<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token punctuation">:</span>
-                <span class="token comment" spellcheck="true"># target 若在递增序列内，则更新左指针</span>
-                <span class="token keyword">if</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token operator">&lt;</span>target<span class="token operator">&lt;=</span>nums<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">:</span>
-                    l<span class="token operator">=</span>mid<span class="token operator">+</span><span class="token number">1</span>
-                <span class="token keyword">else</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 剩余情况更新右指针</span>
-                    r<span class="token operator">=</span>mid<span class="token number">-1</span>
-        <span class="token keyword">return</span> <span class="token boolean">False</span> <span class="token comment" spellcheck="true"># 不满足条件时，返回-1</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+            <span class="token comment" spellcheck="true"># 如果窗口大小等于s1长度，则判断窗口的内容是否符合条件</span>
+            <span class="token comment" spellcheck="true"># 注意是左闭右开，所以是r-l==len(s1)，而不是r-l+1==len(s1)</span>
+            <span class="token keyword">if</span> r<span class="token operator">-</span>l<span class="token operator">==</span>len<span class="token punctuation">(</span>s1<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token comment" spellcheck="true"># 若符合，返回True</span>
+                <span class="token keyword">if</span> valid<span class="token operator">==</span>len<span class="token punctuation">(</span>need<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                    <span class="token keyword">return</span> <span class="token boolean">True</span>
+
+                <span class="token comment" spellcheck="true"># 收缩并更新左窗口</span>
+                c<span class="token operator">=</span>s2<span class="token punctuation">[</span>l<span class="token punctuation">]</span>
+                l<span class="token operator">+=</span><span class="token number">1</span>
+                <span class="token keyword">if</span> c <span class="token keyword">in</span> need<span class="token punctuation">:</span>
+                    <span class="token keyword">if</span> window<span class="token punctuation">[</span>c<span class="token punctuation">]</span><span class="token operator">==</span>need<span class="token punctuation">[</span>c<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                        valid<span class="token operator">-=</span><span class="token number">1</span>
+                    window<span class="token punctuation">[</span>c<span class="token punctuation">]</span><span class="token operator">-=</span><span class="token number">1</span>
+        <span class="token keyword">return</span> <span class="token boolean">False</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="438-找到字符串中所有字母异位词"><a href="#438-找到字符串中所有字母异位词" class="headerlink" title="438. 找到字符串中所有字母异位词"></a><a href="https://leetcode-cn.com/problems/find-all-anagrams-in-a-string/" target="_blank" rel="noopener">438. 找到字符串中所有字母异位词</a></h1><p>相当于在上题的基础上，返回所有满足条件的排列的初始索引值。 用res保存结果（用<code>res.append(l)</code> 添加左指针的索引）</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 输入:</span>
+<span class="token comment" spellcheck="true"># s: "cbaebabacd" p: "abc"</span>
+<span class="token comment" spellcheck="true"># 输出:</span>
+<span class="token comment" spellcheck="true"># [0, 6]</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">findAnagrams</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">,</span> p<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :type s: str
+        :type p: str
+        :rtype: List[int]
+        """</span>
+        <span class="token keyword">from</span> collections <span class="token keyword">import</span> defaultdict
+        need<span class="token operator">=</span>defaultdict<span class="token punctuation">(</span>int<span class="token punctuation">)</span>
+        window<span class="token operator">=</span>defaultdict<span class="token punctuation">(</span>int<span class="token punctuation">)</span>
+        l<span class="token punctuation">,</span>r<span class="token punctuation">,</span>valid<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span>
+        res<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> c <span class="token keyword">in</span> p<span class="token punctuation">:</span>
+            need<span class="token punctuation">[</span>c<span class="token punctuation">]</span><span class="token operator">+=</span><span class="token number">1</span>
+        <span class="token keyword">while</span> r<span class="token operator">&lt;</span>len<span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            c<span class="token operator">=</span>s<span class="token punctuation">[</span>r<span class="token punctuation">]</span>
+            r<span class="token operator">+=</span><span class="token number">1</span>
+            <span class="token keyword">if</span> c <span class="token keyword">in</span> need<span class="token punctuation">:</span>
+                window<span class="token punctuation">[</span>c<span class="token punctuation">]</span><span class="token operator">+=</span><span class="token number">1</span>
+                <span class="token keyword">if</span> window<span class="token punctuation">[</span>c<span class="token punctuation">]</span><span class="token operator">==</span>need<span class="token punctuation">[</span>c<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                    valid<span class="token operator">+=</span><span class="token number">1</span>
+
+            <span class="token keyword">if</span> r<span class="token operator">-</span>l<span class="token operator">==</span>len<span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">if</span> valid<span class="token operator">==</span>len<span class="token punctuation">(</span>need<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                    res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>l<span class="token punctuation">)</span>
+                c<span class="token operator">=</span>s<span class="token punctuation">[</span>l<span class="token punctuation">]</span>
+                l<span class="token operator">+=</span><span class="token number">1</span>
+                <span class="token keyword">if</span> c <span class="token keyword">in</span> need<span class="token punctuation">:</span>
+                    <span class="token keyword">if</span> window<span class="token punctuation">[</span>c<span class="token punctuation">]</span><span class="token operator">==</span>need<span class="token punctuation">[</span>c<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                        valid<span class="token operator">-=</span><span class="token number">1</span>
+                    window<span class="token punctuation">[</span>c<span class="token punctuation">]</span><span class="token operator">-=</span><span class="token number">1</span>
+        <span class="token keyword">return</span> res<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="3-无重复字符的最长子串"><a href="#3-无重复字符的最长子串" class="headerlink" title="3. 无重复字符的最长子串"></a><a href="https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/" target="_blank" rel="noopener">3. 无重复字符的最长子串</a></h1><ul>
+<li>这次连need和valid都不需要，直接更新window即可</li>
+<li><code>while window[c]&gt;1</code>时，说明窗口中存在重复元素，不符合条件，就该移动left缩小窗口了</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 输入: "abcabcbb"</span>
+<span class="token comment" spellcheck="true"># 输出: 3</span>
+<span class="token comment" spellcheck="true"># 解释: 因为无重复字符的最长子串是 "abc"，所以其长度为 3。</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">lengthOfLongestSubstring</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">from</span> collections <span class="token keyword">import</span> defaultdict
+        window<span class="token operator">=</span>defaultdict<span class="token punctuation">(</span>int<span class="token punctuation">)</span>
+        l<span class="token punctuation">,</span>r<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span>
+        res_max<span class="token operator">=</span><span class="token number">0</span>
+        <span class="token keyword">while</span> r <span class="token operator">&lt;</span>len<span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true"># 更新右窗口</span>
+            c<span class="token operator">=</span>s<span class="token punctuation">[</span>r<span class="token punctuation">]</span>
+            r<span class="token operator">+=</span><span class="token number">1</span>
+            window<span class="token punctuation">[</span>c<span class="token punctuation">]</span><span class="token operator">+=</span><span class="token number">1</span>
+
+            <span class="token comment" spellcheck="true"># 符合左窗口更新的条件</span>
+            <span class="token comment" spellcheck="true"># 注意这里要用while，把不符合条件的左窗口内容一直跳过去</span>
+            <span class="token comment" spellcheck="true"># 如 "pwwkew"，把左侧p移除后，继续移除左侧w</span>
+            <span class="token keyword">while</span> window<span class="token punctuation">[</span>c<span class="token punctuation">]</span><span class="token operator">></span><span class="token number">1</span><span class="token punctuation">:</span>
+                d<span class="token operator">=</span>s<span class="token punctuation">[</span>l<span class="token punctuation">]</span>
+                l<span class="token operator">+=</span><span class="token number">1</span>
+                window<span class="token punctuation">[</span>d<span class="token punctuation">]</span><span class="token operator">-=</span><span class="token number">1</span>
+            <span class="token comment" spellcheck="true"># 更新答案</span>
+            res_max<span class="token operator">=</span>max<span class="token punctuation">(</span>res_max<span class="token punctuation">,</span>r<span class="token operator">-</span>l<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> res_max<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<hr>
+<p>此题也可用动态规划解：</p>
+<ul>
+<li>dp数组含义：<strong>包含</strong>第i个元素的所有无重复字符串的长度（即<code>len(visited)</code>）</li>
+<li><code>visited</code> 用于保存无重复字符串元素。<code>visited=[s[i]]</code>一定包含当前元素，然后从i-1 开始，逆序遍历之前的元素，若不在visited里，则添加到visited，否则break跳出。</li>
+<li>最后返回dp数组的最大值</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">lengthOfLongestSubstring</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :type s: str
+        :rtype: int
+        """</span>
+        <span class="token keyword">if</span> len<span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token number">0</span>
+        dp<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>len<span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            visited<span class="token operator">=</span><span class="token punctuation">[</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span>
+            <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>i<span class="token number">-1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">if</span> s<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">not</span> <span class="token keyword">in</span> visited<span class="token punctuation">:</span>
+                    visited<span class="token punctuation">.</span>append<span class="token punctuation">(</span>s<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>
+                <span class="token keyword">else</span><span class="token punctuation">:</span>
+                    <span class="token keyword">break</span>
+            dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>len<span class="token punctuation">(</span>visited<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> max<span class="token punctuation">(</span>dp<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -861,9 +845,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《搜索旋转排序数组系列》
+                    《第零章：我写了首诗，把滑动窗口算法变成了默写题》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/07/17/leetcode/sou-suo-xuan-zhuan-pai-xu-shu-zu-xi-lie/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/07/25/labuladong/di-ling-zhang-wo-xie-liao-shou-shi-ba-hua-dong-chuang-kou-suan-fa-bian-cheng-liao-mo-xie-ti/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Min
             </a> 采用
@@ -907,33 +891,27 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/07/22/leetcode/python-jing-dian-pai-xu-suan-fa/">
+                <a href="/2020/07/26/labuladong/di-ling-zhang-tuan-mie-leetcode-da-jia-jie-she-wen-ti/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Python经典排序算法">
+                        <img src="/medias/featureimages/27.jpg" class="responsive-img" alt="第零章：团灭 LeetCode 打家劫舍问题">
                         
-                        <span class="card-title">Python经典排序算法</span>
+                        <span class="card-title">第零章：团灭 LeetCode 打家劫舍问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Python经典排序算法
-
-选择排序
-对每一个nums[i], 寻找 $range(i,n)$ 范围内比nums[i]大的数，并与之交换
-以此类推，位置 i 处就是 第i 小的数
-
-
-两次for循环，时间复杂度为 $O(n^2)$
-
-def
+                            labuladong 团灭 LeetCode 打家劫舍问题
+图解动态规划的解题四步骤
+动态规划：在确定动态转移方程后，可以用（自顶向下的使用备忘录递归的方法） 自底向上使用 dp 数组的方法
+198. 打家劫舍因为状态转移方程中，dp[i]
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-22
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-26
                         </span>
                         <span class="publish-author">
                             
@@ -950,8 +928,8 @@ def
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Sort/" target="_blank">
-                        <span class="chip bg-color">Sort</span>
+                    <a href="/tags/labuladong/" target="_blank">
+                        <span class="chip bg-color">labuladong</span>
                     </a>
                     
                 </div>
@@ -965,27 +943,27 @@ def
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/16/labuladong/yi-ge-han-shu-miao-sha-2sum-3sum-wen-ti/">
+                <a href="/2020/07/25/labuladong/di-ling-zhang-wo-xie-liao-shou-shi-rang-ni-bi-zhao-yan-jing-ye-neng-xie-dui-er-fen-sou-suo/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="一个函数秒杀 2Sum 3Sum 问题">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="第零章：我写了首诗，让你闭着眼睛也能写对二分搜索">
                         
-                        <span class="card-title">一个函数秒杀 2Sum 3Sum 问题</span>
+                        <span class="card-title">第零章：我写了首诗，让你闭着眼睛也能写对二分搜索</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            labuladong一个函数秒杀 2Sum 3Sum 4Sum 问题
-方法1：利用字典去重的2Sum和3Sum2Sum 问题
-利用字典保存遍历过程变量，若满足条件，则返回结果class Solution(object):
-  def two
+                            labuladong 我写了首诗，让你闭着眼睛也能写对二分搜索
+
+二分查找的一个技巧是：不要出现 else，而是把所有情况用 elif 列出来，这样可以清楚地展现所有细节
+mid=left + (right - left) // 2 可防止
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-16
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-25
                             </span>
                         <span class="publish-author">
                             
@@ -1004,6 +982,10 @@ def
                     
                     <a href="/tags/labuladong/" target="_blank">
                         <span class="chip bg-color">labuladong</span>
+                    </a>
+                    
+                    <a href="/tags/BinarySearch/" target="_blank">
+                        <span class="chip bg-color">BinarySearch</span>
                     </a>
                     
                 </div>
