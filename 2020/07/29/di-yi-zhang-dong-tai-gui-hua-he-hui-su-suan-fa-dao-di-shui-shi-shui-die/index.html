@@ -4,14 +4,17 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="第零章：团灭 LeetCode 打家劫舍问题, It&#39;s the job that&#39;s never started as takes longest to finish.”― J.R.R. Tolkien">
+    <meta name="keywords" content="第一章：动态规划和回溯算法到底谁是谁爹？, It&#39;s the job that&#39;s never started as takes longest to finish.”― J.R.R. Tolkien">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="labuladong 团灭 LeetCode 打家劫舍问题
-图解动态规划的解题四步骤
-动态规划：在确定动态转移方程后，可以用（自顶向下的使用备忘录递归的方法） 自底向上使用 dp 数组的方法
-198. 打家劫舍因为状态转移方程中，dp[i]">
+    <meta name="description" content="labuladong动态规划和回溯算法到底谁是谁爹？
+494. 目标和方法1：动态规划（dp二维数组）dp[i][j]表示 数组中前i个元素组成和为j的方案数
+
+base case: 
+
+
+首先初始化数组第0行。如果第一个元素为0，则dp[">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +22,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>第零章：团灭 LeetCode 打家劫舍问题 | Min&#39;s Blog</title>
+    <title>第一章：动态规划和回溯算法到底谁是谁爹？ | Min&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -319,13 +322,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/25.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        第零章：团灭 LeetCode 打家劫舍问题
+                        第一章：动态规划和回溯算法到底谁是谁爹？
                     </div>
                 </div>
             </div>
@@ -460,7 +463,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-26
+                    2020-07-29
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -474,14 +477,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    691
+                    1.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    4 分
                 </div>
                 
                 
@@ -497,83 +500,93 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>labuladong <a href="https://github.com/labuladong/fucking-algorithm/blob/master/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E6%8A%A2%E6%88%BF%E5%AD%90.md" target="_blank" rel="noopener">团灭 LeetCode 打家劫舍问题</a></p>
-<p><a href="https://leetcode-cn.com/problems/house-robber/solution/dong-tai-gui-hua-jie-ti-si-bu-zou-xiang-jie-cjavap/" target="_blank" rel="noopener">图解动态规划的解题四步骤</a></p>
-<p>动态规划：在确定动态转移方程后，可以用<del>（自顶向下的使用备忘录递归的方法）</del> <strong>自底向上使用 dp 数组</strong>的方法</p>
-<h1 id="198-打家劫舍"><a href="#198-打家劫舍" class="headerlink" title="198. 打家劫舍"></a><a href="https://leetcode-cn.com/problems/house-robber/" target="_blank" rel="noopener">198. 打家劫舍</a></h1><p>因为状态转移方程中，dp[i]涉及到dp[i-2], 在base case 中，在最前面加一个虚拟的空房子，状态更容易转换。而dp[1] 就初始化为nums[0]。</p>
-<pre class="line-numbers language-python"><code class="language-python">
-<span class="token keyword">def</span> <span class="token function">rob</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">:</span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
-    <span class="token keyword">if</span> len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> <span class="token number">0</span>
-
-    <span class="token comment" spellcheck="true"># 子问题：</span>
-    <span class="token comment" spellcheck="true"># f(k) = 偷 [0..k) 房间中的最大金额</span>
-
-    <span class="token comment" spellcheck="true"># f(0) = 0</span>
-    <span class="token comment" spellcheck="true"># f(1) = nums[0]</span>
-    <span class="token comment" spellcheck="true"># f(k) = max{ rob(k-1), nums[k-1] + rob(k-2) }</span>
-
-    N <span class="token operator">=</span> len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span>
-    dp <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token punctuation">(</span>N<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
-    dp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span>
-    dp<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-    <span class="token keyword">for</span> k <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> N<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        dp<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">=</span> max<span class="token punctuation">(</span>dp<span class="token punctuation">[</span>k<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> nums<span class="token punctuation">[</span>k<span class="token number">-1</span><span class="token punctuation">]</span> <span class="token operator">+</span> dp<span class="token punctuation">[</span>k<span class="token number">-2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-    <span class="token keyword">return</span> dp<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="213-打家劫舍-II"><a href="#213-打家劫舍-II" class="headerlink" title="213. 打家劫舍 II"></a><a href="https://leetcode-cn.com/problems/house-robber-ii/" target="_blank" rel="noopener">213. 打家劫舍 II</a></h1><ul>
-<li><p>现在房子环成了一个圈，也就是说第一间和最后一间不能同时抢。那么有：</p>
+                <p>labuladong<a href="https://labuladong.gitbook.io/algo/dong-tai-gui-hua-xi-lie/targetsum" target="_blank" rel="noopener">动态规划和回溯算法到底谁是谁爹？</a></p>
+<h1 id="494-目标和"><a href="#494-目标和" class="headerlink" title="494. 目标和"></a><a href="https://leetcode-cn.com/problems/target-sum/solution/dong-tai-gui-hua-by-powcai-22/" target="_blank" rel="noopener">494. 目标和</a></h1><h2 id="方法1：动态规划（dp二维数组）"><a href="#方法1：动态规划（dp二维数组）" class="headerlink" title="方法1：动态规划（dp二维数组）"></a>方法1：动态规划（dp二维数组）</h2><p>dp[i][j]表示 <strong>数组中前i个元素组成和为j的方案数</strong></p>
 <ol>
-<li><p>抢第一间，不抢最后一间</p>
+<li>base case: </li>
+</ol>
+<ul>
+<li>首先初始化数组第0行。如果第一个元素为0，则<code>dp[0][total]=2</code> <ul>
+<li>(-0 和+0 都为0，所以先初始化为2) 比如 [0,1,2], 目标和为3，则有-0+1+2=3，+0+1+2=3</li>
+</ul>
 </li>
-<li><p>不抢第一间， 抢最后一间</p>
+<li>否则和为±nums[0] 的位置的方案数置为1</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python">        <span class="token keyword">if</span> nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">:</span>
+            dp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span>total<span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">2</span>
+            <span class="token comment" spellcheck="true"># 相当于</span>
+            <span class="token comment" spellcheck="true"># dp[0][total-nums[0]]=2</span>
+            <span class="token comment" spellcheck="true"># dp[0][total+nums[0]]=2</span>
+            <span class="token comment" spellcheck="true"># 只是此时nums[0]=0，因此写成 dp[0][total]=2</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            dp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span>total<span class="token operator">-</span>nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span>
+            dp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span>total<span class="token operator">+</span>nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>（或者直接用下面的代码来包含nums[0]为0 和非0的情况）</p>
+<pre class="line-numbers language-python"><code class="language-python">        dp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span>total<span class="token operator">-</span>nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token operator">+</span><span class="token number">1</span>
+        dp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span>total<span class="token operator">+</span>nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token operator">+</span><span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ol start="2">
+<li><p>状态转移方程<br>保证数组的列索引在0到total*2+1范围内</p>
+<pre class="line-numbers language-python"><code class="language-python">             l<span class="token operator">=</span>j<span class="token operator">-</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token keyword">if</span> j<span class="token operator">-</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">>=</span><span class="token number">0</span> <span class="token keyword">else</span> <span class="token number">0</span>
+             r<span class="token operator">=</span>j<span class="token operator">+</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token keyword">if</span> j<span class="token operator">+</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&lt;</span>total<span class="token operator">*</span><span class="token number">2</span><span class="token operator">+</span><span class="token number">1</span> <span class="token keyword">else</span> <span class="token number">0</span>
+             dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span>dp<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token operator">+</span>dp<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>r<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
-<li><p>不抢第一间， 不抢最后一间</p>
-<p>实际上，情况3的结果是小于情况2的(或者可以说是包含关系), 所以我们只需要考虑情况1,2。</p>
+<li><p>dp[i][j]的含义 : 数组中前i个元素组成和为j的方案数。因为和最大为sum（nums），所以和的范围为 <code>-sum（nums）</code>到 <code>0</code>到 <code>sum（nums）</code>。 数组大小设为<code>[[0 for _ in range(sum(nums)*2+1)] for _ in range(len(nums))]</code></p>
 </li>
 </ol>
-</li>
-<li><p>因此，当有多于1个房子时，只需要比较<code>nums[:-1] , nums[1:]</code> 并返回最大值<code>max(my_rob(nums[:-1]),my_rob(nums[1:]))</code>即可</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">findTargetSumWays</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">,</span> S<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        total<span class="token operator">=</span>sum<span class="token punctuation">(</span>nums<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> abs<span class="token punctuation">(</span>total<span class="token punctuation">)</span><span class="token operator">&lt;</span>abs<span class="token punctuation">(</span>S<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">return</span> <span class="token number">0</span> <span class="token comment" spellcheck="true">#若目标和大于数组和，凑不成，返回0</span>
+        dp<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>total<span class="token operator">*</span><span class="token number">2</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+        <span class="token comment" spellcheck="true">#初始化数组第0行</span>
+        <span class="token keyword">if</span> nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">:</span>
+            dp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span>total<span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">2</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            dp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span>total<span class="token operator">-</span>nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span>
+            dp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span>total<span class="token operator">+</span>nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span>
+
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>total<span class="token operator">*</span><span class="token number">2</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token comment" spellcheck="true"># l和r要保证在合法的索引范围内</span>
+                l<span class="token operator">=</span>j<span class="token operator">-</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token keyword">if</span> j<span class="token operator">-</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">>=</span><span class="token number">0</span> <span class="token keyword">else</span> <span class="token number">0</span>
+                r<span class="token operator">=</span>j<span class="token operator">+</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token keyword">if</span> j<span class="token operator">+</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&lt;</span>total<span class="token operator">*</span><span class="token number">2</span><span class="token operator">+</span><span class="token number">1</span> <span class="token keyword">else</span> <span class="token number">0</span>
+                dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span>dp<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token operator">+</span>dp<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>r<span class="token punctuation">]</span>
+        <span class="token keyword">return</span> dp<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>total<span class="token operator">+</span>S<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="方法2：动态规划（0-1背包的变体）"><a href="#方法2：动态规划（0-1背包的变体）" class="headerlink" title="方法2：动态规划（0-1背包的变体）"></a>方法2：动态规划（0-1背包的变体）</h2><blockquote>
+<ul>
+<li><em>dp数组行和列都分别增加1，第0列表示背包容量为0，第0行表示（虚拟）物品重量为0（这样做，方便初始化dp数组以及后续dp状态转移）</em></li>
+<li><em>由于加了虚拟的0行和0列， 物品i从 1 开始，而数组索引是从 0 开始的，所以第 i 个物品的重量应该是 nums[i-1]</em></li>
+</ul>
+</blockquote>
+<p>以[1,1,2,3]为例，目标和为 target=3.</p>
+<p> 一种可行的方式为 <code>+1+1-2+3=3</code> 。正数列表为P=[1,1,3] , 负数列表为N=[2] 。 则有<br>    <code>sum（P）- sum（N）=target                （1）</code><br>  另一方面，<br>  <code>sum（P）+sum（N）=sum（nums）   （2）</code><br>  公式（1）与（2）相加，得 <code>sum（P）= （sum（nums）+target）/2</code><br>  问题转化为    -&gt;     <strong>各个物品大小为 [1,1,2,3], 背包容量为（sum（nums）+target）/2，求把背包正好装满的方案数</strong></p>
+<p>但是，这里有个<strong>与0-1背包的区别</strong>：</p>
+<ul>
+<li>对于0-1 背包，物品大小为正数，可以先对二维数组初始化第0行（除[0][0]位置外全为0）和<strong>第0列（全为1）</strong>。<strong>然后<code>i</code>和<code>j</code>都从1开始遍历</strong></li>
+<li>对于该问题，列表中可能存在为 0 的元素，因此选不选这个0，都能将容量为0的背包装满。所以<strong>只有<code>dp[0][0]=1</code></strong> （因为是增加的虚拟0行和0列）, 剩下的第0列的其他位置的值用状态转移方程确定 <del>（而不能初始化为1）</del> 。<strong>即<code>i</code>从1开始遍历，<code>j</code>从0开始遍历</strong><ul>
+<li>如 列表为 [0,0,0] , 目标值为 0，则最终的dp数组为<code>[[1], [2], [4], [8]]</code></li>
+<li>如 列表为 [0,0,1]，目标值为 1，则最终的dp数组为<code>[[1, 0], [2, 0], [4, 0], [4, 4]]</code></li>
+</ul>
 </li>
 </ul>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">rob</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">def</span> <span class="token function">my_rob</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token triple-quoted-string string">"""
-            :type nums: List[int]
-            :rtype: int
-            """</span>
-            <span class="token keyword">if</span> len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
-                <span class="token keyword">return</span> <span class="token number">0</span>
-            dp<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">*</span><span class="token punctuation">(</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
-            dp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">0</span>
-            dp<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span>nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-            <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-                dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>max<span class="token punctuation">(</span>dp<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>dp<span class="token punctuation">[</span>i<span class="token number">-2</span><span class="token punctuation">]</span><span class="token operator">+</span>nums<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-            <span class="token keyword">return</span> dp<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
-        <span class="token keyword">return</span> max<span class="token punctuation">(</span>my_rob<span class="token punctuation">(</span>nums<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>my_rob<span class="token punctuation">(</span>nums<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">if</span> len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">1</span> <span class="token keyword">else</span> nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="337-树形打家劫舍"><a href="#337-树形打家劫舍" class="headerlink" title="337 树形打家劫舍"></a><a href="https://leetcode-cn.com/problems/house-robber-iii/solution/shu-xing-dp-by-enda-2/" target="_blank" rel="noopener">337 树形打家劫舍</a></h1><ul>
-<li>对于每一个节点，都只有选和不选两种情况。数组中<code>[ ,  ]</code>第一个index表示不打劫当前节点的收益，第二个index表示打劫当前节点的收益</li>
-<li>如果没选当前节点，则可以选左右节点（<code>withoutRoot=max(l)+max(r)</code>。如果选了当前节点，则不能选左右节点（<code>withRoot=root.val+l[0]+r[0]</code>）</li>
-</ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for a binary tree node.</span>
-<span class="token comment" spellcheck="true"># class TreeNode(object):</span>
-<span class="token comment" spellcheck="true">#     def __init__(self, x):</span>
-<span class="token comment" spellcheck="true">#         self.val = x</span>
-<span class="token comment" spellcheck="true">#         self.left = None</span>
-<span class="token comment" spellcheck="true">#         self.right = None</span>
-<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">rob</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">def</span> <span class="token function">dp</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> <span class="token operator">not</span> root<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># 不偷/偷的收益</span>
-            l<span class="token operator">=</span>dp<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 左节点不偷/偷带来的收益</span>
-            r<span class="token operator">=</span>dp<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 右节点不偷/偷带来的收益</span>
-            <span class="token comment" spellcheck="true"># 若偷当前节点，则收益=当前节点+左节点不偷+右节点不偷</span>
-            <span class="token comment" spellcheck="true"># 若不偷当前节点，则收益=左节点偷或不偷的最大值+右节点偷或不偷的最大值</span>
-            withRoot<span class="token operator">=</span>root<span class="token punctuation">.</span>val<span class="token operator">+</span>l<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">+</span>r<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># 若偷当前节点，则</span>
-            withoutRoot<span class="token operator">=</span>max<span class="token punctuation">(</span>l<span class="token punctuation">)</span><span class="token operator">+</span>max<span class="token punctuation">(</span>r<span class="token punctuation">)</span>
-            <span class="token keyword">return</span> <span class="token punctuation">[</span>withoutRoot<span class="token punctuation">,</span>withRoot<span class="token punctuation">]</span>
+    <span class="token keyword">def</span> <span class="token function">findTargetSumWays</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">,</span> S<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        total <span class="token operator">=</span> sum<span class="token punctuation">(</span>nums<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> abs<span class="token punctuation">(</span>total<span class="token punctuation">)</span> <span class="token operator">&lt;</span> abs<span class="token punctuation">(</span>S<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token number">0</span><span class="token comment" spellcheck="true"># 目标和太大</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>total <span class="token operator">+</span> S<span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token number">0</span> <span class="token comment" spellcheck="true">#(total + S)必须为偶数，即，能被2整除</span>
 
-        <span class="token keyword">return</span> max<span class="token punctuation">(</span>dp<span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 返回 不偷/偷当前节点 的收益最大值</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        volume <span class="token operator">=</span> <span class="token punctuation">(</span>total <span class="token operator">+</span> S<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span>
+        dp <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>volume <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+        dp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span>
+
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span> volume <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">if</span> j<span class="token operator">&lt;</span>nums<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 背包太小，装不下</span>
+                    dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span>dp<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span>
+                <span class="token keyword">else</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 装和不装的总和</span>
+                    dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> dp<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">+</span> dp<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j <span class="token operator">-</span> nums<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>dp<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> dp<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -732,9 +745,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《第零章：团灭 LeetCode 打家劫舍问题》
+                    《第一章：动态规划和回溯算法到底谁是谁爹？》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/07/26/labuladong/di-ling-zhang-tuan-mie-leetcode-da-jia-jie-she-wen-ti/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/07/29/di-yi-zhang-dong-tai-gui-hua-he-hui-su-suan-fa-dao-di-shui-shi-shui-die/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Min
             </a> 采用
@@ -774,36 +787,36 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/07/27/labuladong/di-yi-zhang-jing-dian-dong-tai-gui-hua-0-1-bei-bao-wen-ti/">
+                <a href="/2020/07/29/di-yi-zhang-dong-tai-gui-hua-he-hui-su-suan-fa-dao-di-shui-shi-shui-die/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="第一章：经典动态规划：0-1 背包问题">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="第一章：动态规划和回溯算法到底谁是谁爹？">
                         
-                        <span class="card-title">第一章：经典动态规划：0-1 背包问题</span>
+                        <span class="card-title">第一章：动态规划和回溯算法到底谁是谁爹？</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            labuladong 经典动态规划：0-1 背包问题
+                            labuladong动态规划和回溯算法到底谁是谁爹？
+494. 目标和方法1：动态规划（dp二维数组）dp[i][j]表示 数组中前i个元素组成和为j的方案数
 
-动态规划之背包汇总
-第零章：动态规划解题套路框架第一章：经典动态规划：0-1 背包问题第零章：经典动态规划：子集背包问题第零章：经典动态规划：完全背包问题
+base case: 
 
-题目地址
 
-有 n 个物品
+首先初始化数组第0行。如果第一个元素为0，则dp[
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-27
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-29
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -816,6 +829,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -834,32 +848,36 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/25/labuladong/di-ling-zhang-wo-xie-liao-shou-shi-ba-hua-dong-chuang-kou-suan-fa-bian-cheng-liao-mo-xie-ti/">
+                <a href="/2020/07/27/labuladong/di-ling-zhang-jing-dian-dong-tai-gui-hua-wan-quan-bei-bao-wen-ti/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="第零章：我写了首诗，把滑动窗口算法变成了默写题">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="第零章：经典动态规划：完全背包问题">
                         
-                        <span class="card-title">第零章：我写了首诗，把滑动窗口算法变成了默写题</span>
+                        <span class="card-title">第零章：经典动态规划：完全背包问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            labuladong 我写了首诗，把滑动窗口算法变成了默写题
+                            labuladong经典动态规划：完全背包问题
 
-增大窗口 
-找到可行解后缩小窗口
-注意维护valid及window中的内容（若包含需要找的元素，才更新window）
+动态规划之背包汇总
+第零章：动态规划解题套路框架第一章：经典动态规划：0-1 背包问题第零章：经典动态规划：子集背包问题第零章：经典动态规划：完全背包问题
 
 
- 滑动窗口算法的思路是这样：
-1、我们在字符串S中使用
+
+
+0-1背包
+完全背包
+
+
+
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-25
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-27
                             </span>
                         <span class="publish-author">
                             

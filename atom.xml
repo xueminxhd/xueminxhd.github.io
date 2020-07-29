@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xueminxhd.github.io/"/>
-  <updated>2020-07-27T15:27:43.920Z</updated>
+  <updated>2020-07-29T06:41:51.584Z</updated>
   <id>https://xueminxhd.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>第一章：动态规划和回溯算法到底谁是谁爹？</title>
+    <link href="https://xueminxhd.github.io/2020/07/29/di-yi-zhang-dong-tai-gui-hua-he-hui-su-suan-fa-dao-di-shui-shi-shui-die/"/>
+    <id>https://xueminxhd.github.io/2020/07/29/di-yi-zhang-dong-tai-gui-hua-he-hui-su-suan-fa-dao-di-shui-shi-shui-die/</id>
+    <published>2020-07-29T06:40:56.000Z</published>
+    <updated>2020-07-29T06:41:51.584Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;labuladong&lt;a href=&quot;https://labuladong.gitbook.io/algo/dong-tai-gui-hua-xi-lie/targetsum&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
+    
+  </entry>
   
   <entry>
     <title>第零章：经典动态规划：完全背包问题</title>
@@ -47,7 +73,7 @@
     <link href="https://xueminxhd.github.io/2020/07/27/labuladong/di-ling-zhang-jing-dian-dong-tai-gui-hua-zi-ji-bei-bao-wen-ti/"/>
     <id>https://xueminxhd.github.io/2020/07/27/labuladong/di-ling-zhang-jing-dian-dong-tai-gui-hua-zi-ji-bei-bao-wen-ti/</id>
     <published>2020-07-27T10:07:54.000Z</published>
-    <updated>2020-07-27T15:31:28.676Z</updated>
+    <updated>2020-07-29T06:15:58.112Z</updated>
     
     <summary type="html">
     
@@ -500,34 +526,6 @@
         
         
           &lt;p&gt;labuladong&lt;a href=&quot;https://labuladong.gitbook.io/algo/gao-pin-mian-shi-xi-lie/k-ge-yi-zu-fan-zhuan-lian-biao&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
-    
-      <category term="LeetCode" scheme="https://xueminxhd.github.io/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第四章：如何运用贪心思想玩跳跃游戏</title>
-    <link href="https://xueminxhd.github.io/2020/07/12/labuladong/di-si-zhang-ru-he-yun-yong-tan-xin-si-xiang-wan-tiao-yue-you-xi/"/>
-    <id>https://xueminxhd.github.io/2020/07/12/labuladong/di-si-zhang-ru-he-yun-yong-tan-xin-si-xiang-wan-tiao-yue-you-xi/</id>
-    <published>2020-07-12T09:52:59.000Z</published>
-    <updated>2020-07-13T06:42:12.512Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;labuladong 之 &lt;a href=&quot;https://labuladong.gitbook.io/algo/gao-pin-mian-shi-xi-lie/tiao-yue-you-xi&quot; target=&quot;_blank&quot;
         
       
     
