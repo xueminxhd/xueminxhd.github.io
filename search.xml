@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>第一章：动态规划设计：最大子数组</title>
+      <link href="/2020/07/29/di-yi-zhang-dong-tai-gui-hua-she-ji-zui-da-zi-shu-zu/"/>
+      <url>/2020/07/29/di-yi-zhang-dong-tai-gui-hua-she-ji-zui-da-zi-shu-zu/</url>
+      
+        <content type="html"><![CDATA[<p>labuladong<a href="https://labuladong.gitbook.io/algo/dong-tai-gui-hua-xi-lie/zui-da-zi-shu-zu" target="_blank" rel="noopener">动态规划设计：最大子数组</a></p><p><a href="https://leetcode-cn.com/problems/maximum-subarray/" target="_blank" rel="noopener">53. 最大子序和</a></p><hr><p>课堂上，学生排排坐。</p><p>老师：“这门课的作业，你们可以选择自己完成，也可以根据座位顺序，和你前面的同学组队（前面的同学可能和前前面的同学组了队，也可能就他一个人）。” </p><p>每个人都想把自己的作业完成得最好。</p><p> 在座位<code>i</code>处的大佬心想：“前面可能是大大佬（可以组队, <code>dp[i-1]+nums[i]</code>），也可能是小小菜（组队会拖我后腿，还不如我自己<code>nums[i]</code>）”。不管哪种选择，最后他的成绩取这两种选择的最大值即可。</p><hr><ul><li>dp数组含义： <strong>以nums[i]结尾</strong>的当前最大子序和保存在dp[i] 中</li><li>状态转移方程：<strong>nums[i] 有两种「选择」，要么与前面的相邻子数组连接，形成一个和更大的子数组；要么不与前面的子数组连接，自成一派，自己作为一个子数组</strong><ul><li><strong>对nums[i]而言</strong>（dp数组的含义决定了子序和是以nums[i]结尾的），若连接前面的子序列，则dp[i]=dp[i-1]+nums[i]。 若不连接，则自立门户 dp[i]=nums[i] 。根据这两种选择，直接取最大值即可 <code>dp[i]=max(nums[i],dp[i-1]+nums[i])</code>。</li></ul></li></ul><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>    <span class="token keyword">def</span> <span class="token function">maxSubArray</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">)</span><span class="token punctuation">:</span>        <span class="token keyword">if</span> <span class="token operator">not</span> nums<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token number">0</span>        dp<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">0</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">]</span>        dp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">=</span>nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>            dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>max<span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span>dp<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token operator">+</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>        <span class="token keyword">return</span> max<span class="token punctuation">(</span>dp<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> labuladong </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>第一章：动态规划设计：最长递增子序列</title>
+      <link href="/2020/07/29/di-yi-zhang-dong-tai-gui-hua-she-ji-zui-chang-di-zeng-zi-xu-lie/"/>
+      <url>/2020/07/29/di-yi-zhang-dong-tai-gui-hua-she-ji-zui-chang-di-zeng-zi-xu-lie/</url>
+      
+        <content type="html"><![CDATA[<p>labuladong<a href="https://github.com/labuladong/fucking-algorithm/blob/master/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E8%AE%BE%E8%AE%A1%EF%BC%9A%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97.md" target="_blank" rel="noopener">动态规划设计：最长递增子序列</a></p><h1 id="300-最长上升子序列"><a href="#300-最长上升子序列" class="headerlink" title="300. 最长上升子序列"></a><a href="https://leetcode-cn.com/problems/longest-increasing-subsequence/" target="_blank" rel="noopener">300. 最长上升子序列</a></h1><ul><li>dp数组的含义：以nums[i] 结尾的当前最长上升子序列的长度记录在dp[i]中</li><li>状态转移方程：nums[i] 与它之前的元素nums[j]进行比较，若大于nums[j], 则比较之前保存的dp[i] 和dp[j]+1 的大小，并更新dp[i] （始终保存最大值）</li><li>base case： 上升子序列至少为自己，因此dp数组初始化为1</li></ul><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>    <span class="token keyword">def</span> <span class="token function">lengthOfLIS</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">)</span><span class="token punctuation">:</span>        <span class="token keyword">if</span> <span class="token operator">not</span> nums<span class="token punctuation">:</span>            <span class="token keyword">return</span> <span class="token number">0</span>        dp<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">]</span>        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>            <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">:</span>                <span class="token keyword">if</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">></span>nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">:</span>                    dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>max<span class="token punctuation">(</span>dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span>dp<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>        <span class="token keyword">return</span> max<span class="token punctuation">(</span>dp<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> labuladong </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>第一章：动态规划和回溯算法到底谁是谁爹？</title>
       <link href="/2020/07/29/di-yi-zhang-dong-tai-gui-hua-he-hui-su-suan-fa-dao-di-shui-shi-shui-die/"/>
       <url>/2020/07/29/di-yi-zhang-dong-tai-gui-hua-he-hui-su-suan-fa-dao-di-shui-shi-shui-die/</url>
