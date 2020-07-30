@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xueminxhd.github.io/"/>
-  <updated>2020-07-29T10:29:03.067Z</updated>
+  <updated>2020-07-30T13:02:59.407Z</updated>
   <id>https://xueminxhd.github.io/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>第一章：经典动态规划：编辑距离</title>
+    <link href="https://xueminxhd.github.io/2020/07/30/di-yi-zhang-jing-dian-dong-tai-gui-hua-bian-ji-ju-chi/"/>
+    <id>https://xueminxhd.github.io/2020/07/30/di-yi-zhang-jing-dian-dong-tai-gui-hua-bian-ji-ju-chi/</id>
+    <published>2020-07-30T12:06:54.000Z</published>
+    <updated>2020-07-30T13:02:59.407Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;labuladong&lt;a href=&quot;https://labuladong.gitbook.io/algo/dong-tai-gui-hua-xi-lie/bian-ji-ju-li&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
+    
+  </entry>
+  
+  <entry>
     <title>第一章：动态规划设计：最大子数组</title>
-    <link href="https://xueminxhd.github.io/2020/07/29/di-yi-zhang-dong-tai-gui-hua-she-ji-zui-da-zi-shu-zu/"/>
-    <id>https://xueminxhd.github.io/2020/07/29/di-yi-zhang-dong-tai-gui-hua-she-ji-zui-da-zi-shu-zu/</id>
+    <link href="https://xueminxhd.github.io/2020/07/29/labuladong/di-yi-zhang-dong-tai-gui-hua-she-ji-zui-da-zi-shu-zu/"/>
+    <id>https://xueminxhd.github.io/2020/07/29/labuladong/di-yi-zhang-dong-tai-gui-hua-she-ji-zui-da-zi-shu-zu/</id>
     <published>2020-07-29T10:28:14.000Z</published>
-    <updated>2020-07-29T10:29:03.067Z</updated>
+    <updated>2020-07-29T14:04:56.359Z</updated>
     
     <summary type="html">
     
@@ -44,8 +70,8 @@
   
   <entry>
     <title>第一章：动态规划设计：最长递增子序列</title>
-    <link href="https://xueminxhd.github.io/2020/07/29/di-yi-zhang-dong-tai-gui-hua-she-ji-zui-chang-di-zeng-zi-xu-lie/"/>
-    <id>https://xueminxhd.github.io/2020/07/29/di-yi-zhang-dong-tai-gui-hua-she-ji-zui-chang-di-zeng-zi-xu-lie/</id>
+    <link href="https://xueminxhd.github.io/2020/07/29/labuladong/di-yi-zhang-dong-tai-gui-hua-she-ji-zui-chang-di-zeng-zi-xu-lie/"/>
+    <id>https://xueminxhd.github.io/2020/07/29/labuladong/di-yi-zhang-dong-tai-gui-hua-she-ji-zui-chang-di-zeng-zi-xu-lie/</id>
     <published>2020-07-29T08:11:12.000Z</published>
     <updated>2020-07-29T08:12:53.431Z</updated>
     
@@ -70,8 +96,8 @@
   
   <entry>
     <title>第一章：动态规划和回溯算法到底谁是谁爹？</title>
-    <link href="https://xueminxhd.github.io/2020/07/29/di-yi-zhang-dong-tai-gui-hua-he-hui-su-suan-fa-dao-di-shui-shi-shui-die/"/>
-    <id>https://xueminxhd.github.io/2020/07/29/di-yi-zhang-dong-tai-gui-hua-he-hui-su-suan-fa-dao-di-shui-shi-shui-die/</id>
+    <link href="https://xueminxhd.github.io/2020/07/29/labuladong/di-yi-zhang-dong-tai-gui-hua-he-hui-su-suan-fa-dao-di-shui-shi-shui-die/"/>
+    <id>https://xueminxhd.github.io/2020/07/29/labuladong/di-yi-zhang-dong-tai-gui-hua-he-hui-su-suan-fa-dao-di-shui-shi-shui-die/</id>
     <published>2020-07-29T06:40:56.000Z</published>
     <updated>2020-07-29T06:41:51.584Z</updated>
     
@@ -500,32 +526,6 @@
         
         
           &lt;p&gt;labuladong&lt;a href=&quot;https://labuladong.gitbook.io/algo/gao-pin-mian-shi-xi-lie/xiao-shi-de-yuan-su&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第四章：如何判定括号合法性</title>
-    <link href="https://xueminxhd.github.io/2020/07/13/labuladong/di-si-zhang-ru-he-pan-ding-gua-hao-he-fa-xing/"/>
-    <id>https://xueminxhd.github.io/2020/07/13/labuladong/di-si-zhang-ru-he-pan-ding-gua-hao-he-fa-xing/</id>
-    <published>2020-07-13T09:33:50.000Z</published>
-    <updated>2020-07-13T09:37:08.709Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/gao-pin-mian-shi-xi-lie/he-fa-kuo-hao-pan-ding&quot; target=&quot;_blank&quot;
         
       
     

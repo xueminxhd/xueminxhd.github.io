@@ -4,18 +4,16 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="第一章：经典动态规划：0-1 背包问题, It&#39;s the job that&#39;s never started as takes longest to finish.”― J.R.R. Tolkien">
+    <meta name="keywords" content="第一章：经典动态规划：编辑距离, It&#39;s the job that&#39;s never started as takes longest to finish.”― J.R.R. Tolkien">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="labuladong 经典动态规划：0-1 背包问题
+    <meta name="description" content="labuladong经典动态规划：编辑距离
+72. 编辑距离
 
-动态规划之背包汇总
-第零章：动态规划解题套路框架第一章：经典动态规划：0-1 背包问题第零章：经典动态规划：子集背包问题第零章：经典动态规划：完全背包问题
 
-题目地址
-
-有 n 个物品">
+在word1 和word2 前面分别插入&amp;quot;&amp;quot; 不仅可以包括字符串为空的情况，而且可以更清楚地用空字符串说明状态转移的过程
+i 和 j 中，因为最前面加了&amp;">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -23,7 +21,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>第一章：经典动态规划：0-1 背包问题 | Min&#39;s Blog</title>
+    <title>第一章：经典动态规划：编辑距离 | Min&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -323,13 +321,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/24.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        第一章：经典动态规划：0-1 背包问题
+                        第一章：经典动态规划：编辑距离
                     </div>
                 </div>
             </div>
@@ -464,7 +462,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-27
+                    2020-07-30
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -478,14 +476,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    553
+                    248
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
                 
@@ -501,50 +499,35 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>labuladong <a href="https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247485064&idx=1&sn=550705eb67f5e71487c8b218382919d6&chksm=9bd7f880aca071962a5a17d0f85d979d6f0c5a5ce32c84b8fee88e36d451f9ccb3bb47b88f78&scene=21#wechat_redirect" target="_blank" rel="noopener">经典动态规划：0-1 背包问题</a></p>
-<hr>
-<p>动态规划之背包汇总</p>
-<p><a href="https://xueminxhd.github.io/2020/07/24/labuladong/di-ling-zhang-dong-tai-gui-hua-jie-ti-tao-lu-kuang-jia/">第零章：动态规划解题套路框架</a><br><a href="https://xueminxhd.github.io/2020/07/27/labuladong/di-yi-zhang-jing-dian-dong-tai-gui-hua-0-1-bei-bao-wen-ti/">第一章：经典动态规划：0-1 背包问题</a><br><a href="https://xueminxhd.github.io/2020/07/27/labuladong/di-ling-zhang-jing-dian-dong-tai-gui-hua-zi-ji-bei-bao-wen-ti/">第零章：经典动态规划：子集背包问题</a><br><a href="https://xueminxhd.github.io/2020/07/27/labuladong/di-ling-zhang-jing-dian-dong-tai-gui-hua-wan-quan-bei-bao-wen-ti/">第零章：经典动态规划：完全背包问题</a></p>
-<hr>
-<p><a href="https://www.lintcode.com/problem/backpack-ii/description" target="_blank" rel="noopener">题目地址</a></p>
-<blockquote>
-<p>有 n 个物品和一个大小为 m 的背包. 给定数组 A 表示每个物品的大小和数组 V 表示每个物品的价值.</p>
-<p>问最多能装入背包的总价值是多大?</p>
-<p>样例 样例 1:</p>
-<p>输入: m = 10, A = [2, 3, 5, 7], V = [1, 5, 2, 4] 输出: 9 解释: 装入 A[1] 和<br>A[3] 可以得到最大价值, V[1] + V[3] = 9  样例 2:</p>
-<p>输入: m = 10, A = [2, 3, 8], V = [2, 5, 8] 输出: 10 解释: 装入 A[0] 和 A[2]<br>可以得到最大价值, V[0] + V[2] = 10</p>
-</blockquote>
-<ol>
-<li>base case：0 物品和 0 背包容量时，价值为0</li>
-<li>明确状态和选择<ul>
-<li>状态：背包的容量 ，放进去的物品</li>
-<li>选择：放/不放 当前物品到背包中</li>
-</ul>
-</li>
-<li>dp数组的含义：因为状态有两个，所以dp用二维数组表示。<code>dp[i][j]</code>    表示对前<code>i</code>个物品，背包容量为<code>j</code>时，可以装的最大价值（dp数组可以加一行一列表示0物品或0容量时的状态，更<strong>便于进行状态转移</strong>）<ul>
-<li>若书包容量太小，容不下（<code>if j&lt;A[i-1]</code>），则<code>dp[i][j]=dp[i-1][j]</code></li>
-<li>否则，可以放进去<ul>
-<li>若不放进去，则dp[i][j]=dp[i-1][j]</li>
-<li>若放进去，则dp[i][j]=dp[i-1][j-w[i]] +w[i]</li>
+                <p>labuladong<a href="https://labuladong.gitbook.io/algo/dong-tai-gui-hua-xi-lie/bian-ji-ju-li" target="_blank" rel="noopener">经典动态规划：编辑距离</a></p>
+<p><a href="https://leetcode-cn.com/problems/edit-distance/" target="_blank" rel="noopener">72. 编辑距离</a></p>
+<p><img src="https://img-blog.csdnimg.cn/2020073020134580.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L29wZW5jdnpzZWZ2,size_16,color_FFFFFF,t_70" alt></p>
+<ul>
+<li>在word1 和word2 前面分别插入<code>&quot;&quot;</code> 不仅可以包括字符串为空的情况，而且可以更清楚地用空字符串说明状态转移的过程</li>
+<li>i 和 j 中，因为最前面加了<code>&quot;&quot;</code>, 因此第i个字符的下标为i-1 <ul>
+<li>若两个字符相等（<code>word1[i-1]==word2[j-1]</code>），则i和j分别继续向右跳一格</li>
+<li>若不相等，则增（dp[i][j-1]，如第0行），改（dp[i-1][j-1]），删（dp[i-1][j]，如第0列）的最小操作数 +1 </li>
 </ul>
 </li>
 </ul>
-</li>
-</ol>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">backPackII</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> m<span class="token punctuation">,</span> A<span class="token punctuation">,</span> V<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token comment" spellcheck="true"># write your code here</span>
-        dp<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>m<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>A<span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>len<span class="token punctuation">(</span>A<span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>m<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>                
-                <span class="token keyword">if</span> j<span class="token operator">&lt;</span>A<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">:</span><span class="token comment" spellcheck="true"># 若书包容量为j时，放不进去第i个物品（从0开始，所以A[i-1]表示第i个物品的大小）</span>
-                    dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span>dp<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span>
-                <span class="token keyword">else</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 否则，可以放进去</span>
-                    notBring<span class="token operator">=</span>dp<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># 选择不放</span>
-                    bring<span class="token operator">=</span>dp<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token operator">-</span>A<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">+</span>V<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># 选择放</span>
-                    dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span>max<span class="token punctuation">(</span>notBring<span class="token punctuation">,</span>bring<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 取最大值即可</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span>dp<span class="token punctuation">)</span>
-        <span class="token keyword">return</span> dp<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">minDistance</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> word1<span class="token punctuation">,</span> word2<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        m<span class="token operator">=</span>len<span class="token punctuation">(</span>word1<span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span>
+        n<span class="token operator">=</span>len<span class="token punctuation">(</span>word2<span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span>
+        dp<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            dp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span>j
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>m<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">=</span>i
+
+
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>m<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">if</span> word1<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token operator">==</span>word2<span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+                    dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span>dp<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span>
+                <span class="token keyword">else</span><span class="token punctuation">:</span>
+                    dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span>min<span class="token punctuation">(</span>dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>dp<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span>dp<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span>
+        <span class="token keyword">return</span> dp<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -703,9 +686,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《第一章：经典动态规划：0-1 背包问题》
+                    《第一章：经典动态规划：编辑距离》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/07/27/labuladong/di-yi-zhang-jing-dian-dong-tai-gui-hua-0-1-bei-bao-wen-ti/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/07/30/di-yi-zhang-jing-dian-dong-tai-gui-hua-bian-ji-ju-chi/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Min
             </a> 采用
@@ -745,34 +728,35 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/07/27/labuladong/di-ling-zhang-jing-dian-dong-tai-gui-hua-zi-ji-bei-bao-wen-ti/">
+                <a href="/2020/07/30/di-yi-zhang-jing-dian-dong-tai-gui-hua-bian-ji-ju-chi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="第零章：经典动态规划：子集背包问题">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="第一章：经典动态规划：编辑距离">
                         
-                        <span class="card-title">第零章：经典动态规划：子集背包问题</span>
+                        <span class="card-title">第一章：经典动态规划：编辑距离</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            labuladong经典动态规划：子集背包问题
+                            labuladong经典动态规划：编辑距离
+72. 编辑距离
 
-动态规划之背包汇总
-第零章：动态规划解题套路框架第一章：经典动态规划：0-1 背包问题第零章：经典动态规划：子集背包问题第零章：经典动态规划：完全背包问题
 
-该背包问题相当于0-1背包问题的
+在word1 和word2 前面分别插入&quot;&quot; 不仅可以包括字符串为空的情况，而且可以更清楚地用空字符串说明状态转移的过程
+i 和 j 中，因为最前面加了&
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-27
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-30
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -785,6 +769,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -803,27 +788,29 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/26/labuladong/di-ling-zhang-tuan-mie-leetcode-da-jia-jie-she-wen-ti/">
+                <a href="/2020/07/29/labuladong/di-yi-zhang-dong-tai-gui-hua-she-ji-zui-da-zi-shu-zu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="第零章：团灭 LeetCode 打家劫舍问题">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="第一章：动态规划设计：最大子数组">
                         
-                        <span class="card-title">第零章：团灭 LeetCode 打家劫舍问题</span>
+                        <span class="card-title">第一章：动态规划设计：最大子数组</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            labuladong 团灭 LeetCode 打家劫舍问题
-图解动态规划的解题四步骤
-动态规划：在确定动态转移方程后，可以用（自顶向下的使用备忘录递归的方法） 自底向上使用 dp 数组的方法
-198. 打家劫舍因为状态转移方程中，dp[i]
+                            labuladong动态规划设计：最大子数组
+53. 最大子序和
+
+课堂上，学生排排坐。
+老师：“这门课的作业，你们可以选择自己完成，也可以根据座位顺序，和你前面的同学组队（前面的同学可能和前前面的同学组了队，也可能就他一个人）。” 
+每个
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-26
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-29
                             </span>
                         <span class="publish-author">
                             
