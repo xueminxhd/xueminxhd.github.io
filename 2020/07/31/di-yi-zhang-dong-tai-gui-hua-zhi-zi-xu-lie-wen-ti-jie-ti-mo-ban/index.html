@@ -4,14 +4,14 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="第一章：动态规划设计：最长递增子序列, It&#39;s the job that&#39;s never started as takes longest to finish.”― J.R.R. Tolkien">
+    <meta name="keywords" content="第一章：动态规划之子序列问题解题模板, It&#39;s the job that&#39;s never started as takes longest to finish.”― J.R.R. Tolkien">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="labuladong动态规划设计：最长递增子序列
-300. 最长上升子序列
-dp数组的含义：以nums[i] 结尾的当前最长上升子序列的长度记录在dp[i]中
-状态转移方程：nums[i] 与它之前的元素nums[j]进行比较，若大于num">
+    <meta name="description" content="labuladong 动态规划之子序列问题解题模板
+516. 最长回文子序列
+dp数组的含义：s[i…j] 中最长回文子序列的长度保存在dp[i][j] 中
+状态转移方程：如果i处和j处的字符相同，则从短串s[i+1…j-1]中扩充2（dp">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +19,7 @@ dp数组的含义：以nums[i] 结尾的当前最长上升子序列的长度记�
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>第一章：动态规划设计：最长递增子序列 | Min&#39;s Blog</title>
+    <title>第一章：动态规划之子序列问题解题模板 | Min&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -319,13 +319,13 @@ dp数组的含义：以nums[i] 结尾的当前最长上升子序列的长度记�
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        第一章：动态规划设计：最长递增子序列
+                        第一章：动态规划之子序列问题解题模板
                     </div>
                 </div>
             </div>
@@ -460,7 +460,7 @@ dp数组的含义：以nums[i] 结尾的当前最长上升子序列的长度记�
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-29
+                    2020-07-31
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -474,7 +474,7 @@ dp数组的含义：以nums[i] 结尾的当前最长上升子序列的长度记�
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    176
+                    279
                 </div>
                 
 
@@ -497,22 +497,26 @@ dp数组的含义：以nums[i] 结尾的当前最长上升子序列的长度记�
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>labuladong<a href="https://github.com/labuladong/fucking-algorithm/blob/master/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E8%AE%BE%E8%AE%A1%EF%BC%9A%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97.md" target="_blank" rel="noopener">动态规划设计：最长递增子序列</a></p>
-<h1 id="300-最长上升子序列"><a href="#300-最长上升子序列" class="headerlink" title="300. 最长上升子序列"></a><a href="https://leetcode-cn.com/problems/longest-increasing-subsequence/" target="_blank" rel="noopener">300. 最长上升子序列</a></h1><ul>
-<li>dp数组的含义：以nums[i] 结尾的当前最长上升子序列的长度记录在dp[i]中</li>
-<li>状态转移方程：nums[i] 与它之前的元素nums[j]进行比较，若大于nums[j], 则比较之前保存的dp[i] 和dp[j]+1 的大小，并更新dp[i] （始终保存最大值）</li>
-<li>base case： 上升子序列至少为自己，因此dp数组初始化为1</li>
-</ul>
+                <p>labuladong <a href="https://github.com/labuladong/fucking-algorithm/blob/master/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%AD%90%E5%BA%8F%E5%88%97%E9%97%AE%E9%A2%98%E6%A8%A1%E6%9D%BF.md" target="_blank" rel="noopener">动态规划之子序列问题解题模板</a></p>
+<h1 id="516-最长回文子序列"><a href="#516-最长回文子序列" class="headerlink" title="516. 最长回文子序列"></a><a href="https://leetcode-cn.com/problems/longest-palindromic-subsequence/" target="_blank" rel="noopener">516. 最长回文子序列</a></h1><ol>
+<li>dp数组的含义：s[i…j] 中最长回文子序列的长度保存在dp[i][j] 中</li>
+<li>状态转移方程：如果i处和j处的字符相同，则从短串s[i+1…j-1]中扩充2（<code>dp[i][j]=dp[i+1][j-1]+2</code>）。 否则继承 s[i+1…j] ， s[i…j-1] 的最长回文子序列长度的最大值 （<code>max(dp[i+1][j],dp[i][j-1])</code>）</li>
+<li>base case: dp 数组先初始化为 0 （而且对角线下半部分的三角形表示i &gt; j, 不可能出现这种情况，因此为0）。i 和 j 指向同一个字符时，回文子序列为其本身， 因此对角线处的dp数组元素初始化为1</li>
+</ol>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">lengthOfLIS</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">if</span> <span class="token operator">not</span> nums<span class="token punctuation">:</span>
-            <span class="token keyword">return</span> <span class="token number">0</span>
-        dp<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">:</span>
-                <span class="token keyword">if</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">></span>nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">:</span>
-                    dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>max<span class="token punctuation">(</span>dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span>dp<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
-        <span class="token keyword">return</span> max<span class="token punctuation">(</span>dp<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token keyword">def</span> <span class="token function">longestPalindromeSubseq</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        n<span class="token operator">=</span>len<span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+        dp<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span>
+
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token number">-1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">if</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">==</span>s<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                    dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span>dp<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span><span class="token operator">+</span><span class="token number">2</span>
+                <span class="token keyword">else</span><span class="token punctuation">:</span>
+                    dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span>max<span class="token punctuation">(</span>dp<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span>dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> dp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -671,9 +675,9 @@ dp数组的含义：以nums[i] 结尾的当前最长上升子序列的长度记�
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《第一章：动态规划设计：最长递增子序列》
+                    《第一章：动态规划之子序列问题解题模板》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/07/29/labuladong/di-yi-zhang-dong-tai-gui-hua-she-ji-zui-chang-di-zeng-zi-xu-lie/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/07/31/di-yi-zhang-dong-tai-gui-hua-zhi-zi-xu-lie-wen-ti-jie-ti-mo-ban/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Min
             </a> 采用
@@ -713,34 +717,33 @@ dp数组的含义：以nums[i] 结尾的当前最长上升子序列的长度记�
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/07/29/labuladong/di-yi-zhang-dong-tai-gui-hua-she-ji-zui-da-zi-shu-zu/">
+                <a href="/2020/07/31/di-yi-zhang-dong-tai-gui-hua-zhi-zi-xu-lie-wen-ti-jie-ti-mo-ban/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="第一章：动态规划设计：最大子数组">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="第一章：动态规划之子序列问题解题模板">
                         
-                        <span class="card-title">第一章：动态规划设计：最大子数组</span>
+                        <span class="card-title">第一章：动态规划之子序列问题解题模板</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            labuladong动态规划设计：最大子数组
-53. 最大子序和
-
-课堂上，学生排排坐。
-老师：“这门课的作业，你们可以选择自己完成，也可以根据座位顺序，和你前面的同学组队（前面的同学可能和前前面的同学组了队，也可能就他一个人）。” 
-每个
+                            labuladong 动态规划之子序列问题解题模板
+516. 最长回文子序列
+dp数组的含义：s[i…j] 中最长回文子序列的长度保存在dp[i][j] 中
+状态转移方程：如果i处和j处的字符相同，则从短串s[i+1…j-1]中扩充2（dp
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-29
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-31
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -753,6 +756,7 @@ dp数组的含义：以nums[i] 结尾的当前最长上升子序列的长度记�
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -771,30 +775,27 @@ dp数组的含义：以nums[i] 结尾的当前最长上升子序列的长度记�
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/29/labuladong/di-yi-zhang-dong-tai-gui-hua-he-hui-su-suan-fa-dao-di-shui-shi-shui-die/">
+                <a href="/2020/07/31/labuladong/di-yi-zhang-jing-dian-dong-tai-gui-hua-zui-chang-gong-gong-zi-xu-lie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="第一章：动态规划和回溯算法到底谁是谁爹？">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="第一章：经典动态规划：最长公共子序列">
                         
-                        <span class="card-title">第一章：动态规划和回溯算法到底谁是谁爹？</span>
+                        <span class="card-title">第一章：经典动态规划：最长公共子序列</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            labuladong动态规划和回溯算法到底谁是谁爹？
-494. 目标和方法1：动态规划（dp二维数组）dp[i][j]表示 数组中前i个元素组成和为j的方案数
+                            labuladong经典动态规划：最长公共子序列
+（在dp数组中添加0行和0列可以包含text为空的情况，并且更便于状态转移）
 
-base case: 
-
-
-首先初始化数组第0行。如果第一个元素为0，则dp[
+dp数组的含义： 对于 text1[0..i-1] 和 text2[0..j-1]，dp[i][j]中保存当前
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-29
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-31
                             </span>
                         <span class="publish-author">
                             
