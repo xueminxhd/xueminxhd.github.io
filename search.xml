@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>第一章：贪心算法之区间调度问题</title>
+      <link href="/2020/07/31/di-yi-zhang-tan-xin-suan-fa-zhi-qu-jian-diao-du-wen-ti/"/>
+      <url>/2020/07/31/di-yi-zhang-tan-xin-suan-fa-zhi-qu-jian-diao-du-wen-ti/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://labuladong.gitbook.io/algo/dong-tai-gui-hua-xi-lie/tan-xin-suan-fa-zhi-qu-jian-tiao-du-wen-ti" target="_blank" rel="noopener">贪心算法之区间调度问题</a></p><h1 id="435-无重叠区间"><a href="#435-无重叠区间" class="headerlink" title="435. 无重叠区间"></a><a href="https://leetcode-cn.com/problems/non-overlapping-intervals/" target="_blank" rel="noopener">435. 无重叠区间</a></h1><blockquote><p>一天有好多活动，你可以选择不重叠的时间尽量多参加活动。</p><ul><li>按照活动结束的时间排序后（不管开始得多早，都不如选择早点结束的活动，这样还能继续选其他活动）<ul><li>假设当前参加的是活动A，如果活动B的开始时间大于等于活动A的结束时间，则继续参加B活动。</li><li>这时活动数+1，后面的活动开始时间要和活动B结束的时间进行比较，所以活动结束的时间更新为活动B结束的时间。</li></ul></li></ul></blockquote><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>    <span class="token keyword">def</span> <span class="token function">eraseOverlapIntervals</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> intervals<span class="token punctuation">)</span><span class="token punctuation">:</span>        <span class="token keyword">if</span> <span class="token operator">not</span> intervals<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token number">0</span>        intervals<span class="token operator">=</span>sorted<span class="token punctuation">(</span>intervals<span class="token punctuation">,</span>key<span class="token operator">=</span><span class="token keyword">lambda</span> x <span class="token punctuation">:</span> x<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>        end<span class="token operator">=</span>intervals<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token comment" spellcheck="true"># 第0个活动结束的时间</span>        count<span class="token operator">=</span><span class="token number">1</span>        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>len<span class="token punctuation">(</span>intervals<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>            <span class="token comment" spellcheck="true"># 可以想象成当前活动开始的时间大于等于之前活动结束的时间，那么参加当前活动</span>            <span class="token keyword">if</span> intervals<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">>=</span>end<span class="token punctuation">:</span>                count<span class="token operator">+=</span><span class="token number">1</span>                end<span class="token operator">=</span>intervals<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>        <span class="token keyword">return</span> len<span class="token punctuation">(</span>intervals<span class="token punctuation">)</span><span class="token operator">-</span>count<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> labuladong </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>第一章：动态规划之子序列问题解题模板</title>
       <link href="/2020/07/31/di-yi-zhang-dong-tai-gui-hua-zhi-zi-xu-lie-wen-ti-jie-ti-mo-ban/"/>
       <url>/2020/07/31/di-yi-zhang-dong-tai-gui-hua-zhi-zi-xu-lie-wen-ti-jie-ti-mo-ban/</url>
