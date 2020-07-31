@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xueminxhd.github.io/"/>
-  <updated>2020-07-30T13:02:59.407Z</updated>
+  <updated>2020-07-31T04:58:32.763Z</updated>
   <id>https://xueminxhd.github.io/</id>
   
   <author>
@@ -17,9 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>第一章：经典动态规划：最长公共子序列</title>
+    <link href="https://xueminxhd.github.io/2020/07/31/labuladong/di-yi-zhang-jing-dian-dong-tai-gui-hua-zui-chang-gong-gong-zi-xu-lie/"/>
+    <id>https://xueminxhd.github.io/2020/07/31/labuladong/di-yi-zhang-jing-dian-dong-tai-gui-hua-zui-chang-gong-gong-zi-xu-lie/</id>
+    <published>2020-07-31T04:57:30.000Z</published>
+    <updated>2020-07-31T04:58:32.763Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;labuladong&lt;a href=&quot;https://labuladong.gitbook.io/algo/dong-tai-gui-hua-xi-lie/zui-chang-gong-gong-zi-xu-lie&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
+    
+  </entry>
+  
+  <entry>
     <title>第一章：经典动态规划：编辑距离</title>
-    <link href="https://xueminxhd.github.io/2020/07/30/di-yi-zhang-jing-dian-dong-tai-gui-hua-bian-ji-ju-chi/"/>
-    <id>https://xueminxhd.github.io/2020/07/30/di-yi-zhang-jing-dian-dong-tai-gui-hua-bian-ji-ju-chi/</id>
+    <link href="https://xueminxhd.github.io/2020/07/30/labuladong/di-yi-zhang-jing-dian-dong-tai-gui-hua-bian-ji-ju-chi/"/>
+    <id>https://xueminxhd.github.io/2020/07/30/labuladong/di-yi-zhang-jing-dian-dong-tai-gui-hua-bian-ji-ju-chi/</id>
     <published>2020-07-30T12:06:54.000Z</published>
     <updated>2020-07-30T13:02:59.407Z</updated>
     
@@ -500,32 +526,6 @@
         
         
           &lt;p&gt;labuladong&lt;a href=&quot;https://labuladong.gitbook.io/algo/gao-pin-mian-shi-xi-lie/que-shi-he-zhong-fu-de-yuan-su&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第四章：如何寻找缺失的元素</title>
-    <link href="https://xueminxhd.github.io/2020/07/13/labuladong/di-si-zhang-ru-he-xun-zhao-que-shi-de-yuan-su/"/>
-    <id>https://xueminxhd.github.io/2020/07/13/labuladong/di-si-zhang-ru-he-xun-zhao-que-shi-de-yuan-su/</id>
-    <published>2020-07-13T12:23:34.000Z</published>
-    <updated>2020-07-13T12:37:53.103Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;labuladong&lt;a href=&quot;https://labuladong.gitbook.io/algo/gao-pin-mian-shi-xi-lie/xiao-shi-de-yuan-su&quot; target=&quot;_blank&quot;
         
       
     

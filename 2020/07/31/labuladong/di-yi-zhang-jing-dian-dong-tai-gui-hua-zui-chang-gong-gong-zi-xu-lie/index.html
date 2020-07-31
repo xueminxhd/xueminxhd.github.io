@@ -4,17 +4,14 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="第四章：如何寻找缺失的元素, It&#39;s the job that&#39;s never started as takes longest to finish.”― J.R.R. Tolkien">
+    <meta name="keywords" content="第一章：经典动态规划：最长公共子序列, It&#39;s the job that&#39;s never started as takes longest to finish.”― J.R.R. Tolkien">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="labuladong如何寻找缺失的元素
+    <meta name="description" content="labuladong经典动态规划：最长公共子序列
+（在dp数组中添加0行和0列可以包含text为空的情况，并且更便于状态转移）
 
-先遍历列表，并加到set中。利用 HashSet 去重
-若元素不在列表中，则表示该元素缺失
-
-class Solution(object):
-    def findDisappearedNumbe">
+dp数组的含义： 对于 text1[0..i-1] 和 text2[0..j-1]，dp[i][j]中保存当前">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -22,7 +19,7 @@ class Solution(object):
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>第四章：如何寻找缺失的元素 | Min&#39;s Blog</title>
+    <title>第一章：经典动态规划：最长公共子序列 | Min&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -322,13 +319,13 @@ class Solution(object):
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        第四章：如何寻找缺失的元素
+                        第一章：经典动态规划：最长公共子序列
                     </div>
                 </div>
             </div>
@@ -463,7 +460,7 @@ class Solution(object):
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-13
+                    2020-07-31
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -477,7 +474,7 @@ class Solution(object):
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    83
+                    264
                 </div>
                 
 
@@ -500,25 +497,27 @@ class Solution(object):
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>labuladong<a href="https://labuladong.gitbook.io/algo/gao-pin-mian-shi-xi-lie/xiao-shi-de-yuan-su" target="_blank" rel="noopener">如何寻找缺失的元素</a></p>
-<ul>
-<li>先遍历列表，并加到set中。利用 HashSet 去重</li>
-<li>若元素不在列表中，则表示该元素缺失</li>
-</ul>
+                <p>labuladong<a href="https://labuladong.gitbook.io/algo/dong-tai-gui-hua-xi-lie/zui-chang-gong-gong-zi-xu-lie" target="_blank" rel="noopener">经典动态规划：最长公共子序列</a></p>
+<p><em>（在dp数组中添加0行和0列可以包含text为空的情况，并且更便于状态转移）</em></p>
+<ol>
+<li>dp数组的含义： 对于 text1[0..i-1] 和 text2[0..j-1]，dp[i][j]中保存当前位置的最长公共子序列的长度</li>
+<li>状态转移方程：若当前元素相等，则在之前状态下+1 （<code>dp[i][j]=dp[i-1][j-1]+1</code>）。 若不相等，则继承之前的最大值（<code>dp[i][j]=max(dp[i-1][j],dp[i][j-1])</code>）</li>
+<li>base case : 第0行和第0列初始化为0 。（至少有一个为空字符时，不可能有公共子序列 （两个都为空时，公共子序列长度也为0））</li>
+</ol>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">findDisappearedNumbers</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token triple-quoted-string string">"""
-        :type nums: List[int]
-        :rtype: List[int]
-        """</span>
-        res<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
-        se<span class="token operator">=</span>set<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> nums<span class="token punctuation">:</span>
-            se<span class="token punctuation">.</span>add<span class="token punctuation">(</span>i<span class="token punctuation">)</span>
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> i <span class="token operator">not</span> <span class="token keyword">in</span> se<span class="token punctuation">:</span>
-                res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>i<span class="token punctuation">)</span>
-        <span class="token keyword">return</span> res<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token keyword">def</span> <span class="token function">longestCommonSubsequence</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> text1<span class="token punctuation">,</span> text2<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> <span class="token operator">not</span> <span class="token punctuation">(</span>text1 <span class="token operator">and</span> text2<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token number">0</span>
+        m<span class="token operator">=</span>len<span class="token punctuation">(</span>text1<span class="token punctuation">)</span>
+        n<span class="token operator">=</span>len<span class="token punctuation">(</span>text2<span class="token punctuation">)</span>
+        dp<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>m<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>m<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">if</span> text1<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token operator">==</span>text2<span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+                    dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span>dp<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span><span class="token operator">+</span><span class="token number">1</span>
+                <span class="token keyword">else</span><span class="token punctuation">:</span>
+                    dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span>max<span class="token punctuation">(</span>dp<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span>dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> dp<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -677,9 +676,9 @@ class Solution(object):
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《第四章：如何寻找缺失的元素》
+                    《第一章：经典动态规划：最长公共子序列》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/07/13/labuladong/di-si-zhang-ru-he-xun-zhao-que-shi-de-yuan-su/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/07/31/labuladong/di-yi-zhang-jing-dian-dong-tai-gui-hua-zui-chang-gong-gong-zi-xu-lie/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Min
             </a> 采用
@@ -719,35 +718,33 @@ class Solution(object):
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/07/13/labuladong/di-si-zhang-ru-he-tong-shi-xun-zhao-que-shi-he-chong-fu-de-yuan-su/">
+                <a href="/2020/07/31/labuladong/di-yi-zhang-jing-dian-dong-tai-gui-hua-zui-chang-gong-gong-zi-xu-lie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="第四章：如何同时寻找缺失和重复的元素">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="第一章：经典动态规划：最长公共子序列">
                         
-                        <span class="card-title">第四章：如何同时寻找缺失和重复的元素</span>
+                        <span class="card-title">第一章：经典动态规划：最长公共子序列</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            labuladong如何同时寻找缺失和重复的元素
+                            labuladong经典动态规划：最长公共子序列
+（在dp数组中添加0行和0列可以包含text为空的情况，并且更便于状态转移）
 
-利用set去重，并记录重复的元素
-遍历一遍range(1,len(nums)+1),找到并记录不存在的于set中的元素
-
-class Solution(object):
-    def f
+dp数组的含义： 对于 text1[0..i-1] 和 text2[0..j-1]，dp[i][j]中保存当前
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-31
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -760,6 +757,7 @@ class Solution(object):
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -778,28 +776,29 @@ class Solution(object):
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/13/labuladong/di-si-zhang-ru-he-pan-ding-gua-hao-he-fa-xing/">
+                <a href="/2020/07/30/labuladong/di-yi-zhang-jing-dian-dong-tai-gui-hua-bian-ji-ju-chi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="第四章：如何判定括号合法性">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="第一章：经典动态规划：编辑距离">
                         
-                        <span class="card-title">第四章：如何判定括号合法性</span>
+                        <span class="card-title">第一章：经典动态规划：编辑距离</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            labuladong 如何判定括号合法性
-解题思路：遇到左括号就入栈，遇到右括号就去栈中寻找最近的左括号（栈顶元素），看是否匹配。
-Krahets的极简思路及实现
+                            labuladong经典动态规划：编辑距离
+72. 编辑距离
 
-栈 stack 为空： 此时 stack.pop() 操作会报错；因此，我
+
+在word1 和word2 前面分别插入&quot;&quot; 不仅可以包括字符串为空的情况，而且可以更清楚地用空字符串说明状态转移的过程
+i 和 j 中，因为最前面加了&
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-13
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-30
                             </span>
                         <span class="publish-author">
                             
