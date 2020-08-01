@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xueminxhd.github.io/"/>
-  <updated>2020-07-31T10:07:59.101Z</updated>
+  <updated>2020-08-01T01:41:40.618Z</updated>
   <id>https://xueminxhd.github.io/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>第一章：贪心算法之区间调度问题</title>
-    <link href="https://xueminxhd.github.io/2020/07/31/di-yi-zhang-tan-xin-suan-fa-zhi-qu-jian-diao-du-wen-ti/"/>
-    <id>https://xueminxhd.github.io/2020/07/31/di-yi-zhang-tan-xin-suan-fa-zhi-qu-jian-diao-du-wen-ti/</id>
+    <link href="https://xueminxhd.github.io/2020/07/31/labuladong/di-yi-zhang-tan-xin-suan-fa-zhi-qu-jian-diao-du-wen-ti/"/>
+    <id>https://xueminxhd.github.io/2020/07/31/labuladong/di-yi-zhang-tan-xin-suan-fa-zhi-qu-jian-diao-du-wen-ti/</id>
     <published>2020-07-31T10:07:38.000Z</published>
-    <updated>2020-07-31T10:07:59.101Z</updated>
+    <updated>2020-08-01T01:41:40.618Z</updated>
     
     <summary type="html">
     
@@ -29,7 +29,7 @@
       
         
         
-          &lt;p&gt;&lt;a href=&quot;https://labuladong.gitbook.io/algo/dong-tai-gui-hua-xi-lie/tan-xin-suan-fa-zhi-qu-jian-tiao-du-wen-ti&quot; target=&quot;_blank&quot;
+          &lt;p&gt;labuladong&lt;a href=&quot;https://labuladong.gitbook.io/algo/dong-tai-gui-hua-xi-lie/tan-xin-suan-fa-zhi-qu-jian-tiao-du-wen-ti&quot;
         
       
     
@@ -44,10 +44,10 @@
   
   <entry>
     <title>第一章：动态规划之子序列问题解题模板</title>
-    <link href="https://xueminxhd.github.io/2020/07/31/di-yi-zhang-dong-tai-gui-hua-zhi-zi-xu-lie-wen-ti-jie-ti-mo-ban/"/>
-    <id>https://xueminxhd.github.io/2020/07/31/di-yi-zhang-dong-tai-gui-hua-zhi-zi-xu-lie-wen-ti-jie-ti-mo-ban/</id>
+    <link href="https://xueminxhd.github.io/2020/07/31/labuladong/di-yi-zhang-dong-tai-gui-hua-zhi-zi-xu-lie-wen-ti-jie-ti-mo-ban/"/>
+    <id>https://xueminxhd.github.io/2020/07/31/labuladong/di-yi-zhang-dong-tai-gui-hua-zhi-zi-xu-lie-wen-ti-jie-ti-mo-ban/</id>
     <published>2020-07-31T07:48:23.000Z</published>
-    <updated>2020-07-31T07:49:04.339Z</updated>
+    <updated>2020-08-01T01:41:52.689Z</updated>
     
     <summary type="html">
     
