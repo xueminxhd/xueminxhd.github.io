@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>第二章：如何计算完全二叉树的节点数</title>
+      <link href="/2020/08/02/di-er-zhang-ru-he-ji-suan-wan-quan-er-cha-shu-de-jie-dian-shu/"/>
+      <url>/2020/08/02/di-er-zhang-ru-he-ji-suan-wan-quan-er-cha-shu-de-jie-dian-shu/</url>
+      
+        <content type="html"><![CDATA[<p>labuladong <a href="https://mp.weixin.qq.com/s/xW2fbE3v4JhMSKfxoxIHBg" target="_blank" rel="noopener">如何计算完全二叉树的节点数</a></p><h1 id="222-完全二叉树的节点个数"><a href="#222-完全二叉树的节点个数" class="headerlink" title="222. 完全二叉树的节点个数"></a><a href="https://leetcode-cn.com/problems/count-complete-tree-nodes/" target="_blank" rel="noopener">222. 完全二叉树的节点个数</a></h1><ul><li>完全二叉树都是<strong>紧凑靠左排列</strong>的</li><li>满二叉树<strong>每一层都是满的</strong> （除底层的叶子节点外，左右孩子都有），<strong>是一种特殊的完全二叉树</strong></li></ul><p>遍历二叉树节点时：</p><ol><li>若是普通的二叉树，则在遍历节点时计数即可</li><li>若是满二叉树，则说明左右子树的高度相等，节点个数=2^高度-1</li></ol><p>因此，若判断该完全二叉树是满二叉树，则用情况2，否则用情况1</p><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for a binary tree node.</span><span class="token comment" spellcheck="true"># class TreeNode(object):</span><span class="token comment" spellcheck="true">#     def __init__(self, x):</span><span class="token comment" spellcheck="true">#         self.val = x</span><span class="token comment" spellcheck="true">#         self.left = None</span><span class="token comment" spellcheck="true">#         self.right = None</span><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>    <span class="token keyword">def</span> <span class="token function">countNodes</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">)</span><span class="token punctuation">:</span>        <span class="token keyword">if</span> <span class="token operator">not</span> root<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token number">0</span>        l<span class="token punctuation">,</span>r<span class="token operator">=</span>root<span class="token punctuation">,</span>root        hl<span class="token punctuation">,</span>hr<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span>        <span class="token keyword">while</span> l<span class="token operator">!=</span>None<span class="token punctuation">:</span>            l<span class="token operator">=</span>l<span class="token punctuation">.</span>left            hl<span class="token operator">+=</span><span class="token number">1</span>        <span class="token keyword">while</span> r<span class="token operator">!=</span>None<span class="token punctuation">:</span>            r<span class="token operator">=</span>r<span class="token punctuation">.</span>right            hr<span class="token operator">+=</span><span class="token number">1</span>        <span class="token keyword">if</span> hl<span class="token operator">==</span>hr<span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 左右子树高度相等，是满二叉树，用公式计算</span>            <span class="token keyword">return</span> pow<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span>hl<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span>        <span class="token keyword">return</span> <span class="token number">1</span><span class="token operator">+</span>self<span class="token punctuation">.</span>countNodes<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">)</span><span class="token operator">+</span>self<span class="token punctuation">.</span>countNodes<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 普通二叉树，用递归方法计算</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> labuladong </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>第二章：二叉搜索树操作集锦</title>
       <link href="/2020/08/02/labuladong/di-er-zhang-er-cha-sou-suo-shu-cao-zuo-ji-jin/"/>
       <url>/2020/08/02/labuladong/di-er-zhang-er-cha-sou-suo-shu-cao-zuo-ji-jin/</url>
