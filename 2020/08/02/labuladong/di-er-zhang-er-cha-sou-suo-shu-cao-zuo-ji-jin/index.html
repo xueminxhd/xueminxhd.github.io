@@ -4,14 +4,17 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="第零章：学习算法和刷题的框架思维, It&#39;s the job that&#39;s never started as takes longest to finish.”― J.R.R. Tolkien">
+    <meta name="keywords" content="第二章：二叉搜索树操作集锦, It&#39;s the job that&#39;s never started as takes longest to finish.”― J.R.R. Tolkien">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="labuladong学习算法和刷题的框架思维
-124. 二叉树中的最大路径和_后序遍历
-maxVal 记录的是全局最大路径和（可以不返回，因为它始终在递归过程中更新即可）。
-dfs()函数返回的是包含root在内的单边最大路径和。这样做的好">
+    <meta name="description" content="labuladong 二叉搜索树操作集锦
+
+二叉树
+
+二叉树算法设计的总路线：把当前节点要做的事做好，其他的交给递归框架，不用当前节点操心。    （可以理解成递归方法的应用）
+明确递归结束的条件 （已经到了叶子节点）
+把root该做的事情">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +22,7 @@ dfs()函数返回的是包含root在内的单边最大路径和。这样做的�
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>第零章：学习算法和刷题的框架思维 | Min&#39;s Blog</title>
+    <title>第二章：二叉搜索树操作集锦 | Min&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -319,13 +322,13 @@ dfs()函数返回的是包含root在内的单边最大路径和。这样做的�
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        第零章：学习算法和刷题的框架思维
+                        第二章：二叉搜索树操作集锦
                     </div>
                 </div>
             </div>
@@ -460,7 +463,7 @@ dfs()函数返回的是包含root在内的单边最大路径和。这样做的�
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-23
+                    2020-08-02
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -474,14 +477,14 @@ dfs()函数返回的是包含root在内的单边最大路径和。这样做的�
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    810
+                    1.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    7 分
                 </div>
                 
                 
@@ -497,13 +500,76 @@ dfs()函数返回的是包含root在内的单边最大路径和。这样做的�
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>labuladong<a href="https://labuladong.gitbook.io/algo/di-ling-zhang-bi-du-xi-lie/xue-xi-shu-ju-jie-gou-he-suan-fa-de-gao-xiao-fang-fa" target="_blank" rel="noopener">学习算法和刷题的框架思维</a></p>
-<h1 id="124-二叉树中的最大路径和-后序遍历"><a href="#124-二叉树中的最大路径和-后序遍历" class="headerlink" title="124. 二叉树中的最大路径和_后序遍历"></a><a href="https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/solution/er-cha-shu-zhong-de-zui-da-lu-jing-he-by-ikaruga/" target="_blank" rel="noopener">124. 二叉树中的最大路径和_后序遍历</a></h1><ul>
-<li><code>maxVal</code> 记录的是全局最大路径和（可以不返回，因为它始终在递归过程中更新即可）。</li>
-<li><code>dfs()</code>函数<strong>返回</strong>的是<strong>包含root</strong>在内的<strong>单边</strong>最大路径和。这样做的好处是<code>self.maxVal=max(self.maxVal,root.val+l+r)</code>可以包括全部的路径和情况（（1）根，（2）根+左，（3）根+右，（4）根+左+右），<code>l</code>或<code>r</code>可能为0）</li>
-<li>若root的左节点对应的最大路径和是负数（在拖后腿，所以抛弃），则最大路径和为0，因此有<code>l=max(0,dfs(root.left))</code>。右节点同理</li>
-<li>记得写<strong>递归结束</strong>的条件</li>
+                <p>labuladong <a href="https://labuladong.gitbook.io/algo/shu-ju-jie-gou-xi-lie/er-cha-sou-suo-shu-cao-zuo-ji-jin" target="_blank" rel="noopener">二叉搜索树操作集锦</a></p>
+<ul>
+<li><p>二叉树</p>
+<ul>
+<li>二叉树算法设计的总路线：<strong>把当前节点要做的事做好，其他的交给递归框架，不用当前节点操心。</strong>    （可以理解成<strong>递归</strong>方法的应用）<ul>
+<li>明确递归结束的条件 （已经到了叶子节点）</li>
+<li>把root该做的事情做完， 然后左右子节点递归调用该方法</li>
 </ul>
+</li>
+<li>如果当前节点会对下面的子节点<strong>有整体影响</strong>，可以通过<strong>辅助函数增长参数列表</strong>，借助参数传递信息。<pre class="line-numbers language-python"><code class="language-python">void traverse<span class="token punctuation">(</span>TreeNode root<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token operator">//</span> root 需要做什么？在这做。
+<span class="token operator">//</span> 其他的不用 root 操心，抛给框架
+traverse<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+traverse<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+<li><p>二叉搜索树</p>
+<ul>
+<li>定义：任意<strong>节点的值要大于等于左子树所有节点</strong>的值，且要<strong>小于等于右子树的所有节点</strong>的值。</li>
+<li>因此，<strong>中序遍历</strong>二叉搜索树后，可以得到<strong>递增</strong>数组。<pre class="line-numbers language-python"><code class="language-python">void BST<span class="token punctuation">(</span>TreeNode root<span class="token punctuation">,</span> int target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>root<span class="token punctuation">.</span>val <span class="token operator">==</span> target<span class="token punctuation">)</span>
+  <span class="token operator">//</span> 找到目标，做点什么
+<span class="token keyword">if</span> <span class="token punctuation">(</span>root<span class="token punctuation">.</span>val <span class="token operator">&lt;</span> target<span class="token punctuation">)</span> 
+  BST<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">,</span> target<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>root<span class="token punctuation">.</span>val <span class="token operator">></span> target<span class="token punctuation">)</span>
+  BST<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">,</span> target<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="100-相同的树"><a href="#100-相同的树" class="headerlink" title="100. 相同的树"></a><a href="https://leetcode-cn.com/problems/same-tree/solution/ji-yu-xie-shu-suan-fa-de-tao-lu-kuang-jia-de-pytho/" target="_blank" rel="noopener">100. 相同的树</a></h1><ul>
+<li>函数内先判断两个root节点是否相等，然后递归调用该函数，判断左右子节点是否相等</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for a binary tree node.</span>
+<span class="token comment" spellcheck="true"># class TreeNode(object):</span>
+<span class="token comment" spellcheck="true">#     def __init__(self, val=0, left=None, right=None):</span>
+<span class="token comment" spellcheck="true">#         self.val = val</span>
+<span class="token comment" spellcheck="true">#         self.left = left</span>
+<span class="token comment" spellcheck="true">#         self.right = right</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">isSameTree</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> p<span class="token punctuation">,</span> q<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :type p: TreeNode
+        :type q: TreeNode
+        :rtype: bool
+        """</span>
+        <span class="token keyword">if</span> p<span class="token operator">==</span>None <span class="token operator">and</span> q <span class="token operator">==</span>None<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token boolean">True</span> <span class="token comment" spellcheck="true"># 都为空节点</span>
+        <span class="token keyword">if</span> p<span class="token operator">==</span>None <span class="token operator">or</span> q <span class="token operator">==</span>None<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token boolean">False</span> <span class="token comment" spellcheck="true"># 其中一个为空节点</span>
+        <span class="token keyword">if</span> p<span class="token punctuation">.</span>val<span class="token operator">!=</span>q<span class="token punctuation">.</span>val<span class="token punctuation">:</span><span class="token keyword">return</span> <span class="token boolean">False</span> <span class="token comment" spellcheck="true"># 值不相等</span>
+        <span class="token comment" spellcheck="true"># 调用递归，判断左右子树是否都满足isSameTree</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>isSameTree<span class="token punctuation">(</span>p<span class="token punctuation">.</span>left<span class="token punctuation">,</span>q<span class="token punctuation">.</span>left<span class="token punctuation">)</span> <span class="token operator">and</span> self<span class="token punctuation">.</span>isSameTree<span class="token punctuation">(</span>p<span class="token punctuation">.</span>right<span class="token punctuation">,</span>q<span class="token punctuation">.</span>right<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="面试题-04-05-合法二叉搜索树"><a href="#面试题-04-05-合法二叉搜索树" class="headerlink" title="面试题 04.05. 合法二叉搜索树"></a><a href="https://leetcode-cn.com/problems/validate-binary-search-tree/solution/die-dai-yu-di-gui-by-powcai/" target="_blank" rel="noopener">面试题 04.05. 合法二叉搜索树</a></h1><h2 id="方法1：利用携带的最大最小值进行判断"><a href="#方法1：利用携带的最大最小值进行判断" class="headerlink" title="方法1：利用携带的最大最小值进行判断"></a>方法1：利用携带的最大最小值进行判断</h2><ul>
+<li><p>root 需要做的不只是和左右子节点比较，而是要和整个左子树和右子树<strong>所有节点</strong>比较</p>
+</li>
+<li><p>使用辅助函数，增加函数参数列表，在<strong>参数中携带额外信息</strong>（当前节点需要比较的最小值和最大值）</p>
+<ul>
+<li>直接赋予最小值<code>-float(&quot;inf&quot;)</code>、最大值<code>float(&quot;inf&quot;)</code>，在递归的过程中修改最值（<strong>自顶向下</strong>的过程中，<strong>右子树的最小值从<code>-float(&quot;inf&quot;)</code> 逐渐增大，左子树的最大值从<code>float(&quot;inf&quot;)</code> 逐渐减小</strong>）</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>以该不合法的二叉搜索树树为例：</p>
+<ul>
+<li>遍历到15 时，15与 <code>[10, float(&quot;inf&quot;)]</code> 比较，结果是True（此时最小值为10）</li>
+<li>对于15的左子树，它应该在[10,15] 范围内，但现在是6，结果为False <img src="https://img-blog.csdnimg.cn/20200802113813779.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L29wZW5jdnpzZWZ2,size_16,color_FFFFFF,t_70" alt></li>
+</ul>
+</blockquote>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for a binary tree node.</span>
 <span class="token comment" spellcheck="true"># class TreeNode(object):</span>
 <span class="token comment" spellcheck="true">#     def __init__(self, x):</span>
@@ -512,23 +578,19 @@ dfs()函数返回的是包含root在内的单边最大路径和。这样做的�
 <span class="token comment" spellcheck="true">#         self.right = None</span>
 
 <span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">maxPathSum</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">isValidBST</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token triple-quoted-string string">"""
         :type root: TreeNode
-        :rtype: int
+        :rtype: bool
         """</span>
-        <span class="token keyword">def</span> <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> <span class="token operator">not</span> root<span class="token punctuation">:</span><span class="token keyword">return</span> <span class="token number">0</span>
-            l<span class="token operator">=</span>max<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>dfs<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">)</span><span class="token punctuation">)</span>
-            r<span class="token operator">=</span>max<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>dfs<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span><span class="token punctuation">)</span>
-            self<span class="token punctuation">.</span>maxVal<span class="token operator">=</span>max<span class="token punctuation">(</span>self<span class="token punctuation">.</span>maxVal<span class="token punctuation">,</span>root<span class="token punctuation">.</span>val<span class="token operator">+</span>l<span class="token operator">+</span>r<span class="token punctuation">)</span>
-            <span class="token keyword">return</span> root<span class="token punctuation">.</span>val<span class="token operator">+</span>max<span class="token punctuation">(</span>l<span class="token punctuation">,</span>r<span class="token punctuation">)</span>
-
-        self<span class="token punctuation">.</span>maxVal<span class="token operator">=</span>float<span class="token punctuation">(</span><span class="token string">"-inf"</span><span class="token punctuation">)</span>
-        dfs<span class="token punctuation">(</span>root<span class="token punctuation">)</span>
-        <span class="token keyword">return</span> self<span class="token punctuation">.</span>maxVal<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="类似题目104-二叉树的最大深度-后序遍历"><a href="#类似题目104-二叉树的最大深度-后序遍历" class="headerlink" title="类似题目104. 二叉树的最大深度_后序遍历"></a>类似题目<a href="https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/" target="_blank" rel="noopener">104. 二叉树的最大深度_后序遍历</a></h2><ul>
-<li><code>dfs()</code>函数返回包含<code>root</code>在内的二叉树最大深度</li>
+        <span class="token keyword">def</span> <span class="token function">valid</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span>mi<span class="token punctuation">,</span>ma<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> root<span class="token operator">==</span>None<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token boolean">True</span>
+            <span class="token keyword">if</span> root<span class="token punctuation">.</span>val<span class="token operator">&lt;=</span>mi<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token boolean">False</span>
+            <span class="token keyword">if</span> root<span class="token punctuation">.</span>val<span class="token operator">>=</span>ma<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token boolean">False</span>
+            <span class="token keyword">return</span> valid<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">,</span> mi <span class="token punctuation">,</span> root<span class="token punctuation">.</span>val<span class="token punctuation">)</span> <span class="token operator">and</span> valid<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">,</span> root<span class="token punctuation">.</span>val<span class="token punctuation">,</span> ma<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> valid<span class="token punctuation">(</span>root<span class="token punctuation">,</span> <span class="token operator">-</span>float<span class="token punctuation">(</span><span class="token string">"inf"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> float<span class="token punctuation">(</span><span class="token string">"inf"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="方法2：中序遍历二叉搜索树后，判断其是否为没有重复元素的递增数组"><a href="#方法2：中序遍历二叉搜索树后，判断其是否为没有重复元素的递增数组" class="headerlink" title="方法2：中序遍历二叉搜索树后，判断其是否为没有重复元素的递增数组"></a>方法2：中序遍历二叉搜索树后，判断其是否为没有重复元素的递增数组</h2><ul>
+<li>最后的<code>return nodes == sorted(set(nodes))</code>, 要<strong>先set，再 sorted</strong>，这样返回的是列表形式，即判断列表是否等于列表（<del>若先sorted，再set，返回的是一个集合，即判断列表是否等于集合，出现错误）</del> 。</li>
 </ul>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for a binary tree node.</span>
 <span class="token comment" spellcheck="true"># class TreeNode(object):</span>
@@ -538,25 +600,22 @@ dfs()函数返回的是包含root在内的单边最大路径和。这样做的�
 <span class="token comment" spellcheck="true">#         self.right = None</span>
 
 <span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">maxDepth</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">isValidBST</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token triple-quoted-string string">"""
         :type root: TreeNode
-        :rtype: int
+        :rtype: bool
         """</span>
-        <span class="token keyword">def</span> <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> <span class="token operator">not</span> root<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token number">0</span>
-            l<span class="token operator">=</span>dfs<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">)</span>
-            r<span class="token operator">=</span>dfs<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
-            <span class="token keyword">return</span> max<span class="token punctuation">(</span>l<span class="token punctuation">,</span>r<span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span>
-        <span class="token keyword">return</span> dfs<span class="token punctuation">(</span>root<span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="105-从前序与中序遍历序列构造二叉树-前序遍历"><a href="#105-从前序与中序遍历序列构造二叉树-前序遍历" class="headerlink" title="105. 从前序与中序遍历序列构造二叉树_前序遍历"></a><a href="https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/solution/dong-hua-yan-shi-105-cong-qian-xu-yu-zhong-xu-bian/" target="_blank" rel="noopener">105. 从前序与中序遍历序列构造二叉树_前序遍历</a></h1><ul>
-<li>前序遍历的第一个元素是根节点</li>
-<li>在中序遍历中找到根节点的位置，其左边的元素就是左子树，右边的元素就是右子树</li>
-<li>然后递归处理左右子树</li>
-<li>注意写上递归结束条件（左右子树为空时）</li>
-</ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for a binary tree node.</span>
+        nodes<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">def</span> <span class="token function">inOrder</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 中序遍历后，判断其是否递增</span>
+            <span class="token keyword">if</span> <span class="token operator">not</span> root<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token boolean">True</span>
+            inOrder<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">)</span>
+            nodes<span class="token punctuation">.</span>append<span class="token punctuation">(</span>root<span class="token punctuation">.</span>val<span class="token punctuation">)</span>
+            inOrder<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
+            <span class="token keyword">return</span> nodes
+
+        inOrder<span class="token punctuation">(</span>root<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> nodes <span class="token operator">==</span> sorted<span class="token punctuation">(</span>set<span class="token punctuation">(</span>nodes<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="700-二叉搜索树中的搜索"><a href="#700-二叉搜索树中的搜索" class="headerlink" title="700. 二叉搜索树中的搜索"></a><a href="https://leetcode-cn.com/problems/search-in-a-binary-search-tree/" target="_blank" rel="noopener">700. 二叉搜索树中的搜索</a></h1><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for a binary tree node.</span>
 <span class="token comment" spellcheck="true"># class TreeNode(object):</span>
 <span class="token comment" spellcheck="true">#     def __init__(self, x):</span>
 <span class="token comment" spellcheck="true">#         self.val = x</span>
@@ -564,27 +623,42 @@ dfs()函数返回的是包含root在内的单边最大路径和。这样做的�
 <span class="token comment" spellcheck="true">#         self.right = None</span>
 
 <span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">buildTree</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> preorder<span class="token punctuation">,</span> inorder<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">searchBST</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">,</span> val<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token triple-quoted-string string">"""
-        :type preorder: List[int]
-        :type inorder: List[int]
+        :type root: TreeNode
+        :type val: int
         :rtype: TreeNode
         """</span>
-        <span class="token keyword">if</span> <span class="token operator">not</span> <span class="token punctuation">(</span>preorder <span class="token operator">and</span> inorder<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">return</span> None
-        root<span class="token operator">=</span>TreeNode<span class="token punctuation">(</span>preorder<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 根节点</span>
-        midIdx<span class="token operator">=</span>inorder<span class="token punctuation">.</span>index<span class="token punctuation">(</span>root<span class="token punctuation">.</span>val<span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true"># 递归处理左右子树</span>
-        root<span class="token punctuation">.</span>left<span class="token operator">=</span>self<span class="token punctuation">.</span>buildTree<span class="token punctuation">(</span>preorder<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span>midIdx<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>inorder<span class="token punctuation">[</span><span class="token punctuation">:</span>midIdx<span class="token punctuation">]</span><span class="token punctuation">)</span>
-        root<span class="token punctuation">.</span>right<span class="token operator">=</span>self<span class="token punctuation">.</span>buildTree<span class="token punctuation">(</span>preorder<span class="token punctuation">[</span>midIdx<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">,</span>inorder<span class="token punctuation">[</span>midIdx<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-        <span class="token keyword">return</span> root
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="99-恢复二叉搜索树-中序遍历"><a href="#99-恢复二叉搜索树-中序遍历" class="headerlink" title="99. 恢复二叉搜索树_中序遍历"></a><a href="https://leetcode-cn.com/problems/recover-binary-search-tree/solution/san-chong-jie-fa-xiang-xi-tu-jie-99-hui-fu-er-cha-/" target="_blank" rel="noopener">99. 恢复二叉搜索树_中序遍历</a></h1><p>题目说二叉搜索树，中序遍历后应该是升序排列。否则若出现非递增的元素，说明这个地方有错误</p>
-<ul>
-<li>先中序遍历二叉搜索树，保存在nodes列表中（列表中的元素是节点）</li>
-<li>x保存第一个错误节点，y保存第二个错误节点，pre保存遍历过程中的前一个节点</li>
-<li>找到错误节点x、y后，交换x与y的值</li>
-</ul>
+        <span class="token keyword">if</span> <span class="token operator">not</span> root<span class="token punctuation">:</span> <span class="token keyword">return</span> None
+        <span class="token keyword">if</span> root<span class="token punctuation">.</span>val<span class="token operator">==</span>val<span class="token punctuation">:</span> <span class="token keyword">return</span> root
+        <span class="token keyword">if</span> root<span class="token punctuation">.</span>val<span class="token operator">></span>val<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> seatchBST<span class="token punctuation">(</span>self<span class="token punctuation">,</span>root<span class="token punctuation">.</span>left<span class="token punctuation">,</span>val<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> root<span class="token punctuation">.</span>val<span class="token operator">&lt;</span>val<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> searchBST<span class="token punctuation">(</span>self<span class="token punctuation">,</span>root<span class="token punctuation">.</span>right<span class="token punctuation">,</span>val<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="701-二叉搜索树的插入操作"><a href="#701-二叉搜索树的插入操作" class="headerlink" title="701.二叉搜索树的插入操作"></a><a href="https://leetcode-cn.com/problems/insert-into-a-binary-search-tree/submissions/" target="_blank" rel="noopener">701.二叉搜索树的插入操作</a></h1><p>对数据结构的操作无非遍历 + 访问，遍历就是“找”，访问就是“改”。具体到这个问题，插入一个数，就是先找到插入位置，然后进行插入操作。</p>
+<p>上一个问题，我们总结了 BST 中的遍历框架，就是“找”的问题。直接套框架，加上“改”的操作即可。一旦涉及“<strong>改</strong>”，函数就要<strong>返回 TreeNode 类型</strong>，并且<strong>对递归调用的返回值进行接收。</strong></p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for a binary tree node.</span>
+<span class="token comment" spellcheck="true"># class TreeNode(object):</span>
+<span class="token comment" spellcheck="true">#     def __init__(self, val=0, left=None, right=None):</span>
+<span class="token comment" spellcheck="true">#         self.val = val</span>
+<span class="token comment" spellcheck="true">#         self.left = left</span>
+<span class="token comment" spellcheck="true">#         self.right = right</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">insertIntoBST</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">,</span> val<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :type root: TreeNode
+        :type val: int
+        :rtype: TreeNode
+        """</span>
+        <span class="token keyword">if</span> <span class="token operator">not</span> root<span class="token punctuation">:</span>
+            root<span class="token operator">=</span>TreeNode<span class="token punctuation">(</span>val<span class="token punctuation">)</span>
+            <span class="token keyword">return</span> root
+        <span class="token keyword">if</span> val<span class="token operator">></span>root<span class="token punctuation">.</span>val<span class="token punctuation">:</span>
+            root<span class="token punctuation">.</span>right<span class="token operator">=</span>self<span class="token punctuation">.</span>insertIntoBST<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">,</span>val<span class="token punctuation">)</span>
+        <span class="token keyword">elif</span> val<span class="token operator">&lt;</span> root<span class="token punctuation">.</span>val<span class="token punctuation">:</span>
+            root<span class="token punctuation">.</span>left<span class="token operator">=</span>self<span class="token punctuation">.</span>insertIntoBST<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">,</span>val<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> root<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="450-删除二叉搜索树中的节点"><a href="#450-删除二叉搜索树中的节点" class="headerlink" title="450. 删除二叉搜索树中的节点"></a><a href="https://leetcode-cn.com/problems/delete-node-in-a-bst/" target="_blank" rel="noopener">450. 删除二叉搜索树中的节点</a></h1><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for a binary tree node.</span>
 <span class="token comment" spellcheck="true"># class TreeNode(object):</span>
 <span class="token comment" spellcheck="true">#     def __init__(self, x):</span>
 <span class="token comment" spellcheck="true">#         self.val = x</span>
@@ -592,35 +666,88 @@ dfs()函数返回的是包含root在内的单边最大路径和。这样做的�
 <span class="token comment" spellcheck="true">#         self.right = None</span>
 
 <span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">recoverTree</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">deleteNode</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">,</span> key<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :type root: TreeNode
+        :type key: int
+        :rtype: TreeNode
+        """</span>
+
+
+        <span class="token comment" spellcheck="true"># 若无根节点，直接返回</span>
+        <span class="token keyword">if</span> <span class="token operator">not</span> root<span class="token punctuation">:</span><span class="token keyword">return</span> None
+        <span class="token comment" spellcheck="true"># 若找到目标值</span>
+        <span class="token keyword">if</span> root<span class="token punctuation">.</span>val<span class="token operator">==</span>key<span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true"># 处理无子节点/只有一个子节点的情况</span>
+            <span class="token keyword">if</span> root<span class="token punctuation">.</span>left<span class="token operator">==</span>None<span class="token punctuation">:</span> <span class="token keyword">return</span> root<span class="token punctuation">.</span>right
+            <span class="token keyword">if</span> root<span class="token punctuation">.</span>right<span class="token operator">==</span>None<span class="token punctuation">:</span> <span class="token keyword">return</span> root<span class="token punctuation">.</span>left
+
+            <span class="token comment" spellcheck="true"># 找到右子树的最左（小）节点，并替换</span>
+            minNode<span class="token operator">=</span>self<span class="token punctuation">.</span>getMin<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
+            root<span class="token punctuation">.</span>val<span class="token operator">=</span>minNode<span class="token punctuation">.</span>val
+            <span class="token comment" spellcheck="true"># 转而删除最小节点</span>
+            root<span class="token punctuation">.</span>right<span class="token operator">=</span>self<span class="token punctuation">.</span>deleteNode<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">,</span>minNode<span class="token punctuation">.</span>val<span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># 二叉搜索树</span>
+        <span class="token keyword">elif</span> root<span class="token punctuation">.</span>val<span class="token operator">></span>key<span class="token punctuation">:</span>
+            root<span class="token punctuation">.</span>left<span class="token operator">=</span>self<span class="token punctuation">.</span>deleteNode<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">,</span>key<span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            root<span class="token punctuation">.</span>right<span class="token operator">=</span>self<span class="token punctuation">.</span>deleteNode<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">,</span>key<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> root
+
+    <span class="token keyword">def</span> <span class="token function">getMin</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>root<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 最小值一定在左叶子节点处</span>
+        <span class="token keyword">while</span> root<span class="token punctuation">.</span>left<span class="token operator">!=</span>None<span class="token punctuation">:</span>
+            root<span class="token operator">=</span>root<span class="token punctuation">.</span>left
+        <span class="token keyword">return</span> root<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="二叉树的遍历"><a href="#二叉树的遍历" class="headerlink" title="二叉树的遍历"></a>二叉树的遍历</h1><p><a href="https://leetcode-cn.com/problems/binary-tree-postorder-traversal/solution/liang-chong-die-dai-by-powcai/" target="_blank" rel="noopener"><strong>前序、中序、后序、层序遍历 打包，讲解很棒！</strong></a></p>
+<p>只需要<strong>改变遍历的顺序</strong>即可<br><a href="https://leetcode-cn.com/problems/binary-tree-preorder-traversal/solution/di-gui-he-die-dai-by-powcai-5/" target="_blank" rel="noopener">前序遍历</a></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">preorderTraversal</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token triple-quoted-string string">"""
         :type root: TreeNode
         :rtype: List[int]
         """</span>
-        nodes<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token comment" spellcheck="true"># nodes 中保存节点</span>
-        <span class="token comment" spellcheck="true"># 中序遍历二叉树,得到递增序列</span>
-        <span class="token keyword">def</span> <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> <span class="token operator">not</span> root<span class="token punctuation">:</span> <span class="token keyword">return</span>
-            dfs<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">)</span>
-            nodes<span class="token punctuation">.</span>append<span class="token punctuation">(</span>root<span class="token punctuation">)</span>
-            dfs<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
-        dfs<span class="token punctuation">(</span>root<span class="token punctuation">)</span>
+        res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">def</span> <span class="token function">helper</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> <span class="token operator">not</span> root<span class="token punctuation">:</span><span class="token keyword">return</span> 
+            res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>root<span class="token punctuation">.</span>val<span class="token punctuation">)</span>
+            helper<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">)</span>
+            helper<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
+        helper<span class="token punctuation">(</span>root<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> res<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><a href="https://leetcode-cn.com/problems/binary-tree-inorder-traversal/solution/dong-hua-yan-shi-94-er-cha-shu-de-zhong-xu-bian-li/" target="_blank" rel="noopener">中序遍历</a></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for a binary tree node.</span>
+<span class="token comment" spellcheck="true"># class TreeNode(object):</span>
+<span class="token comment" spellcheck="true">#     def __init__(self, x):</span>
+<span class="token comment" spellcheck="true">#         self.val = x</span>
+<span class="token comment" spellcheck="true">#         self.left = None</span>
+<span class="token comment" spellcheck="true">#         self.right = None</span>
 
-        <span class="token comment" spellcheck="true"># 如果出现非递增的元素，说明这个地方有错误</span>
-        x<span class="token operator">=</span>None
-        y<span class="token operator">=</span>None
-        pre<span class="token operator">=</span>nodes<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>len<span class="token punctuation">(</span>nodes<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> pre<span class="token punctuation">.</span>val<span class="token operator">></span>nodes<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>val<span class="token punctuation">:</span>
-                y<span class="token operator">=</span>nodes<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
-                <span class="token keyword">if</span> <span class="token operator">not</span> x<span class="token punctuation">:</span>
-                    x<span class="token operator">=</span>pre
-            pre<span class="token operator">=</span>nodes<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
-
-        <span class="token comment" spellcheck="true"># 交换x与y的值</span>
-        <span class="token keyword">if</span> x <span class="token operator">and</span> y<span class="token punctuation">:</span>
-            x<span class="token punctuation">.</span>val<span class="token punctuation">,</span>y<span class="token punctuation">.</span>val<span class="token operator">=</span>y<span class="token punctuation">.</span>val<span class="token punctuation">,</span>x<span class="token punctuation">.</span>val
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">inorderTraversal</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :type root: TreeNode
+        :rtype: List[int]
+        """</span>
+        res<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">def</span> <span class="token function">helper</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> <span class="token operator">not</span> root<span class="token punctuation">:</span> <span class="token keyword">return</span> 
+            helper<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">)</span>
+            res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>root<span class="token punctuation">.</span>val<span class="token punctuation">)</span>
+            helper<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
+        helper<span class="token punctuation">(</span>root<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> res<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><a href="https://leetcode-cn.com/problems/binary-tree-postorder-traversal/solution/liang-chong-die-dai-by-powcai/" target="_blank" rel="noopener">后序遍历</a></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">postorderTraversal</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">:</span> TreeNode<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">:</span>
+        res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">def</span> <span class="token function">helper</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> <span class="token operator">not</span> root<span class="token punctuation">:</span>
+                <span class="token keyword">return</span> 
+            helper<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">)</span>
+            helper<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
+            res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>root<span class="token punctuation">.</span>val<span class="token punctuation">)</span>
+        helper<span class="token punctuation">(</span>root<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> res<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -779,9 +906,9 @@ dfs()函数返回的是包含root在内的单边最大路径和。这样做的�
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《第零章：学习算法和刷题的框架思维》
+                    《第二章：二叉搜索树操作集锦》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/07/23/labuladong/di-ling-zhang-xue-xi-suan-fa-he-shua-ti-de-kuang-jia-si-wei/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/08/02/labuladong/di-er-zhang-er-cha-sou-suo-shu-cao-zuo-ji-jin/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Min
             </a> 采用
@@ -821,34 +948,36 @@ dfs()函数返回的是包含root在内的单边最大路径和。这样做的�
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/07/24/labuladong/di-ling-zhang-dong-tai-gui-hua-jie-ti-tao-lu-kuang-jia/">
+                <a href="/2020/08/02/labuladong/di-er-zhang-er-cha-sou-suo-shu-cao-zuo-ji-jin/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="第零章：动态规划解题套路框架">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="第二章：二叉搜索树操作集锦">
                         
-                        <span class="card-title">第零章：动态规划解题套路框架</span>
+                        <span class="card-title">第二章：二叉搜索树操作集锦</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            labuladong动态规划解题套路框架
+                            labuladong 二叉搜索树操作集锦
 
-动态规划之背包汇总
-第零章：动态规划解题套路框架第一章：经典动态规划：0-1 背包问题第零章：经典动态规划：子集背包问题第零章：经典动态规划：完全背包问题
+二叉树
 
-求解动态规划的核心问题是穷举,但是穷举
+二叉树算法设计的总路线：把当前节点要做的事做好，其他的交给递归框架，不用当前节点操心。    （可以理解成递归方法的应用）
+明确递归结束的条件 （已经到了叶子节点）
+把root该做的事情
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-02
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -861,6 +990,7 @@ dfs()函数返回的是包含root在内的单边最大路径和。这样做的�
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -879,33 +1009,29 @@ dfs()函数返回的是包含root在内的单边最大路径和。这样做的�
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/22/leetcode/python-jing-dian-pai-xu-suan-fa/">
+                <a href="/2020/08/01/labuladong/di-er-zhang-lru-suan-fa-xiang-jie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Python经典排序算法">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="第二章：LRU算法详解">
                         
-                        <span class="card-title">Python经典排序算法</span>
+                        <span class="card-title">第二章：LRU算法详解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Python经典排序算法
+                            labuladong LRU算法详解
+146. LRU(Least Recently Used) 缓存机制
+利用字典+双向链表
 
-选择排序
-对每一个nums[i], 寻找 $range(i,n)$ 范围内比nums[i]大的数，并与之交换
-以此类推，位置 i 处就是 第i 小的数
-
-
-两次for循环，时间复杂度为 $O(n^2)$
-
-def
+字典里存的是Node的节点类，self.add(Node(key, value))
+传给add函数的是一个No
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-22
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-01
                             </span>
                         <span class="publish-author">
                             
@@ -922,8 +1048,8 @@ def
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Sort/" target="_blank">
-                        <span class="chip bg-color">Sort</span>
+                    <a href="/tags/labuladong/" target="_blank">
+                        <span class="chip bg-color">labuladong</span>
                     </a>
                     
                 </div>
