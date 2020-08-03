@@ -322,7 +322,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -477,14 +477,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    2.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    10 分
                 </div>
                 
                 
@@ -699,8 +699,8 @@ traverse<span class="token punctuation">(</span>root<span class="token punctuati
             root<span class="token operator">=</span>root<span class="token punctuation">.</span>left
         <span class="token keyword">return</span> root<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="二叉树的遍历"><a href="#二叉树的遍历" class="headerlink" title="二叉树的遍历"></a>二叉树的遍历</h1><p><a href="https://leetcode-cn.com/problems/binary-tree-postorder-traversal/solution/liang-chong-die-dai-by-powcai/" target="_blank" rel="noopener"><strong>前序、中序、后序、层序遍历 打包，讲解很棒！</strong></a></p>
-<p>只需要<strong>改变遍历的顺序</strong>即可<br><a href="https://leetcode-cn.com/problems/binary-tree-preorder-traversal/solution/di-gui-he-die-dai-by-powcai-5/" target="_blank" rel="noopener">前序遍历</a></p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<p>只需要<strong>改变遍历的顺序</strong>即可</p>
+<h2 id="前序遍历"><a href="#前序遍历" class="headerlink" title="前序遍历"></a><a href="https://leetcode-cn.com/problems/binary-tree-preorder-traversal/solution/di-gui-he-die-dai-by-powcai-5/" target="_blank" rel="noopener">前序遍历</a></h2><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">preorderTraversal</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token triple-quoted-string string">"""
         :type root: TreeNode
@@ -714,8 +714,7 @@ traverse<span class="token punctuation">(</span>root<span class="token punctuati
             helper<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
         helper<span class="token punctuation">(</span>root<span class="token punctuation">)</span>
         <span class="token keyword">return</span> res<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><a href="https://leetcode-cn.com/problems/binary-tree-inorder-traversal/solution/dong-hua-yan-shi-94-er-cha-shu-de-zhong-xu-bian-li/" target="_blank" rel="noopener">中序遍历</a></p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for a binary tree node.</span>
+<h2 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a><a href="https://leetcode-cn.com/problems/binary-tree-inorder-traversal/solution/dong-hua-yan-shi-94-er-cha-shu-de-zhong-xu-bian-li/" target="_blank" rel="noopener">中序遍历</a></h2><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for a binary tree node.</span>
 <span class="token comment" spellcheck="true"># class TreeNode(object):</span>
 <span class="token comment" spellcheck="true">#     def __init__(self, x):</span>
 <span class="token comment" spellcheck="true">#         self.val = x</span>
@@ -736,8 +735,7 @@ traverse<span class="token punctuation">(</span>root<span class="token punctuati
             helper<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
         helper<span class="token punctuation">(</span>root<span class="token punctuation">)</span>
         <span class="token keyword">return</span> res<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><a href="https://leetcode-cn.com/problems/binary-tree-postorder-traversal/solution/liang-chong-die-dai-by-powcai/" target="_blank" rel="noopener">后序遍历</a></p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+<h2 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a><a href="https://leetcode-cn.com/problems/binary-tree-postorder-traversal/solution/liang-chong-die-dai-by-powcai/" target="_blank" rel="noopener">后序遍历</a></h2><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">postorderTraversal</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">:</span> TreeNode<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">:</span>
         res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
         <span class="token keyword">def</span> <span class="token function">helper</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -748,6 +746,121 @@ traverse<span class="token punctuation">(</span>root<span class="token punctuati
             res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>root<span class="token punctuation">.</span>val<span class="token punctuation">)</span>
         helper<span class="token punctuation">(</span>root<span class="token punctuation">)</span>
         <span class="token keyword">return</span> res<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="层序遍历"><a href="#层序遍历" class="headerlink" title="层序遍历"></a>层序遍历</h2><p><a href="https://leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-lcof/solution/mian-shi-ti-32-i-cong-shang-dao-xia-da-yin-er-ch-4/" target="_blank" rel="noopener">剑指 Offer 32 - I. 从上到下打印二叉树</a></p>
+<ul>
+<li><strong>队列</strong>中存储当前层的节点，然后利用<strong>先进先出</strong>特性得到结果 。构建队列： <code>queue = collections.deque()</code><ul>
+<li>同一层的节点，左儿子先进入，右儿子后进入 （如 queue的 2，3）</li>
+<li>对于子节点，左儿子弹出后，将左儿子的左右孙子连接到右儿子后面（如 queue的3，4，5）。右儿子弹出后，将右儿子的左右孙子继续连接到左儿子的左右孙子后面（如 queue的 4,5,6,7）</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>以如下二叉树为例，说明队列的先进先出，并得到层序遍历的打印结果[1,2,3,4,5,6,7]<br><img src="https://img-blog.csdnimg.cn/2020080220292811.png" alt>          </p>
+<table>
+<thead>
+<tr>
+<th>res（存储节点的值）</th>
+<th>queue （存储节点，因为要判断是否有左右子节点）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[]</td>
+<td>1</td>
+</tr>
+<tr>
+<td>[1]</td>
+<td>2,3</td>
+</tr>
+<tr>
+<td>[1,2]</td>
+<td>3,4,5</td>
+</tr>
+<tr>
+<td>[1,2,3]</td>
+<td>4,5,6,7</td>
+</tr>
+<tr>
+<td>[1,2,3,4]</td>
+<td>5,6,7</td>
+</tr>
+<tr>
+<td>[1,2,3,4,5]</td>
+<td>6,7</td>
+</tr>
+<tr>
+<td>[1,2,3,4,5,6]</td>
+<td>7</td>
+</tr>
+<tr>
+<td>[1,2,3,4,5,6,7]</td>
+<td>空</td>
+</tr>
+</tbody></table>
+</blockquote>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for a binary tree node.</span>
+<span class="token comment" spellcheck="true"># class TreeNode(object):</span>
+<span class="token comment" spellcheck="true">#     def __init__(self, x):</span>
+<span class="token comment" spellcheck="true">#         self.val = x</span>
+<span class="token comment" spellcheck="true">#         self.left = None</span>
+<span class="token comment" spellcheck="true">#         self.right = None</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">levelOrder</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :type root: TreeNode
+        :rtype: List[int]
+        """</span>
+        <span class="token keyword">if</span> <span class="token operator">not</span> root<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">from</span> collections <span class="token keyword">import</span> deque
+        res<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+        queue<span class="token operator">=</span>deque<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        queue<span class="token punctuation">.</span>append<span class="token punctuation">(</span>root<span class="token punctuation">)</span>
+        <span class="token keyword">while</span> queue<span class="token punctuation">:</span>
+            node<span class="token operator">=</span>queue<span class="token punctuation">.</span>popleft<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>node<span class="token punctuation">.</span>val<span class="token punctuation">)</span>
+            <span class="token keyword">if</span> node<span class="token punctuation">.</span>left<span class="token punctuation">:</span>queue<span class="token punctuation">.</span>append<span class="token punctuation">(</span>node<span class="token punctuation">.</span>left<span class="token punctuation">)</span>
+            <span class="token keyword">if</span> node<span class="token punctuation">.</span>right<span class="token punctuation">:</span>queue<span class="token punctuation">.</span>append<span class="token punctuation">(</span>node<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> res
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><a href="https://leetcode-cn.com/problems/binary-tree-level-order-traversal/" target="_blank" rel="noopener">102. 二叉树的层序遍历</a></p>
+<p>上一题把所有遍历的结果保存在数组中，即<code>[1,2,3,4,5,6,7]</code>。该题与上题的不同之处在于，这一次把每一层的元素保存在结果中，即 <code>[[1],[2,3],[4,5,6,7]]</code>.</p>
+<p>所以只需要在<code>range(len(queue))</code> 范围内，增加临时变量temp保存当前层的结果。</p>
+<blockquote>
+<p>注意！即便<br><code>if node.left: queue.append(node.left)</code><br><code>if node.right: queue.append(node.right)</code> 会改变queue的长度，<code>for i in range(len(queue))</code>在超出当时赋值<code>range(len(queue))</code>范围后才跳出for循环（即，i的变化范围是0|0,1|0,1,2,3|,而不会随着循环语句中queue的改变而改变for循环次数)</p>
+<p>如：</p>
+<pre class="line-numbers language-python"><code class="language-python">nums<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    nums<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>结果为： 0 1 2 。不随着nums的变化而改变for循环的次数</p>
+</blockquote>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for a binary tree node.</span>
+<span class="token comment" spellcheck="true"># class TreeNode(object):</span>
+<span class="token comment" spellcheck="true">#     def __init__(self, x):</span>
+<span class="token comment" spellcheck="true">#         self.val = x</span>
+<span class="token comment" spellcheck="true">#         self.left = None</span>
+<span class="token comment" spellcheck="true">#         self.right = None</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">levelOrder</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :type root: TreeNode
+        :rtype: List[List[int]]
+        """</span>
+        <span class="token keyword">if</span> <span class="token operator">not</span> root<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        queue <span class="token operator">=</span> collections<span class="token punctuation">.</span>deque<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        queue<span class="token punctuation">.</span>append<span class="token punctuation">(</span>root<span class="token punctuation">)</span>
+        <span class="token keyword">while</span> queue<span class="token punctuation">:</span>
+            tmp <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+            <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>queue<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>         
+                node <span class="token operator">=</span> queue<span class="token punctuation">.</span>popleft<span class="token punctuation">(</span><span class="token punctuation">)</span>
+                tmp<span class="token punctuation">.</span>append<span class="token punctuation">(</span>node<span class="token punctuation">.</span>val<span class="token punctuation">)</span>
+                <span class="token keyword">if</span> node<span class="token punctuation">.</span>left<span class="token punctuation">:</span> queue<span class="token punctuation">.</span>append<span class="token punctuation">(</span>node<span class="token punctuation">.</span>left<span class="token punctuation">)</span>
+                <span class="token keyword">if</span> node<span class="token punctuation">.</span>right<span class="token punctuation">:</span> queue<span class="token punctuation">.</span>append<span class="token punctuation">(</span>node<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
+            res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>tmp<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> res
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -952,11 +1065,11 @@ traverse<span class="token punctuation">(</span>root<span class="token punctuati
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/08/02/di-er-zhang-ru-he-ji-suan-wan-quan-er-cha-shu-de-jie-dian-shu/">
+                <a href="/2020/08/02/labuladong/di-er-zhang-ru-he-ji-suan-wan-quan-er-cha-shu-de-jie-dian-shu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="第二章：如何计算完全二叉树的节点数">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="第二章：如何计算完全二叉树的节点数">
                         
                         <span class="card-title">第二章：如何计算完全二叉树的节点数</span>
                     </div>
@@ -1012,7 +1125,7 @@ traverse<span class="token punctuation">(</span>root<span class="token punctuati
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="第二章：LRU算法详解">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="第二章：LRU算法详解">
                         
                         <span class="card-title">第二章：LRU算法详解</span>
                     </div>
@@ -1222,7 +1335,7 @@ traverse<span class="token punctuation">(</span>root<span class="token punctuati
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">16.2k</span>
+            <span class="white-color">16.9k</span>
             
 
             <br>
