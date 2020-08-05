@@ -517,9 +517,9 @@ nums<span class="token operator">=</span><span class="token punctuation">[</span
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"ans:"</span><span class="token punctuation">,</span>nextGreaterElement<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>结果输出：</p>
 <blockquote>
-<p>每次的s:<br>[]<br>[3]<br>[4]<br>[4, 2]</p>
+<p>每次的s:<br>[]<br>[3]<br>[4]<br>[4, 2]<br>[4, 2, 1]</p>
+<p>ans: [4, 2, 4, -1, -1]</p>
 </blockquote>
-<h1 id="4-2-1"><a href="#4-2-1" class="headerlink" title="[4, 2, 1]"></a>[4, 2, 1]</h1><p>ans: [4, 2, 4, -1, -1]</p>
 <h1 id="503-下一个更大元素-II"><a href="#503-下一个更大元素-II" class="headerlink" title="503. 下一个更大元素 II"></a><a href="https://leetcode-cn.com/problems/next-greater-element-ii/" target="_blank" rel="noopener">503. 下一个更大元素 II</a></h1><ul>
 <li>从<strong>最后一个</strong>元素开始逆序遍历，维护一个单调递减的<strong>栈</strong>。</li>
 <li>因为这个栈是<strong>先进后出</strong>，且<strong>单调递减</strong>的，所以弹出栈中<strong>小于等于</strong>当前元素的值后，栈顶的元素就是找到的结果</li>
