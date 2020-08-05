@@ -322,7 +322,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -746,8 +746,7 @@ traverse<span class="token punctuation">(</span>root<span class="token punctuati
             res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>root<span class="token punctuation">.</span>val<span class="token punctuation">)</span>
         helper<span class="token punctuation">(</span>root<span class="token punctuation">)</span>
         <span class="token keyword">return</span> res<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="层序遍历"><a href="#层序遍历" class="headerlink" title="层序遍历"></a>层序遍历</h2><p><a href="https://leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-lcof/solution/mian-shi-ti-32-i-cong-shang-dao-xia-da-yin-er-ch-4/" target="_blank" rel="noopener">剑指 Offer 32 - I. 从上到下打印二叉树</a></p>
-<ul>
+<h2 id="层序遍历"><a href="#层序遍历" class="headerlink" title="层序遍历"></a>层序遍历</h2><h3 id="剑指-Offer-32-I-从上到下打印二叉树"><a href="#剑指-Offer-32-I-从上到下打印二叉树" class="headerlink" title="剑指 Offer 32 - I. 从上到下打印二叉树"></a><a href="https://leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-lcof/solution/mian-shi-ti-32-i-cong-shang-dao-xia-da-yin-er-ch-4/" target="_blank" rel="noopener">剑指 Offer 32 - I. 从上到下打印二叉树</a></h3><ul>
 <li><strong>队列</strong>中存储当前层的节点，然后利用<strong>先进先出</strong>特性得到结果 。构建队列： <code>queue = collections.deque()</code><ul>
 <li>同一层的节点，左儿子先进入，右儿子后进入 （如 queue的 2，3）</li>
 <li>对于子节点，左儿子弹出后，将左儿子的左右孙子连接到右儿子后面（如 queue的3，4，5）。右儿子弹出后，将右儿子的左右孙子继续连接到左儿子的左右孙子后面（如 queue的 4,5,6,7）</li>
@@ -822,8 +821,7 @@ traverse<span class="token punctuation">(</span>root<span class="token punctuati
             <span class="token keyword">if</span> node<span class="token punctuation">.</span>right<span class="token punctuation">:</span>queue<span class="token punctuation">.</span>append<span class="token punctuation">(</span>node<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
         <span class="token keyword">return</span> res
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><a href="https://leetcode-cn.com/problems/binary-tree-level-order-traversal/" target="_blank" rel="noopener">102. 二叉树的层序遍历</a></p>
-<p>上一题把所有遍历的结果保存在数组中，即<code>[1,2,3,4,5,6,7]</code>。该题与上题的不同之处在于，这一次把每一层的元素保存在结果中，即 <code>[[1],[2,3],[4,5,6,7]]</code>.</p>
+<h3 id="102-二叉树的层序遍历"><a href="#102-二叉树的层序遍历" class="headerlink" title="102. 二叉树的层序遍历"></a><a href="https://leetcode-cn.com/problems/binary-tree-level-order-traversal/" target="_blank" rel="noopener">102. 二叉树的层序遍历</a></h3><p>上一题把所有遍历的结果保存在数组中，即<code>[1,2,3,4,5,6,7]</code>。该题与上题的不同之处在于，这一次把每一层的元素保存在结果中，即 <code>[[1],[2,3],[4,5,6,7]]</code>.</p>
 <p>所以只需要在<code>range(len(queue))</code> 范围内，增加临时变量temp保存当前层的结果。</p>
 <blockquote>
 <p>注意！即便<br><code>if node.left: queue.append(node.left)</code><br><code>if node.right: queue.append(node.right)</code> 会改变queue的长度，<code>for i in range(len(queue))</code>在超出当时赋值<code>range(len(queue))</code>范围后才跳出for循环（即，i的变化范围是0|0,1|0,1,2,3|,而不会随着循环语句中queue的改变而改变for循环次数)</p>
@@ -1069,7 +1067,7 @@ traverse<span class="token punctuation">(</span>root<span class="token punctuati
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="第二章：如何计算完全二叉树的节点数">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="第二章：如何计算完全二叉树的节点数">
                         
                         <span class="card-title">第二章：如何计算完全二叉树的节点数</span>
                     </div>
@@ -1125,7 +1123,7 @@ traverse<span class="token punctuation">(</span>root<span class="token punctuati
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="第二章：LRU算法详解">
+                        <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="第二章：LRU算法详解">
                         
                         <span class="card-title">第二章：LRU算法详解</span>
                     </div>
@@ -1335,7 +1333,7 @@ traverse<span class="token punctuation">(</span>root<span class="token punctuati
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">16.9k</span>
+            <span class="white-color">17.7k</span>
             
 
             <br>
