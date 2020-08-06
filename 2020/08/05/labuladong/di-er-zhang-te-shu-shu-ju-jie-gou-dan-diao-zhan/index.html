@@ -318,7 +318,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -473,7 +473,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    1.6k
                 </div>
                 
 
@@ -523,7 +523,8 @@ nums<span class="token operator">=</span><span class="token punctuation">[</span
 <h1 id="503-下一个更大元素-II"><a href="#503-下一个更大元素-II" class="headerlink" title="503. 下一个更大元素 II"></a><a href="https://leetcode-cn.com/problems/next-greater-element-ii/" target="_blank" rel="noopener">503. 下一个更大元素 II</a></h1><ul>
 <li>从<strong>最后一个</strong>元素开始逆序遍历，维护一个单调递减的<strong>栈</strong>。</li>
 <li>因为这个栈是<strong>先进后出</strong>，且<strong>单调递减</strong>的，所以弹出栈中<strong>小于等于</strong>当前元素的值后，栈顶的元素就是找到的结果</li>
-<li>把<strong>当前元素入栈</strong>，这样，它前面的元素才能和它继续比较</li>
+<li>把<strong>当前元素入栈</strong>，这样，它前面的元素才能和它继续比较 </li>
+<li>根据不同输出结果的要求，栈中存放当前元素对应的信息，此题存放<strong>当前元素</strong></li>
 </ul>
 <blockquote>
 <p>以 [2,1,2,4,3] 为例，<code>nums*2</code> 后得[2,1,2,,4,3,2,1,2,4,3] （扩充数组，以便求取最后一个值对应的结果）。<br>当前值对应的结果为栈中当前值所在的<strong>前一个</strong>元素（记录结果后才把当前值入栈），当前值前面没有元素，则结果为-1</p>
@@ -547,8 +548,12 @@ nums<span class="token operator">=</span><span class="token punctuation">[</span
         <span class="token keyword">return</span> ans<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token operator">//</span><span class="token number">2</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="496-下一个更大元素-I"><a href="#496-下一个更大元素-I" class="headerlink" title="496. 下一个更大元素 I"></a><a href="https://leetcode-cn.com/problems/next-greater-element-i/" target="_blank" rel="noopener">496. 下一个更大元素 I</a></h1><ul>
 <li>该题与上题的区别是： <ul>
-<li>上题直接给定列表，在逆序遍历的同时，更新栈</li>
-<li>本题中，对任意的nums1[i], 需要找到当前元素在nums2 中的位置，并把该位置及其后面的元素取出来作为栈<code>s</code> 中的内容 （<code>nums2[nums2.index(nums1[i]):][::-1]</code>）,然后进行比较</li>
+<li>上题直接给定列表，在逆序遍历的同时，更新单调栈</li>
+<li>本题中，对任意的nums1[i], 需要找到当前元素在nums2 中的位置，并把该位置及其后面的元素取出来并反转后作为栈<code>s</code> 中的内容 （<code>nums2[nums2.index(nums1[i]):][::-1]</code>）,然后进行比较。 <ul>
+<li>（这里并不是维护单调递减的栈，而是把找到的反转栈从尾部开始逐个弹出不符合条件的元素，最终得到结果）</li>
+</ul>
+</li>
+<li>根据不同输出结果的要求，栈中存放当前元素的信息，此题存放<strong>当前元素在nums2中对应的本身及其后面的元素（并反转）</strong></li>
 </ul>
 </li>
 </ul>
@@ -569,7 +574,7 @@ nums<span class="token operator">=</span><span class="token punctuation">[</span
             ans<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>s<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token keyword">if</span> s <span class="token keyword">else</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token comment" spellcheck="true"># 2.弹出不符合的元素后，栈顶元素就是所求的结果</span>
         <span class="token keyword">return</span> ans<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="739-每日温度"><a href="#739-每日温度" class="headerlink" title="739.每日温度"></a><a href="https://leetcode-cn.com/problems/daily-temperatures/" target="_blank" rel="noopener">739.每日温度</a></h1><ul>
-<li>用栈记录的是list中元素的index，而不是list中元素值本身。</li>
+<li>用栈记录的是list中元素的index，而不是list中元素值本身 （与503题类似，根据不同输出结果的要求，栈中存放当前元素的信息，此题存放<strong>当前元素的index下标</strong>）</li>
 </ul>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">dailyTemperatures</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> T<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -798,7 +803,7 @@ so<span class="token punctuation">.</span>dailyTemperatures<span class="token pu
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="第二章：特殊数据结构：单调队列">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="第二章：特殊数据结构：单调队列">
                         
                         <span class="card-title">第二章：特殊数据结构：单调队列</span>
                     </div>
@@ -852,7 +857,7 @@ so<span class="token punctuation">.</span>dailyTemperatures<span class="token pu
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="第二章：如何计算完全二叉树的节点数">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="第二章：如何计算完全二叉树的节点数">
                         
                         <span class="card-title">第二章：如何计算完全二叉树的节点数</span>
                     </div>
@@ -1064,7 +1069,7 @@ so<span class="token punctuation">.</span>dailyTemperatures<span class="token pu
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">18.7k</span>
+            <span class="white-color">18.9k</span>
             
 
             <br>

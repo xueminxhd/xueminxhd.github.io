@@ -321,7 +321,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -543,32 +543,32 @@
 </blockquote>
 <ul>
 <li>deque中存放的是<strong>递减队列</strong>排列的<strong>元素下标</strong>，而非元素 （deque队头 -&gt; 队尾）</li>
-<li>由图1可知，<strong>数组下标为<code>i-k+1</code></strong>。 当这个下标大于等于0时，才记录结果<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-<span class="token keyword">def</span> <span class="token function">maxSlidingWindow</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">,</span> k<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">import</span> collections
-    deque <span class="token operator">=</span> collections<span class="token punctuation">.</span>deque<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 双端队列</span>
-    res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-    <span class="token keyword">for</span> i<span class="token punctuation">,</span> num <span class="token keyword">in</span> enumerate<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token triple-quoted-string string">'''
-        deque中存放的是递减队列排列的元素下标，而非元素
-        deque队头 -> 队尾
-        '''</span>
-        <span class="token comment" spellcheck="true"># print(deque)</span>
-        <span class="token comment" spellcheck="true"># 刚开始时，若队头超出窗口左侧，弹出</span>
-        <span class="token keyword">if</span> deque <span class="token operator">and</span> deque<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">&lt;</span> i <span class="token operator">-</span> k <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">:</span> deque<span class="token punctuation">.</span>popleft<span class="token punctuation">(</span><span class="token punctuation">)</span>  
-        <span class="token comment" spellcheck="true">#若加进来的num比deque对应的元素大，则消掉这些小元素的下标</span>
-        <span class="token keyword">while</span> deque <span class="token operator">and</span> num <span class="token operator">></span> nums<span class="token punctuation">[</span>deque<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">:</span> deque<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        deque<span class="token punctuation">.</span>append<span class="token punctuation">(</span>i<span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true">#i-k+1 >=0时，队伍才完整地进入了列表，这时才开始添加结果</span>
-        <span class="token keyword">if</span> i<span class="token operator">-</span>k<span class="token operator">+</span><span class="token number">1</span> <span class="token operator">>=</span><span class="token number">0</span><span class="token punctuation">:</span>
-            res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>nums<span class="token punctuation">[</span>deque<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-    <span class="token keyword">return</span> res
+<li>由图1可知，<strong>数组下标为<code>i-k+1</code></strong>。 当这个下标大于等于0时，才记录结果</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">maxSlidingWindow</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">,</span> k<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">import</span> collections
+        deque <span class="token operator">=</span> collections<span class="token punctuation">.</span>deque<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 双端队列</span>
+        res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> i<span class="token punctuation">,</span> num <span class="token keyword">in</span> enumerate<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token triple-quoted-string string">'''
+            deque中存放的是递减队列排列的元素下标，而非元素
+            deque队头 -> 队尾
+            '''</span>
+            <span class="token comment" spellcheck="true"># print(deque)</span>
+            <span class="token comment" spellcheck="true"># 刚开始时，若队头超出窗口左侧，弹出</span>
+            <span class="token keyword">if</span> deque <span class="token operator">and</span> deque<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">&lt;</span> i <span class="token operator">-</span> k <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">:</span> deque<span class="token punctuation">.</span>popleft<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token comment" spellcheck="true">#若加进来的num比deque对应的元素大，则消掉这些小元素的下标</span>
+            <span class="token keyword">while</span> deque <span class="token operator">and</span> num <span class="token operator">></span> nums<span class="token punctuation">[</span>deque<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">:</span> deque<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            deque<span class="token punctuation">.</span>append<span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+            <span class="token comment" spellcheck="true">#i-k+1 >=0时，队伍才完整地进入了列表，这时才开始添加结果</span>
+            <span class="token keyword">if</span> i<span class="token operator">-</span>k<span class="token operator">+</span><span class="token number">1</span> <span class="token operator">>=</span><span class="token number">0</span><span class="token punctuation">:</span>
+                res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>nums<span class="token punctuation">[</span>deque<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> res
 so<span class="token operator">=</span>Solution<span class="token punctuation">(</span><span class="token punctuation">)</span>
 nums<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span>
 k<span class="token operator">=</span><span class="token number">3</span>
 so<span class="token punctuation">.</span>maxSlidingWindow<span class="token punctuation">(</span>nums<span class="token punctuation">,</span>k<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
 
             </div>
             <hr />
@@ -778,7 +778,7 @@ so<span class="token punctuation">.</span>maxSlidingWindow<span class="token pun
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="第二章：特殊数据结构：单调队列">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="第二章：特殊数据结构：单调队列">
                         
                         <span class="card-title">第二章：特殊数据结构：单调队列</span>
                     </div>
@@ -833,7 +833,7 @@ so<span class="token punctuation">.</span>maxSlidingWindow<span class="token pun
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="第二章：特殊数据结构：单调栈">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="第二章：特殊数据结构：单调栈">
                         
                         <span class="card-title">第二章：特殊数据结构：单调栈</span>
                     </div>
@@ -1040,7 +1040,7 @@ so<span class="token punctuation">.</span>maxSlidingWindow<span class="token pun
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">18.7k</span>
+            <span class="white-color">18.9k</span>
             
 
             <br>
