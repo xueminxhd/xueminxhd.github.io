@@ -4,13 +4,16 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="第二章：特殊数据结构：单调栈, It&#39;s the job that&#39;s never started as takes longest to finish.”― J.R.R. Tolkien">
+    <meta name="keywords" content="第二章：递归反转链表的一部分, It&#39;s the job that&#39;s never started as takes longest to finish.”― J.R.R. Tolkien">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="labuladong 特殊数据结构：单调栈
+    <meta name="description" content="labuladong 递归反转链表的一部分
+方法1.递归反转链表 （只是说明递归方法的思想，本题优解应参考方法二）
 
-文章例题：给你一个数组 [2,1,2,4,3]，你返回数组 [4,2,4,-1,-1]。解释：第一个 2 后面比 2 大的数是 4; 1 后面比 1 大的数是 2；第二个 2 后面比 2 大的数">
+
+先看例题206. 反转整个链表
+对于递归算法，最重要的就是明确递归函数实现的功能（而不是跳进递归中） ，因此，rever">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +21,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>第二章：特殊数据结构：单调栈 | Min&#39;s Blog</title>
+    <title>第二章：递归反转链表的一部分 | Min&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -318,13 +321,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        第二章：特殊数据结构：单调栈
+                        第二章：递归反转链表的一部分
                     </div>
                 </div>
             </div>
@@ -459,7 +462,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-08-05
+                    2020-08-12
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -473,14 +476,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    799
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    3 分
                 </div>
                 
                 
@@ -496,105 +499,105 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>labuladong <a href="https://labuladong.gitbook.io/algo/shu-ju-jie-gou-xi-lie/dan-tiao-zhan" target="_blank" rel="noopener">特殊数据结构：单调栈</a></p>
+                <p>labuladong <a href="https://labuladong.gitbook.io/algo/shu-ju-jie-gou-xi-lie/di-gui-fan-zhuan-lian-biao-de-yi-bu-fen" target="_blank" rel="noopener">递归反转链表的一部分</a></p>
+<h1 id="方法1-递归反转链表"><a href="#方法1-递归反转链表" class="headerlink" title="方法1.递归反转链表 "></a>方法1.<a href="https://leetcode-cn.com/problems/reverse-linked-list-ii/solution/pythondi-gui-jie-jue-by-clark-12/" target="_blank" rel="noopener"><del>递归反转链表</del> </a></h1><p>（只是说明递归方法的思想，本题优解应参考方法二）</p>
 <blockquote>
-<p>文章例题：<br>给你一个数组 [2,1,2,4,3]，你返回数组 [4,2,4,-1,-1]。<br>解释：第一个 2 后面比 2 大的数是 4; 1 后面比 1 大的数是 2；第二个 2 后面比 2 大的数是 4; 4 后面没有比 4 大的数，填 -1；3 后面没有比 3 大的数，填 -1。</p>
-</blockquote>
-<p>这个问题可以这样抽象思考：把数组的元素想象成并列站立的人，元素大小想象成人的身高。这些人站成一列（你站在右边看他们，且逆序遍历），如何求元素「2」的 Next Greater Number 呢？很简单，如果能够看到元素「2」，那么他后面可见的第一个人就是「2」的 Next Greater Number，因为比「2」小的元素身高不够，都被「2」挡住了，第一个露出来的就是答案。</p>
-<p>这就是单调队列解决问题的模板。<strong>for 循环要从后往前扫描元素，因为我们借助的是栈的结构，倒着入栈，其实是正着出栈。while 循环是把两个“高个”元素之间的元素排除，因为他们的存在没有意义，前面挡着个“更高”的元素，所以他们不可能被作为后续进来的元素的 Next Great Number 了。</strong><br><img src="https://img-blog.csdnimg.cn/20200623194612914.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L29wZW5jdnpzZWZ2,size_16,color_FFFFFF,t_70" alt="图片来自labuladong"></p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">nextGreaterElement</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    ans<span class="token operator">=</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
-    s<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
-    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token comment" spellcheck="true">#倒着往栈里放</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span>
-        <span class="token keyword">while</span>  s <span class="token operator">and</span> s<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">&lt;=</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">:</span><span class="token comment" spellcheck="true">#矮个起开</span>
-            s<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        ans<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>s<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token keyword">if</span>  s <span class="token keyword">else</span> <span class="token operator">-</span><span class="token number">1</span>
-        s<span class="token punctuation">.</span>append<span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 进队，接受之后的身高判定</span>
-    <span class="token keyword">return</span> ans
+<ul>
+<li>先看例题<a href="https://leetcode-cn.com/problems/reverse-linked-list/" target="_blank" rel="noopener">206. 反转整个链表</a><ul>
+<li>对于递归算法，最重要的就是<strong>明确递归函数实现的功能</strong><del>（而不是跳进递归中）</del> ，因此，reverseList函数定义为：输入一个节点 head，将「以 head 为起点」的链表反转，并返回反转之后的头结点    </li>
+</ul>
+</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for singly-linked list.</span>
+<span class="token comment" spellcheck="true"># class ListNode(object):</span>
+<span class="token comment" spellcheck="true">#     def __init__(self, x):</span>
+<span class="token comment" spellcheck="true">#         self.val = x</span>
+<span class="token comment" spellcheck="true">#         self.next = None</span>
 
-nums<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"ans:"</span><span class="token punctuation">,</span>nextGreaterElement<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>结果输出：</p>
-<blockquote>
-<p>每次的s:<br>[]<br>[3]<br>[4]<br>[4, 2]<br>[4, 2, 1]</p>
-<p>ans: [4, 2, 4, -1, -1]</p>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">reverseList</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> head<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 递归结束条件</span>
+        <span class="token keyword">if</span> head<span class="token operator">==</span>None <span class="token operator">or</span> head<span class="token punctuation">.</span>next<span class="token operator">==</span>None<span class="token punctuation">:</span> <span class="token keyword">return</span> head
+        <span class="token comment" spellcheck="true"># reverseList函数返回反转后的头结点</span>
+        last<span class="token operator">=</span>self<span class="token punctuation">.</span>reverseList<span class="token punctuation">(</span>head<span class="token punctuation">.</span>next<span class="token punctuation">)</span>
+        head<span class="token punctuation">.</span>next<span class="token punctuation">.</span>next<span class="token operator">=</span>head
+        head<span class="token punctuation">.</span>next<span class="token operator">=</span>None
+        <span class="token keyword">return</span> last ```<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </blockquote>
-<h1 id="503-下一个更大元素-II"><a href="#503-下一个更大元素-II" class="headerlink" title="503. 下一个更大元素 II"></a><a href="https://leetcode-cn.com/problems/next-greater-element-ii/" target="_blank" rel="noopener">503. 下一个更大元素 II</a></h1><ul>
-<li>从<strong>最后一个</strong>元素开始逆序遍历，维护一个单调递减的<strong>栈</strong>。</li>
-<li>因为这个栈是<strong>先进后出</strong>，且<strong>单调递减</strong>的，所以弹出栈中<strong>小于等于</strong>当前元素的值后，栈顶的元素就是找到的结果</li>
-<li>把<strong>当前元素入栈</strong>，这样，它前面的元素才能和它继续比较 </li>
-<li>根据不同输出结果的要求，栈中存放当前元素对应的信息，此题存放<strong>当前元素</strong></li>
+<ul>
+<li><p>先用递归实现：       反转以head开头的前n个节点</p>
+</li>
+<li><p>首先，如果 m == 1（因为头结点是从1开始计数的），就相当于反转链表开头的 n 个元素，也就是函数<code>reverseN(head, n)</code>   (也是<code>reverseBetween</code>结束递归的条件)</p>
+</li>
+<li><p>如果 m != 1 怎么办？如果我们把 head 的索引视为 1，那么我们是想从第 m 个元素开始反转；如果把 head.next 的索引视为 1 呢？那么相对于 head.next，反转的区间应该是从第 m - 1 个元素开始的；那么对于 head.next.next 呢……因此有：</p>
+<pre class="line-numbers language-python"><code class="language-python">      <span class="token comment" spellcheck="true"># 如果不是第一个，那么以下一个为头结点开始递归，直到触发m==1递归终止条件</span>
+      head<span class="token punctuation">.</span>next <span class="token operator">=</span> self<span class="token punctuation">.</span>reverseBetween<span class="token punctuation">(</span>head<span class="token punctuation">.</span>next<span class="token punctuation">,</span> m<span class="token number">-1</span><span class="token punctuation">,</span> n<span class="token number">-1</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>综上，反转m到n直接的节点的整体代码为：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">reverseBetween</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> head<span class="token punctuation">:</span> ListNode<span class="token punctuation">,</span> m<span class="token punctuation">:</span> int<span class="token punctuation">,</span> n<span class="token punctuation">:</span> int<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> ListNode<span class="token punctuation">:</span>
+      <span class="token comment" spellcheck="true"># 先用递归实现：       反转以head开头的前n个节点</span>
+      <span class="token keyword">def</span> <span class="token function">reverseN</span><span class="token punctuation">(</span>head<span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+          <span class="token keyword">if</span> n <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+              successor <span class="token operator">=</span> head<span class="token punctuation">.</span>next <span class="token comment" spellcheck="true"># 拿到后继节点</span>
+              <span class="token keyword">return</span> head<span class="token punctuation">,</span> successor
+          <span class="token comment" spellcheck="true"># 以 head.next 为起点，需要反转前 n - 1 个节点</span>
+          last<span class="token punctuation">,</span> successor <span class="token operator">=</span> reverseN<span class="token punctuation">(</span>head<span class="token punctuation">.</span>next<span class="token punctuation">,</span> n<span class="token number">-1</span><span class="token punctuation">)</span>
+
+          head<span class="token punctuation">.</span>next<span class="token punctuation">.</span>next <span class="token operator">=</span> head
+          head<span class="token punctuation">.</span>next <span class="token operator">=</span> successor
+          <span class="token keyword">return</span> last<span class="token punctuation">,</span> successor
+
+      <span class="token keyword">if</span> m <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 递归终止条件</span>
+          res<span class="token punctuation">,</span> _ <span class="token operator">=</span> reverseN<span class="token punctuation">(</span>head<span class="token punctuation">,</span> n<span class="token punctuation">)</span>
+          <span class="token keyword">return</span> res
+      <span class="token comment" spellcheck="true"># 如果不是第一个，那么以下一个为头结点开始递归，直到触发条件</span>
+      head<span class="token punctuation">.</span>next <span class="token operator">=</span> self<span class="token punctuation">.</span>reverseBetween<span class="token punctuation">(</span>head<span class="token punctuation">.</span>next<span class="token punctuation">,</span> m<span class="token number">-1</span><span class="token punctuation">,</span> n<span class="token number">-1</span><span class="token punctuation">)</span>
+      <span class="token keyword">return</span> head<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="方法2-找到要翻转部分的链表-将其翻转-再与原链表拼接"><a href="#方法2-找到要翻转部分的链表-将其翻转-再与原链表拼接" class="headerlink" title="方法2. 找到要翻转部分的链表,将其翻转,再与原链表拼接"></a>方法2. <a href="https://leetcode-cn.com/problems/reverse-linked-list-ii/solution/liang-chong-fang-fa-by-powcai/" target="_blank" rel="noopener">找到要翻转部分的链表,将其翻转,再与原链表拼接</a></h1></li>
 </ul>
 <blockquote>
-<p>以 [2,1,2,4,3] 为例，<code>nums*2</code> 后得[2,1,2,,4,3,2,1,2,4,3] （扩充数组，以便求取最后一个值对应的结果）。<br>当前值对应的结果为栈中当前值所在的<strong>前一个</strong>元素（记录结果后才把当前值入栈），当前值前面没有元素，则结果为-1</p>
-<p>则逆序遍历过程中：<br>当前值为：3，加入当前值后对应的栈为[3]   （无解，-1）<br>当前值为：4，加入当前值后对应的栈为[4] （无解，-1）<br>当前值为：2，加入当前值后对应的栈为[<strong>4</strong>, 2]<br>当前值为：1，加入当前值后对应的栈为[4, <strong>2</strong>, 1]<br>当前值为：2，加入当前值后对应的栈为[<strong>4</strong>, 2]<br><em>当前值为：3，加入当前值后对应的栈为[<strong>4</strong>, 3]<br>当前值为：4，加入当前值后对应的栈为[4]   （无解，-1）<br>当前值为：2，加入当前值后对应的栈为[<strong>4</strong>, 2]<br>当前值为：1，加入当前值后对应的栈为[4, <strong>2</strong>, 1]<br>当前值为：2，加入当前值后对应的栈为[<strong>4</strong>, 2]</em></p>
-</blockquote>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">nextGreaterElements</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token triple-quoted-string string">"""
-        :type nums: List[int]
-        :rtype: List[int]
-        """</span>
-        <span class="token keyword">if</span> <span class="token operator">not</span> nums<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-        nums<span class="token operator">=</span>nums<span class="token operator">*</span><span class="token number">2</span>  <span class="token comment" spellcheck="true"># 扩充数组</span>
-        ans<span class="token operator">=</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># 初始化</span>
-        s<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 逆序遍历</span>
-            <span class="token keyword">while</span> s <span class="token operator">and</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">>=</span>s<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 1.弹出栈中小于等于当前元素的值</span>
-                s<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
-            ans<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>s<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token keyword">if</span> s <span class="token keyword">else</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token comment" spellcheck="true"># 2.弹出不符合的元素后，栈顶元素就是所求的结果</span>
-            s<span class="token punctuation">.</span>append<span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 3. 当前元素入栈，这样，它前面的元素才能和它继续比较</span>
-        <span class="token keyword">return</span> ans<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token operator">//</span><span class="token number">2</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="496-下一个更大元素-I"><a href="#496-下一个更大元素-I" class="headerlink" title="496. 下一个更大元素 I"></a><a href="https://leetcode-cn.com/problems/next-greater-element-i/" target="_blank" rel="noopener">496. 下一个更大元素 I</a></h1><ul>
-<li>该题与上题的区别是： <ul>
-<li>上题直接给定列表，在逆序遍历的同时，更新单调栈</li>
-<li>本题中，对任意的nums1[i], 需要找到当前元素在nums2 中的位置，并把该位置及其后面的元素取出来并反转后作为栈<code>s</code> 中的内容 （<code>nums2[nums2.index(nums1[i]):][::-1]</code>）,然后进行比较。 <ul>
-<li>（这里并不是维护单调递减的栈，而是把找到的反转栈从尾部开始逐个弹出不符合条件的元素，最终得到结果）</li>
+<ol>
+<li><a href="https://leetcode-cn.com/problems/reverse-linked-list/solution/dong-hua-yan-shi-206-fan-zhuan-lian-biao-by-user74/" target="_blank" rel="noopener">复习一下逐个反转链表元素的代码：</a><ul>
+<li>pre -&gt; cur (pre在前，cur 在后)</li>
+<li>把cur的next指向pre，然后pre和cur分别向右跳一格。（利用<strong>同步赋值语句</strong>同时实现这些功能） </li>
 </ul>
 </li>
-<li>根据不同输出结果的要求，栈中存放当前元素的信息，此题存放<strong>当前元素在nums2中对应的本身及其后面的元素（并反转）</strong></li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>以 nums1=[4,1,2]， nums2=[1,3,4,2] 为例，<br>则逆序遍历过程中：<br>当前值为2,对应的反转后的栈为[2]<br>当前值为1,对应的反转后的栈为[2, 4, 3, 1]<br>（解释：<em>nums2中找到1的位置，1及其1后面的元素为[1,3,4,2],反转后为[2,4,3,1]）</em><br>当前值为4,对应的反转后的栈为[2, 4]</p>
+</ol>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">reverseList</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>head<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        pre<span class="token operator">=</span>None
+        cur<span class="token operator">=</span>head
+        <span class="token keyword">while</span> cur<span class="token punctuation">:</span>
+            cur<span class="token punctuation">.</span>next<span class="token punctuation">,</span>pre<span class="token punctuation">,</span>cur<span class="token operator">=</span>pre<span class="token punctuation">,</span>cur<span class="token punctuation">,</span>cur<span class="token punctuation">.</span>next
+        <span class="token keyword">return</span> pre <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </blockquote>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">nextGreaterElement</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums1<span class="token punctuation">,</span> nums2<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">if</span> <span class="token operator">not</span> nums1<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true">#若为空数组，则返回</span>
-        ans<span class="token operator">=</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>nums1<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>nums1<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token comment" spellcheck="true">#逆序遍历</span>
-            <span class="token comment" spellcheck="true"># 用反转，使得pop的顺序一致</span>
-            <span class="token comment" spellcheck="true"># 比如1 要和[1,3,4,2]比，输出3</span>
-            <span class="token comment" spellcheck="true"># 则反转后为[2,4,3,1], 弹1，得到3为符合条件的值</span>
-            s<span class="token operator">=</span>nums2<span class="token punctuation">[</span>nums2<span class="token punctuation">.</span>index<span class="token punctuation">(</span>nums1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># 找到每个元素对应的栈，并反转</span>
-            <span class="token keyword">while</span> s <span class="token operator">and</span> nums1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">>=</span>s<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 1.弹出栈中小于等于当前元素的值</span>
-                s<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#矮个起开</span>
-            ans<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>s<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token keyword">if</span> s <span class="token keyword">else</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token comment" spellcheck="true"># 2.弹出不符合的元素后，栈顶元素就是所求的结果</span>
-        <span class="token keyword">return</span> ans<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="739-每日温度"><a href="#739-每日温度" class="headerlink" title="739.每日温度"></a><a href="https://leetcode-cn.com/problems/daily-temperatures/" target="_blank" rel="noopener">739.每日温度</a></h1><ul>
-<li>用栈记录的是list中元素的index，而不是list中元素值本身 （与503题类似，根据不同输出结果的要求，栈中存放当前元素的信息，此题存放<strong>当前元素的index下标</strong>）</li>
+<ul>
+<li>先添加dummy节点，并连接在头结点前面</li>
+<li>cur跳到位置m处，pre在cur左面</li>
+<li>反转m到n的节点</li>
+<li>连接各节点</li>
 </ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">dailyTemperatures</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> T<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token triple-quoted-string string">"""
-        :type T: List[int]
-        :rtype: List[int]
-        """</span>
-        <span class="token keyword">if</span> <span class="token operator">not</span> T <span class="token punctuation">:</span><span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-        ans<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">0</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>T<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
-        s<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token comment" spellcheck="true"># 这里放元素索引，而不是元素</span>
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>T<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">while</span> s <span class="token operator">and</span> T<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">>=</span>T<span class="token punctuation">[</span>s<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-                s<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
-            ans<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>s<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">-</span>i <span class="token keyword">if</span> s <span class="token keyword">else</span> <span class="token number">0</span> <span class="token comment" spellcheck="true"># 得到索引间距</span>
-            s<span class="token punctuation">.</span>append<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 放入索引</span>
-        <span class="token comment" spellcheck="true"># print(ans)</span>
-        <span class="token keyword">return</span> ans
-T<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">73</span><span class="token punctuation">,</span> <span class="token number">74</span><span class="token punctuation">,</span> <span class="token number">75</span><span class="token punctuation">,</span> <span class="token number">71</span><span class="token punctuation">,</span> <span class="token number">69</span><span class="token punctuation">,</span> <span class="token number">72</span><span class="token punctuation">,</span> <span class="token number">76</span><span class="token punctuation">,</span> <span class="token number">73</span><span class="token punctuation">]</span>
-so<span class="token operator">=</span>Solution<span class="token punctuation">(</span><span class="token punctuation">)</span>
-so<span class="token punctuation">.</span>dailyTemperatures<span class="token punctuation">(</span>T<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># class ListNode(object):</span>
+<span class="token comment" spellcheck="true">#     def __init__(self):</span>
+<span class="token comment" spellcheck="true">#         self.val=x</span>
+<span class="token comment" spellcheck="true">#         self.next=None</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">reverseBetween</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> head<span class="token punctuation">,</span> m<span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        dummy<span class="token operator">=</span>ListNode<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+        dummy<span class="token punctuation">.</span>next<span class="token operator">=</span>head
+        pre<span class="token operator">=</span>dummy
+        <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>m<span class="token number">-1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            pre<span class="token operator">=</span>pre<span class="token punctuation">.</span>next
+        cur<span class="token operator">=</span>pre<span class="token punctuation">.</span>next
+        node<span class="token operator">=</span>pre
+
+        <span class="token comment" spellcheck="true"># node保存m的前一个节点，为后续连接做准备</span>
+        <span class="token comment" spellcheck="true"># cur为反转的当前节点，node为cur的上一个节点 </span>
+        <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token operator">-</span>m<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true">#反转m到n的节点</span>
+            cur<span class="token punctuation">.</span>next<span class="token punctuation">,</span>node<span class="token punctuation">,</span>cur<span class="token operator">=</span>node<span class="token punctuation">,</span>cur<span class="token punctuation">,</span>cur<span class="token punctuation">.</span>next <span class="token comment" spellcheck="true">#注意顺序，cur.next 在最前</span>
+        <span class="token comment" spellcheck="true">#连接反转后的各节点</span>
+        pre<span class="token punctuation">.</span>next<span class="token punctuation">.</span>next<span class="token operator">=</span>cur
+        pre<span class="token punctuation">.</span>next<span class="token operator">=</span>node
+        <span class="token keyword">return</span> dummy<span class="token punctuation">.</span>next<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -753,9 +756,9 @@ so<span class="token punctuation">.</span>dailyTemperatures<span class="token pu
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《第二章：特殊数据结构：单调栈》
+                    《第二章：递归反转链表的一部分》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/08/05/labuladong/di-er-zhang-te-shu-shu-ju-jie-gou-dan-diao-zhan/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/08/12/labuladong/di-er-zhang-di-gui-fan-zhuan-lian-biao-de-yi-bu-fen/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Min
             </a> 采用
@@ -799,27 +802,28 @@ so<span class="token punctuation">.</span>dailyTemperatures<span class="token pu
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/08/05/labuladong/di-er-zhang-te-shu-shu-ju-jie-gou-dan-diao-dui-lie/">
+                <a href="/2020/08/12/labuladong/di-san-zhang-hui-su-suan-fa-zui-jia-shi-jian-gua-hao-sheng-cheng/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="第二章：特殊数据结构：单调队列">
+                        <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="第三章：回溯算法最佳实践：括号生成">
                         
-                        <span class="card-title">第二章：特殊数据结构：单调队列</span>
+                        <span class="card-title">第三章：回溯算法最佳实践：括号生成</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            labuladong 特殊数据结构：单调队列
-239. 滑动窗口最大值方法1：更新滑动窗口法（暴力遍历，超时）
-滑动窗口没有完全进入数组时，把数据加入窗口中
-窗口完全进入数组后，保存最大值，同时弹出窗口最左侧的元素（即，右边进，左边出，更新
+                            labuladong 回溯算法最佳实践：括号生成
+22. 括号生成
+问题转化为：现在有 2n 个位置，每个位置可以放置字符 ( 或者 )，求生成所有可能的并且 有效的 括号组合
+
+可用的左括号数量为 left 个，可用的右括号数量为 rgi
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-05
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-12
                         </span>
                         <span class="publish-author">
                             
@@ -851,31 +855,27 @@ so<span class="token punctuation">.</span>dailyTemperatures<span class="token pu
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/08/02/labuladong/di-er-zhang-ru-he-ji-suan-wan-quan-er-cha-shu-de-jie-dian-shu/">
+                <a href="/2020/08/05/labuladong/di-er-zhang-te-shu-shu-ju-jie-gou-dan-diao-dui-lie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="第二章：如何计算完全二叉树的节点数">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="第二章：特殊数据结构：单调队列">
                         
-                        <span class="card-title">第二章：如何计算完全二叉树的节点数</span>
+                        <span class="card-title">第二章：特殊数据结构：单调队列</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            labuladong 如何计算完全二叉树的节点数
-222. 完全二叉树的节点个数
-完全二叉树都是紧凑靠左排列的
-满二叉树每一层都是满的 （除底层的叶子节点外，左右孩子都有），是一种特殊的完全二叉树
-
-遍历二叉树节点时：
-
-若是普通的二叉树，
+                            labuladong 特殊数据结构：单调队列
+239. 滑动窗口最大值方法1：更新滑动窗口法（暴力遍历，超时）
+滑动窗口没有完全进入数组时，把数据加入窗口中
+窗口完全进入数组后，保存最大值，同时弹出窗口最左侧的元素（即，右边进，左边出，更新
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-02
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-05
                             </span>
                         <span class="publish-author">
                             

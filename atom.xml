@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xueminxhd.github.io/"/>
-  <updated>2020-08-12T09:31:11.147Z</updated>
+  <updated>2020-08-12T10:15:57.890Z</updated>
   <id>https://xueminxhd.github.io/</id>
   
   <author>
@@ -17,9 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>第三章：双指针技巧总结</title>
+    <link href="https://xueminxhd.github.io/2020/08/12/labuladong/di-san-zhang-shuang-zhi-zhen-ji-qiao-zong-jie/"/>
+    <id>https://xueminxhd.github.io/2020/08/12/labuladong/di-san-zhang-shuang-zhi-zhen-ji-qiao-zong-jie/</id>
+    <published>2020-08-12T10:15:27.000Z</published>
+    <updated>2020-08-12T10:15:57.890Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/suan-fa-si-wei-xi-lie/shuang-zhi-zhen-ji-qiao&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
+    
+  </entry>
+  
+  <entry>
     <title>第三章：回溯算法最佳实践：括号生成</title>
-    <link href="https://xueminxhd.github.io/2020/08/12/di-san-zhang-hui-su-suan-fa-zui-jia-shi-jian-gua-hao-sheng-cheng/"/>
-    <id>https://xueminxhd.github.io/2020/08/12/di-san-zhang-hui-su-suan-fa-zui-jia-shi-jian-gua-hao-sheng-cheng/</id>
+    <link href="https://xueminxhd.github.io/2020/08/12/labuladong/di-san-zhang-hui-su-suan-fa-zui-jia-shi-jian-gua-hao-sheng-cheng/"/>
+    <id>https://xueminxhd.github.io/2020/08/12/labuladong/di-san-zhang-hui-su-suan-fa-zui-jia-shi-jian-gua-hao-sheng-cheng/</id>
     <published>2020-08-12T08:44:59.000Z</published>
     <updated>2020-08-12T09:31:11.147Z</updated>
     
@@ -44,10 +70,10 @@
   
   <entry>
     <title>第二章：递归反转链表的一部分</title>
-    <link href="https://xueminxhd.github.io/2020/08/12/di-er-zhang-di-gui-fan-zhuan-lian-biao-de-yi-bu-fen/"/>
-    <id>https://xueminxhd.github.io/2020/08/12/di-er-zhang-di-gui-fan-zhuan-lian-biao-de-yi-bu-fen/</id>
+    <link href="https://xueminxhd.github.io/2020/08/12/labuladong/di-er-zhang-di-gui-fan-zhuan-lian-biao-de-yi-bu-fen/"/>
+    <id>https://xueminxhd.github.io/2020/08/12/labuladong/di-er-zhang-di-gui-fan-zhuan-lian-biao-de-yi-bu-fen/</id>
     <published>2020-08-12T03:29:33.000Z</published>
-    <updated>2020-08-12T04:03:01.541Z</updated>
+    <updated>2020-08-12T09:43:25.294Z</updated>
     
     <summary type="html">
     
@@ -508,34 +534,6 @@
     
     
       <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第零章：我写了首诗，让你闭着眼睛也能写对二分搜索</title>
-    <link href="https://xueminxhd.github.io/2020/07/25/labuladong/di-ling-zhang-wo-xie-liao-shou-shi-rang-ni-bi-zhao-yan-jing-ye-neng-xie-dui-er-fen-sou-suo/"/>
-    <id>https://xueminxhd.github.io/2020/07/25/labuladong/di-ling-zhang-wo-xie-liao-shou-shi-rang-ni-bi-zhao-yan-jing-ye-neng-xie-dui-er-fen-sou-suo/</id>
-    <published>2020-07-25T06:05:04.000Z</published>
-    <updated>2020-07-25T06:19:21.835Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/di-ling-zhang-bi-du-xi-lie/er-fen-cha-zhao-xiang-jie&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
-    
-      <category term="BinarySearch" scheme="https://xueminxhd.github.io/tags/BinarySearch/"/>
     
   </entry>
   
