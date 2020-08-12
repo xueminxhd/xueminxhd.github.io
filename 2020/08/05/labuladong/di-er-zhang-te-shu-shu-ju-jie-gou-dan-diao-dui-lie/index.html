@@ -8,10 +8,10 @@
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="labuladong 特殊数据结构：单调队列labuladong 特殊数据结构：单调队列
+    <meta name="description" content="labuladong 特殊数据结构：单调队列
 239. 滑动窗口最大值方法1：更新滑动窗口法（暴力遍历，超时）
 滑动窗口没有完全进入数组时，把数据加入窗口中
-窗口完全进入数组后，保存最大值，同时弹">
+窗口完全进入数组后，保存最大值，同时弹出窗口最左侧的元素（即，右边进，左边出，更新">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -319,7 +319,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -474,7 +474,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    936
+                    941
                 </div>
                 
 
@@ -497,7 +497,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>labuladong <a href="https://labuladong.gitbook.io/algo/shu-ju-jie-gou-xi-lie/dan-tiao-dui-lie" target="_blank" rel="noopener">特殊数据结构：单调队列</a><br>labuladong <a href="https://labuladong.gitbook.io/algo/shu-ju-jie-gou-xi-lie/dan-tiao-dui-lie" target="_blank" rel="noopener">特殊数据结构：单调队列</a></p>
+                <p>labuladong <a href="https://labuladong.gitbook.io/algo/shu-ju-jie-gou-xi-lie/dan-tiao-dui-lie" target="_blank" rel="noopener">特殊数据结构：单调队列</a></p>
 <h1 id="239-滑动窗口最大值"><a href="#239-滑动窗口最大值" class="headerlink" title="239. 滑动窗口最大值"></a><a href="https://leetcode-cn.com/problems/sliding-window-maximum/solution/python-deque-by-frankchen250/" target="_blank" rel="noopener">239. 滑动窗口最大值</a></h1><h2 id="方法1：更新滑动窗口法（暴力遍历，超时）"><a href="#方法1：更新滑动窗口法（暴力遍历，超时）" class="headerlink" title="方法1：更新滑动窗口法（暴力遍历，超时）"></a><del>方法1：更新滑动窗口法（暴力遍历，超时）</del></h2><ul>
 <li>滑动窗口没有完全进入数组时，把数据加入窗口中</li>
 <li>窗口完全进入数组后，保存最大值，同时弹出窗口最左侧的元素（即，右边进，左边出，更新窗口），继续进行下一次循环</li>
@@ -565,7 +565,7 @@
 <li>队列中的最大值有重复时，保留重复（只踩扁比它小的数，相同的不踩，确保次序一致）</li>
 <li><strong>之所以要判断<code>queue[0] == n</code>，是因为我们想删除的队头元素 n 可能已经被「压扁」了，这时候就不用删除了</strong><ul>
 <li>双端队列中最多<strong>存储着<code>k-1</code> 个</strong>元素，以确保下一次循环时，元素能被加到队列中。因此，若加进来的元素一直压不扁队头，但队列已满时，要删掉最左边的队头元素 （如果已经压扁过了，那么<code>queue[0] == nums[i - k + 1]</code>不成立 ,不用删了）</li>
-<li>以滑动窗口位置在<code>1 [3 -1 -3] 5 3 6 7</code>  为例，现在的队列是[3,-1,-3] (-1 和 -3 都没能压扁3，说明这时<code>queue[0] == nums[i - k + 1]</code>)，为了给后面的元素腾出空位，把队列最左边的元素删掉，让队列变成[-1,-3]</li>
+<li>以滑动窗口位置在<code>1 [3 -1 -3] 5 3 6 7</code>  为例，现在的队列是[3,-1,-3] (-1 和 -3 都没能压扁3，说明这时<code>queue[0] == nums[i - k + 1]</code>，在窗口向右挪动时，这个3就要过时了)，为了给后面的元素腾出空位，把队列最左边的元素删掉，让队列变成[-1,-3]</li>
 </ul>
 </li>
 </ul>
@@ -794,33 +794,34 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/08/05/labuladong/di-er-zhang-te-shu-shu-ju-jie-gou-dan-diao-dui-lie/">
+                <a href="/2020/08/12/di-er-zhang-di-gui-fan-zhuan-lian-biao-de-yi-bu-fen/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="第二章：特殊数据结构：单调队列">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="第二章：递归反转链表的一部分">
                         
-                        <span class="card-title">第二章：特殊数据结构：单调队列</span>
+                        <span class="card-title">第二章：递归反转链表的一部分</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            labuladong 特殊数据结构：单调队列labuladong 特殊数据结构：单调队列
-239. 滑动窗口最大值方法1：更新滑动窗口法（暴力遍历，超时）
-滑动窗口没有完全进入数组时，把数据加入窗口中
-窗口完全进入数组后，保存最大值，同时弹
+                            labuladong 递归反转链表的一部分
+方法1.递归反转链表 （只是说明递归方法的思想，本题优解应参考方法二）
+
+
+先看例题206. 反转整个链表
+对于递归算法，最重要的就是明确递归函数实现的功能（而不是跳进递归中） ，因此，rever
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-05
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-12
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -833,7 +834,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -856,7 +856,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="第二章：特殊数据结构：单调栈">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="第二章：特殊数据结构：单调栈">
                         
                         <span class="card-title">第二章：特殊数据结构：单调栈</span>
                     </div>
@@ -1063,7 +1063,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">19.4k</span>
+            <span class="white-color">20.5k</span>
             
 
             <br>

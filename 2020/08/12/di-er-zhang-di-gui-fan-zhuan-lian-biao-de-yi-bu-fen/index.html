@@ -4,16 +4,16 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="第一章：贪心算法之区间调度问题, It&#39;s the job that&#39;s never started as takes longest to finish.”― J.R.R. Tolkien">
+    <meta name="keywords" content="第二章：递归反转链表的一部分, It&#39;s the job that&#39;s never started as takes longest to finish.”― J.R.R. Tolkien">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="labuladong贪心算法之区间调度问题
-435. 无重叠区间
-一天有好多活动，你可以选择不重叠的时间尽量多参加活动。
+    <meta name="description" content="labuladong 递归反转链表的一部分
+方法1.递归反转链表 （只是说明递归方法的思想，本题优解应参考方法二）
 
-按照活动结束的时间排序后（不管开始得多早，都不如选择早点结束的活动，这样还能继续选其他活动）
-假设当前参加的是活动A">
+
+先看例题206. 反转整个链表
+对于递归算法，最重要的就是明确递归函数实现的功能（而不是跳进递归中） ，因此，rever">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +21,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>第一章：贪心算法之区间调度问题 | Min&#39;s Blog</title>
+    <title>第二章：递归反转链表的一部分 | Min&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -321,13 +321,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        第一章：贪心算法之区间调度问题
+                        第二章：递归反转链表的一部分
                     </div>
                 </div>
             </div>
@@ -462,7 +462,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-31
+                    2020-08-12
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -476,14 +476,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    267
+                    799
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
                 
@@ -499,30 +499,107 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>labuladong<a href="https://labuladong.gitbook.io/algo/dong-tai-gui-hua-xi-lie/tan-xin-suan-fa-zhi-qu-jian-tiao-du-wen-ti" target="_blank" rel="noopener">贪心算法之区间调度问题</a></p>
-<h1 id="435-无重叠区间"><a href="#435-无重叠区间" class="headerlink" title="435. 无重叠区间"></a><a href="https://leetcode-cn.com/problems/non-overlapping-intervals/" target="_blank" rel="noopener">435. 无重叠区间</a></h1><blockquote>
-<p>一天有好多活动，你可以选择不重叠的时间尽量多参加活动。</p>
+                <p>labuladong <a href="https://labuladong.gitbook.io/algo/shu-ju-jie-gou-xi-lie/di-gui-fan-zhuan-lian-biao-de-yi-bu-fen" target="_blank" rel="noopener">递归反转链表的一部分</a></p>
+<h1 id="方法1-递归反转链表"><a href="#方法1-递归反转链表" class="headerlink" title="方法1.递归反转链表 "></a>方法1.<a href="https://leetcode-cn.com/problems/reverse-linked-list-ii/solution/pythondi-gui-jie-jue-by-clark-12/" target="_blank" rel="noopener"><del>递归反转链表</del> </a></h1><p>（只是说明递归方法的思想，本题优解应参考方法二）</p>
+<blockquote>
 <ul>
-<li>按照活动结束的时间排序后（不管开始得多早，都不如选择早点结束的活动，这样还能继续选其他活动）<ul>
-<li>假设当前参加的是活动A，如果活动B的开始时间大于等于活动A的结束时间，则继续参加B活动。</li>
-<li>这时活动数+1，后面的活动开始时间要和活动B结束的时间进行比较，所以活动结束的时间更新为活动B结束的时间。</li>
+<li>先看例题<a href="https://leetcode-cn.com/problems/reverse-linked-list/" target="_blank" rel="noopener">206. 反转整个链表</a><ul>
+<li>对于递归算法，最重要的就是<strong>明确递归函数实现的功能</strong><del>（而不是跳进递归中）</del> ，因此，reverseList函数定义为：输入一个节点 head，将「以 head 为起点」的链表反转，并返回反转之后的头结点    </li>
 </ul>
 </li>
 </ul>
-</blockquote>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">eraseOverlapIntervals</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> intervals<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">if</span> <span class="token operator">not</span> intervals<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token number">0</span>
-        intervals<span class="token operator">=</span>sorted<span class="token punctuation">(</span>intervals<span class="token punctuation">,</span>key<span class="token operator">=</span><span class="token keyword">lambda</span> x <span class="token punctuation">:</span> x<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for singly-linked list.</span>
+<span class="token comment" spellcheck="true"># class ListNode(object):</span>
+<span class="token comment" spellcheck="true">#     def __init__(self, x):</span>
+<span class="token comment" spellcheck="true">#         self.val = x</span>
+<span class="token comment" spellcheck="true">#         self.next = None</span>
 
-        end<span class="token operator">=</span>intervals<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token comment" spellcheck="true"># 第0个活动结束的时间</span>
-        count<span class="token operator">=</span><span class="token number">1</span>
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>len<span class="token punctuation">(</span>intervals<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token comment" spellcheck="true"># 可以想象成当前活动开始的时间大于等于之前活动结束的时间，那么参加当前活动</span>
-            <span class="token keyword">if</span> intervals<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">>=</span>end<span class="token punctuation">:</span>
-                count<span class="token operator">+=</span><span class="token number">1</span>
-                end<span class="token operator">=</span>intervals<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
-        <span class="token keyword">return</span> len<span class="token punctuation">(</span>intervals<span class="token punctuation">)</span><span class="token operator">-</span>count<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">reverseList</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> head<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 递归结束条件</span>
+        <span class="token keyword">if</span> head<span class="token operator">==</span>None <span class="token operator">or</span> head<span class="token punctuation">.</span>next<span class="token operator">==</span>None<span class="token punctuation">:</span> <span class="token keyword">return</span> head
+        <span class="token comment" spellcheck="true"># reverseList函数返回反转后的头结点</span>
+        last<span class="token operator">=</span>self<span class="token punctuation">.</span>reverseList<span class="token punctuation">(</span>head<span class="token punctuation">.</span>next<span class="token punctuation">)</span>
+        head<span class="token punctuation">.</span>next<span class="token punctuation">.</span>next<span class="token operator">=</span>head
+        head<span class="token punctuation">.</span>next<span class="token operator">=</span>None
+        <span class="token keyword">return</span> last ```<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</blockquote>
+<ul>
+<li><p>先用递归实现：       反转以head开头的前n个节点</p>
+</li>
+<li><p>首先，如果 m == 1（因为头结点是从1开始计数的），就相当于反转链表开头的 n 个元素，也就是函数<code>reverseN(head, n)</code>   (也是<code>reverseBetween</code>结束递归的条件)</p>
+</li>
+<li><p>如果 m != 1 怎么办？如果我们把 head 的索引视为 1，那么我们是想从第 m 个元素开始反转；如果把 head.next 的索引视为 1 呢？那么相对于 head.next，反转的区间应该是从第 m - 1 个元素开始的；那么对于 head.next.next 呢……因此有：</p>
+<pre class="line-numbers language-python"><code class="language-python">      <span class="token comment" spellcheck="true"># 如果不是第一个，那么以下一个为头结点开始递归，直到触发m==1递归终止条件</span>
+      head<span class="token punctuation">.</span>next <span class="token operator">=</span> self<span class="token punctuation">.</span>reverseBetween<span class="token punctuation">(</span>head<span class="token punctuation">.</span>next<span class="token punctuation">,</span> m<span class="token number">-1</span><span class="token punctuation">,</span> n<span class="token number">-1</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>综上，反转m到n直接的节点的整体代码为：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">reverseBetween</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> head<span class="token punctuation">:</span> ListNode<span class="token punctuation">,</span> m<span class="token punctuation">:</span> int<span class="token punctuation">,</span> n<span class="token punctuation">:</span> int<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> ListNode<span class="token punctuation">:</span>
+      <span class="token comment" spellcheck="true"># 先用递归实现：       反转以head开头的前n个节点</span>
+      <span class="token keyword">def</span> <span class="token function">reverseN</span><span class="token punctuation">(</span>head<span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+          <span class="token keyword">if</span> n <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+              successor <span class="token operator">=</span> head<span class="token punctuation">.</span>next <span class="token comment" spellcheck="true"># 拿到后继节点</span>
+              <span class="token keyword">return</span> head<span class="token punctuation">,</span> successor
+          <span class="token comment" spellcheck="true"># 以 head.next 为起点，需要反转前 n - 1 个节点</span>
+          last<span class="token punctuation">,</span> successor <span class="token operator">=</span> reverseN<span class="token punctuation">(</span>head<span class="token punctuation">.</span>next<span class="token punctuation">,</span> n<span class="token number">-1</span><span class="token punctuation">)</span>
+
+          head<span class="token punctuation">.</span>next<span class="token punctuation">.</span>next <span class="token operator">=</span> head
+          head<span class="token punctuation">.</span>next <span class="token operator">=</span> successor
+          <span class="token keyword">return</span> last<span class="token punctuation">,</span> successor
+
+      <span class="token keyword">if</span> m <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 递归终止条件</span>
+          res<span class="token punctuation">,</span> _ <span class="token operator">=</span> reverseN<span class="token punctuation">(</span>head<span class="token punctuation">,</span> n<span class="token punctuation">)</span>
+          <span class="token keyword">return</span> res
+      <span class="token comment" spellcheck="true"># 如果不是第一个，那么以下一个为头结点开始递归，直到触发条件</span>
+      head<span class="token punctuation">.</span>next <span class="token operator">=</span> self<span class="token punctuation">.</span>reverseBetween<span class="token punctuation">(</span>head<span class="token punctuation">.</span>next<span class="token punctuation">,</span> m<span class="token number">-1</span><span class="token punctuation">,</span> n<span class="token number">-1</span><span class="token punctuation">)</span>
+      <span class="token keyword">return</span> head<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="方法2-找到要翻转部分的链表-将其翻转-再与原链表拼接"><a href="#方法2-找到要翻转部分的链表-将其翻转-再与原链表拼接" class="headerlink" title="方法2. 找到要翻转部分的链表,将其翻转,再与原链表拼接"></a>方法2. <a href="https://leetcode-cn.com/problems/reverse-linked-list-ii/solution/liang-chong-fang-fa-by-powcai/" target="_blank" rel="noopener">找到要翻转部分的链表,将其翻转,再与原链表拼接</a></h1></li>
+</ul>
+<blockquote>
+<ol>
+<li><a href="https://leetcode-cn.com/problems/reverse-linked-list/solution/dong-hua-yan-shi-206-fan-zhuan-lian-biao-by-user74/" target="_blank" rel="noopener">复习一下逐个反转链表元素的代码：</a><ul>
+<li>pre -&gt; cur (pre在前，cur 在后)</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>把cur的next指向pre，然后pre和cur分别向右跳一格。（利用<strong>同步赋值语句</strong>同时实现这些功能） </li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">reverseList</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>head<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        pre<span class="token operator">=</span>None
+        cur<span class="token operator">=</span>head
+        <span class="token keyword">while</span> cur<span class="token punctuation">:</span>
+            cur<span class="token punctuation">.</span>next<span class="token punctuation">,</span>pre<span class="token punctuation">,</span>cur<span class="token operator">=</span>pre<span class="token punctuation">,</span>cur<span class="token punctuation">,</span>cur<span class="token punctuation">.</span>next
+        <span class="token keyword">return</span> pre <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>先添加dummy节点，并连接在头结点前面</li>
+<li>cur跳到位置m处，pre在cur左面</li>
+<li>反转m到n的节点</li>
+<li>连接各节点</li>
+</ul>
+</blockquote>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># class ListNode(object):</span>
+<span class="token comment" spellcheck="true">#     def __init__(self):</span>
+<span class="token comment" spellcheck="true">#         self.val=x</span>
+<span class="token comment" spellcheck="true">#         self.next=None</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">reverseBetween</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> head<span class="token punctuation">,</span> m<span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        dummy<span class="token operator">=</span>ListNode<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+        dummy<span class="token punctuation">.</span>next<span class="token operator">=</span>head
+        pre<span class="token operator">=</span>dummy
+        <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>m<span class="token number">-1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            pre<span class="token operator">=</span>pre<span class="token punctuation">.</span>next
+        cur<span class="token operator">=</span>pre<span class="token punctuation">.</span>next
+        node<span class="token operator">=</span>pre
+
+        <span class="token comment" spellcheck="true"># node保存m的前一个节点，为后续连接做准备</span>
+        <span class="token comment" spellcheck="true"># cur为反转的当前节点，node为cur的上一个节点 </span>
+        <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token operator">-</span>m<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true">#反转m到n的节点</span>
+            cur<span class="token punctuation">.</span>next<span class="token punctuation">,</span>node<span class="token punctuation">,</span>cur<span class="token operator">=</span>node<span class="token punctuation">,</span>cur<span class="token punctuation">,</span>cur<span class="token punctuation">.</span>next <span class="token comment" spellcheck="true">#注意顺序，cur.next 在最前</span>
+        <span class="token comment" spellcheck="true">#连接反转后的各节点</span>
+        pre<span class="token punctuation">.</span>next<span class="token punctuation">.</span>next<span class="token operator">=</span>cur
+        pre<span class="token punctuation">.</span>next<span class="token operator">=</span>node
+        <span class="token keyword">return</span> dummy<span class="token punctuation">.</span>next<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -681,9 +758,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《第一章：贪心算法之区间调度问题》
+                    《第二章：递归反转链表的一部分》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/07/31/labuladong/di-yi-zhang-tan-xin-suan-fa-zhi-qu-jian-diao-du-wen-ti/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/08/12/di-er-zhang-di-gui-fan-zhuan-lian-biao-de-yi-bu-fen/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Min
             </a> 采用
@@ -727,29 +804,28 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/08/01/labuladong/di-er-zhang-lru-suan-fa-xiang-jie/">
+                <a href="/2020/08/12/di-san-zhang-hui-su-suan-fa-zui-jia-shi-jian-gua-hao-sheng-cheng/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="第二章：LRU算法详解">
+                        <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="第三章：回溯算法最佳实践：括号生成">
                         
-                        <span class="card-title">第二章：LRU算法详解</span>
+                        <span class="card-title">第三章：回溯算法最佳实践：括号生成</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            labuladong LRU算法详解
-146. LRU(Least Recently Used) 缓存机制
-利用字典+双向链表
+                            labuladong 回溯算法最佳实践：括号生成
+22. 括号生成
+问题转化为：现在有 2n 个位置，每个位置可以放置字符 ( 或者 )，求生成所有可能的并且 有效的 括号组合
 
-字典里存的是Node的节点类，self.add(Node(key, value))
-传给add函数的是一个No
+可用的左括号数量为 left 个，可用的右括号数量为 rgi
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-01
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-12
                         </span>
                         <span class="publish-author">
                             
@@ -781,27 +857,27 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/31/labuladong/di-yi-zhang-dong-tai-gui-hua-zhi-zi-xu-lie-wen-ti-jie-ti-mo-ban/">
+                <a href="/2020/08/05/labuladong/di-er-zhang-te-shu-shu-ju-jie-gou-dan-diao-dui-lie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="第一章：动态规划之子序列问题解题模板">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="第二章：特殊数据结构：单调队列">
                         
-                        <span class="card-title">第一章：动态规划之子序列问题解题模板</span>
+                        <span class="card-title">第二章：特殊数据结构：单调队列</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            labuladong 动态规划之子序列问题解题模板
-516. 最长回文子序列
-dp数组的含义：s[i…j] 中最长回文子序列的长度保存在dp[i][j] 中
-状态转移方程：如果i处和j处的字符相同，则从短串s[i+1…j-1]中扩充2（dp
+                            labuladong 特殊数据结构：单调队列
+239. 滑动窗口最大值方法1：更新滑动窗口法（暴力遍历，超时）
+滑动窗口没有完全进入数组时，把数据加入窗口中
+窗口完全进入数组后，保存最大值，同时弹出窗口最左侧的元素（即，右边进，左边出，更新
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-31
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-05
                             </span>
                         <span class="publish-author">
                             

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xueminxhd.github.io/"/>
-  <updated>2020-08-06T11:20:14.834Z</updated>
+  <updated>2020-08-12T09:31:11.147Z</updated>
   <id>https://xueminxhd.github.io/</id>
   
   <author>
@@ -17,11 +17,63 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>第三章：回溯算法最佳实践：括号生成</title>
+    <link href="https://xueminxhd.github.io/2020/08/12/di-san-zhang-hui-su-suan-fa-zui-jia-shi-jian-gua-hao-sheng-cheng/"/>
+    <id>https://xueminxhd.github.io/2020/08/12/di-san-zhang-hui-su-suan-fa-zui-jia-shi-jian-gua-hao-sheng-cheng/</id>
+    <published>2020-08-12T08:44:59.000Z</published>
+    <updated>2020-08-12T09:31:11.147Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/suan-fa-si-wei-xi-lie/he-fa-kuo-hao-sheng-cheng&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第二章：递归反转链表的一部分</title>
+    <link href="https://xueminxhd.github.io/2020/08/12/di-er-zhang-di-gui-fan-zhuan-lian-biao-de-yi-bu-fen/"/>
+    <id>https://xueminxhd.github.io/2020/08/12/di-er-zhang-di-gui-fan-zhuan-lian-biao-de-yi-bu-fen/</id>
+    <published>2020-08-12T03:29:33.000Z</published>
+    <updated>2020-08-12T04:03:01.541Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/shu-ju-jie-gou-xi-lie/di-gui-fan-zhuan-lian-biao-de-yi-bu-fen&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
+    
+  </entry>
+  
+  <entry>
     <title>第二章：特殊数据结构：单调队列</title>
     <link href="https://xueminxhd.github.io/2020/08/05/labuladong/di-er-zhang-te-shu-shu-ju-jie-gou-dan-diao-dui-lie/"/>
     <id>https://xueminxhd.github.io/2020/08/05/labuladong/di-er-zhang-te-shu-shu-ju-jie-gou-dan-diao-dui-lie/</id>
     <published>2020-08-05T15:02:28.000Z</published>
-    <updated>2020-08-06T11:20:14.834Z</updated>
+    <updated>2020-08-09T01:33:33.448Z</updated>
     
     <summary type="html">
     
@@ -484,58 +536,6 @@
       <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
     
       <category term="BinarySearch" scheme="https://xueminxhd.github.io/tags/BinarySearch/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第零章：BFS 算法解题套路框架（暂）</title>
-    <link href="https://xueminxhd.github.io/2020/07/24/labuladong/di-ling-zhang-bfs-suan-fa-jie-ti-tao-lu-kuang-jia-zan/"/>
-    <id>https://xueminxhd.github.io/2020/07/24/labuladong/di-ling-zhang-bfs-suan-fa-jie-ti-tao-lu-kuang-jia-zan/</id>
-    <published>2020-07-24T12:45:46.000Z</published>
-    <updated>2020-07-24T13:15:08.111Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;labuladong&lt;a href=&quot;https://labuladong.gitbook.io/algo/di-ling-zhang-bi-du-xi-lie/bfs-kuang-jia&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;BFS
-        
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第零章：回溯算法解题套路框架</title>
-    <link href="https://xueminxhd.github.io/2020/07/24/labuladong/di-ling-zhang-hui-su-suan-fa-jie-ti-tao-lu-kuang-jia/"/>
-    <id>https://xueminxhd.github.io/2020/07/24/labuladong/di-ling-zhang-hui-su-suan-fa-jie-ti-tao-lu-kuang-jia/</id>
-    <published>2020-07-24T09:16:37.000Z</published>
-    <updated>2020-07-24T11:27:14.016Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;labuladong&lt;a href=&quot;https://labuladong.gitbook.io/algo/di-ling-zhang-bi-du-xi-lie/hui-su-suan-fa-xiang-jie-xiu-ding-ban&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
     
   </entry>
   
