@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xueminxhd.github.io/"/>
-  <updated>2020-08-12T10:15:57.890Z</updated>
+  <updated>2020-08-12T13:19:06.282Z</updated>
   <id>https://xueminxhd.github.io/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>第三章：前缀和技巧</title>
+    <link href="https://xueminxhd.github.io/2020/08/12/labuladong/di-san-zhang-qian-zhui-he-ji-qiao/"/>
+    <id>https://xueminxhd.github.io/2020/08/12/labuladong/di-san-zhang-qian-zhui-he-ji-qiao/</id>
+    <published>2020-08-12T12:33:08.000Z</published>
+    <updated>2020-08-12T13:19:06.282Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/suan-fa-si-wei-xi-lie/qian-zhui-he-ji-qiao&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
+    
+  </entry>
+  
+  <entry>
     <title>第三章：双指针技巧总结</title>
     <link href="https://xueminxhd.github.io/2020/08/12/labuladong/di-san-zhang-shuang-zhi-zhen-ji-qiao-zong-jie/"/>
     <id>https://xueminxhd.github.io/2020/08/12/labuladong/di-san-zhang-shuang-zhi-zhen-ji-qiao-zong-jie/</id>
     <published>2020-08-12T10:15:27.000Z</published>
-    <updated>2020-08-12T10:15:57.890Z</updated>
+    <updated>2020-08-13T02:10:31.030Z</updated>
     
     <summary type="html">
     
@@ -499,32 +525,6 @@
         
         
           &lt;p&gt;labuladong &lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第零章：我写了首诗，把滑动窗口算法变成了默写题</title>
-    <link href="https://xueminxhd.github.io/2020/07/25/labuladong/di-ling-zhang-wo-xie-liao-shou-shi-ba-hua-dong-chuang-kou-suan-fa-bian-cheng-liao-mo-xie-ti/"/>
-    <id>https://xueminxhd.github.io/2020/07/25/labuladong/di-ling-zhang-wo-xie-liao-shou-shi-ba-hua-dong-chuang-kou-suan-fa-bian-cheng-liao-mo-xie-ti/</id>
-    <published>2020-07-25T13:41:01.000Z</published>
-    <updated>2020-07-25T13:47:28.457Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;labuladong &lt;a href=&quot;https://mp.weixin.qq.com/s/ioKXTMZufDECBUwRRp3zaA&quot; target=&quot;_blank&quot;
         
       
     

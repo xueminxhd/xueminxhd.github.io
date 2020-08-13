@@ -319,7 +319,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/25.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/24.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -474,7 +474,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    654
+                    635
                 </div>
                 
 
@@ -526,34 +526,51 @@
 <span class="token comment" spellcheck="true">#     def __init__(self, x):</span>
 <span class="token comment" spellcheck="true">#         self.val = x</span>
 <span class="token comment" spellcheck="true">#         self.next = None</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token keyword">def</span> <span class="token function">detectCycle</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> head<span class="token punctuation">)</span><span class="token punctuation">:</span>
+      <span class="token triple-quoted-string string">"""
+      :type head: ListNode
+      :rtype: ListNode
+      """</span>
+      <span class="token comment" spellcheck="true"># 找到相遇点</span>
+      slow<span class="token punctuation">,</span>fast<span class="token operator">=</span>head<span class="token punctuation">,</span>head
+      <span class="token keyword">while</span> fast<span class="token operator">!=</span>None <span class="token operator">and</span> fast<span class="token punctuation">.</span>next<span class="token operator">!=</span>None<span class="token punctuation">:</span>
+          slow<span class="token operator">=</span>slow<span class="token punctuation">.</span>next
+          fast<span class="token operator">=</span>fast<span class="token punctuation">.</span>next<span class="token punctuation">.</span>next
+          <span class="token keyword">if</span> slow<span class="token operator">==</span>fast<span class="token punctuation">:</span>
+              <span class="token keyword">break</span>
+      <span class="token keyword">else</span><span class="token punctuation">:</span> <span class="token keyword">return</span> None
+      slow<span class="token operator">=</span>head
+      <span class="token keyword">while</span> slow<span class="token operator">!=</span>fast<span class="token punctuation">:</span>
+          slow<span class="token operator">=</span>slow<span class="token punctuation">.</span>next
+          fast<span class="token operator">=</span>fast<span class="token punctuation">.</span>next
+      <span class="token keyword">return</span> slow<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
-<p>class Solution(object):<br>    def detectCycle(self, head):<br>        “””<br>        :type head: ListNode<br>        :rtype: ListNode<br>        “””<br>        # 找到相遇点<br>        slow,fast=head,head<br>        while fast!=None and fast.next!=None:<br>            slow=slow.next<br>            fast=fast.next.next<br>            if slow==fast:<br>                break<br>        else: return None<br>        slow=head<br>        while slow!=fast:<br>            slow=slow.next<br>            fast=fast.next<br>        return slow</p>
-<pre><code># [倒数第k个节点](https://leetcode-cn.com/problems/kth-node-from-end-of-list-lcci/)
-- 让快指针先走k步，然后快慢指针一起同步走。快指针到达终点时，慢指针指向的就是倒数第k个节点
-```python
-# Definition for singly-linked list.
-# class ListNode(object):
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
-
-class Solution(object):
-    def kthToLast(self, head, k):
-        &quot;&quot;&quot;
+<h1 id="倒数第k个节点"><a href="#倒数第k个节点" class="headerlink" title="倒数第k个节点"></a><a href="https://leetcode-cn.com/problems/kth-node-from-end-of-list-lcci/" target="_blank" rel="noopener">倒数第k个节点</a></h1><ul>
+<li>让快指针先走k步，然后快慢指针一起同步走。快指针到达终点时，慢指针指向的就是倒数第k个节点</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for singly-linked list.</span>
+<span class="token comment" spellcheck="true"># class ListNode(object):</span>
+<span class="token comment" spellcheck="true">#     def __init__(self, x):</span>
+<span class="token comment" spellcheck="true">#         self.val = x</span>
+<span class="token comment" spellcheck="true">#         self.next = None</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">kthToLast</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> head<span class="token punctuation">,</span> k<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
         :type head: ListNode
         :type k: int
         :rtype: int
-        &quot;&quot;&quot;
-        fast,slow=head,head
-        while k: #相当于 while k&gt;0
-            fast=fast.next
-            k-=1
-        while fast: # 相当于while fast!=None
-            fast=fast.next
-            slow=slow.next
-        return slow.val</code></pre><h1 id="两数之和2"><a href="#两数之和2" class="headerlink" title="两数之和2"></a><a href="https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/" target="_blank" rel="noopener">两数之和2</a></h1><ul>
+        """</span>
+        fast<span class="token punctuation">,</span>slow<span class="token operator">=</span>head<span class="token punctuation">,</span>head
+        <span class="token keyword">while</span> k<span class="token punctuation">:</span> <span class="token comment" spellcheck="true">#相当于 while k>0</span>
+            fast<span class="token operator">=</span>fast<span class="token punctuation">.</span>next
+            k<span class="token operator">-=</span><span class="token number">1</span>
+        <span class="token keyword">while</span> fast<span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 相当于while fast!=None</span>
+            fast<span class="token operator">=</span>fast<span class="token punctuation">.</span>next
+            slow<span class="token operator">=</span>slow<span class="token punctuation">.</span>next
+        <span class="token keyword">return</span> slow<span class="token punctuation">.</span>val<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="两数之和2"><a href="#两数之和2" class="headerlink" title="两数之和2"></a><a href="https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/" target="_blank" rel="noopener">两数之和2</a></h1><ul>
 <li>只要数组有序，就应该想到双指针技巧</li>
 <li>类似于二分查找，通过调节左右指针，得到目标和<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
   <span class="token keyword">def</span> <span class="token function">twoSum</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">,</span> target<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -571,8 +588,11 @@ class Solution(object):
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
-<pre><code># [两数之和1（无序）](https://leetcode-cn.com/problems/two-sum/)
+<pre><code>
+# [两数之和1（无序）](https://leetcode-cn.com/problems/two-sum/)
+
 - 遍历过程中，利用字典保存值对应的下标。若找到目标和，则返回下标
+- 
 ```python
 class Solution(object):
     def twoSum(self, nums, target):
@@ -805,33 +825,34 @@ class Solution(object):
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/08/12/labuladong/di-san-zhang-shuang-zhi-zhen-ji-qiao-zong-jie/">
+                <a href="/2020/08/12/labuladong/di-san-zhang-qian-zhui-he-ji-qiao/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="第三章：双指针技巧总结">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="第三章：前缀和技巧">
                         
-                        <span class="card-title">第三章：双指针技巧总结</span>
+                        <span class="card-title">第三章：前缀和技巧</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            labuladong 双指针技巧总结
-利用快慢指针或者左右指针解决问题
-141. 环形链表利用快慢指针，一开始都指到头结点处，然后每次快指针走两步，慢指针。若最后相遇了，说明有环
-# Definition for singly-linked
+                            labuladong 前缀和技巧
+560. 和为K的子数组
+具体算法：
+
+维护一个 hashmap，hashmap 的 key 为累加值 acc，value 为累加值 acc 出现的次数。
+遍历数组，然后不断更新 acc 和 hashmap
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-12
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-12
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -844,7 +865,6 @@ class Solution(object):
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -867,7 +887,7 @@ class Solution(object):
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="第三章：回溯算法最佳实践：括号生成">
+                        <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="第三章：回溯算法最佳实践：括号生成">
                         
                         <span class="card-title">第三章：回溯算法最佳实践：括号生成</span>
                     </div>
@@ -1076,7 +1096,7 @@ class Solution(object):
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">21.2k</span>
+            <span class="white-color">22.7k</span>
             
 
             <br>
