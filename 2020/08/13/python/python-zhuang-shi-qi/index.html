@@ -4,18 +4,21 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="第二章：如何计算完全二叉树的节点数, It&#39;s the job that&#39;s never started as takes longest to finish.”― J.R.R. Tolkien">
+    <meta name="keywords" content="python装饰器, It&#39;s the job that&#39;s never started as takes longest to finish.”― J.R.R. Tolkien">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="labuladong 如何计算完全二叉树的节点数
-222. 完全二叉树的节点个数
-完全二叉树都是紧凑靠左排列的
-满二叉树每一层都是满的 （除底层的叶子节点外，左右孩子都有），是一种特殊的完全二叉树
+    <meta name="description" content="
+什么是装饰器？
+python装饰器用于装饰函数。可以在保留原函数功能的条件下，赋予该函数更丰富的功能（而无需改动原函数）
 
-遍历二叉树节点时：
 
-若是普通的二叉树，">
+为什么要用装饰器？
+可以更便于开发，实现代码复用
+
+
+装饰器可以解决哪些问题？
+不破坏原函数的条件下，扩展函数功">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -23,7 +26,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>第二章：如何计算完全二叉树的节点数 | Min&#39;s Blog</title>
+    <title>python装饰器 | Min&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -323,13 +326,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/27.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        第二章：如何计算完全二叉树的节点数
+                        python装饰器
                     </div>
                 </div>
             </div>
@@ -440,8 +443,8 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/labuladong/" target="_blank">
-                            <span class="chip bg-color">labuladong</span>
+                        <a href="/tags/Python基础/" target="_blank">
+                            <span class="chip bg-color">Python基础</span>
                         </a>
                         
                     </div>
@@ -452,8 +455,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/LeetCode/" class="post-category" target="_blank">
-                            LeetCode
+                        <a href="/categories/Python/" class="post-category" target="_blank">
+                            Python
                         </a>
                         
                     </div>
@@ -464,7 +467,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-08-02
+                    2020-08-13
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -478,7 +481,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    262
+                    495
                 </div>
                 
 
@@ -501,38 +504,76 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>labuladong <a href="https://mp.weixin.qq.com/s/xW2fbE3v4JhMSKfxoxIHBg" target="_blank" rel="noopener">如何计算完全二叉树的节点数</a></p>
-<h1 id="222-完全二叉树的节点个数"><a href="#222-完全二叉树的节点个数" class="headerlink" title="222. 完全二叉树的节点个数"></a><a href="https://leetcode-cn.com/problems/count-complete-tree-nodes/" target="_blank" rel="noopener">222. 完全二叉树的节点个数</a></h1><ul>
-<li>完全二叉树都是<strong>紧凑靠左排列</strong>的</li>
-<li>满二叉树<strong>每一层都是满的</strong> （除底层的叶子节点外，左右孩子都有），<strong>是一种特殊的完全二叉树</strong></li>
+                <ul>
+<li>什么是装饰器？<ul>
+<li>python装饰器用于装饰函数。可以在保留原函数功能的条件下，赋予该函数更丰富的功能（而无需改动原函数）</li>
 </ul>
-<p>遍历二叉树节点时：</p>
-<ol>
-<li>若是普通的二叉树，则在遍历节点时计数即可</li>
-<li>若是满二叉树，则说明左右子树的高度相等，节点个数=2^高度-1</li>
-</ol>
-<p>因此，若判断该完全二叉树是满二叉树，则用情况2，否则用情况1</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for a binary tree node.</span>
-<span class="token comment" spellcheck="true"># class TreeNode(object):</span>
-<span class="token comment" spellcheck="true">#     def __init__(self, x):</span>
-<span class="token comment" spellcheck="true">#         self.val = x</span>
-<span class="token comment" spellcheck="true">#         self.left = None</span>
-<span class="token comment" spellcheck="true">#         self.right = None</span>
+</li>
+<li>为什么要用装饰器？<ul>
+<li>可以更便于开发，实现代码复用</li>
+</ul>
+</li>
+<li>装饰器可以解决哪些问题？<ul>
+<li>不破坏原函数的条件下，扩展函数功能(或函数权限)</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>小明每学会一个新本领，他妈妈都会说：“小明太棒了”。所以把妈妈说的话单独写个函数，以后在每次调用时，就可以代码复用</p>
+<ul>
+<li><code>momSaid(func)</code>里的参数为函数</li>
+<li><code>def wrapper(*args,**kwargs)</code>  … <code>return wrapper</code> 可以自动调用函数参数。（如 <code>learnAdd</code>函数有3个参数，<code>learnSubtraction</code> 有两个，但是完全没问题）</li>
+</ul>
+</blockquote>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">momSaid</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">wrapper</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        f<span class="token operator">=</span>func<span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"算数结果为{}"</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"妈妈说小明太棒了"</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> f
+    <span class="token keyword">return</span> wrapper
 
-<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">countNodes</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">if</span> <span class="token operator">not</span> root<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token number">0</span>
-        l<span class="token punctuation">,</span>r<span class="token operator">=</span>root<span class="token punctuation">,</span>root
-        hl<span class="token punctuation">,</span>hr<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span>
-        <span class="token keyword">while</span> l<span class="token operator">!=</span>None<span class="token punctuation">:</span>
-            l<span class="token operator">=</span>l<span class="token punctuation">.</span>left
-            hl<span class="token operator">+=</span><span class="token number">1</span>
-        <span class="token keyword">while</span> r<span class="token operator">!=</span>None<span class="token punctuation">:</span>
-            r<span class="token operator">=</span>r<span class="token punctuation">.</span>right
-            hr<span class="token operator">+=</span><span class="token number">1</span>
-        <span class="token keyword">if</span> hl<span class="token operator">==</span>hr<span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 左右子树高度相等，是满二叉树，用公式计算</span>
-            <span class="token keyword">return</span> pow<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span>hl<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span>
-        <span class="token keyword">return</span> <span class="token number">1</span><span class="token operator">+</span>self<span class="token punctuation">.</span>countNodes<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">)</span><span class="token operator">+</span>self<span class="token punctuation">.</span>countNodes<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 普通二叉树，用递归方法计算</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+@momSaid
+<span class="token keyword">def</span> <span class="token function">learnAdd</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>c<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"小明学会了加法"</span><span class="token punctuation">)</span>
+    res<span class="token operator">=</span>a<span class="token operator">+</span>b<span class="token operator">+</span>c
+    <span class="token keyword">return</span> res
+
+@momSaid
+<span class="token keyword">def</span> <span class="token function">learnSubtraction</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"小明学会了减法"</span><span class="token punctuation">)</span>
+    res<span class="token operator">=</span>a<span class="token operator">-</span>b
+    <span class="token keyword">return</span> res
+
+learnAdd<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"==="</span><span class="token punctuation">)</span>
+learnSubtraction<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>运行结果为：</p>
+<pre><code>小明学会了加法
+算数结果为6
+妈妈说小明太棒了
+===
+小明学会了减法
+算数结果为1
+妈妈说小明太棒了</code></pre><blockquote>
+<p>小明和他爸爸都喜欢看动画片。于是小明的妈妈在电视上加了年龄权限，当爸爸在看天线宝宝时，会提醒他别看啦（增加函数权限）。而小明在看时，就不会提醒（不破坏原函数）</p>
+</blockquote>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">accessTV</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">wapper</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> age<span class="token operator">&lt;=</span><span class="token number">18</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> func<span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"小明的爸爸，你都成年啦，别看天线宝宝啦"</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> wapper
+
+@accessTV
+<span class="token keyword">def</span> <span class="token function">watchTV</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"小明在看天线宝宝"</span><span class="token punctuation">)</span>
+
+age<span class="token operator">=</span><span class="token number">10</span>
+watchTV<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>运行结果为：</p>
+<pre><code>age小于等于18时，函数输出：小明在看天线宝宝
+age大于18时，函数输出：小明的爸爸，你都成年啦，别看天线宝宝啦</code></pre><p><a href="https://www.youtube.com/watch?v=QqRvteWBSWg" target="_blank" rel="noopener">参考1</a>,<a href="https://www.zhihu.com/question/26930016/answer/360300235" target="_blank" rel="noopener">参考2</a></p>
 
             </div>
             <hr />
@@ -691,9 +732,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《第二章：如何计算完全二叉树的节点数》
+                    《python装饰器》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/08/02/labuladong/di-er-zhang-ru-he-ji-suan-wan-quan-er-cha-shu-de-jie-dian-shu/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/08/13/python/python-zhuang-shi-qi/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Min
             </a> 采用
@@ -733,48 +774,58 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/08/05/labuladong/di-er-zhang-te-shu-shu-ju-jie-gou-dan-diao-zhan/">
+                <a href="/2020/08/13/python/python-zhuang-shi-qi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="第二章：特殊数据结构：单调栈">
+                        <img src="/medias/featureimages/27.jpg" class="responsive-img" alt="python装饰器">
                         
-                        <span class="card-title">第二章：特殊数据结构：单调栈</span>
+                        <span class="card-title">python装饰器</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            labuladong 特殊数据结构：单调栈
+                            
+什么是装饰器？
+python装饰器用于装饰函数。可以在保留原函数功能的条件下，赋予该函数更丰富的功能（而无需改动原函数）
 
-文章例题：给你一个数组 [2,1,2,4,3]，你返回数组 [4,2,4,-1,-1]。解释：第一个 2 后面比 2 大的数是 4; 1 后面比 1 大的数是 2；第二个 2 后面比 2 大的数
+
+为什么要用装饰器？
+可以更便于开发，实现代码复用
+
+
+装饰器可以解决哪些问题？
+不破坏原函数的条件下，扩展函数功
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-05
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/LeetCode/" class="post-category" target="_blank">
-                                    LeetCode
+                            <a href="/categories/Python/" class="post-category" target="_blank">
+                                    Python
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/labuladong/" target="_blank">
-                        <span class="chip bg-color">labuladong</span>
+                    <a href="/tags/Python基础/" target="_blank">
+                        <span class="chip bg-color">Python基础</span>
                     </a>
                     
                 </div>
@@ -788,30 +839,29 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/08/02/labuladong/di-er-zhang-er-cha-sou-suo-shu-cao-zuo-ji-jin/">
+                <a href="/2020/08/12/labuladong/di-san-zhang-qian-zhui-he-ji-qiao/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="第二章：二叉搜索树操作集锦">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="第三章：前缀和技巧">
                         
-                        <span class="card-title">第二章：二叉搜索树操作集锦</span>
+                        <span class="card-title">第三章：前缀和技巧</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            labuladong 二叉搜索树操作集锦
+                            labuladong 前缀和技巧
+560. 和为K的子数组
+具体算法：
 
-二叉树
-
-二叉树算法设计的总路线：把当前节点要做的事做好，其他的交给递归框架，不用当前节点操心。    （可以理解成递归方法的应用）
-明确递归结束的条件 （已经到了叶子节点）
-把root该做的事情
+维护一个 hashmap，hashmap 的 key 为累加值 acc，value 为累加值 acc 出现的次数。
+遍历数组，然后不断更新 acc 和 hashmap
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-02
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-12
                             </span>
                         <span class="publish-author">
                             
