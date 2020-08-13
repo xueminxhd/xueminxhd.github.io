@@ -474,7 +474,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    635
+                    621
                 </div>
                 
 
@@ -584,32 +584,29 @@
           <span class="token keyword">elif</span> nums<span class="token punctuation">[</span>left<span class="token punctuation">]</span><span class="token operator">+</span>nums<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token operator">==</span>target<span class="token punctuation">:</span>
               <span class="token keyword">return</span> <span class="token punctuation">[</span>left<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>right<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span>
       <span class="token keyword">else</span><span class="token punctuation">:</span>
-          <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+          <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
-<pre><code>
-# [两数之和1（无序）](https://leetcode-cn.com/problems/two-sum/)
-
-- 遍历过程中，利用字典保存值对应的下标。若找到目标和，则返回下标
-- 
-```python
-class Solution(object):
-    def twoSum(self, nums, target):
-        &quot;&quot;&quot;
+<h1 id="两数之和1（无序）"><a href="#两数之和1（无序）" class="headerlink" title="两数之和1（无序）"></a><a href="https://leetcode-cn.com/problems/two-sum/" target="_blank" rel="noopener">两数之和1（无序）</a></h1><ul>
+<li>遍历过程中，利用字典保存值对应的下标。若找到目标和，则返回下标</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">twoSum</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">,</span> target<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
         :type nums: List[int]
         :type target: int
         :rtype: List[int]
-        &quot;&quot;&quot;
-    # def two_sum(nums,target):
-        dic=dict()
-        for i,v in enumerate(nums):
-            if target-v  in dic:
-                return i, dic[target-v]
-            dic[v]=i  
-        # for i,j in enumerate(nums):
-        #     if target-j in nums[i+1:]:
-        #         return i, i+1+nums[i+1:].index(target-j)</code></pre><h1 id="344-反转字符串"><a href="#344-反转字符串" class="headerlink" title="344. 反转字符串"></a><a href="https://leetcode-cn.com/problems/reverse-string/" target="_blank" rel="noopener">344. 反转字符串</a></h1><ul>
+        """</span>
+    <span class="token comment" spellcheck="true"># def two_sum(nums,target):</span>
+        dic<span class="token operator">=</span>dict<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">for</span> i<span class="token punctuation">,</span>v <span class="token keyword">in</span> enumerate<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> target<span class="token operator">-</span>v  <span class="token keyword">in</span> dic<span class="token punctuation">:</span>
+                <span class="token keyword">return</span> i<span class="token punctuation">,</span> dic<span class="token punctuation">[</span>target<span class="token operator">-</span>v<span class="token punctuation">]</span>
+            dic<span class="token punctuation">[</span>v<span class="token punctuation">]</span><span class="token operator">=</span>i  
+        <span class="token comment" spellcheck="true"># for i,j in enumerate(nums):</span>
+        <span class="token comment" spellcheck="true">#     if target-j in nums[i+1:]:</span>
+        <span class="token comment" spellcheck="true">#         return i, i+1+nums[i+1:].index(target-j)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="344-反转字符串"><a href="#344-反转字符串" class="headerlink" title="344. 反转字符串"></a><a href="https://leetcode-cn.com/problems/reverse-string/" target="_blank" rel="noopener">344. 反转字符串</a></h1><ul>
 <li>利用同步赋值，交换左右指针对应的值<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
   <span class="token keyword">def</span> <span class="token function">reverseString</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">)</span><span class="token punctuation">:</span>
       <span class="token triple-quoted-string string">"""
