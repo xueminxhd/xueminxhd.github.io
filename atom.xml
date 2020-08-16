@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xueminxhd.github.io/"/>
-  <updated>2020-08-13T06:36:20.640Z</updated>
+  <updated>2020-08-16T15:08:10.011Z</updated>
   <id>https://xueminxhd.github.io/</id>
   
   <author>
@@ -15,6 +15,84 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>第三章：信封嵌套问题</title>
+    <link href="https://xueminxhd.github.io/2020/08/16/labuladong/di-san-zhang-xin-feng-qian-tao-wen-ti/"/>
+    <id>https://xueminxhd.github.io/2020/08/16/labuladong/di-san-zhang-xin-feng-qian-tao-wen-ti/</id>
+    <published>2020-08-16T15:07:29.000Z</published>
+    <updated>2020-08-16T15:08:10.011Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/suan-fa-si-wei-xi-lie/xin-feng-qian-tao-wen-ti#yi-ti-mu-gai-shu&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第三章：区间调度之区间交集问题</title>
+    <link href="https://xueminxhd.github.io/2020/08/16/labuladong/di-san-zhang-qu-jian-diao-du-zhi-qu-jian-jiao-ji-wen-ti/"/>
+    <id>https://xueminxhd.github.io/2020/08/16/labuladong/di-san-zhang-qu-jian-diao-du-zhi-qu-jian-jiao-ji-wen-ti/</id>
+    <published>2020-08-16T14:51:26.000Z</published>
+    <updated>2020-08-16T14:52:55.729Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/suan-fa-si-wei-xi-lie/qu-jian-jiao-ji-wen-ti&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第三章：区间调度之区间合并问题</title>
+    <link href="https://xueminxhd.github.io/2020/08/16/labuladong/di-san-zhang-qu-jian-diao-du-zhi-qu-jian-he-bing-wen-ti/"/>
+    <id>https://xueminxhd.github.io/2020/08/16/labuladong/di-san-zhang-qu-jian-diao-du-zhi-qu-jian-he-bing-wen-ti/</id>
+    <published>2020-08-16T06:03:33.000Z</published>
+    <updated>2020-08-16T14:53:03.175Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/suan-fa-si-wei-xi-lie/qu-jian-tiao-du-wen-ti-zhi-qu-jian-he-bing&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
+    
+  </entry>
   
   <entry>
     <title>python装饰器</title>
@@ -454,84 +532,6 @@
         
         
           &lt;p&gt;labuladong&lt;a href=&quot;https://labuladong.gitbook.io/algo/dong-tai-gui-hua-xi-lie/targetsum&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第零章：经典动态规划：完全背包问题</title>
-    <link href="https://xueminxhd.github.io/2020/07/27/labuladong/di-ling-zhang-jing-dian-dong-tai-gui-hua-wan-quan-bei-bao-wen-ti/"/>
-    <id>https://xueminxhd.github.io/2020/07/27/labuladong/di-ling-zhang-jing-dian-dong-tai-gui-hua-wan-quan-bei-bao-wen-ti/</id>
-    <published>2020-07-27T13:23:22.000Z</published>
-    <updated>2020-07-27T15:27:43.920Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;labuladong&lt;a href=&quot;https://labuladong.gitbook.io/algo/di-ling-zhang-bi-du-xi-lie/bei-bao-ling-qian&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第零章：经典动态规划：子集背包问题</title>
-    <link href="https://xueminxhd.github.io/2020/07/27/labuladong/di-ling-zhang-jing-dian-dong-tai-gui-hua-zi-ji-bei-bao-wen-ti/"/>
-    <id>https://xueminxhd.github.io/2020/07/27/labuladong/di-ling-zhang-jing-dian-dong-tai-gui-hua-zi-ji-bei-bao-wen-ti/</id>
-    <published>2020-07-27T10:07:54.000Z</published>
-    <updated>2020-08-02T02:01:43.701Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;labuladong&lt;a href=&quot;https://labuladong.gitbook.io/algo/di-ling-zhang-bi-du-xi-lie/bei-bao-zi-ji&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第一章：经典动态规划：0-1 背包问题</title>
-    <link href="https://xueminxhd.github.io/2020/07/27/labuladong/di-yi-zhang-jing-dian-dong-tai-gui-hua-0-1-bei-bao-wen-ti/"/>
-    <id>https://xueminxhd.github.io/2020/07/27/labuladong/di-yi-zhang-jing-dian-dong-tai-gui-hua-0-1-bei-bao-wen-ti/</id>
-    <published>2020-07-27T02:12:54.000Z</published>
-    <updated>2020-07-27T15:27:40.602Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;labuladong &lt;a
         
       
     
