@@ -4,16 +4,17 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="第一章：动态规划设计：最大子数组, It&#39;s the job that&#39;s never started as takes longest to finish.”― J.R.R. Tolkien">
+    <meta name="keywords" content="第四章：如何高效寻找素数, It&#39;s the job that&#39;s never started as takes longest to finish.”― J.R.R. Tolkien">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="labuladong动态规划设计：最大子数组
-53. 最大子序和
+    <meta name="description" content="labuladong 如何高效寻找素数
+204. 计数质数
+统计所有小于非负整数 n 的质数的数量
 
-课堂上，学生排排坐。
-老师：“这门课的作业，你们可以选择自己完成，也可以根据座位顺序，和你前面的同学组队（前面的同学可能和前前面的同学组了队，也可能就他一个人）。” 
-每个">
+初始化时，给每个位置立一个flag，并初始化为1
+遍历时，对于i而言：
+如果这个位置的flag为1，说明数字 i  没有被比 i 小的数整">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +22,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>第一章：动态规划设计：最大子数组 | Min&#39;s Blog</title>
+    <title>第四章：如何高效寻找素数 | Min&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -321,13 +322,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        第一章：动态规划设计：最大子数组
+                        第四章：如何高效寻找素数
                     </div>
                 </div>
             </div>
@@ -462,7 +463,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-29
+                    2020-08-17
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -476,7 +477,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    386
+                    360
                 </div>
                 
 
@@ -499,30 +500,39 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>labuladong<a href="https://labuladong.gitbook.io/algo/dong-tai-gui-hua-xi-lie/zui-da-zi-shu-zu" target="_blank" rel="noopener">动态规划设计：最大子数组</a></p>
-<p><a href="https://leetcode-cn.com/problems/maximum-subarray/" target="_blank" rel="noopener">53. 最大子序和</a></p>
-<hr>
-<p>课堂上，学生排排坐。</p>
-<p>老师：“这门课的作业，你们可以选择自己完成，也可以根据座位顺序，和你前面的同学组队（前面的同学可能和前前面的同学组了队，也可能就他一个人）。” </p>
-<p>每个人都想把自己的作业完成得最好。</p>
-<p> 在座位<code>i</code>处的大佬心想：“前面可能是大大佬（可以组队, <code>dp[i-1]+nums[i]</code>），也可能是小小菜（组队会拖我后腿，还不如我自己<code>nums[i]</code>）。”  不管哪种选择，最后，他的最好成绩取这两种选择的最大值即可。</p>
-<hr>
+                <p>labuladong <a href="https://labuladong.gitbook.io/algo/gao-pin-mian-shi-xi-lie/da-yin-su-shu" target="_blank" rel="noopener">如何高效寻找素数</a></p>
+<p><a href="https://leetcode-cn.com/problems/count-primes/solution/qiu-zhi-shu-chao-guo-90-by-powcai/" target="_blank" rel="noopener">204. 计数质数</a></p>
+<p>统计所有<strong>小于非负整数 n</strong> 的质数的数量</p>
 <ul>
-<li>dp数组含义： <strong>以nums[i]结尾</strong>的当前最大子序和保存在dp[i] 中</li>
-<li>状态转移方程：<strong>nums[i] 有两种「选择」，要么与前面的相邻子数组连接，形成一个和更大的子数组；要么不与前面的子数组连接，自成一派，自己作为一个子数组</strong><ul>
-<li><strong>对nums[i]而言</strong>（dp数组的含义决定了子序和是以nums[i]结尾的），若连接前面的子序列，则dp[i]=dp[i-1]+nums[i]。 若不连接，则自立门户 dp[i]=nums[i] 。根据这两种选择，直接取最大值即可 <code>dp[i]=max(nums[i],dp[i-1]+nums[i])</code>。</li>
+<li>初始化时，给每个位置立一个flag，并初始化为1</li>
+<li>遍历时，对于i而言：<ul>
+<li>如果这个位置的flag为1，说明数字 i  没有被比 i 小的数整除过，说明它是质数，计数器+1。</li>
+<li>i 的倍数一定不是质数，将这些数的flag设置为0</li>
 </ul>
 </li>
 </ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">maxSubArray</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">if</span> <span class="token operator">not</span> nums<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token number">0</span>
-        dp<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">0</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
-        dp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">=</span>nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">countPrimes</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> n<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true">#给每个位置立一个flag，初始化为1</span>
+        isPrimes <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">*</span> n
+        <span class="token comment" spellcheck="true">#result，输出的质数总个数的计数器，初始化为0</span>
+        res <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token comment" spellcheck="true">#循环，从最小质数i开始到n循环</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true">#如果这个位置的flag为1，说明数字 i  没有被比 i 小的数整除过，说明它是质数，计数器+1</span>
+            <span class="token keyword">if</span> isPrimes<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span> res <span class="token operator">+=</span> <span class="token number">1</span>
 
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>max<span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span>dp<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token operator">+</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
-        <span class="token keyword">return</span> max<span class="token punctuation">(</span>dp<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+            <span class="token comment" spellcheck="true">#下面这几步的思路是， i 的倍数一定不是质数，将这些数的flag设置为0</span>
+            <span class="token comment" spellcheck="true">#设置倍数 j ，初始化与 i 相等。 因为i也是一点点加上来的，比如 i=5的时候，i 的4倍一定在 i=4 时已经设置为0过。</span>
+            j <span class="token operator">=</span> i
+            <span class="token comment" spellcheck="true"># 因为统计的是所有小于非负整数 n 的质数的数量，当 i 的 j 倍 >=n 时，跳出循环</span>
+            <span class="token keyword">while</span> i <span class="token operator">*</span> j <span class="token operator">&lt;</span> n<span class="token punctuation">:</span>
+                <span class="token comment" spellcheck="true">#设置i 的 j 倍的flag为0</span>
+                isPrimes<span class="token punctuation">[</span>i <span class="token operator">*</span> j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span>
+                <span class="token comment" spellcheck="true"># 自增，下一个找 j+1 倍</span>
+                j <span class="token operator">+=</span> <span class="token number">1</span>
+        <span class="token comment" spellcheck="true">#返回结果</span>
+        <span class="token keyword">return</span> res<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -681,9 +691,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《第一章：动态规划设计：最大子数组》
+                    《第四章：如何高效寻找素数》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/07/29/labuladong/di-yi-zhang-dong-tai-gui-hua-she-ji-zui-da-zi-shu-zu/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/08/17/labuladong/di-si-zhang-ru-he-gao-xiao-xun-zhao-su-shu/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Min
             </a> 采用
@@ -727,29 +737,29 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/07/30/labuladong/di-yi-zhang-jing-dian-dong-tai-gui-hua-bian-ji-ju-chi/">
+                <a href="/2020/08/17/labuladong/di-si-zhang-ru-he-yun-yong-er-fen-cha-zhao-suan-fa/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="第一章：经典动态规划：编辑距离">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="第四章：如何运用二分查找算法">
                         
-                        <span class="card-title">第一章：经典动态规划：编辑距离</span>
+                        <span class="card-title">第四章：如何运用二分查找算法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            labuladong经典动态规划：编辑距离
-72. 编辑距离
+                            labuladong 如何运用二分查找算法
+875. 爱吃香蕉的珂珂
 
+canFinish() 函数：当前速度下，能吃完的小时数（注意要向上整除）    
 
-在word1 和word2 前面分别插入&quot;&quot; 不仅可以包括字符串为空的情况，而且可以更清楚地用空字符串说明状态转移的过程
-i 和 j 中，因为最前面加了&
+最小速度为1，最大速度为数组中最大值。因此利用二分查找框架求h（h相当于二分查找中
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-30
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-17
                         </span>
                         <span class="publish-author">
                             
@@ -781,27 +791,28 @@ i 和 j 中，因为最前面加了&
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/29/labuladong/di-yi-zhang-dong-tai-gui-hua-she-ji-zui-chang-di-zeng-zi-xu-lie/">
+                <a href="/2020/08/17/labuladong/di-san-zhang-di-gui-xiang-jie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="第一章：动态规划设计：最长递增子序列">
+                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="第三章：递归详解">
                         
-                        <span class="card-title">第一章：动态规划设计：最长递增子序列</span>
+                        <span class="card-title">第三章：递归详解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            labuladong动态规划设计：最长递增子序列
-300. 最长上升子序列
-dp数组的含义：以nums[i] 结尾的当前最长上升子序列的长度记录在dp[i]中
-状态转移方程：nums[i] 与它之前的元素nums[j]进行比较，若大于num
+                            labuladong 递归详解
+
+明白一个递归函数的作用并相信它能完成这个任务，千万不要试图跳进细节
+补充递归结束的条件路径总和 III
+pathSum(self, root, sum) : 给定root 和目标值，返回和为目标值的路径总数
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-29
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-17
                             </span>
                         <span class="publish-author">
                             

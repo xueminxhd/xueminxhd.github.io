@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xueminxhd.github.io/"/>
-  <updated>2020-08-16T15:08:10.011Z</updated>
+  <updated>2020-08-17T13:48:36.619Z</updated>
   <id>https://xueminxhd.github.io/</id>
   
   <author>
@@ -15,6 +15,108 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>第四章：如何高效解决接雨水问题</title>
+    <link href="https://xueminxhd.github.io/2020/08/17/labuladong/di-si-zhang-ru-he-gao-xiao-jie-jue-jie-yu-shui-wen-ti/"/>
+    <id>https://xueminxhd.github.io/2020/08/17/labuladong/di-si-zhang-ru-he-gao-xiao-jie-jue-jie-yu-shui-wen-ti/</id>
+    <published>2020-08-17T13:36:35.000Z</published>
+    <updated>2020-08-17T13:48:36.619Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/gao-pin-mian-shi-xi-lie/jie-yu-shui&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第四章：如何运用二分查找算法</title>
+    <link href="https://xueminxhd.github.io/2020/08/17/labuladong/di-si-zhang-ru-he-yun-yong-er-fen-cha-zhao-suan-fa/"/>
+    <id>https://xueminxhd.github.io/2020/08/17/labuladong/di-si-zhang-ru-he-yun-yong-er-fen-cha-zhao-suan-fa/</id>
+    <published>2020-08-17T13:17:23.000Z</published>
+    <updated>2020-08-17T13:18:28.871Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/gao-pin-mian-shi-xi-lie/koko-tou-xiang-jiao&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第四章：如何高效寻找素数</title>
+    <link href="https://xueminxhd.github.io/2020/08/17/labuladong/di-si-zhang-ru-he-gao-xiao-xun-zhao-su-shu/"/>
+    <id>https://xueminxhd.github.io/2020/08/17/labuladong/di-si-zhang-ru-he-gao-xiao-xun-zhao-su-shu/</id>
+    <published>2020-08-17T07:12:54.000Z</published>
+    <updated>2020-08-17T07:13:14.766Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/gao-pin-mian-shi-xi-lie/da-yin-su-shu&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第三章：递归详解</title>
+    <link href="https://xueminxhd.github.io/2020/08/17/labuladong/di-san-zhang-di-gui-xiang-jie/"/>
+    <id>https://xueminxhd.github.io/2020/08/17/labuladong/di-san-zhang-di-gui-xiang-jie/</id>
+    <published>2020-08-17T06:44:38.000Z</published>
+    <updated>2020-08-17T06:50:59.107Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/suan-fa-si-wei-xi-lie/di-gui-xiang-jie&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
+    
+  </entry>
   
   <entry>
     <title>第三章：信封嵌套问题</title>
@@ -428,110 +530,6 @@
         
         
           &lt;p&gt;labuladong&lt;a href=&quot;https://labuladong.gitbook.io/algo/dong-tai-gui-hua-xi-lie/zui-chang-gong-gong-zi-xu-lie&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第一章：经典动态规划：编辑距离</title>
-    <link href="https://xueminxhd.github.io/2020/07/30/labuladong/di-yi-zhang-jing-dian-dong-tai-gui-hua-bian-ji-ju-chi/"/>
-    <id>https://xueminxhd.github.io/2020/07/30/labuladong/di-yi-zhang-jing-dian-dong-tai-gui-hua-bian-ji-ju-chi/</id>
-    <published>2020-07-30T12:06:54.000Z</published>
-    <updated>2020-07-30T13:02:59.407Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;labuladong&lt;a href=&quot;https://labuladong.gitbook.io/algo/dong-tai-gui-hua-xi-lie/bian-ji-ju-li&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第一章：动态规划设计：最大子数组</title>
-    <link href="https://xueminxhd.github.io/2020/07/29/labuladong/di-yi-zhang-dong-tai-gui-hua-she-ji-zui-da-zi-shu-zu/"/>
-    <id>https://xueminxhd.github.io/2020/07/29/labuladong/di-yi-zhang-dong-tai-gui-hua-she-ji-zui-da-zi-shu-zu/</id>
-    <published>2020-07-29T10:28:14.000Z</published>
-    <updated>2020-07-29T14:04:56.359Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;labuladong&lt;a href=&quot;https://labuladong.gitbook.io/algo/dong-tai-gui-hua-xi-lie/zui-da-zi-shu-zu&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第一章：动态规划设计：最长递增子序列</title>
-    <link href="https://xueminxhd.github.io/2020/07/29/labuladong/di-yi-zhang-dong-tai-gui-hua-she-ji-zui-chang-di-zeng-zi-xu-lie/"/>
-    <id>https://xueminxhd.github.io/2020/07/29/labuladong/di-yi-zhang-dong-tai-gui-hua-she-ji-zui-chang-di-zeng-zi-xu-lie/</id>
-    <published>2020-07-29T08:11:12.000Z</published>
-    <updated>2020-07-29T08:12:53.431Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;labuladong&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第一章：动态规划和回溯算法到底谁是谁爹？</title>
-    <link href="https://xueminxhd.github.io/2020/07/29/labuladong/di-yi-zhang-dong-tai-gui-hua-he-hui-su-suan-fa-dao-di-shui-shi-shui-die/"/>
-    <id>https://xueminxhd.github.io/2020/07/29/labuladong/di-yi-zhang-dong-tai-gui-hua-he-hui-su-suan-fa-dao-di-shui-shi-shui-die/</id>
-    <published>2020-07-29T06:40:56.000Z</published>
-    <updated>2020-08-02T03:24:07.784Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;labuladong&lt;a href=&quot;https://labuladong.gitbook.io/algo/dong-tai-gui-hua-xi-lie/targetsum&quot; target=&quot;_blank&quot;
         
       
     
