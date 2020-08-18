@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xueminxhd.github.io/"/>
-  <updated>2020-08-17T14:11:03.487Z</updated>
+  <updated>2020-08-18T08:52:24.797Z</updated>
   <id>https://xueminxhd.github.io/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>第四章：如何去除有序数组的重复元素</title>
+    <link href="https://xueminxhd.github.io/2020/08/18/labuladong/di-si-zhang-ru-he-qu-chu-you-xu-shu-zu-de-chong-fu-yuan-su/"/>
+    <id>https://xueminxhd.github.io/2020/08/18/labuladong/di-si-zhang-ru-he-qu-chu-you-xu-shu-zu-de-chong-fu-yuan-su/</id>
+    <published>2020-08-18T08:48:13.000Z</published>
+    <updated>2020-08-18T08:52:24.797Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/gao-pin-mian-shi-xi-lie/ru-he-qu-chu-you-xu-shu-zu-de-zhong-fu-yuan-su&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
+    
+  </entry>
+  
+  <entry>
     <title>第四章：如何高效解决接雨水问题</title>
     <link href="https://xueminxhd.github.io/2020/08/17/labuladong/di-si-zhang-ru-he-gao-xiao-jie-jue-jie-yu-shui-wen-ti/"/>
     <id>https://xueminxhd.github.io/2020/08/17/labuladong/di-si-zhang-ru-he-gao-xiao-jie-jue-jie-yu-shui-wen-ti/</id>
     <published>2020-08-17T13:36:35.000Z</published>
-    <updated>2020-08-17T14:11:03.487Z</updated>
+    <updated>2020-08-18T07:30:59.959Z</updated>
     
     <summary type="html">
     
@@ -34,6 +60,8 @@
       
     
     </summary>
+    
+      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
     
     
       <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
@@ -504,32 +532,6 @@
         
         
           &lt;p&gt;labuladong &lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第一章：经典动态规划：最长公共子序列</title>
-    <link href="https://xueminxhd.github.io/2020/07/31/labuladong/di-yi-zhang-jing-dian-dong-tai-gui-hua-zui-chang-gong-gong-zi-xu-lie/"/>
-    <id>https://xueminxhd.github.io/2020/07/31/labuladong/di-yi-zhang-jing-dian-dong-tai-gui-hua-zui-chang-gong-gong-zi-xu-lie/</id>
-    <published>2020-07-31T04:57:30.000Z</published>
-    <updated>2020-07-31T04:58:32.763Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;labuladong&lt;a href=&quot;https://labuladong.gitbook.io/algo/dong-tai-gui-hua-xi-lie/zui-chang-gong-gong-zi-xu-lie&quot; target=&quot;_blank&quot;
         
       
     

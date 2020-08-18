@@ -4,15 +4,17 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="第四章：如何判定括号合法性, It&#39;s the job that&#39;s never started as takes longest to finish.”― J.R.R. Tolkien">
+    <meta name="keywords" content="第四章：如何去除有序数组的重复元素, It&#39;s the job that&#39;s never started as takes longest to finish.”― J.R.R. Tolkien">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="labuladong 如何判定括号合法性
-解题思路：遇到左括号就入栈，遇到右括号就去栈中寻找最近的左括号（栈顶元素），看是否匹配。
-Krahets的极简思路及实现
-
-栈 stack 为空： 此时 stack.pop() 操作会报错；因此，我">
+    <meta name="description" content="labuladong 如何去除有序数组的重复元素
+用快慢指针解决问题（两种初始化都可以）初始化时：
+slow,fast=0,0
+slow,fast=head,head
+或者
+slow,fast=0,1
+slow,fast=head,head">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +22,7 @@ Krahets的极简思路及实现
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>第四章：如何判定括号合法性 | Min&#39;s Blog</title>
+    <title>第四章：如何去除有序数组的重复元素 | Min&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -320,13 +322,13 @@ Krahets的极简思路及实现
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        第四章：如何判定括号合法性
+                        第四章：如何去除有序数组的重复元素
                     </div>
                 </div>
             </div>
@@ -461,7 +463,7 @@ Krahets的极简思路及实现
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-13
+                    2020-08-18
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -475,7 +477,7 @@ Krahets的极简思路及实现
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    148
+                    249
                 </div>
                 
 
@@ -498,29 +500,59 @@ Krahets的极简思路及实现
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>labuladong <a href="https://labuladong.gitbook.io/algo/gao-pin-mian-shi-xi-lie/he-fa-kuo-hao-pan-ding" target="_blank" rel="noopener">如何判定括号合法性</a></p>
-<p><strong>解题思路</strong>：遇到左括号就入栈，遇到右括号就去栈中寻找最近的左括号（栈顶元素），看是否匹配。</p>
-<p>Krahets的<a href="https://leetcode-cn.com/problems/valid-parentheses/solution/valid-parentheses-fu-zhu-zhan-fa-by-jin407891080/" target="_blank" rel="noopener">极简思路及实现</a></p>
-<blockquote>
-<p><strong>栈 stack 为空： 此时 stack.pop() 操作会报错</strong>；因此，我们采用一个取巧方法，给 stack 赋初值 ?? ，并在哈希表 dic 中建立 key: ‘?’，value:’?’key: ′ ? ′ ，value: ′ ? ′  的对应关系予以配合。</p>
-</blockquote>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">isValid</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <p>labuladong <a href="https://labuladong.gitbook.io/algo/gao-pin-mian-shi-xi-lie/ru-he-qu-chu-you-xu-shu-zu-de-zhong-fu-yuan-su" target="_blank" rel="noopener">如何去除有序数组的重复元素</a></p>
+<p>用<strong>快慢指针</strong>解决问题（两种初始化都可以）<br>初始化时：</p>
+<pre class="line-numbers language-python"><code class="language-python">slow<span class="token punctuation">,</span>fast<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span>
+slow<span class="token punctuation">,</span>fast<span class="token operator">=</span>head<span class="token punctuation">,</span>head<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>或者</p>
+<pre class="line-numbers language-python"><code class="language-python">slow<span class="token punctuation">,</span>fast<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span>
+slow<span class="token punctuation">,</span>fast<span class="token operator">=</span>head<span class="token punctuation">,</span>head<span class="token punctuation">.</span>next<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li>快指针在前，慢指针在后。快指针在每次前进时，如果和慢指针的元素不同，则慢指针跳1格，然后把快指针的元素赋给慢指针</li>
+</ul>
+<p><a href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/" target="_blank" rel="noopener">26. 删除排序数组中的重复项</a></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># nums = [0,0,1,1,1,2,2,3,3,4]</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">removeDuplicates</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token triple-quoted-string string">"""
-        :type s: str
-        :rtype: bool
+        :type nums: List[int]
+        :rtype: int
         """</span>
-        dic<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">'('</span><span class="token punctuation">:</span><span class="token string">')'</span><span class="token punctuation">,</span><span class="token string">'{'</span><span class="token punctuation">:</span><span class="token string">'}'</span><span class="token punctuation">,</span><span class="token string">'['</span><span class="token punctuation">:</span><span class="token string">']'</span><span class="token punctuation">,</span><span class="token string">'?'</span><span class="token punctuation">:</span><span class="token string">'?'</span><span class="token punctuation">}</span>
-        stack<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'?'</span><span class="token punctuation">]</span>
-        <span class="token keyword">for</span> c <span class="token keyword">in</span> s<span class="token punctuation">:</span>
-            <span class="token keyword">if</span> c <span class="token keyword">in</span> dic<span class="token punctuation">:</span>
-                stack<span class="token punctuation">.</span>append<span class="token punctuation">(</span>c<span class="token punctuation">)</span>
-            <span class="token keyword">elif</span> c<span class="token operator">==</span>dic<span class="token punctuation">[</span>stack<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-                stack<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
-            <span class="token keyword">else</span><span class="token punctuation">:</span>
-                <span class="token keyword">return</span> <span class="token boolean">False</span>
-        <span class="token keyword">return</span> len<span class="token punctuation">(</span>stack<span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">1</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        <span class="token keyword">if</span> <span class="token operator">not</span> nums<span class="token punctuation">:</span><span class="token keyword">return</span> <span class="token number">0</span>
+        slow<span class="token punctuation">,</span>fast<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span>
+        n<span class="token operator">=</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span>
+        <span class="token keyword">while</span> fast<span class="token operator">&lt;</span>n<span class="token punctuation">:</span>
+            <span class="token keyword">if</span> nums<span class="token punctuation">[</span>slow<span class="token punctuation">]</span><span class="token operator">!=</span>nums<span class="token punctuation">[</span>fast<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                slow <span class="token operator">+=</span> <span class="token number">1</span>
+                nums<span class="token punctuation">[</span>slow<span class="token punctuation">]</span><span class="token operator">=</span>nums<span class="token punctuation">[</span>fast<span class="token punctuation">]</span>
+            fast<span class="token operator">+=</span><span class="token number">1</span>
+        <span class="token keyword">return</span> slow<span class="token operator">+</span><span class="token number">1</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><a href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/" target="_blank" rel="noopener">83. 删除排序链表中的重复元素</a></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for singly-linked list.</span>
+<span class="token comment" spellcheck="true"># class ListNode(object):</span>
+<span class="token comment" spellcheck="true">#     def __init__(self, x):</span>
+<span class="token comment" spellcheck="true">#         self.val = x</span>
+<span class="token comment" spellcheck="true">#         self.next = None</span>
+
+
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">deleteDuplicates</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> head<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :type head: ListNode
+        :rtype: ListNode
+        """</span>
+        <span class="token keyword">if</span> <span class="token operator">not</span> head<span class="token punctuation">:</span> <span class="token keyword">return</span> None
+        slow<span class="token operator">=</span>head
+        fast<span class="token operator">=</span>head<span class="token punctuation">.</span>next
+        <span class="token keyword">while</span> fast<span class="token operator">!=</span>None<span class="token punctuation">:</span>
+            <span class="token keyword">if</span> slow<span class="token punctuation">.</span>val<span class="token operator">!=</span>fast<span class="token punctuation">.</span>val<span class="token punctuation">:</span>
+                slow<span class="token operator">=</span>slow<span class="token punctuation">.</span>next
+                slow<span class="token punctuation">.</span>val<span class="token operator">=</span>fast<span class="token punctuation">.</span>val
+            fast<span class="token operator">=</span>fast<span class="token punctuation">.</span>next
+        slow<span class="token punctuation">.</span>next<span class="token operator">=</span>None
+        <span class="token keyword">return</span> head<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -679,9 +711,9 @@ Krahets的极简思路及实现
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《第四章：如何判定括号合法性》
+                    《第四章：如何去除有序数组的重复元素》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/07/13/labuladong/di-si-zhang-ru-he-pan-ding-gua-hao-he-fa-xing/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/08/18/labuladong/di-si-zhang-ru-he-qu-chu-you-xu-shu-zu-de-chong-fu-yuan-su/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Min
             </a> 采用
@@ -721,35 +753,36 @@ Krahets的极简思路及实现
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/07/13/labuladong/di-si-zhang-ru-he-xun-zhao-que-shi-de-yuan-su/">
+                <a href="/2020/08/18/labuladong/di-si-zhang-ru-he-qu-chu-you-xu-shu-zu-de-chong-fu-yuan-su/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="第四章：如何寻找缺失的元素">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="第四章：如何去除有序数组的重复元素">
                         
-                        <span class="card-title">第四章：如何寻找缺失的元素</span>
+                        <span class="card-title">第四章：如何去除有序数组的重复元素</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            labuladong如何寻找缺失的元素
-
-先遍历列表，并加到set中。利用 HashSet 去重
-若元素不在列表中，则表示该元素缺失
-
-class Solution(object):
-    def findDisappearedNumbe
+                            labuladong 如何去除有序数组的重复元素
+用快慢指针解决问题（两种初始化都可以）初始化时：
+slow,fast=0,0
+slow,fast=head,head
+或者
+slow,fast=0,1
+slow,fast=head,head
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -762,6 +795,7 @@ class Solution(object):
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -780,28 +814,28 @@ class Solution(object):
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/13/labuladong/di-si-zhang-ru-he-xun-zhao-zui-chang-hui-wen-zi-chuan/">
+                <a href="/2020/08/17/labuladong/di-si-zhang-ru-he-gao-xiao-jie-jue-jie-yu-shui-wen-ti/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="第四章：如何寻找最长回文子串">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="第四章：如何高效解决接雨水问题">
                         
-                        <span class="card-title">第四章：如何寻找最长回文子串</span>
+                        <span class="card-title">第四章：如何高效解决接雨水问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            labuladong 如何寻找最长回文子串
-5. 最长回文子串
+                            labuladong 如何高效解决接雨水问题
+42. 接雨水
+我们开两个数组 r_max 和 l_max 充当备忘录
 
-回文串的长度可能是奇数也可能是偶数，如果是 abba这种情况，没有一个中心字符。所以可以：
-找到以 s[i] 为中心的回文串（对奇数回文串），找到以 s[i] 和 s[i+1
+l_max[i] 表示位置 i 左边最高的柱子高度（包括本身在内，正着遍历）， r_max[i] 表示位置 i 右边最高
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-13
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-17
                             </span>
                         <span class="publish-author">
                             
