@@ -8,8 +8,9 @@
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="labuladong 之 如何运用贪心思想玩跳跃游戏
-两道题都注意，在 for i in range (len(nums)-1)    处就停止，不考虑最后一个元素的下标及元素的大小。因为nums[-1] 不会再用到，若加入，反而会干扰部分">
+    <meta name="description" content="labuladong 如何运用贪心思想玩跳跃游戏
+有关动态规划的问题，大多是让你求最值的，比如最长子序列，最小编辑距离，最长公共子串等等等。
+那么贪心算法作为特殊的动态规划也是一样，也一定是让你求个最值。这道题就是让求：请问通过题目中的跳跃">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -317,7 +318,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -438,10 +439,6 @@
                             <span class="chip bg-color">labuladong</span>
                         </a>
                         
-                        <a href="/tags/LeetCode/" target="_blank">
-                            <span class="chip bg-color">LeetCode</span>
-                        </a>
-                        
                     </div>
                     
                 </div>
@@ -476,7 +473,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    226
+                    488
                 </div>
                 
 
@@ -499,10 +496,15 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>labuladong 之 <a href="https://labuladong.gitbook.io/algo/gao-pin-mian-shi-xi-lie/tiao-yue-you-xi" target="_blank" rel="noopener">如何运用贪心思想玩跳跃游戏</a></p>
+                <p>labuladong <a href="https://labuladong.gitbook.io/algo/gao-pin-mian-shi-xi-lie/tiao-yue-you-xi" target="_blank" rel="noopener">如何运用贪心思想玩跳跃游戏</a></p>
+<p>有关动态规划的问题，大多是让你求最值的，比如<strong>最长子序列，最小编辑距离，最长公共子串等等等</strong>。</p>
+<p>那么贪心算法作为特殊的动态规划也是一样，也一定是让你求个最值。这道题就是让求：请问通过题目中的跳跃规则，<strong>最多能跳多远</strong>？如果能够越过最后一格，返回 true，否则返回 false。</p>
 <p>两道题都注意，在 <code>for i in range (len(nums)-1)</code>    处就停止，不考虑最后一个元素的下标及元素的大小。因为nums[-1] 不会再用到，若加入，反而会干扰部分结果，产生错误 （如<code>[2,0,0]</code>）。</p>
 <p><a href="https://leetcode-cn.com/problems/jump-game/" target="_blank" rel="noopener">55. 跳跃游戏1</a></p>
 <p><code>farthest</code>表示到达最远距离的下标</p>
+<ul>
+<li>每一步都计算一下从当前位置最远能够跳到哪里，然后和一个全局最优的最远位置 farthest 做对比，通过每一步的最优解，更新全局最优解，这就是贪心。</li>
+</ul>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">canJump</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token triple-quoted-string string">"""
@@ -519,7 +521,11 @@
                 <span class="token keyword">return</span> <span class="token boolean">False</span>
         <span class="token keyword">return</span> farthest<span class="token operator">>=</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><a href="https://leetcode-cn.com/problems/jump-game-ii/" target="_blank" rel="noopener">45. 跳跃游戏2</a></p>
-<p><code>end</code>表示当前元素对应的可跳的最大元素下标</p>
+<ul>
+<li>我们不需要【递归地】计算出所有选择的具体结果然后比较求最值，而只需要做出那个最有【潜力】，看起来最优的选择即可。</li>
+<li>i 和 end 标记了可以选择的跳跃步数，farthest 标记了所有选择 [i..end] 中能够跳到的最远距离，step记录了跳跃次数。</li>
+<li>当i遍历到end处时，把end更新为更远的farthest，步数+1</li>
+</ul>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">jump</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token triple-quoted-string string">"""
@@ -742,7 +748,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/27.jpg" class="responsive-img" alt="第四章：如何k个一组反转链表">
+                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="第四章：如何k个一组反转链表">
                         
                         <span class="card-title">第四章：如何k个一组反转链表</span>
                     </div>
@@ -751,6 +757,7 @@
                     <div class="summary block-with-text">
                         
                             labuladong如何k个一组反转链表
+25. K 个一组翻转链表
 利用栈先进后出，反转k个一组的链表
 
 stack中存放的是ListNode
@@ -758,7 +765,7 @@ stack中存放的是ListNode
 
 
 
-以 1-&gt;2-&gt;3-&gt;4-&gt
+以 1-&gt;2-&
                         
                     </div>
                     <div class="publish-info">
@@ -784,10 +791,6 @@ stack中存放的是ListNode
                         <span class="chip bg-color">labuladong</span>
                     </a>
                     
-                    <a href="/tags/LeetCode/" target="_blank">
-                        <span class="chip bg-color">LeetCode</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -803,7 +806,7 @@ stack中存放的是ListNode
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="第四章：如何运用贪心思想玩跳跃游戏">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="第四章：如何运用贪心思想玩跳跃游戏">
                         
                         <span class="card-title">第四章：如何运用贪心思想玩跳跃游戏</span>
                     </div>
@@ -811,8 +814,9 @@ stack中存放的是ListNode
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            labuladong 之 如何运用贪心思想玩跳跃游戏
-两道题都注意，在 for i in range (len(nums)-1)    处就停止，不考虑最后一个元素的下标及元素的大小。因为nums[-1] 不会再用到，若加入，反而会干扰部分
+                            labuladong 如何运用贪心思想玩跳跃游戏
+有关动态规划的问题，大多是让你求最值的，比如最长子序列，最小编辑距离，最长公共子串等等等。
+那么贪心算法作为特殊的动态规划也是一样，也一定是让你求个最值。这道题就是让求：请问通过题目中的跳跃
                         
                     </div>
                     <div class="publish-info">
@@ -837,10 +841,6 @@ stack中存放的是ListNode
                     
                     <a href="/tags/labuladong/" target="_blank">
                         <span class="chip bg-color">labuladong</span>
-                    </a>
-                    
-                    <a href="/tags/LeetCode/" target="_blank">
-                        <span class="chip bg-color">LeetCode</span>
                     </a>
                     
                 </div>
@@ -1014,7 +1014,7 @@ stack中存放的是ListNode
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">25.7k</span>
+            <span class="white-color">25.9k</span>
             
 
             <br>
