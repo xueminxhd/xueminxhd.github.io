@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xueminxhd.github.io/"/>
-  <updated>2020-08-18T08:52:24.797Z</updated>
+  <updated>2020-08-20T02:04:00.255Z</updated>
   <id>https://xueminxhd.github.io/</id>
   
   <author>
@@ -15,6 +15,59 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>54. 螺旋矩阵</title>
+    <link href="https://xueminxhd.github.io/2020/08/20/54-luo-xuan-ju-zhen/"/>
+    <id>https://xueminxhd.github.io/2020/08/20/54-luo-xuan-ju-zhen/</id>
+    <published>2020-08-20T01:50:50.000Z</published>
+    <updated>2020-08-20T02:04:00.255Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="https://xueminxhd.github.io/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>牛客网编程常见输入输出练习</title>
+    <link href="https://xueminxhd.github.io/2020/08/19/niu-ke-wang-bian-cheng-chang-jian-shu-ru-shu-chu-lian-xi/"/>
+    <id>https://xueminxhd.github.io/2020/08/19/niu-ke-wang-bian-cheng-chang-jian-shu-ru-shu-chu-lian-xi/</id>
+    <published>2020-08-19T15:11:33.000Z</published>
+    <updated>2020-08-19T15:48:57.914Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href=&quot;https://ac.nowcoder.com/acm/contest/5649#question&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;OJ在线编程常见输入输出练习场&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;A-B-1&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="https://xueminxhd.github.io/tags/LeetCode/"/>
+    
+  </entry>
   
   <entry>
     <title>第四章：如何去除有序数组的重复元素</title>
@@ -480,58 +533,6 @@
         
         
           &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/shu-ju-jie-gou-xi-lie/lru-suan-fa&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第一章：贪心算法之区间调度问题</title>
-    <link href="https://xueminxhd.github.io/2020/07/31/labuladong/di-yi-zhang-tan-xin-suan-fa-zhi-qu-jian-diao-du-wen-ti/"/>
-    <id>https://xueminxhd.github.io/2020/07/31/labuladong/di-yi-zhang-tan-xin-suan-fa-zhi-qu-jian-diao-du-wen-ti/</id>
-    <published>2020-07-31T10:07:38.000Z</published>
-    <updated>2020-08-01T01:41:40.618Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;labuladong&lt;a href=&quot;https://labuladong.gitbook.io/algo/dong-tai-gui-hua-xi-lie/tan-xin-suan-fa-zhi-qu-jian-tiao-du-wen-ti&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第一章：动态规划之子序列问题解题模板</title>
-    <link href="https://xueminxhd.github.io/2020/07/31/labuladong/di-yi-zhang-dong-tai-gui-hua-zhi-zi-xu-lie-wen-ti-jie-ti-mo-ban/"/>
-    <id>https://xueminxhd.github.io/2020/07/31/labuladong/di-yi-zhang-dong-tai-gui-hua-zhi-zi-xu-lie-wen-ti-jie-ti-mo-ban/</id>
-    <published>2020-07-31T07:48:23.000Z</published>
-    <updated>2020-08-01T01:41:52.689Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;labuladong &lt;a
         
       
     

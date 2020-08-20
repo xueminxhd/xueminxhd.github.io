@@ -320,7 +320,7 @@ Krahets的极简思路及实现
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -475,7 +475,7 @@ Krahets的极简思路及实现
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    148
+                    225
                 </div>
                 
 
@@ -504,6 +504,11 @@ Krahets的极简思路及实现
 <blockquote>
 <p><strong>栈 stack 为空： 此时 stack.pop() 操作会报错</strong>；因此，我们采用一个取巧方法，给 stack 赋初值 ?? ，并在哈希表 dic 中建立 key: ‘?’，value:’?’key: ′ ? ′ ，value: ′ ? ′  的对应关系予以配合。</p>
 </blockquote>
+<ul>
+<li>建立哈希表 dic 构建左右括号对应关系：keykey 左括号，valuevalue 右括号</li>
+<li>如果 <code>c</code> 是左括号，则入栈 push</li>
+<li>否则通过哈希表判断括号对应关系，若 stack 栈顶出栈括号 stack.pop() 与当前遍历括号 <code>c</code>不对应，则提前返回 False</li>
+</ul>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">isValid</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token triple-quoted-string string">"""
@@ -729,7 +734,7 @@ Krahets的极简思路及实现
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="第四章：如何寻找缺失的元素">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="第四章：如何寻找缺失的元素">
                         
                         <span class="card-title">第四章：如何寻找缺失的元素</span>
                     </div>
@@ -738,12 +743,13 @@ Krahets的极简思路及实现
                     <div class="summary block-with-text">
                         
                             labuladong如何寻找缺失的元素
+448. 找到所有数组中消失的数字
 
 先遍历列表，并加到set中。利用 HashSet 去重
 若元素不在列表中，则表示该元素缺失
 
 class Solution(object):
-    def findDisappearedNumbe
+    def fi
                         
                     </div>
                     <div class="publish-info">
@@ -784,7 +790,7 @@ class Solution(object):
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="第四章：如何寻找最长回文子串">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="第四章：如何寻找最长回文子串">
                         
                         <span class="card-title">第四章：如何寻找最长回文子串</span>
                     </div>
@@ -993,7 +999,7 @@ class Solution(object):
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">25.9k</span>
+            <span class="white-color">26.5k</span>
             
 
             <br>
