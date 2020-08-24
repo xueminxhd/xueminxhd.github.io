@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xueminxhd.github.io/"/>
-  <updated>2020-08-23T08:19:25.599Z</updated>
+  <updated>2020-08-24T15:30:08.117Z</updated>
   <id>https://xueminxhd.github.io/</id>
   
   <author>
@@ -15,6 +15,59 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>腾讯2020笔试记录</title>
+    <link href="https://xueminxhd.github.io/2020/08/24/teng-xun-2020-bi-shi-ji-lu/"/>
+    <id>https://xueminxhd.github.io/2020/08/24/teng-xun-2020-bi-shi-ji-lu/</id>
+    <published>2020-08-24T08:57:43.000Z</published>
+    <updated>2020-08-24T15:30:08.117Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href=&quot;https://www.nowcoder.com/discuss/486638&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;技术研究 数据分析笔试题&amp;amp;题解&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="https://xueminxhd.github.io/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>921. 使括号有效的最少添加</title>
+    <link href="https://xueminxhd.github.io/2020/08/24/leetcode/921-shi-gua-hao-you-xiao-de-zui-shao-tian-jia/"/>
+    <id>https://xueminxhd.github.io/2020/08/24/leetcode/921-shi-gua-hao-you-xiao-de-zui-shao-tian-jia/</id>
+    <published>2020-08-24T08:16:47.000Z</published>
+    <updated>2020-08-24T08:53:38.212Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/minimum-add-to-make-parentheses-valid/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;921.
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
+    
+  </entry>
   
   <entry>
     <title>美团2020笔试及赛码网输入输出示例</title>
@@ -480,59 +533,6 @@
         
         
           &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/shu-ju-jie-gou-xi-lie/dan-tiao-dui-lie&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第二章：特殊数据结构：单调栈</title>
-    <link href="https://xueminxhd.github.io/2020/08/05/labuladong/di-er-zhang-te-shu-shu-ju-jie-gou-dan-diao-zhan/"/>
-    <id>https://xueminxhd.github.io/2020/08/05/labuladong/di-er-zhang-te-shu-shu-ju-jie-gou-dan-diao-zhan/</id>
-    <published>2020-08-05T12:27:08.000Z</published>
-    <updated>2020-08-06T02:34:32.333Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/shu-ju-jie-gou-xi-lie/dan-tiao-zhan&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第二章：如何计算完全二叉树的节点数</title>
-    <link href="https://xueminxhd.github.io/2020/08/02/labuladong/di-er-zhang-ru-he-ji-suan-wan-quan-er-cha-shu-de-jie-dian-shu/"/>
-    <id>https://xueminxhd.github.io/2020/08/02/labuladong/di-er-zhang-ru-he-ji-suan-wan-quan-er-cha-shu-de-jie-dian-shu/</id>
-    <published>2020-08-02T06:27:45.000Z</published>
-    <updated>2020-08-02T06:32:20.035Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;labuladong &lt;a href=&quot;https://mp.weixin.qq.com/s/xW2fbE3v4JhMSKfxoxIHBg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;如何计算完全二叉树的节点数&lt;/a&gt;&lt;/p&gt;
-&lt;h1
         
       
     
