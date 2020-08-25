@@ -18,8 +18,8 @@
   
   <entry>
     <title>python字典常用操作</title>
-    <link href="https://xueminxhd.github.io/2020/08/25/python-zi-dian-chang-yong-cao-zuo/"/>
-    <id>https://xueminxhd.github.io/2020/08/25/python-zi-dian-chang-yong-cao-zuo/</id>
+    <link href="https://xueminxhd.github.io/2020/08/25/python/python-zi-dian-chang-yong-cao-zuo/"/>
+    <id>https://xueminxhd.github.io/2020/08/25/python/python-zi-dian-chang-yong-cao-zuo/</id>
     <published>2020-08-25T03:20:31.000Z</published>
     <updated>2020-08-25T05:21:48.501Z</updated>
     
@@ -42,20 +42,6 @@
     
     
       <category term="Python基础" scheme="https://xueminxhd.github.io/tags/Python%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python字典常用操作</title>
-    <link href="https://xueminxhd.github.io/2020/08/25/python/python-zi-dian-chang-yong-cao-zuo/"/>
-    <id>https://xueminxhd.github.io/2020/08/25/python/python-zi-dian-chang-yong-cao-zuo/</id>
-    <published>2020-08-25T03:20:31.000Z</published>
-    <updated>2020-08-25T03:20:31.188Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
     
   </entry>
   
@@ -524,6 +510,32 @@
         
         
           &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/suan-fa-si-wei-xi-lie/he-fa-kuo-hao-sheng-cheng&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第二章：递归反转链表的一部分</title>
+    <link href="https://xueminxhd.github.io/2020/08/12/labuladong/di-er-zhang-di-gui-fan-zhuan-lian-biao-de-yi-bu-fen/"/>
+    <id>https://xueminxhd.github.io/2020/08/12/labuladong/di-er-zhang-di-gui-fan-zhuan-lian-biao-de-yi-bu-fen/</id>
+    <published>2020-08-12T03:29:33.000Z</published>
+    <updated>2020-08-12T09:43:25.294Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/shu-ju-jie-gou-xi-lie/di-gui-fan-zhuan-lian-biao-de-yi-bu-fen&quot; target=&quot;_blank&quot;
         
       
     
