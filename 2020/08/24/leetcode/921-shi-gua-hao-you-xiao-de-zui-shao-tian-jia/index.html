@@ -13,7 +13,7 @@
 
 加一个’?’打底，防止栈为空并且需要pop时报错
 若栈顶为左括号，且当前元素为右括号，可以互相抵消。此时栈顶出栈
-其他情况：抵消不了.此时，不管是’(‘还是’">
+其他情况：抵消不了. 此时，不管是左括号还是">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -476,7 +476,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    179
+                    185
                 </div>
                 
 
@@ -504,7 +504,7 @@
 <ul>
 <li>加一个’?’打底，防止栈为空并且需要pop时报错</li>
 <li>若栈顶为左括号，且当前元素为右括号，可以互相抵消。此时栈顶出栈</li>
-<li>其他情况：抵消不了.此时，不管是’(‘还是’)’, 通通入栈</li>
+<li>其他情况：抵消不了. 此时，不管是左括号还是右括号, 通通入栈</li>
 </ul>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">minAddToMakeValid</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> S<span class="token punctuation">)</span><span class="token punctuation">:</span>
