@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xueminxhd.github.io/"/>
-  <updated>2020-08-25T01:59:59.873Z</updated>
+  <updated>2020-08-25T05:21:48.501Z</updated>
   <id>https://xueminxhd.github.io/</id>
   
   <author>
@@ -15,6 +15,49 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python字典常用操作</title>
+    <link href="https://xueminxhd.github.io/2020/08/25/python-zi-dian-chang-yong-cao-zuo/"/>
+    <id>https://xueminxhd.github.io/2020/08/25/python-zi-dian-chang-yong-cao-zuo/</id>
+    <published>2020-08-25T03:20:31.000Z</published>
+    <updated>2020-08-25T05:21:48.501Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ol&gt;
+&lt;li&gt;普通字典&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.runoob.com/python/python-dictionary.html&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="https://xueminxhd.github.io/categories/Python/"/>
+    
+    
+      <category term="Python基础" scheme="https://xueminxhd.github.io/tags/Python%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python字典常用操作</title>
+    <link href="https://xueminxhd.github.io/2020/08/25/python/python-zi-dian-chang-yong-cao-zuo/"/>
+    <id>https://xueminxhd.github.io/2020/08/25/python/python-zi-dian-chang-yong-cao-zuo/</id>
+    <published>2020-08-25T03:20:31.000Z</published>
+    <updated>2020-08-25T03:20:31.188Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>腾讯2020笔试记录</title>
@@ -481,58 +524,6 @@
         
         
           &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/suan-fa-si-wei-xi-lie/he-fa-kuo-hao-sheng-cheng&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第二章：递归反转链表的一部分</title>
-    <link href="https://xueminxhd.github.io/2020/08/12/labuladong/di-er-zhang-di-gui-fan-zhuan-lian-biao-de-yi-bu-fen/"/>
-    <id>https://xueminxhd.github.io/2020/08/12/labuladong/di-er-zhang-di-gui-fan-zhuan-lian-biao-de-yi-bu-fen/</id>
-    <published>2020-08-12T03:29:33.000Z</published>
-    <updated>2020-08-12T09:43:25.294Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/shu-ju-jie-gou-xi-lie/di-gui-fan-zhuan-lian-biao-de-yi-bu-fen&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第二章：特殊数据结构：单调队列</title>
-    <link href="https://xueminxhd.github.io/2020/08/05/labuladong/di-er-zhang-te-shu-shu-ju-jie-gou-dan-diao-dui-lie/"/>
-    <id>https://xueminxhd.github.io/2020/08/05/labuladong/di-er-zhang-te-shu-shu-ju-jie-gou-dan-diao-dui-lie/</id>
-    <published>2020-08-05T15:02:28.000Z</published>
-    <updated>2020-08-09T01:33:33.448Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/shu-ju-jie-gou-xi-lie/dan-tiao-dui-lie&quot; target=&quot;_blank&quot;
         
       
     
