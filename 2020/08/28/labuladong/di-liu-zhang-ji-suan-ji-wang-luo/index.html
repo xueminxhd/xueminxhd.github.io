@@ -501,7 +501,7 @@ DNS域名解析
 <h1 id="25-张图解：键入网址后，到网页显示，其间发生了什么"><a href="#25-张图解：键入网址后，到网页显示，其间发生了什么" class="headerlink" title="25 张图解：键入网址后，到网页显示，其间发生了什么"></a><a href="https://labuladong.gitbook.io/algo/labuladong-he-ta-de-peng-you-men/25-zhang-tu-jie-jian-ru-wang-zhi-hou-dao-wang-ye-xian-shi-qi-jian-fa-sheng-le-shi-mo#01-gu-dan-xiao-di-http" target="_blank" rel="noopener">25 张图解：键入网址后，到网页显示，其间发生了什么</a></h1><h2 id="当你在浏览器输入一个网址，按回车之后发生了什么？"><a href="#当你在浏览器输入一个网址，按回车之后发生了什么？" class="headerlink" title="当你在浏览器输入一个网址，按回车之后发生了什么？"></a><a href="https://blog.csdn.net/kongmin_123/article/details/82555936" target="_blank" rel="noopener">当你在浏览器输入一个网址，按回车之后发生了什么？</a></h2><ul>
 <li>DNS域名解析<ul>
 <li><strong>查询服务器域名对应的 IP 地址</strong>。因为委托操作系统发送消息时，必须提供通信对象的 IP 地址</li>
-<li>DNS 中的域名都是用句点来分隔的，比如 <a href="http://www.server.com，这里的句点代表了不同层次之间的界限。在域名中，越靠右的位置表示其层级越高" target="_blank" rel="noopener">www.server.com，这里的句点代表了不同层次之间的界限。在域名中，越靠右的位置表示其层级越高</a></li>
+<li>DNS 中的域名都是用句点来分隔的，比如 <code>www.server.com</code>，这里的句点代表了不同层次之间的界限。在域名中，越靠右的位置表示其层级越高</li>
 </ul>
 </li>
 <li>浏览器得到了IP以后，向服务器发送TCP连接<ul>
@@ -509,7 +509,7 @@ DNS域名解析
 </ul>
 </li>
 <li>浏览器发送HTTP请求<ul>
-<li>浏览器和服务器建立连接以后，浏览器接着按这个IP地址给服务器发送一个http请求，方式为get，例如访问<a href="http://www.baidu.com。其本质是在建立起的TCP连接中，按照HTTP协议标准**发送一个索要网页的请求" target="_blank" rel="noopener">www.baidu.com。其本质是在建立起的TCP连接中，按照HTTP协议标准**发送一个索要网页的请求</a>**</li>
+<li>浏览器和服务器建立连接以后，浏览器接着按这个IP地址给服务器发送一个http请求，方式为get，例如访问<code>www.baidu.com</code>。其本质是在建立起的TCP连接中，按照HTTP协议标准<strong>发送一个索要网页的请求</strong></li>
 </ul>
 </li>
 <li>服务器处理请求<ul>
@@ -600,7 +600,10 @@ DNS域名解析
 </ul>
 </li>
 <li>三次握手才可以同步双方的初始序列号</li>
-<li>三次握手才可以避免资源浪费<h2 id="TCP-四次挥手"><a href="#TCP-四次挥手" class="headerlink" title="TCP 四次挥手"></a>TCP 四次挥手</h2><img src="https://img-blog.csdnimg.cn/20200828203712197.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L29wZW5jdnpzZWZ2,size_16,color_FFFFFF,t_70#pic_center" alt><h2 id="TCP-为什么是四次挥手？"><a href="#TCP-为什么是四次挥手？" class="headerlink" title="TCP 为什么是四次挥手？"></a>TCP 为什么是四次挥手？</h2></li>
+<li>三次握手才可以避免资源浪费</li>
+</ul>
+<h2 id="TCP-四次挥手"><a href="#TCP-四次挥手" class="headerlink" title="TCP 四次挥手"></a>TCP 四次挥手</h2><p><img src="https://img-blog.csdnimg.cn/20200828203712197.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L29wZW5jdnpzZWZ2,size_16,color_FFFFFF,t_70#pic_center" alt></p>
+<h2 id="TCP-为什么是四次挥手？"><a href="#TCP-为什么是四次挥手？" class="headerlink" title="TCP 为什么是四次挥手？"></a>TCP 为什么是四次挥手？</h2><ul>
 <li>关闭连接时，客户端向服务端发送 FIN 时，仅仅表示客户端不再发送数据了<strong>但是还能接收数据</strong></li>
 <li>服务器收到客户端的 FIN 报文时，先回一个 ACK 应答报文，<strong>而服务端可能还有数据需要处理和发送</strong>，等服务端不再发送数据时，才发送 FIN 报文给客户端来表示同意现在关闭连接</li>
 </ul>
@@ -619,9 +622,11 @@ DNS域名解析
 <li>IPv6 除了有更多的地址之外，还有更好的安全性和扩展性，说简单点就是 IPv6 相比于 IPv4 能带来更好的网络体验。<ul>
 <li>IPv6 可自动配置，即使没有 DHCP 服务器也可以<strong>实现自动分配IP地址</strong></li>
 <li>IPv6 包头包首部长度采用固定的值 40 字节，去掉了包头校验和，简化了首部结构，<strong>减轻了路由器负荷，大大提高了传输的性能</strong>。</li>
-<li>IPv6 有应对伪造 IP 地址的网络安全功能以及防止线路窃听的功能，<strong>大大提升了安全性</strong><br><img src="https://img-blog.csdnimg.cn/20200829125751727.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L29wZW5jdnpzZWZ2,size_16,color_FFFFFF,t_70#pic_center" alt><h2 id="ARP-（Address-Resolution-Protocol，地址解析协议）"><a href="#ARP-（Address-Resolution-Protocol，地址解析协议）" class="headerlink" title="ARP （Address Resolution Protocol，地址解析协议）"></a>ARP （Address Resolution Protocol，地址解析协议）</h2></li>
+<li>IPv6 有应对伪造 IP 地址的网络安全功能以及防止线路窃听的功能，<strong>大大提升了安全性</strong><br><img src="https://img-blog.csdnimg.cn/20200829125751727.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L29wZW5jdnpzZWZ2,size_16,color_FFFFFF,t_70#pic_center" alt></li>
 </ul>
 </li>
+</ul>
+<h2 id="ARP-（Address-Resolution-Protocol，地址解析协议）"><a href="#ARP-（Address-Resolution-Protocol，地址解析协议）" class="headerlink" title="ARP （Address Resolution Protocol，地址解析协议）"></a>ARP （Address Resolution Protocol，地址解析协议）</h2><ul>
 <li>在传输一个 IP 数据报的时候，确定了源 IP 地址和目标 IP 地址后，就会通过主机「路由表」确定 IP 数据包下一跳。然而，网络层的下一层是数据链路层，<strong>所以我们还要知道「下一跳」的 MAC 地址</strong>。</li>
 <li>由于主机的路由表中可以找到下一跳的 IP 地址，所以可以通过 ARP 协议，求得下一跳的 MAC 地址。</li>
 </ul>
