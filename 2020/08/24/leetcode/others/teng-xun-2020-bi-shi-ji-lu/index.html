@@ -9,10 +9,11 @@
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
     <meta name="description" content="技术研究 数据分析笔试题&amp;amp;题解
+（P.S. 一个支持多语言在线编译的页面）
 题解1题解2（python实现）
 1. 使括号有效的最小添加
 
-如果是单类别的括号，就是：LeetCode921题给定一个由 ‘(‘ 和 ‘)’ 括号组成的字符串 S，我们需要添加最少的括号（ ‘(‘">
+如果是单类别的括号，就是：LeetCode921题给定一个由 ‘(‘ 和 ‘)’ 括号组成的">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -320,7 +321,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/26.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -475,14 +476,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1k
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    5 分
                 </div>
                 
                 
@@ -499,6 +500,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p><a href="https://www.nowcoder.com/discuss/486638" target="_blank" rel="noopener">技术研究 数据分析笔试题&amp;题解</a></p>
+<p>（P.S. <a href="https://wandbox.org/" target="_blank" rel="noopener">一个支持多语言在线编译的页面</a>）</p>
 <p><a href="https://blog.csdn.net/qq_22522375/article/details/108189181" target="_blank" rel="noopener">题解1</a><br><a href="https://www.nowcoder.com/discuss/486688?channel=1009&source_id=discuss_terminal_discuss_sim" target="_blank" rel="noopener">题解2（python实现）</a></p>
 <h1 id="1-使括号有效的最小添加"><a href="#1-使括号有效的最小添加" class="headerlink" title="1. 使括号有效的最小添加"></a>1. 使括号有效的最小添加</h1><p><img src="https://img-blog.csdnimg.cn/20200824165931141.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L29wZW5jdnpzZWZ2,size_16,color_FFFFFF,t_70#pic_center" alt></p>
 <blockquote>
@@ -524,9 +526,39 @@
 <ul>
 <li>经典区间dp问题，构建一个<code>len(s)*len(s)</code>的二维数组。dp[i][j]代表着从字符串i位置到j位置需要的最小括号匹配数。</li>
 <li>对角线部分（<code>dp[i][i]</code>）为1，从下到上遍历上三角部分，    <code>dp[0][len(s)-1]</code> 为所求结果</li>
+<li>当i&lt;j 时:<ul>
 <li>如果第i个位置和第j个位置的两个括号是匹配的（<code>if((s[i]==&#39;[&#39; &amp;&amp; s[j]==&#39;]&#39;) or (s[i]==&#39;(&#39; &amp;&amp; s[j]==&#39;)&#39;))</code>），那么<code>dp[i][j] = dp[i+1][j-1]</code>，相当于两边分别往里缩了一个；</li>
-<li>当i&lt;j时，<code>dp[i][j] = min(dp[i][j-1], dp[i+1][j])+1</code></li>
+<li>如果第i个位置和第j个位置的两个括号无法抵消，则 <code>dp[i][j] = dp[i][k]+dp[k+1][j]</code>  k的范围为<code>[i,j)</code></li>
 </ul>
+</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">helper</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    n<span class="token operator">=</span>len<span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># dp=[[float('inf') for _ in range(n)] for _ in range(n)] # 不可以这样初始化，为什么？</span>
+    dp<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">]</span>
+    <span class="token comment" spellcheck="true"># 对角线初始化为1</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span><span class="token number">1</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token number">-2</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            当i <span class="token operator">&lt;</span> j时
+            <span class="token comment" spellcheck="true"># 如果能抵消，则 dp[i][j]=dp[i+1][j-1]</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">==</span><span class="token string">'['</span> <span class="token operator">and</span> s<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">==</span><span class="token string">']'</span><span class="token punctuation">)</span> <span class="token operator">or</span>  <span class="token punctuation">(</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">==</span><span class="token string">'('</span> <span class="token operator">and</span> s<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">==</span><span class="token string">')'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span>dp<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                <span class="token comment" spellcheck="true"># 如果不能抵消，则 dp[i][j] = dp[i][k]+dp[k+1][j] k的范围为[i,j)</span>
+                temp<span class="token operator">=</span>n
+                <span class="token keyword">for</span> k <span class="token keyword">in</span> range<span class="token punctuation">(</span>i<span class="token punctuation">,</span>j<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                    <span class="token keyword">if</span> dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token operator">+</span>dp<span class="token punctuation">[</span>k<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">&lt;=</span>temp<span class="token punctuation">:</span>
+                        temp<span class="token operator">=</span>dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token operator">+</span>dp<span class="token punctuation">[</span>k<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span>
+                dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span>temp
+        <span class="token keyword">print</span><span class="token punctuation">(</span>dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>dp<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>dp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># s=str(input().strip())</span>
+s<span class="token operator">=</span><span class="token string">'()[)[)(][(]([)]]]((]]'</span>
+helper<span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="2-求抛物线围成的面积"><a href="#2-求抛物线围成的面积" class="headerlink" title="2. 求抛物线围成的面积"></a>2. 求抛物线围成的面积</h1><p><img src="https://img-blog.csdnimg.cn/20200824184943576.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L29wZW5jdnpzZWZ2,size_16,color_FFFFFF,t_70#pic_center" alt></p>
 <ul>
 <li>题目要求取6位小数，注意输出的格式：<code>print(&quot;{:.6f}&quot;.format(ans))</code><br><a href="https://www.runoob.com/python/att-string-format.html" target="_blank" rel="noopener">Python format 格式化函数</a></li>
@@ -822,7 +854,7 @@ ans<span class="token operator">=</span><span class="token number">0</span>
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="python字典常用操作">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="python字典常用操作">
                         
                         <span class="card-title">python字典常用操作</span>
                     </div>
@@ -881,7 +913,7 @@ print(d_k) # [
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="921. 使括号有效的最少添加">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="921. 使括号有效的最少添加">
                         
                         <span class="card-title">921. 使括号有效的最少添加</span>
                     </div>
@@ -1091,7 +1123,7 @@ print(d_k) # [
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">30.1k</span>
+            <span class="white-color">33.9k</span>
             
 
             <br>
