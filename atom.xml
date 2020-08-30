@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xueminxhd.github.io/"/>
-  <updated>2020-08-29T12:52:25.079Z</updated>
+  <updated>2020-08-30T03:31:36.166Z</updated>
   <id>https://xueminxhd.github.io/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>计算机操作系统</title>
-    <link href="https://xueminxhd.github.io/2020/08/29/csnotes/ji-suan-ji-cao-zuo-xi-tong/"/>
-    <id>https://xueminxhd.github.io/2020/08/29/csnotes/ji-suan-ji-cao-zuo-xi-tong/</id>
+    <title>面经整理发布版</title>
+    <link href="https://xueminxhd.github.io/2020/08/29/ji-suan-ji-ji-chu/mian-jing-yuan-wen-jian/mian-jing-zheng-li-fa-bu-ban/"/>
+    <id>https://xueminxhd.github.io/2020/08/29/ji-suan-ji-ji-chu/mian-jing-yuan-wen-jian/mian-jing-zheng-li-fa-bu-ban/</id>
     <published>2020-08-29T11:43:25.000Z</published>
-    <updated>2020-08-29T12:52:25.079Z</updated>
+    <updated>2020-08-30T03:31:36.166Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;1-语言基础-C-C&quot;&gt;&lt;a href=&quot;#1-语言基础-C-C&quot; class=&quot;headerlink&quot; title=&quot;1. 语言基础 (C/C++)&quot;&gt;&lt;/a&gt;1. 语言基础 (C/C++)&lt;/h1&gt;&lt;h4 id=&quot;（0）-指针和引用的区别&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="计算机基础" scheme="https://xueminxhd.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="计算机基础" scheme="https://xueminxhd.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计算机操作系统</title>
+    <link href="https://xueminxhd.github.io/2020/08/29/ji-suan-ji-ji-chu/ji-suan-ji-cao-zuo-xi-tong/"/>
+    <id>https://xueminxhd.github.io/2020/08/29/ji-suan-ji-ji-chu/ji-suan-ji-cao-zuo-xi-tong/</id>
+    <published>2020-08-29T11:43:25.000Z</published>
+    <updated>2020-08-30T03:16:07.735Z</updated>
     
     <summary type="html">
     
@@ -35,7 +61,7 @@
     
     </summary>
     
-      <category term="CSNotes" scheme="https://xueminxhd.github.io/categories/CSNotes/"/>
+      <category term="计算机基础" scheme="https://xueminxhd.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
     
     
       <category term="计算机基础" scheme="https://xueminxhd.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
@@ -73,7 +99,7 @@
     <link href="https://xueminxhd.github.io/2020/08/28/labuladong/di-liu-zhang-ji-suan-ji-wang-luo/"/>
     <id>https://xueminxhd.github.io/2020/08/28/labuladong/di-liu-zhang-ji-suan-ji-wang-luo/</id>
     <published>2020-08-28T05:25:41.000Z</published>
-    <updated>2020-08-29T15:29:07.365Z</updated>
+    <updated>2020-08-30T03:15:57.512Z</updated>
     
     <summary type="html">
     
@@ -519,32 +545,6 @@
     
     
       <category term="Python基础" scheme="https://xueminxhd.github.io/tags/Python%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第三章：前缀和技巧</title>
-    <link href="https://xueminxhd.github.io/2020/08/12/labuladong/di-san-zhang-qian-zhui-he-ji-qiao/"/>
-    <id>https://xueminxhd.github.io/2020/08/12/labuladong/di-san-zhang-qian-zhui-he-ji-qiao/</id>
-    <published>2020-08-12T12:33:08.000Z</published>
-    <updated>2020-08-12T13:19:06.282Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/suan-fa-si-wei-xi-lie/qian-zhui-he-ji-qiao&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
     
   </entry>
   
