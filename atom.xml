@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xueminxhd.github.io/"/>
-  <updated>2020-08-30T04:38:38.305Z</updated>
+  <updated>2020-08-30T03:16:07.735Z</updated>
   <id>https://xueminxhd.github.io/</id>
   
   <author>
@@ -15,33 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>面经整理发布版</title>
-    <link href="https://xueminxhd.github.io/2020/08/29/ji-suan-ji-ji-chu/ji-suan-ji-ji-chu-zhi-shi-lian-jie-zheng-li/"/>
-    <id>https://xueminxhd.github.io/2020/08/29/ji-suan-ji-ji-chu/ji-suan-ji-ji-chu-zhi-shi-lian-jie-zheng-li/</id>
-    <published>2020-08-29T11:43:25.000Z</published>
-    <updated>2020-08-30T04:38:38.305Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net/neverever01/article/details/108237531&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="计算机基础" scheme="https://xueminxhd.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
-    
-    
-      <category term="计算机基础" scheme="https://xueminxhd.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
   
   <entry>
     <title>计算机操作系统</title>
@@ -546,6 +519,32 @@
     
     
       <category term="Python基础" scheme="https://xueminxhd.github.io/tags/Python%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第三章：前缀和技巧</title>
+    <link href="https://xueminxhd.github.io/2020/08/12/labuladong/di-san-zhang-qian-zhui-he-ji-qiao/"/>
+    <id>https://xueminxhd.github.io/2020/08/12/labuladong/di-san-zhang-qian-zhui-he-ji-qiao/</id>
+    <published>2020-08-12T12:33:08.000Z</published>
+    <updated>2020-08-12T13:19:06.282Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/suan-fa-si-wei-xi-lie/qian-zhui-he-ji-qiao&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
     
   </entry>
   
