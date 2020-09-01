@@ -10,10 +10,9 @@
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
     <meta name="description" content="labuladong 前缀和技巧
 560. 和为K的子数组
-具体算法：
-
-维护一个 hashmap，hashmap 的 key 为累加值 acc，value 为累加值 acc 出现的次数。
-遍历数组，然后不断更新 acc 和 hashmap">
+方法1：前缀和保存一个数组的前缀和，然后利用差分法得出任意区间段的和
+class Solution:
+    def subarraySum(self, nums: List[in">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -321,7 +320,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -476,7 +475,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    140
+                    236
                 </div>
                 
 
@@ -501,7 +500,19 @@
             <div id="articleContent">
                 <p>labuladong <a href="https://labuladong.gitbook.io/algo/suan-fa-si-wei-xi-lie/qian-zhui-he-ji-qiao" target="_blank" rel="noopener">前缀和技巧</a></p>
 <p><a href="https://leetcode-cn.com/problems/subarray-sum-equals-k/solution/qian-zhui-he-si-xiang-560-he-wei-kde-zi-shu-zu-by-/" target="_blank" rel="noopener">560. 和为K的子数组</a></p>
-<p>具体算法：</p>
+<p>方法1：前缀和<br>保存一个数组的前缀和，然后利用差分法得出任意区间段的和</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">subarraySum</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">:</span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">,</span> k<span class="token punctuation">:</span> int<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
+      cnt<span class="token punctuation">,</span> n <span class="token operator">=</span>  <span class="token number">0</span><span class="token punctuation">,</span> len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span>
+      pre <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token punctuation">(</span>n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
+      <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+          pre<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> pre<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> nums<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span>
+      <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+          <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>i<span class="token punctuation">,</span> n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+              <span class="token keyword">if</span> <span class="token punctuation">(</span>pre<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">-</span> pre<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> k<span class="token punctuation">)</span><span class="token punctuation">:</span> cnt <span class="token operator">+=</span> <span class="token number">1</span>
+      <span class="token keyword">return</span> cnt
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>方法2：维护更新hashmap</p>
 <ul>
 <li>维护一个 hashmap，hashmap 的 <strong>key 为累加值 acc，value 为累加值 acc 出现的次数</strong>。</li>
 <li>遍历数组，然后不断更新 acc 和 hashmap，如果 acc 等于 k，那么很明显应该+1. 如果 hashmap[acc - k] 存在，我们就把它加到结果中去即可。</li>
@@ -734,7 +745,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="python装饰器">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="python装饰器">
                         
                         <span class="card-title">python装饰器</span>
                     </div>
@@ -793,7 +804,7 @@ python装饰器用于装饰函数。可以在保留原函数功能的条件下�
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="第三章：双指针技巧总结">
+                        <img src="/medias/featureimages/26.jpg" class="responsive-img" alt="第三章：双指针技巧总结">
                         
                         <span class="card-title">第三章：双指针技巧总结</span>
                     </div>
@@ -1001,7 +1012,7 @@ python装饰器用于装饰函数。可以在保留原函数功能的条件下�
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">35.6k</span>
+            <span class="white-color">37.7k</span>
             
 
             <br>

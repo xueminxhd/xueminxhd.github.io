@@ -318,7 +318,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -473,14 +473,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    1.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    7 分
                 </div>
                 
                 
@@ -500,8 +500,10 @@
 <blockquote>
 <p>文章例题：<br>给你一个数组 [2,1,2,4,3]，你返回数组 [4,2,4,-1,-1]。<br>解释：第一个 2 后面比 2 大的数是 4; 1 后面比 1 大的数是 2；第二个 2 后面比 2 大的数是 4; 4 后面没有比 4 大的数，填 -1；3 后面没有比 3 大的数，填 -1。</p>
 </blockquote>
-<p>这个问题可以这样抽象思考：把数组的元素想象成并列站立的人，元素大小想象成人的身高。这些人站成一列（你站在右边看他们，且逆序遍历），如何求元素「2」的 Next Greater Number 呢？很简单，如果能够看到元素「2」，那么他后面可见的第一个人就是「2」的 Next Greater Number，因为比「2」小的元素身高不够，都被「2」挡住了，第一个露出来的就是答案。</p>
-<p>这就是单调队列解决问题的模板。<strong>for 循环要从后往前扫描元素，因为我们借助的是栈的结构，倒着入栈，其实是正着出栈。while 循环是把两个“高个”元素之间的元素排除，因为他们的存在没有意义，前面挡着个“更高”的元素，所以他们不可能被作为后续进来的元素的 Next Great Number 了。</strong><br><img src="https://img-blog.csdnimg.cn/20200623194612914.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L29wZW5jdnpzZWZ2,size_16,color_FFFFFF,t_70" alt="图片来自labuladong"></p>
+<p>这个问题可以这样抽象思考：把数组的元素想象成并列站立的人，元素大小想象成人的身高。这些人站成一列，如何求元素「2」的 Next Greater Number 呢？很简单，如果能够看到元素「2」，那么他后面可见的第一个人就是「2」的 Next Greater Number，因为比「2」小的元素身高不够，都被「2」挡住了，第一个露出来的就是答案。</p>
+<p>这就是单调队列解决问题的模板。<strong>for 循环要从后往前扫描元素，因为我们借助的是栈的结构，倒着入栈，其实是正着出栈。while 循环是把两个“高个”元素之间的元素排除，因为他们的存在没有意义，前面挡着个“更高”的元素，所以他们不可能被作为后续进来的元素的 Next Great Number 了。</strong></p>
+<p>O(∩_∩)O <strong>也可以用“压扁思想”理解（倒序遍历）：</strong><br>3没有东西压扁，栈为空，所以对应-1。然后3进栈，此时栈为[3]<br>4能压扁3，pop后栈为空，所以对应-1。然后4进栈,此时栈为[4]<br>2不能压扁4，不能pop，栈为[4],所以对应4。然后2进栈，此时栈为[4,2]<br>1不能压扁2和4，不能pop，栈为[4,2],所以对应2。然后1进栈，此时栈为[4,2,1]<br>2能压扁1,2,不能压扁4，栈为[4],所以对应4。<del>然后2进栈，此时栈为[4,2]</del></p>
+<p><img src="https://img-blog.csdnimg.cn/20200623194612914.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L29wZW5jdnpzZWZ2,size_16,color_FFFFFF,t_70" alt="图片来自labuladong"></p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">nextGreaterElement</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
     ans<span class="token operator">=</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
     s<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
@@ -515,7 +517,7 @@
 
 nums<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"ans:"</span><span class="token punctuation">,</span>nextGreaterElement<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>结果输出：</p>
+<p>结果输出（栈里的元素始终单调递减）：</p>
 <blockquote>
 <p>每次的s:<br>[]<br>[3]<br>[4]<br>[4, 2]<br>[4, 2, 1]</p>
 <p>ans: [4, 2, 4, -1, -1]</p>
@@ -803,7 +805,7 @@ so<span class="token punctuation">.</span>dailyTemperatures<span class="token pu
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="第二章：特殊数据结构：单调队列">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="第二章：特殊数据结构：单调队列">
                         
                         <span class="card-title">第二章：特殊数据结构：单调队列</span>
                     </div>
@@ -855,7 +857,7 @@ so<span class="token punctuation">.</span>dailyTemperatures<span class="token pu
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="第二章：如何计算完全二叉树的节点数">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="第二章：如何计算完全二叉树的节点数">
                         
                         <span class="card-title">第二章：如何计算完全二叉树的节点数</span>
                     </div>
@@ -1067,7 +1069,7 @@ so<span class="token punctuation">.</span>dailyTemperatures<span class="token pu
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">35.6k</span>
+            <span class="white-color">37.7k</span>
             
 
             <br>

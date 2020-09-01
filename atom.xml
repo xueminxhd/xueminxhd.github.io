@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xueminxhd.github.io/"/>
-  <updated>2020-08-30T03:16:07.735Z</updated>
+  <updated>2020-08-31T08:13:08.160Z</updated>
   <id>https://xueminxhd.github.io/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>199. 二叉树的右视图</title>
+    <link href="https://xueminxhd.github.io/2020/08/31/leetcode/199-er-cha-shu-de-you-shi-tu/"/>
+    <id>https://xueminxhd.github.io/2020/08/31/leetcode/199-er-cha-shu-de-you-shi-tu/</id>
+    <published>2020-08-31T07:31:54.000Z</published>
+    <updated>2020-08-31T08:13:08.160Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/binary-tree-right-side-view/solution/dfs-bfs-by-powcai-7/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;199.
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="https://xueminxhd.github.io/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python基础知识汇总</title>
+    <link href="https://xueminxhd.github.io/2020/08/30/python/python-ji-chu-zhi-shi-hui-zong/"/>
+    <id>https://xueminxhd.github.io/2020/08/30/python/python-ji-chu-zhi-shi-hui-zong/</id>
+    <published>2020-08-30T05:51:49.000Z</published>
+    <updated>2020-09-01T14:36:46.872Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;封装、继承和多态&quot;&gt;&lt;a href=&quot;#封装、继承和多态&quot; class=&quot;headerlink&quot; title=&quot;封装、继承和多态&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.liujiangblog.com/course/python/44&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="https://xueminxhd.github.io/categories/Python/"/>
+    
+    
+      <category term="Python基础" scheme="https://xueminxhd.github.io/tags/Python%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
   
   <entry>
     <title>计算机操作系统</title>
@@ -477,65 +529,6 @@
         
         
           &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/suan-fa-si-wei-xi-lie/qu-jian-tiao-du-wen-ti-zhi-qu-jian-he-bing&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python装饰器</title>
-    <link href="https://xueminxhd.github.io/2020/08/13/python/python-zhuang-shi-qi/"/>
-    <id>https://xueminxhd.github.io/2020/08/13/python/python-zhuang-shi-qi/</id>
-    <published>2020-08-13T05:20:47.000Z</published>
-    <updated>2020-08-13T06:36:20.640Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;什么是装饰器？&lt;ul&gt;
-&lt;li&gt;python装饰器用于装饰函数。可以在保留原函数功能的条件下，赋予该函数更丰富的功能（而无需改动原函数）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;为什么要用装饰器？&lt;ul&gt;
-&lt;li&gt;可以更便于开发，实现代码复用&lt;/li&gt;
-&lt;/u
-        
-      
-    
-    </summary>
-    
-      <category term="Python" scheme="https://xueminxhd.github.io/categories/Python/"/>
-    
-    
-      <category term="Python基础" scheme="https://xueminxhd.github.io/tags/Python%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第三章：前缀和技巧</title>
-    <link href="https://xueminxhd.github.io/2020/08/12/labuladong/di-san-zhang-qian-zhui-he-ji-qiao/"/>
-    <id>https://xueminxhd.github.io/2020/08/12/labuladong/di-san-zhang-qian-zhui-he-ji-qiao/</id>
-    <published>2020-08-12T12:33:08.000Z</published>
-    <updated>2020-08-12T13:19:06.282Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/suan-fa-si-wei-xi-lie/qian-zhui-he-ji-qiao&quot; target=&quot;_blank&quot;
         
       
     
