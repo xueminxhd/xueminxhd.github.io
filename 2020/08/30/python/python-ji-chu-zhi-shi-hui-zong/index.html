@@ -325,7 +325,7 @@ Sessi">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -574,7 +574,10 @@ Solution2<span class="token operator">=</span>Solution<span class="token punctua
 <h1 id="Python的垃圾回收机制"><a href="#Python的垃圾回收机制" class="headerlink" title="Python的垃圾回收机制"></a><a href="https://zhuanlan.zhihu.com/p/83251959" target="_blank" rel="noopener">Python的垃圾回收机制</a></h1><p>Python中的垃圾回收是以<strong>引用计数</strong>为主，<strong>标记-清除</strong>和<strong>分代收集</strong>为辅</p>
 <ul>
 <li>引用计数：Python在内存中存储每个对象的引用计数，如果计数变成0，该对象就会消失，分配给该对象的内存就会释放出来。</li>
-<li>标记-清除：一些容器对象(注意，只有容器对象才会产生循环引用的情况，比如列表、字典、用户自定义类的对象、元组等。而像数字，字符串这类简单类型不会出现循环引用。作为一种优化策略，对于只包含简单类型的元组也不在标记清除算法的考虑之列)，比如list、dict、tuple，instance等可能会出现引用循环，对于这些循环，垃圾回收器会定时回收这些循环（对象之间通过引用（指针）连在一起，构成一个有向图，对象构成这个有向图的节点，而引用关系构成这个有向图的边）。</li>
+<li>标记-清除：一些容器对象，比如list、dict、tuple，instance等可能会出现引用循环，对于这些循环，垃圾回收器会定时回收这些循环（对象之间通过引用（指针）连在一起，构成一个有向图，对象构成这个有向图的节点，而引用关系构成这个有向图的边）。<ul>
+<li>注意，只有容器对象才会产生循环引用的情况，比如列表、字典、用户自定义类的对象、元组等。而像数字，字符串这类简单类型不会出现循环引用。作为一种优化策略，对于只包含简单类型的元组也不在标记清除算法的考虑之列</li>
+</ul>
+</li>
 <li>分代收集：对于程序，存在一定比例的内存块的生存周期比较短；而剩下的内存块，生存周期会比较长，甚至会从程序开始一直持续到程序结束。生存期较短对象的比例通常在 80%～90% 之间，这种思想简单点说就是：对象存在时间越长，越可能不是垃圾，应该越少去收集。这样在执行标记-清除算法时可以有效减小遍历的对象数，从而提高垃圾回收的速度。<h1 id="浅拷贝和深拷贝"><a href="#浅拷贝和深拷贝" class="headerlink" title="浅拷贝和深拷贝"></a>浅拷贝和深拷贝</h1></li>
 </ul>
 <p>Python中对象之间的赋值是按引用传递的，如果要拷贝对象需要使用标准模板中的copy</p>
@@ -838,7 +841,7 @@ obj<span class="token punctuation">(</span><span class="token punctuation">)</sp
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="199. 二叉树的右视图">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="199. 二叉树的右视图">
                         
                         <span class="card-title">199. 二叉树的右视图</span>
                     </div>
@@ -890,7 +893,7 @@ if len(res)&lt;=depth 时, 说明遍历到了该层第一个元素，这时加�
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="计算机操作系统">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="计算机操作系统">
                         
                         <span class="card-title">计算机操作系统</span>
                     </div>
@@ -1096,7 +1099,7 @@ if len(res)&lt;=depth 时, 说明遍历到了该层第一个元素，这时加�
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">37.7k</span>
+            <span class="white-color">37.6k</span>
             
 
             <br>
