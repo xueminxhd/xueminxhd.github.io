@@ -13,7 +13,7 @@ Navicat 15.x for MySQL安装
 
 
 
-MySQL (B站视频)
+MySQL （B站视频）
 MySQL （文档）
 MySQL01：初识MySQL
 MySQL02：数据库操作
@@ -327,7 +327,7 @@ MySQL">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -482,14 +482,14 @@ MySQL">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    445
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    6 分
                 </div>
                 
                 
@@ -510,7 +510,7 @@ MySQL">
 </ul>
 <hr>
 <ul>
-<li><a href="https://www.bilibili.com/video/BV1NJ411J79W?p=1" target="_blank" rel="noopener">MySQL (B站视频)</a></li>
+<li><a href="https://www.bilibili.com/video/BV1NJ411J79W?p=1" target="_blank" rel="noopener">MySQL （B站视频）</a></li>
 <li>MySQL （文档）<ul>
 <li><a href="https://blog.csdn.net/qq_33369905/article/details/105828923" target="_blank" rel="noopener">MySQL01：初识MySQL</a></li>
 <li><a href="https://blog.csdn.net/qq_33369905/article/details/105828926" target="_blank" rel="noopener">MySQL02：数据库操作</a></li>
@@ -528,6 +528,9 @@ MySQL">
 <li>创建学生表</li>
 <li>给学生表中insert 数据</li>
 </ul>
+<blockquote>
+<p>Mysql字段设置中文默认值时：<br>1.检查字段编码是否UTF-8<br>2.如果用Navicat视图化工具进行设置，需要在<strong>中文外层加上单引号</strong>，例:默认值:’张三’;</p>
+</blockquote>
 <pre><code>CREATE DATABASE
 IF
     NOT EXISTS `school`;-- 创建一个school数据库
@@ -569,7 +572,93 @@ VALUES
     ( &#39;张三&#39;, &#39;123&#39; ),
     ( &#39;李四&#39;, &#39;456&#39; );
 </code></pre><p>结果为：<br><img src="https://i.loli.net/2020/09/26/x2RNpinm1FUYecf.png" alt></p>
+<h1 id="16-基本的select语句和别名"><a href="#16-基本的select语句和别名" class="headerlink" title="16. 基本的select语句和别名"></a><a href="https://www.bilibili.com/video/BV1NJ411J79W?p=16" target="_blank" rel="noopener">16. 基本的select语句和别名</a></h1><p>构建表的sql代码：</p>
+<pre><code>create database if not exists `school`;
+-- 创建一个school数据库
+use `school`;-- 创建学生表
+drop table if exists `student`;
+create table `student`(
+    `studentno` int(4) not null comment &#39;学号&#39;,
+    `loginpwd` varchar(20) default null,
+    `studentname` varchar(20) default null comment &#39;学生姓名&#39;,
+    `sex` tinyint(1) default null comment &#39;性别，0或1&#39;,
+    `gradeid` int(11) default null comment &#39;年级编号&#39;,
+    `phone` varchar(50) not null comment &#39;联系电话，允许为空&#39;,
+    `address` varchar(255) not null comment &#39;地址，允许为空&#39;,
+    `borndate` datetime default null comment &#39;出生时间&#39;,
+    `email` varchar (50) not null comment &#39;邮箱账号允许为空&#39;,
+    `identitycard` varchar(18) default null comment &#39;身份证号&#39;,
+    primary key (`studentno`),
+    unique key `identitycard`(`identitycard`),
+    key `email` (`email`)
+)engine=myisam default charset=utf8;
 
+-- 创建年级表
+drop table if exists `grade`;
+create table `grade`(
+    `gradeid` int(11) not null auto_increment comment &#39;年级编号&#39;,
+  `gradename` varchar(50) not null comment &#39;年级名称&#39;,
+    primary key (`gradeid`)
+) engine=innodb auto_increment = 6 default charset = utf8;
+
+-- 创建科目表
+drop table if exists `subject`;
+create table `subject`(
+    `subjectno`int(11) not null auto_increment comment &#39;课程编号&#39;,
+    `subjectname` varchar(50) default null comment &#39;课程名称&#39;,
+    `classhour` int(4) default null comment &#39;学时&#39;,
+    `gradeid` int(4) default null comment &#39;年级编号&#39;,
+    primary key (`subjectno`)
+)engine = innodb auto_increment = 19 default charset = utf8;
+
+-- 创建成绩表
+drop table if exists `result`;
+create table `result`(
+    `studentno` int(4) not null comment &#39;学号&#39;,
+    `subjectno` int(4) not null comment &#39;课程编号&#39;,
+    `examdate` datetime not null comment &#39;考试日期&#39;,
+    `studentresult` int (4) not null comment &#39;考试成绩&#39;,
+    key `subjectno` (`subjectno`)
+)engine = innodb default charset = utf8;
+
+-- 插入学生数据 其余自行添加 这里只添加了2行
+insert into `student` (`studentno`,`loginpwd`,`studentname`,`sex`,`gradeid`,`phone`,`address`,`borndate`,`email`,`identitycard`)
+values
+(1000,&#39;123456&#39;,&#39;张伟&#39;,0,2,&#39;13800001234&#39;,&#39;北京朝阳&#39;,&#39;1980-1-1&#39;,&#39;text123@qq.com&#39;,&#39;123456198001011234&#39;),
+(1001,&#39;123456&#39;,&#39;赵强&#39;,1,3,&#39;13800002222&#39;,&#39;广东深圳&#39;,&#39;1990-1-1&#39;,&#39;text111@qq.com&#39;,&#39;123456199001011233&#39;);
+
+-- 插入成绩数据  这里仅插入了一组，其余自行添加
+insert into `result`(`studentno`,`subjectno`,`examdate`,`studentresult`)
+values
+(1000,1,&#39;2013-11-11 16:00:00&#39;,85),
+(1000,2,&#39;2013-11-12 16:00:00&#39;,70),
+(1000,3,&#39;2013-11-11 09:00:00&#39;,68),
+(1000,4,&#39;2013-11-13 16:00:00&#39;,98),
+(1000,5,&#39;2013-11-14 16:00:00&#39;,58);
+
+-- 插入年级数据
+insert into `grade` (`gradeid`,`gradename`) values(1,&#39;大一&#39;),(2,&#39;大二&#39;),(3,&#39;大三&#39;),(4,&#39;大四&#39;),(5,&#39;预科班&#39;);
+
+-- 插入科目数据
+insert into `subject`(`subjectno`,`subjectname`,`classhour`,`gradeid`)values
+(1,&#39;高等数学-1&#39;,110,1),
+(2,&#39;高等数学-2&#39;,110,2),
+(3,&#39;高等数学-3&#39;,100,3),
+(4,&#39;高等数学-4&#39;,130,4),
+(5,&#39;C语言-1&#39;,110,1),
+(6,&#39;C语言-2&#39;,110,2),
+(7,&#39;C语言-3&#39;,100,3),
+(8,&#39;C语言-4&#39;,130,4),
+(9,&#39;Java程序设计-1&#39;,110,1),
+(10,&#39;Java程序设计-2&#39;,110,2),
+(11,&#39;Java程序设计-3&#39;,100,3),
+(12,&#39;Java程序设计-4&#39;,130,4),
+(13,&#39;数据库结构-1&#39;,110,1),
+(14,&#39;数据库结构-2&#39;,110,2),
+(15,&#39;数据库结构-3&#39;,100,3),
+(16,&#39;数据库结构-4&#39;,130,4),
+(17,&#39;C#基础&#39;,130,1);
+</code></pre>
             </div>
             <hr />
 
@@ -778,7 +867,7 @@ VALUES
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="狂神说MySQL">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="狂神说MySQL">
                         
                         <span class="card-title">狂神说MySQL</span>
                     </div>
@@ -791,7 +880,7 @@ Navicat 15.x for MySQL安装
 
 
 
-MySQL (B站视频)
+MySQL （B站视频）
 MySQL （文档）
 MySQL01：初识MySQL
 MySQL02：数据库操作
@@ -839,7 +928,7 @@ MySQL
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="动手学深度学学习_pytorch版_笔记">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="动手学深度学学习_pytorch版_笔记">
                         
                         <span class="card-title">动手学深度学学习_pytorch版_笔记</span>
                     </div>
@@ -863,8 +952,23 @@ github 中有每章节的code源文件，clone到本地运行，可观察各模�
                             </span>
                         <span class="publish-author">
                             
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python/" class="post-category" target="_blank">
+                                    Python
+                                </a>
+                            
+                            
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/深度学习/" target="_blank">
+                        <span class="chip bg-color">深度学习</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1036,7 +1140,7 @@ github 中有每章节的code源文件，clone到本地运行，可观察各模�
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">38.4k</span>
+            <span class="white-color">39.2k</span>
             
 
             <br>
