@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xueminxhd.github.io/"/>
-  <updated>2020-09-29T13:33:45.591Z</updated>
+  <updated>2020-09-02T01:40:34.224Z</updated>
   <id>https://xueminxhd.github.io/</id>
   
   <author>
@@ -15,61 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>狂神说MySQL</title>
-    <link href="https://xueminxhd.github.io/2020/09/26/ji-suan-ji-ji-chu/kuang-shen-shuo-mysql/"/>
-    <id>https://xueminxhd.github.io/2020/09/26/ji-suan-ji-ji-chu/kuang-shen-shuo-mysql/</id>
-    <published>2020-09-26T13:30:36.000Z</published>
-    <updated>2020-09-29T13:33:45.591Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.mihuxiong.com/article/15&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Navicat 15.x for
-        
-      
-    
-    </summary>
-    
-      <category term="计算机基础" scheme="https://xueminxhd.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
-    
-    
-      <category term="MySQL" scheme="https://xueminxhd.github.io/tags/MySQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>动手学深度学学习_pytorch版_笔记</title>
-    <link href="https://xueminxhd.github.io/2020/09/12/python/dong-shou-xue-shen-du-xue-xue-xi-pytorch-ban-bi-ji/"/>
-    <id>https://xueminxhd.github.io/2020/09/12/python/dong-shou-xue-shen-du-xue-xue-xi-pytorch-ban-bi-ji/</id>
-    <published>2020-09-12T14:19:46.000Z</published>
-    <updated>2020-09-26T15:03:03.867Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;a href=&quot;https://tangshusen.me/Dive-into-DL-PyTorch/#/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;《动手学深度学习》(Pytorch版)&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="Python" scheme="https://xueminxhd.github.io/categories/Python/"/>
-    
-    
-      <category term="深度学习" scheme="https://xueminxhd.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
   
   <entry>
     <title>199. 二叉树的右视图</title>
@@ -94,58 +39,6 @@
     
     
       <category term="LeetCode" scheme="https://xueminxhd.github.io/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python基础知识汇总</title>
-    <link href="https://xueminxhd.github.io/2020/08/30/python/python-ji-chu-zhi-shi-hui-zong/"/>
-    <id>https://xueminxhd.github.io/2020/08/30/python/python-ji-chu-zhi-shi-hui-zong/</id>
-    <published>2020-08-30T05:51:49.000Z</published>
-    <updated>2020-09-01T15:31:37.946Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;封装、继承和多态&quot;&gt;&lt;a href=&quot;#封装、继承和多态&quot; class=&quot;headerlink&quot; title=&quot;封装、继承和多态&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.liujiangblog.com/course/python/44&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="Python" scheme="https://xueminxhd.github.io/categories/Python/"/>
-    
-    
-      <category term="Python基础" scheme="https://xueminxhd.github.io/tags/Python%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>计算机操作系统</title>
-    <link href="https://xueminxhd.github.io/2020/08/29/ji-suan-ji-ji-chu/ji-suan-ji-cao-zuo-xi-tong/"/>
-    <id>https://xueminxhd.github.io/2020/08/29/ji-suan-ji-ji-chu/ji-suan-ji-cao-zuo-xi-tong/</id>
-    <published>2020-08-29T11:43:25.000Z</published>
-    <updated>2020-08-30T03:16:07.735Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;进程死锁&quot;&gt;&lt;a href=&quot;#进程死锁&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="计算机基础" scheme="https://xueminxhd.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
-    
-    
-      <category term="计算机基础" scheme="https://xueminxhd.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
@@ -198,35 +91,6 @@
     
     
       <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python字典常用操作</title>
-    <link href="https://xueminxhd.github.io/2020/08/25/python/python-zi-dian-chang-yong-cao-zuo/"/>
-    <id>https://xueminxhd.github.io/2020/08/25/python/python-zi-dian-chang-yong-cao-zuo/</id>
-    <published>2020-08-25T03:20:31.000Z</published>
-    <updated>2020-08-25T05:21:48.501Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ol&gt;
-&lt;li&gt;普通字典&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.runoob.com/python/python-dictionary.html&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="Python" scheme="https://xueminxhd.github.io/categories/Python/"/>
-    
-    
-      <category term="Python基础" scheme="https://xueminxhd.github.io/tags/Python%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
@@ -532,6 +396,136 @@
         
         
           &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/suan-fa-si-wei-xi-lie/xin-feng-qian-tao-wen-ti#yi-ti-mu-gai-shu&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第三章：区间调度之区间交集问题</title>
+    <link href="https://xueminxhd.github.io/2020/08/16/labuladong/di-san-zhang-qu-jian-diao-du-zhi-qu-jian-jiao-ji-wen-ti/"/>
+    <id>https://xueminxhd.github.io/2020/08/16/labuladong/di-san-zhang-qu-jian-diao-du-zhi-qu-jian-jiao-ji-wen-ti/</id>
+    <published>2020-08-16T14:51:26.000Z</published>
+    <updated>2020-08-16T14:52:55.729Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/suan-fa-si-wei-xi-lie/qu-jian-jiao-ji-wen-ti&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第三章：区间调度之区间合并问题</title>
+    <link href="https://xueminxhd.github.io/2020/08/16/labuladong/di-san-zhang-qu-jian-diao-du-zhi-qu-jian-he-bing-wen-ti/"/>
+    <id>https://xueminxhd.github.io/2020/08/16/labuladong/di-san-zhang-qu-jian-diao-du-zhi-qu-jian-he-bing-wen-ti/</id>
+    <published>2020-08-16T06:03:33.000Z</published>
+    <updated>2020-08-16T14:53:03.175Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/suan-fa-si-wei-xi-lie/qu-jian-tiao-du-wen-ti-zhi-qu-jian-he-bing&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第三章：前缀和技巧</title>
+    <link href="https://xueminxhd.github.io/2020/08/12/labuladong/di-san-zhang-qian-zhui-he-ji-qiao/"/>
+    <id>https://xueminxhd.github.io/2020/08/12/labuladong/di-san-zhang-qian-zhui-he-ji-qiao/</id>
+    <published>2020-08-12T12:33:08.000Z</published>
+    <updated>2020-09-01T07:27:01.730Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/suan-fa-si-wei-xi-lie/qian-zhui-he-ji-qiao&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第三章：双指针技巧总结</title>
+    <link href="https://xueminxhd.github.io/2020/08/12/labuladong/di-san-zhang-shuang-zhi-zhen-ji-qiao-zong-jie/"/>
+    <id>https://xueminxhd.github.io/2020/08/12/labuladong/di-san-zhang-shuang-zhi-zhen-ji-qiao-zong-jie/</id>
+    <published>2020-08-12T10:15:27.000Z</published>
+    <updated>2020-08-13T03:31:33.403Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/suan-fa-si-wei-xi-lie/shuang-zhi-zhen-ji-qiao&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第三章：回溯算法最佳实践：括号生成</title>
+    <link href="https://xueminxhd.github.io/2020/08/12/labuladong/di-san-zhang-hui-su-suan-fa-zui-jia-shi-jian-gua-hao-sheng-cheng/"/>
+    <id>https://xueminxhd.github.io/2020/08/12/labuladong/di-san-zhang-hui-su-suan-fa-zui-jia-shi-jian-gua-hao-sheng-cheng/</id>
+    <published>2020-08-12T08:44:59.000Z</published>
+    <updated>2020-08-12T09:31:11.147Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/suan-fa-si-wei-xi-lie/he-fa-kuo-hao-sheng-cheng&quot; target=&quot;_blank&quot;
         
       
     

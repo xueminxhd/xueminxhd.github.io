@@ -319,7 +319,7 @@ if len(res)&amp;lt;=depth 时, 说明遍历到了该层第一个元素，这时�
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -727,53 +727,51 @@ if len(res)&amp;lt;=depth 时, 说明遍历到了该层第一个元素，这时�
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/09/12/python/dong-shou-xue-shen-du-xue-xue-xi-pytorch-ban-bi-ji/">
+                <a href="/2020/08/31/leetcode/199-er-cha-shu-de-you-shi-tu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="动手学深度学学习_pytorch版_笔记">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="199. 二叉树的右视图">
                         
-                        <span class="card-title">动手学深度学学习_pytorch版_笔记</span>
+                        <span class="card-title">199. 二叉树的右视图</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            《动手学深度学习》(Pytorch版)
+                            199. 二叉树的右视图
 
-github 中有每章节的code源文件，clone到本地运行，可观察各模型效果。
-
-
-3.4.5 交叉熵损失函数交叉熵只关心对正确类别的预测概率，因为只要其值足够大，就可以确保分类结果正确
-
-交叉
+if len(res)&lt;=depth 时, 说明遍历到了该层第一个元素，这时加个0用来占位置（第depth层的元素）
+先深度遍历左子树，再深度遍历右子树，这样，这一层的值会被每一层的最后一个节点最终覆盖掉。
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-09-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-31
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Python/" class="post-category" target="_blank">
-                                    Python
+                            <a href="/categories/LeetCode/" class="post-category" target="_blank">
+                                    LeetCode
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/深度学习/" target="_blank">
-                        <span class="chip bg-color">深度学习</span>
+                    <a href="/tags/LeetCode/" target="_blank">
+                        <span class="chip bg-color">LeetCode</span>
                     </a>
                     
                 </div>
@@ -787,40 +785,36 @@ github 中有每章节的code源文件，clone到本地运行，可观察各模�
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/08/30/python/python-ji-chu-zhi-shi-hui-zong/">
+                <a href="/2020/08/29/leetcode/200-dao-yu-shu-liang/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="python基础知识汇总">
+                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="200. 岛屿数量">
                         
-                        <span class="card-title">python基础知识汇总</span>
+                        <span class="card-title">200. 岛屿数量</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            封装、继承和多态进程与线程的一个简单解释进程之间有哪些通信方式？小林coding进程间通信
+                            200. 岛屿数量
+利用dfs深度优先搜索解决：
 
-管道
-消息队列
-共享内存
-信号量
-Socket
-
-Python并发编程之谈谈线程中的“锁机制”COOKIE和SESSION有什么区别?
-Sessi
+心里先想象出一棵搜索树
+在节点处判断：
+如果满足条件：该节点没有超过二维数组范围且是岛屿（用1表示），则把该点置为水（用0表示）以避免重复搜索。并在此节点的基础上，继续向搜索树下面（下面的
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-30
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-29
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Python/" class="post-category" target="_blank">
-                                    Python
+                            <a href="/categories/LeetCode/" class="post-category" target="_blank">
+                                    LeetCode
                                 </a>
                             
                             
@@ -830,8 +824,8 @@ Sessi
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Python基础/" target="_blank">
-                        <span class="chip bg-color">Python基础</span>
+                    <a href="/tags/LeetCode/" target="_blank">
+                        <span class="chip bg-color">LeetCode</span>
                     </a>
                     
                 </div>
@@ -1005,7 +999,7 @@ Sessi
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">39.2k</span>
+            <span class="white-color">33.6k</span>
             
 
             <br>

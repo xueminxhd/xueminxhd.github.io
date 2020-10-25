@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xueminxhd.github.io/contact/index.html</loc>
+    
+    <lastmod>2020-10-25T06:30:39.390Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://xueminxhd.github.io/friends/index.html</loc>
     
     <lastmod>2020-10-13T06:40:27.311Z</lastmod>
@@ -12,27 +19,6 @@
     <loc>https://xueminxhd.github.io/about/index.html</loc>
     
     <lastmod>2020-10-13T06:36:17.286Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xueminxhd.github.io/2020/09/26/ji-suan-ji-ji-chu/kuang-shen-shuo-mysql/</loc>
-    
-    <lastmod>2020-09-29T13:33:45.591Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xueminxhd.github.io/2020/09/12/python/dong-shou-xue-shen-du-xue-xue-xi-pytorch-ban-bi-ji/</loc>
-    
-    <lastmod>2020-09-26T15:03:03.867Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xueminxhd.github.io/contact/index.html</loc>
-    
-    <lastmod>2020-09-22T02:20:32.515Z</lastmod>
     
   </url>
   
@@ -51,13 +37,6 @@
   </url>
   
   <url>
-    <loc>https://xueminxhd.github.io/2020/08/30/python/python-ji-chu-zhi-shi-hui-zong/</loc>
-    
-    <lastmod>2020-09-01T15:31:37.946Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://xueminxhd.github.io/2020/08/12/labuladong/di-san-zhang-qian-zhui-he-ji-qiao/</loc>
     
     <lastmod>2020-09-01T07:27:01.730Z</lastmod>
@@ -68,13 +47,6 @@
     <loc>https://xueminxhd.github.io/2020/08/05/labuladong/di-er-zhang-te-shu-shu-ju-jie-gou-dan-diao-zhan/</loc>
     
     <lastmod>2020-09-01T06:20:39.492Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xueminxhd.github.io/2020/08/29/ji-suan-ji-ji-chu/ji-suan-ji-cao-zuo-xi-tong/</loc>
-    
-    <lastmod>2020-08-30T03:16:07.735Z</lastmod>
     
   </url>
   
@@ -103,13 +75,6 @@
     <loc>https://xueminxhd.github.io/2020/08/24/leetcode/921-shi-gua-hao-you-xiao-de-zui-shao-tian-jia/</loc>
     
     <lastmod>2020-08-25T06:18:48.293Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xueminxhd.github.io/2020/08/25/python/python-zi-dian-chang-yong-cao-zuo/</loc>
-    
-    <lastmod>2020-08-25T05:21:48.501Z</lastmod>
     
   </url>
   
@@ -250,13 +215,6 @@
     <loc>https://xueminxhd.github.io/2020/08/16/labuladong/di-san-zhang-qu-jian-diao-du-zhi-qu-jian-jiao-ji-wen-ti/</loc>
     
     <lastmod>2020-08-16T14:52:55.729Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xueminxhd.github.io/2020/08/13/python/python-zhuang-shi-qi/</loc>
-    
-    <lastmod>2020-08-13T06:36:20.640Z</lastmod>
     
   </url>
   
