@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xueminxhd.github.io/"/>
-  <updated>2020-09-02T01:40:34.224Z</updated>
+  <updated>2020-11-11T15:02:51.851Z</updated>
   <id>https://xueminxhd.github.io/</id>
   
   <author>
@@ -15,6 +15,60 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Neural Network Programming - Deep Learning with PyTorch</title>
+    <link href="https://xueminxhd.github.io/2020/11/01/python/deep-learning-with-pytorch-note/"/>
+    <id>https://xueminxhd.github.io/2020/11/01/python/deep-learning-with-pytorch-note/</id>
+    <published>2020-11-01T04:51:49.000Z</published>
+    <updated>2020-11-11T15:02:51.851Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=v5cngxo4mIg&amp;list=PLZbbT5o_s2xrfNyHZsM6ufI0iZENK9xgG&amp;index=1&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="https://xueminxhd.github.io/categories/Python/"/>
+    
+    
+      <category term="深度学习" scheme="https://xueminxhd.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>动手学深度学学习_pytorch版_笔记</title>
+    <link href="https://xueminxhd.github.io/2020/09/12/python/dong-shou-xue-shen-du-xue-xue-xi-pytorch-ban/"/>
+    <id>https://xueminxhd.github.io/2020/09/12/python/dong-shou-xue-shen-du-xue-xue-xi-pytorch-ban/</id>
+    <published>2020-09-12T14:19:46.000Z</published>
+    <updated>2020-09-26T15:03:03.867Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href=&quot;https://tangshusen.me/Dive-into-DL-PyTorch/#/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;《动手学深度学习》(Pytorch版)&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="https://xueminxhd.github.io/categories/Python/"/>
+    
+    
+      <category term="深度学习" scheme="https://xueminxhd.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>199. 二叉树的右视图</title>
@@ -39,6 +93,32 @@
     
     
       <category term="LeetCode" scheme="https://xueminxhd.github.io/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python基础知识汇总</title>
+    <link href="https://xueminxhd.github.io/2020/08/30/python/python-ji-chu-zhi-shi-hui-zong/"/>
+    <id>https://xueminxhd.github.io/2020/08/30/python/python-ji-chu-zhi-shi-hui-zong/</id>
+    <published>2020-08-30T05:51:49.000Z</published>
+    <updated>2020-11-11T15:10:22.005Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h1&gt;&lt;h2 id=&quot;封装、继承和多态&quot;&gt;&lt;a href=&quot;#封装、继承和多态&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="https://xueminxhd.github.io/categories/Python/"/>
+    
+    
+      <category term="Python基础" scheme="https://xueminxhd.github.io/tags/Python%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
@@ -448,84 +528,6 @@
         
         
           &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/suan-fa-si-wei-xi-lie/qu-jian-tiao-du-wen-ti-zhi-qu-jian-he-bing&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第三章：前缀和技巧</title>
-    <link href="https://xueminxhd.github.io/2020/08/12/labuladong/di-san-zhang-qian-zhui-he-ji-qiao/"/>
-    <id>https://xueminxhd.github.io/2020/08/12/labuladong/di-san-zhang-qian-zhui-he-ji-qiao/</id>
-    <published>2020-08-12T12:33:08.000Z</published>
-    <updated>2020-09-01T07:27:01.730Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/suan-fa-si-wei-xi-lie/qian-zhui-he-ji-qiao&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第三章：双指针技巧总结</title>
-    <link href="https://xueminxhd.github.io/2020/08/12/labuladong/di-san-zhang-shuang-zhi-zhen-ji-qiao-zong-jie/"/>
-    <id>https://xueminxhd.github.io/2020/08/12/labuladong/di-san-zhang-shuang-zhi-zhen-ji-qiao-zong-jie/</id>
-    <published>2020-08-12T10:15:27.000Z</published>
-    <updated>2020-08-13T03:31:33.403Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/suan-fa-si-wei-xi-lie/shuang-zhi-zhen-ji-qiao&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第三章：回溯算法最佳实践：括号生成</title>
-    <link href="https://xueminxhd.github.io/2020/08/12/labuladong/di-san-zhang-hui-su-suan-fa-zui-jia-shi-jian-gua-hao-sheng-cheng/"/>
-    <id>https://xueminxhd.github.io/2020/08/12/labuladong/di-san-zhang-hui-su-suan-fa-zui-jia-shi-jian-gua-hao-sheng-cheng/</id>
-    <published>2020-08-12T08:44:59.000Z</published>
-    <updated>2020-08-12T09:31:11.147Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/suan-fa-si-wei-xi-lie/he-fa-kuo-hao-sheng-cheng&quot; target=&quot;_blank&quot;
         
       
     
