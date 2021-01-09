@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xueminxhd.github.io/"/>
-  <updated>2020-12-04T02:51:52.485Z</updated>
+  <updated>2021-01-08T15:38:30.406Z</updated>
   <id>https://xueminxhd.github.io/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Pytorch学习资料</title>
+    <link href="https://xueminxhd.github.io/2021/01/08/python/ml/pytorch-xue-xi-zi-liao/"/>
+    <id>https://xueminxhd.github.io/2021/01/08/python/ml/pytorch-xue-xi-zi-liao/</id>
+    <published>2021-01-08T13:02:13.000Z</published>
+    <updated>2021-01-08T15:38:30.406Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href=&quot;https://space.bilibili.com/88461692/channel/detail?cid=26587&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="https://xueminxhd.github.io/categories/Python/"/>
+    
+    
+      <category term="深度学习" scheme="https://xueminxhd.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>用Latex和Word写论文</title>
     <link href="https://xueminxhd.github.io/2020/11/21/study/yong-llatex-he-word-xie-lun-wen/"/>
     <id>https://xueminxhd.github.io/2020/11/21/study/yong-llatex-he-word-xie-lun-wen/</id>
     <published>2020-11-21T13:43:29.000Z</published>
-    <updated>2020-12-04T02:51:52.485Z</updated>
+    <updated>2020-12-29T07:44:39.812Z</updated>
     
     <summary type="html">
     
@@ -44,8 +70,8 @@
   
   <entry>
     <title>Neural Network Programming - Deep Learning with PyTorch</title>
-    <link href="https://xueminxhd.github.io/2020/11/01/python/deep-learning-with-pytorch-note/"/>
-    <id>https://xueminxhd.github.io/2020/11/01/python/deep-learning-with-pytorch-note/</id>
+    <link href="https://xueminxhd.github.io/2020/11/01/python/ml/deep-learning-with-pytorch-note/"/>
+    <id>https://xueminxhd.github.io/2020/11/01/python/ml/deep-learning-with-pytorch-note/</id>
     <published>2020-11-01T04:51:49.000Z</published>
     <updated>2020-12-03T14:38:50.244Z</updated>
     
@@ -71,8 +97,8 @@
   
   <entry>
     <title>动手学深度学学习_pytorch版</title>
-    <link href="https://xueminxhd.github.io/2020/09/12/python/dong-shou-xue-shen-du-xue-xue-xi-pytorch-ban/"/>
-    <id>https://xueminxhd.github.io/2020/09/12/python/dong-shou-xue-shen-du-xue-xue-xi-pytorch-ban/</id>
+    <link href="https://xueminxhd.github.io/2020/09/12/python/ml/dong-shou-xue-shen-du-xue-xue-xi-pytorch-ban/"/>
+    <id>https://xueminxhd.github.io/2020/09/12/python/ml/dong-shou-xue-shen-du-xue-xue-xi-pytorch-ban/</id>
     <published>2020-09-12T14:19:46.000Z</published>
     <updated>2020-11-11T15:19:17.413Z</updated>
     
@@ -503,32 +529,6 @@
         
         
           &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/suan-fa-si-wei-xi-lie/xin-feng-qian-tao-wen-ti#yi-ti-mu-gai-shu&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://xueminxhd.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="labuladong" scheme="https://xueminxhd.github.io/tags/labuladong/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第三章：区间调度之区间交集问题</title>
-    <link href="https://xueminxhd.github.io/2020/08/16/labuladong/di-san-zhang-qu-jian-diao-du-zhi-qu-jian-jiao-ji-wen-ti/"/>
-    <id>https://xueminxhd.github.io/2020/08/16/labuladong/di-san-zhang-qu-jian-diao-du-zhi-qu-jian-jiao-ji-wen-ti/</id>
-    <published>2020-08-16T14:51:26.000Z</published>
-    <updated>2020-08-16T14:52:55.729Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/suan-fa-si-wei-xi-lie/qu-jian-jiao-ji-wen-ti&quot; target=&quot;_blank&quot;
         
       
     

@@ -320,7 +320,7 @@ pandoc Manuscript.tex -o Manuscript.docx
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -621,6 +621,12 @@ $\mathbb{R}$</code></pre><h3 id="公式中一部分斜体变为直体"><a href="
 \LARGE
 \huge
 \Huge</code></pre></li>
+<li><p>单元格内强制换行</p>
+<ul>
+<li>加入宏包 <code>\usepackage{makecell}</code></li>
+<li>在表格中需要换行的内容处加 <code>\makecell</code>,再用<code>\\</code> 分隔即可。比如<code>\makecell{从这里\\换行}</code>.</li>
+</ul>
+</li>
 </ul>
 <h2 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a><a href="https://blog.csdn.net/golden1314521/article/details/40923377" target="_blank" rel="noopener">伪代码</a></h2><h2 id="添加下一页和空多行"><a href="#添加下一页和空多行" class="headerlink" title="添加下一页和空多行"></a>添加下一页和空多行</h2><ul>
 <li><p><a href="https://blog.csdn.net/zd0303/article/details/7572992" target="_blank" rel="noopener">Latex添加新一页</a><br>用<code>\clearpage</code></p>
@@ -884,52 +890,53 @@ $\mathbb{R}$</code></pre><h3 id="公式中一部分斜体变为直体"><a href="
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/11/21/study/yong-llatex-he-word-xie-lun-wen/">
+                <a href="/2021/01/08/python/ml/pytorch-xue-xi-zi-liao/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="用Latex和Word写论文">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Pytorch学习资料">
                         
-                        <span class="card-title">用Latex和Word写论文</span>
+                        <span class="card-title">Pytorch学习资料</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Latex转Word
-打开cmd
-cd 到LaTeX文件所在的路径
-pandoc Manuscript.tex -o Manuscript.docx
-若要把bib参考文献也转换：pandoc Manuscript.tex --bibliog
+                            3Blue1Brown深度学习专题
+
+☆☆☆☆☆讲解深度学习内在过程 
+
+
+Neural Network Programming - Deep Learning with PyTorch
+
+☆☆☆☆☆超棒的教学视频，把底层原理到实现的具体过
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-11-21
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-01-08
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Study/" class="post-category" target="_blank">
-                                    Study
+                            <a href="/categories/Python/" class="post-category" target="_blank">
+                                    Python
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Study/" target="_blank">
-                        <span class="chip bg-color">Study</span>
+                    <a href="/tags/深度学习/" target="_blank">
+                        <span class="chip bg-color">深度学习</span>
                     </a>
                     
                 </div>
@@ -943,11 +950,11 @@ pandoc Manuscript.tex -o Manuscript.docx
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/11/01/python/deep-learning-with-pytorch-note/">
+                <a href="/2020/11/01/python/ml/deep-learning-with-pytorch-note/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Neural Network Programming - Deep Learning with PyTorch">
+                        <img src="/medias/featureimages/26.jpg" class="responsive-img" alt="Neural Network Programming - Deep Learning with PyTorch">
                         
                         <span class="card-title">Neural Network Programming - Deep Learning with PyTorch</span>
                     </div>
@@ -1157,7 +1164,7 @@ Blog Post
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">39.2k</span>
+            <span class="white-color">39.4k</span>
             
 
             <br>

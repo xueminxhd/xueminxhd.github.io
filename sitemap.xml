@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xueminxhd.github.io/2021/01/08/python/ml/pytorch-xue-xi-zi-liao/</loc>
+    
+    <lastmod>2021-01-08T15:38:30.406Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xueminxhd.github.io/2020/11/21/study/yong-llatex-he-word-xie-lun-wen/</loc>
+    
+    <lastmod>2020-12-29T07:44:39.812Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://xueminxhd.github.io/lifelog/index.html</loc>
     
     <lastmod>2020-12-08T02:24:09.438Z</lastmod>
@@ -9,14 +23,7 @@
   </url>
   
   <url>
-    <loc>https://xueminxhd.github.io/2020/11/21/study/yong-llatex-he-word-xie-lun-wen/</loc>
-    
-    <lastmod>2020-12-04T02:51:52.485Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xueminxhd.github.io/2020/11/01/python/deep-learning-with-pytorch-note/</loc>
+    <loc>https://xueminxhd.github.io/2020/11/01/python/ml/deep-learning-with-pytorch-note/</loc>
     
     <lastmod>2020-12-03T14:38:50.244Z</lastmod>
     
@@ -30,7 +37,7 @@
   </url>
   
   <url>
-    <loc>https://xueminxhd.github.io/2020/09/12/python/dong-shou-xue-shen-du-xue-xue-xi-pytorch-ban/</loc>
+    <loc>https://xueminxhd.github.io/2020/09/12/python/ml/dong-shou-xue-shen-du-xue-xue-xi-pytorch-ban/</loc>
     
     <lastmod>2020-11-11T15:19:17.413Z</lastmod>
     
