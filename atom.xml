@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ismxue.github.io/"/>
-  <updated>2021-01-09T02:39:23.157Z</updated>
+  <updated>2021-02-26T12:22:01.650Z</updated>
   <id>https://ismxue.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>读-“被讨厌的勇气”</title>
+    <link href="https://ismxue.github.io/2021/02/26/growth/du-bei-tao-yan-de-yong-qi/"/>
+    <id>https://ismxue.github.io/2021/02/26/growth/du-bei-tao-yan-de-yong-qi/</id>
+    <published>2021-02-26T12:15:25.000Z</published>
+    <updated>2021-02-26T12:22:01.650Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=grmM-Rn5nyg&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Growth" scheme="https://ismxue.github.io/categories/Growth/"/>
+    
+    
+      <category term="Reading List" scheme="https://ismxue.github.io/tags/Reading-List/"/>
+    
+  </entry>
   
   <entry>
     <title>Pytorch学习资料</title>
@@ -503,32 +529,6 @@
         
         
           &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/suan-fa-si-wei-xi-lie/di-gui-xiang-jie&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://ismxue.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="labuladong" scheme="https://ismxue.github.io/tags/labuladong/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第三章：信封嵌套问题</title>
-    <link href="https://ismxue.github.io/2020/08/16/labuladong/di-san-zhang-xin-feng-qian-tao-wen-ti/"/>
-    <id>https://ismxue.github.io/2020/08/16/labuladong/di-san-zhang-xin-feng-qian-tao-wen-ti/</id>
-    <published>2020-08-16T15:07:29.000Z</published>
-    <updated>2020-08-16T15:08:10.011Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/suan-fa-si-wei-xi-lie/xin-feng-qian-tao-wen-ti#yi-ti-mu-gai-shu&quot; target=&quot;_blank&quot;
         
       
     
