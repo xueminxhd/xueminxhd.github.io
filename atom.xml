@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ismxue.github.io/"/>
-  <updated>2021-02-26T12:42:59.119Z</updated>
+  <updated>2021-02-27T11:42:59.297Z</updated>
   <id>https://ismxue.github.io/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>第零章：一个方法解决三道区间问题</title>
+    <link href="https://ismxue.github.io/2021/02/27/di-ling-zhang-yi-ge-fang-fa-jie-jue-san-dao-qu-jian-wen-ti/"/>
+    <id>https://ismxue.github.io/2021/02/27/di-ling-zhang-yi-ge-fang-fa-jie-jue-san-dao-qu-jian-wen-ti/</id>
+    <published>2021-02-27T09:31:20.000Z</published>
+    <updated>2021-02-27T11:42:59.297Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;labuladong &lt;a href=&quot;https://www.cnblogs.com/labuladong/p/13975851.html&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://ismxue.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="labuladong" scheme="https://ismxue.github.io/tags/labuladong/"/>
+    
+  </entry>
+  
+  <entry>
     <title>读“被讨厌的勇气”</title>
     <link href="https://ismxue.github.io/2021/02/26/growth/du-bei-tao-yan-de-yong-qi/"/>
     <id>https://ismxue.github.io/2021/02/26/growth/du-bei-tao-yan-de-yong-qi/</id>
     <published>2021-02-26T12:15:25.000Z</published>
-    <updated>2021-02-26T12:42:59.119Z</updated>
+    <updated>2021-02-27T02:42:42.276Z</updated>
     
     <summary type="html">
     
@@ -505,32 +531,6 @@
         
         
           &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/gao-pin-mian-shi-xi-lie/koko-tou-xiang-jiao&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://ismxue.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="labuladong" scheme="https://ismxue.github.io/tags/labuladong/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第四章：如何高效寻找素数</title>
-    <link href="https://ismxue.github.io/2020/08/17/labuladong/di-si-zhang-ru-he-gao-xiao-xun-zhao-su-shu/"/>
-    <id>https://ismxue.github.io/2020/08/17/labuladong/di-si-zhang-ru-he-gao-xiao-xun-zhao-su-shu/</id>
-    <published>2020-08-17T07:12:54.000Z</published>
-    <updated>2020-08-17T07:13:14.766Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/gao-pin-mian-shi-xi-lie/da-yin-su-shu&quot; target=&quot;_blank&quot;
         
       
     

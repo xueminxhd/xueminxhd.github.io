@@ -319,7 +319,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -474,7 +474,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    691
+                    697
                 </div>
                 
 
@@ -553,7 +553,7 @@
         <span class="token keyword">return</span> max<span class="token punctuation">(</span>my_rob<span class="token punctuation">(</span>nums<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>my_rob<span class="token punctuation">(</span>nums<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">if</span> len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">1</span> <span class="token keyword">else</span> nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="337-树形打家劫舍"><a href="#337-树形打家劫舍" class="headerlink" title="337 树形打家劫舍"></a><a href="https://leetcode-cn.com/problems/house-robber-iii/solution/shu-xing-dp-by-enda-2/" target="_blank" rel="noopener">337 树形打家劫舍</a></h1><ul>
 <li>对于每一个节点，都只有选和不选两种情况。数组中<code>[ ,  ]</code>第一个index表示不打劫当前节点的收益，第二个index表示打劫当前节点的收益</li>
-<li>如果没选当前节点，则可以选左右节点（<code>withoutRoot=max(l)+max(r)</code>。如果选了当前节点，则不能选左右节点（<code>withRoot=root.val+l[0]+r[0]</code>）</li>
+<li>如果没选当前节点，则可以选左右节点（<code>withoutRoot=max(l)+max(r)</code>）。如果选了当前节点，则不能选左右节点（<code>withRoot=root.val+l[0]+r[0]</code>）</li>
 </ul>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for a binary tree node.</span>
 <span class="token comment" spellcheck="true"># class TreeNode(object):</span>
@@ -569,8 +569,8 @@
             r<span class="token operator">=</span>dp<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 右节点不偷/偷带来的收益</span>
             <span class="token comment" spellcheck="true"># 若偷当前节点，则收益=当前节点+左节点不偷+右节点不偷</span>
             <span class="token comment" spellcheck="true"># 若不偷当前节点，则收益=左节点偷或不偷的最大值+右节点偷或不偷的最大值</span>
-            withRoot<span class="token operator">=</span>root<span class="token punctuation">.</span>val<span class="token operator">+</span>l<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">+</span>r<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># 若偷当前节点，则</span>
-            withoutRoot<span class="token operator">=</span>max<span class="token punctuation">(</span>l<span class="token punctuation">)</span><span class="token operator">+</span>max<span class="token punctuation">(</span>r<span class="token punctuation">)</span>
+            withRoot<span class="token operator">=</span>root<span class="token punctuation">.</span>val<span class="token operator">+</span>l<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">+</span>r<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># 若偷当前节点</span>
+            withoutRoot<span class="token operator">=</span>max<span class="token punctuation">(</span>l<span class="token punctuation">)</span><span class="token operator">+</span>max<span class="token punctuation">(</span>r<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 若不偷当前节点</span>
             <span class="token keyword">return</span> <span class="token punctuation">[</span>withoutRoot<span class="token punctuation">,</span>withRoot<span class="token punctuation">]</span>
 
         <span class="token keyword">return</span> max<span class="token punctuation">(</span>dp<span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 返回 不偷/偷当前节点 的收益最大值</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -782,7 +782,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="第一章：经典动态规划：0-1 背包问题">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="第一章：经典动态规划：0-1 背包问题">
                         
                         <span class="card-title">第一章：经典动态规划：0-1 背包问题</span>
                     </div>
@@ -838,7 +838,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="第零章：我写了首诗，把滑动窗口算法变成了默写题">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="第零章：我写了首诗，把滑动窗口算法变成了默写题">
                         
                         <span class="card-title">第零章：我写了首诗，把滑动窗口算法变成了默写题</span>
                     </div>
@@ -1051,7 +1051,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">59.4k</span>
+            <span class="white-color">59.7k</span>
             
 
             <br>

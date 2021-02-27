@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://ismxue.github.io/2021/02/27/di-ling-zhang-yi-ge-fang-fa-jie-jue-san-dao-qu-jian-wen-ti/</loc>
+    <lastmod>2021-02-27</lastmod>
+  </url>  <url>
+    <loc>https://ismxue.github.io/2020/07/26/labuladong/di-ling-zhang-tuan-mie-leetcode-da-jia-jie-she-wen-ti/</loc>
+    <lastmod>2021-02-27</lastmod>
+  </url>  <url>
     <loc>https://ismxue.github.io/2021/02/26/growth/du-bei-tao-yan-de-yong-qi/</loc>
-    <lastmod>2021-02-26</lastmod>
+    <lastmod>2021-02-27</lastmod>
   </url>  <url>
     <loc>https://ismxue.github.io/2020/11/26/growth/du-fei-bao-li-gou-tong/</loc>
     <lastmod>2021-02-26</lastmod>
@@ -112,12 +118,6 @@
     <loc>https://ismxue.github.io/2020/08/16/labuladong/di-san-zhang-xin-feng-qian-tao-wen-ti/</loc>
     <lastmod>2020-08-16</lastmod>
   </url>  <url>
-    <loc>https://ismxue.github.io/2020/08/16/labuladong/di-san-zhang-qu-jian-diao-du-zhi-qu-jian-he-bing-wen-ti/</loc>
-    <lastmod>2020-08-16</lastmod>
-  </url>  <url>
-    <loc>https://ismxue.github.io/2020/08/16/labuladong/di-san-zhang-qu-jian-diao-du-zhi-qu-jian-jiao-ji-wen-ti/</loc>
-    <lastmod>2020-08-16</lastmod>
-  </url>  <url>
     <loc>https://ismxue.github.io/2020/08/13/python/python-zhuang-shi-qi/</loc>
     <lastmod>2020-08-13</lastmod>
   </url>  <url>
@@ -168,9 +168,6 @@
   </url>  <url>
     <loc>https://ismxue.github.io/2020/07/29/labuladong/di-yi-zhang-dong-tai-gui-hua-she-ji-zui-chang-di-zeng-zi-xu-lie/</loc>
     <lastmod>2020-07-29</lastmod>
-  </url>  <url>
-    <loc>https://ismxue.github.io/2020/07/26/labuladong/di-ling-zhang-tuan-mie-leetcode-da-jia-jie-she-wen-ti/</loc>
-    <lastmod>2020-07-26</lastmod>
   </url>  <url>
     <loc>https://ismxue.github.io/2020/07/25/labuladong/di-ling-zhang-wo-xie-liao-shou-shi-ba-hua-dong-chuang-kou-suan-fa-bian-cheng-liao-mo-xie-ti/</loc>
     <lastmod>2020-07-25</lastmod>
