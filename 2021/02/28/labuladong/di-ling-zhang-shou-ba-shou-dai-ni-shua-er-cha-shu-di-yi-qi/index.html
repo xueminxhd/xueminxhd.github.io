@@ -4,18 +4,13 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="第零章：一个方法解决三道区间问题, It&#39;s the job that&#39;s never started as takes longest to finish.”― J.R.R. Tolkien">
+    <meta name="keywords" content="第零章：手把手带你刷二叉树（第一期）, It&#39;s the job that&#39;s never started as takes longest to finish.”― J.R.R. Tolkien">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="labuladong 一个方法解决三道区间问题删除被覆盖区间、区间合并、区间交集
+    <meta name="description" content="labuladong 手把手带你刷二叉树（第一期）
 
-排序。按照区间起点升序排序，或者先按照起点升序排序，若起点相同，则按照终点降序排序
-
-观察规律并画图。找到区间相对位置的不同情况，并进行分析
-
-
-1288.">
+递归算法的关键要明确函数的定义，相信这个定义，而不要跳进递归细节递归结束的条件一定要写，否则递归跳不出来写二叉树的算法题，都是基于递归框架的，我们先要搞清楚 root 节点它自己要做什么">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -23,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>第零章：一个方法解决三道区间问题 | M&#39;s Blog</title>
+    <title>第零章：手把手带你刷二叉树（第一期） | M&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -323,13 +318,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        第零章：一个方法解决三道区间问题
+                        第零章：手把手带你刷二叉树（第一期）
                     </div>
                 </div>
             </div>
@@ -464,7 +459,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-02-27
+                    2021-02-28
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -478,14 +473,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    691
+                    565
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    2 分
                 </div>
                 
                 
@@ -501,86 +496,95 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>labuladong <a href="https://www.cnblogs.com/labuladong/p/13975851.html" target="_blank" rel="noopener">一个方法解决三道区间问题</a><br>删除被覆盖区间、区间合并、区间交集</p>
-<ol>
-<li><p>排序。按照区间起点升序排序，或者先按照起点升序排序，若起点相同，则按照终点降序排序</p>
-</li>
-<li><p>观察规律并画图。找到区间相对位置的不同情况，并进行分析</p>
-</li>
-</ol>
-<h1 id="1288-删除被覆盖区间"><a href="#1288-删除被覆盖区间" class="headerlink" title="1288. 删除被覆盖区间"></a><a href="https://leetcode-cn.com/problems/remove-covered-intervals/" target="_blank" rel="noopener">1288. 删除被覆盖区间</a></h1><ul>
-<li>先按照起点升序排序。若起点相同，则按照终点降序排序，这样能保证下面的区间被上面的区间覆盖掉。<code>intervals=sorted(intervals,key=lambda x: (x[0], -x[1]))</code></li>
-<li>分3种情况讨论<ul>
-<li>完全覆盖，则计数-1</li>
-<li>部分区间相交，则扩大右区间</li>
-<li>完全不相交，则把区间更新到当前线段中</li>
+                <p>labuladong <a href="https://labuladong.gitbook.io/algo/bi-du-wen-zhang/er-cha-shu-xi-lie-1" target="_blank" rel="noopener">手把手带你刷二叉树（第一期）</a></p>
+<blockquote>
+<p>递归算法的关键要明确函数的定义，相信这个定义，而不要跳进递归细节<br>递归结束的条件一定要写，否则递归跳不出来<br>写二叉树的算法题，都是基于递归框架的，我们先要搞清楚 root 节点它自己要做什么，然后根据题目要求选择使用前序，中序，后续的递归框架</p>
+</blockquote>
+<h1 id="226-翻转二叉树"><a href="#226-翻转二叉树" class="headerlink" title="226. 翻转二叉树"></a><a href="https://leetcode-cn.com/problems/invert-binary-tree/" target="_blank" rel="noopener">226. 翻转二叉树</a></h1><ul>
+<li>相当于前序遍历，把当前的左右节点进行翻转，再讲左右子树进行递归</li>
 </ul>
-</li>
-</ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">removeCoveredIntervals</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> intervals<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token comment" spellcheck="true"># 按起点升序、终点降序的方式排列。排列后，必然是前面的区间覆盖后面的区间</span>
-        intervals<span class="token operator">=</span>sorted<span class="token punctuation">(</span>intervals<span class="token punctuation">,</span>key<span class="token operator">=</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> <span class="token punctuation">(</span>x<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token operator">-</span>x<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-        res <span class="token operator">=</span> len<span class="token punctuation">(</span>intervals<span class="token punctuation">)</span>
-        left<span class="token punctuation">,</span> right <span class="token operator">=</span> intervals<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> intervals<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>  <span class="token comment" spellcheck="true"># 以第0个线段为基准，初始化合并区间的起点和终点</span>
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> len<span class="token punctuation">(</span>intervals<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> left <span class="token operator">&lt;=</span> intervals<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">and</span> right <span class="token operator">>=</span> intervals<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>  <span class="token comment" spellcheck="true"># 情况1：完全覆盖</span>
-                res <span class="token operator">-=</span> <span class="token number">1</span>
-            <span class="token keyword">if</span> right <span class="token operator">>=</span> intervals<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">and</span> right <span class="token operator">&lt;=</span> intervals<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>  <span class="token comment" spellcheck="true"># 情况2：区间相交，需要合并</span>
-                right <span class="token operator">=</span> intervals<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>  <span class="token comment" spellcheck="true"># 扩大右区间</span>
-            <span class="token keyword">if</span> right <span class="token operator">&lt;</span> intervals<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">:</span>  <span class="token comment" spellcheck="true"># 情况3：完全不相交，把区间跳转到当前线段中</span>
-                left <span class="token operator">=</span> intervals<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-                right <span class="token operator">=</span> intervals<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
-        <span class="token keyword">return</span> res<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="56-合并区间"><a href="#56-合并区间" class="headerlink" title="56. 合并区间"></a><a href="https://leetcode-cn.com/problems/merge-intervals/" target="_blank" rel="noopener">56. 合并区间</a></h1><ul>
-<li><p>按照区间的start，排序 <code>intervals = sorted(intervals, key=lambda x: x[0])</code></p>
-</li>
-<li><p>如果当前的头没超过之前的尾，则取当前/ 之间尾的最大值。否则若超过了，res把当前区间添加进去。然后开始新一轮更新</p>
-</li>
-</ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 输入: [[1,3],[2,6],[8,10],[15,18]]</span>
-<span class="token comment" spellcheck="true"># 输出: [[1,6],[8,10],[15,18]]</span>
-<span class="token comment" spellcheck="true"># 解释: 区间 [1,3] 和 [2,6] 重叠, 将它们合并为 [1,6].</span>
-<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-  <span class="token keyword">def</span> <span class="token function">merge</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> intervals<span class="token punctuation">)</span><span class="token punctuation">:</span>
-      <span class="token triple-quoted-string string">"""
-      :type intervals: List[List[int]]
-      :rtype: List[List[int]]
-      """</span>
-      <span class="token keyword">if</span> <span class="token operator">not</span> intervals<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for a binary tree node.</span>
+<span class="token comment" spellcheck="true"># class TreeNode(object):</span>
+<span class="token comment" spellcheck="true">#     def __init__(self, x):</span>
+<span class="token comment" spellcheck="true">#         self.val = x</span>
+<span class="token comment" spellcheck="true">#         self.left = None</span>
+<span class="token comment" spellcheck="true">#         self.right = None</span>
 
-      intervals <span class="token operator">=</span> sorted<span class="token punctuation">(</span>intervals<span class="token punctuation">,</span> key<span class="token operator">=</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> x<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-      res <span class="token operator">=</span> <span class="token punctuation">[</span>intervals<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
-      <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> len<span class="token punctuation">(</span>intervals<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-          <span class="token keyword">if</span> intervals<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">&lt;=</span> res<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-              <span class="token comment" spellcheck="true">#更新并维护当前最大区间</span>
-              res<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> max<span class="token punctuation">(</span>res<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> intervals<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-          <span class="token keyword">else</span><span class="token punctuation">:</span>
-              <span class="token comment" spellcheck="true"># 添加到结果，并重新更新</span>
-              res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>intervals<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
-      <span class="token keyword">return</span> res<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="986-区间列表的交集"><a href="#986-区间列表的交集" class="headerlink" title="986. 区间列表的交集"></a><a href="https://leetcode-cn.com/problems/interval-list-intersections/" target="_blank" rel="noopener">986. 区间列表的交集</a></h1><ul>
-<li>找到有交集的条件，然后取公共部分</li>
-<li>可能存在多个区间，注意更新指针的条件</li>
-</ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">intervalIntersection</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> A<span class="token punctuation">,</span> B<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">invertTree</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token triple-quoted-string string">"""
-        :type A: List[List[int]]
-        :type B: List[List[int]]
-        :rtype: List[List[int]]
+        :type root: TreeNode
+        :rtype: TreeNode
         """</span>
-        res<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
-        i<span class="token punctuation">,</span>j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span>
-        <span class="token keyword">while</span> i<span class="token operator">&lt;</span>len<span class="token punctuation">(</span>A<span class="token punctuation">)</span> <span class="token operator">and</span> j<span class="token operator">&lt;</span>len<span class="token punctuation">(</span>B<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            a1<span class="token punctuation">,</span>a2<span class="token operator">=</span>A<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>A<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
-            b1<span class="token punctuation">,</span>b2<span class="token operator">=</span>B<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>B<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
-            <span class="token keyword">if</span> b2<span class="token operator">>=</span>a1 <span class="token operator">and</span> a2<span class="token operator">>=</span>b1<span class="token punctuation">:</span><span class="token comment" spellcheck="true"># 有交集的情况</span>
-                res<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">[</span>max<span class="token punctuation">(</span>a1<span class="token punctuation">,</span>b1<span class="token punctuation">)</span><span class="token punctuation">,</span>min<span class="token punctuation">(</span>a2<span class="token punctuation">,</span>b2<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 取公共部分</span>
-            <span class="token comment" spellcheck="true"># 跳指针</span>
-            <span class="token keyword">if</span> b2<span class="token operator">&lt;</span>a2<span class="token punctuation">:</span> j<span class="token operator">+=</span><span class="token number">1</span>
-            <span class="token keyword">else</span><span class="token punctuation">:</span> i<span class="token operator">+=</span><span class="token number">1</span>
-        <span class="token keyword">return</span> res<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        <span class="token keyword">if</span> <span class="token operator">not</span> root<span class="token punctuation">:</span>
+            <span class="token keyword">return</span>
+
+        root<span class="token punctuation">.</span>left<span class="token punctuation">,</span>root<span class="token punctuation">.</span>right<span class="token operator">=</span>root<span class="token punctuation">.</span>right<span class="token punctuation">,</span>root<span class="token punctuation">.</span>left
+        self<span class="token punctuation">.</span>invertTree<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>invertTree<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> root
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="116-填充每个节点的下一个右侧节点指针"><a href="#116-填充每个节点的下一个右侧节点指针" class="headerlink" title="116. 填充每个节点的下一个右侧节点指针"></a><a href="https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node/" target="_blank" rel="noopener">116. 填充每个节点的下一个右侧节点指针</a></h1><ul>
+<li>用一个帮助函数<code>connectTwoNode()</code>对两个“子根”节点进行操作，以便相邻树的左右节点也能连接</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
+# Definition for a Node.
+class Node(object):
+    def __init__(self, val=0, left=None, right=None, next=None):
+        self.val = val
+        self.left = left
+        self.right = right
+        self.next = next
+"""</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">connect</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :type root: Node
+        :rtype: Node
+        """</span>
+        <span class="token keyword">def</span> <span class="token function">connectTwoNode</span><span class="token punctuation">(</span>node1<span class="token punctuation">,</span>node2<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true"># if node1==None or node2==None:</span>
+            <span class="token keyword">if</span> <span class="token operator">not</span> <span class="token punctuation">(</span>node1 <span class="token operator">and</span> node2<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">return</span> 
+            node1<span class="token punctuation">.</span>next<span class="token operator">=</span>node2
+            connectTwoNode<span class="token punctuation">(</span>node1<span class="token punctuation">.</span>left<span class="token punctuation">,</span>node1<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
+            connectTwoNode<span class="token punctuation">(</span>node2<span class="token punctuation">.</span>left<span class="token punctuation">,</span>node2<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
+            connectTwoNode<span class="token punctuation">(</span>node1<span class="token punctuation">.</span>right<span class="token punctuation">,</span>node2<span class="token punctuation">.</span>left<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#相邻树的左右节点相连</span>
+
+        <span class="token keyword">if</span> <span class="token operator">not</span> root<span class="token punctuation">:</span> <span class="token keyword">return</span> None
+        connectTwoNode<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">,</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 当前的两个“子根”节点相连</span>
+        <span class="token keyword">return</span> root
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="114-二叉树展开为链表"><a href="#114-二叉树展开为链表" class="headerlink" title="114. 二叉树展开为链表"></a><a href="https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/" target="_blank" rel="noopener">114. 二叉树展开为链表</a></h1><ul>
+<li>相当于后续遍历，先把左右子树拉平，再对根节点进行操作</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for a binary tree node.</span>
+<span class="token comment" spellcheck="true"># class TreeNode(object):</span>
+<span class="token comment" spellcheck="true">#     def __init__(self, val=0, left=None, right=None):</span>
+<span class="token comment" spellcheck="true">#         self.val = val</span>
+<span class="token comment" spellcheck="true">#         self.left = left</span>
+<span class="token comment" spellcheck="true">#         self.right = right</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">flatten</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :type root: TreeNode
+        :rtype: None Do not return anything, modify root in-place instead.
+        """</span>
+        <span class="token comment" spellcheck="true"># 递归结束的条件</span>
+        <span class="token keyword">if</span> root <span class="token operator">==</span>None<span class="token punctuation">:</span><span class="token keyword">return</span>
+        <span class="token comment" spellcheck="true"># 后续遍历，把左右子树拉平</span>
+        l<span class="token operator">=</span>self<span class="token punctuation">.</span>flatten<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">)</span>
+        r<span class="token operator">=</span>self<span class="token punctuation">.</span>flatten<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># 将root原来的左子树置空，并将拉平的左子树接到右子树上</span>
+        root<span class="token punctuation">.</span>left<span class="token operator">=</span>None
+        root<span class="token punctuation">.</span>right<span class="token operator">=</span>l
+        <span class="token comment" spellcheck="true"># 将拉平的右子树接到当前右子树的末端</span>
+        p<span class="token operator">=</span>root
+        <span class="token keyword">while</span> p<span class="token punctuation">.</span>right<span class="token operator">!=</span>None<span class="token punctuation">:</span> 
+            p<span class="token operator">=</span>p<span class="token punctuation">.</span>right <span class="token comment" spellcheck="true"># 将p置到root头上，并一直跳到末端</span>
+        p<span class="token punctuation">.</span>right<span class="token operator">=</span>r <span class="token comment" spellcheck="true"># 末端接拉平的右子树</span>
+        <span class="token keyword">return</span> root<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -739,9 +743,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《第零章：一个方法解决三道区间问题》
+                    《第零章：手把手带你刷二叉树（第一期）》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2021/02/27/labuladong/di-ling-zhang-yi-ge-fang-fa-jie-jue-san-dao-qu-jian-wen-ti/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2021/02/28/labuladong/di-ling-zhang-shou-ba-shou-dai-ni-shua-er-cha-shu-di-yi-qi/" property="cc:attributionName"
                rel="cc:attributionURL">
                 M
             </a> 采用
@@ -781,9 +785,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/02/28/labuladong/di-ling-zhang-shou-ba-shou-dai-ni-shua-er-cha-shu-di-yi-qi/">
                     <div class="card-image">
@@ -803,9 +808,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-02-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-02-28
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -818,6 +823,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -836,38 +842,38 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/02/26/growth/du-bei-tao-yan-de-yong-qi/">
+                <a href="/2021/02/27/labuladong/di-ling-zhang-yi-ge-fang-fa-jie-jue-san-dao-qu-jian-wen-ti/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="读“被讨厌的勇气”">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="第零章：一个方法解决三道区间问题">
                         
-                        <span class="card-title">读“被讨厌的勇气”</span>
+                        <span class="card-title">第零章：一个方法解决三道区间问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            世界很简单，人生也一样
-为什么说爱抱怨、喜欢找借口的人往往一事无成？解读《被讨厌的勇气》学习阿德勒的人生哲学！
-过去可以被改变的真正原因，被讨厌的勇气 | 老高与小茉 Mr &amp; Mrs Gao
+                            labuladong 一个方法解决三道区间问题删除被覆盖区间、区间合并、区间交集
+
+排序。按照区间起点升序排序，或者先按照起点升序排序，若起点相同，则按照终点降序排序
+
+观察规律并画图。找到区间相对位置的不同情况，并进行分析
 
 
-
-建立获得幸福的勇气
-不要抱怨过去
+1288.
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-02-26
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-02-27
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Growth/" class="post-category" target="_blank">
-                                    Growth
+                            <a href="/categories/LeetCode/" class="post-category" target="_blank">
+                                    LeetCode
                                 </a>
                             
                             
@@ -877,8 +883,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Reading-List/" target="_blank">
-                        <span class="chip bg-color">Reading List</span>
+                    <a href="/tags/labuladong/" target="_blank">
+                        <span class="chip bg-color">labuladong</span>
                     </a>
                     
                 </div>
