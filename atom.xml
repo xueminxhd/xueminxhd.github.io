@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ismxue.github.io/"/>
-  <updated>2021-02-28T14:58:53.924Z</updated>
+  <updated>2021-03-05T05:54:00.388Z</updated>
   <id>https://ismxue.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>华为2021笔试记录</title>
+    <link href="https://ismxue.github.io/2021/03/05/leetcode/others/hua-wei-2021-bi-shi-ji-lu/"/>
+    <id>https://ismxue.github.io/2021/03/05/leetcode/others/hua-wei-2021-bi-shi-ji-lu/</id>
+    <published>2021-03-05T05:36:04.000Z</published>
+    <updated>2021-03-05T05:54:00.388Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;重复一次的最长子串&quot;&gt;&lt;a href=&quot;#重复一次的最长子串&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://ismxue.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="https://ismxue.github.io/tags/LeetCode/"/>
+    
+  </entry>
   
   <entry>
     <title>第零章：手把手带你刷二叉树(第一期)</title>
@@ -73,7 +99,7 @@
     <link href="https://ismxue.github.io/2021/02/26/growth/du-bei-tao-yan-de-yong-qi/"/>
     <id>https://ismxue.github.io/2021/02/26/growth/du-bei-tao-yan-de-yong-qi/</id>
     <published>2021-02-26T12:15:25.000Z</published>
-    <updated>2021-02-27T02:42:42.276Z</updated>
+    <updated>2021-03-04T12:56:49.666Z</updated>
     
     <summary type="html">
     
@@ -202,6 +228,64 @@
   </entry>
   
   <entry>
+    <title>狂神说MySQL</title>
+    <link href="https://ismxue.github.io/2020/09/26/ji-suan-ji-ji-chu/kuang-shen-shuo-mysql/"/>
+    <id>https://ismxue.github.io/2020/09/26/ji-suan-ji-ji-chu/kuang-shen-shuo-mysql/</id>
+    <published>2020-09-26T13:30:36.000Z</published>
+    <updated>2020-09-29T13:33:45.591Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.mihuxiong.com/article/15&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Navicat 15.x for
+        
+      
+    
+    </summary>
+    
+      <category term="计算机基础" scheme="https://ismxue.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="MySQL" scheme="https://ismxue.github.io/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git使用说明</title>
+    <link href="https://ismxue.github.io/2020/09/26/ji-suan-ji-ji-chu/git-shi-yong-shuo-ming/"/>
+    <id>https://ismxue.github.io/2020/09/26/ji-suan-ji-ji-chu/git-shi-yong-shuo-ming/</id>
+    <published>2020-09-26T13:30:36.000Z</published>
+    <updated>2021-03-08T01:52:58.852Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Github提供基于Git的版本托管服务。&lt;/p&gt;
+&lt;p&gt;Git是一款免费、开源的分布式版本控制系统，是Github上用来管理项目的工具。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;简单版&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="计算机基础" scheme="https://ismxue.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="Study" scheme="https://ismxue.github.io/tags/Study/"/>
+    
+  </entry>
+  
+  <entry>
     <title>动手学深度学学习_pytorch版</title>
     <link href="https://ismxue.github.io/2020/09/12/python/ml/dong-shou-xue-shen-du-xue-xue-xi-pytorch-ban/"/>
     <id>https://ismxue.github.io/2020/09/12/python/ml/dong-shou-xue-shen-du-xue-xue-xi-pytorch-ban/</id>
@@ -278,6 +362,32 @@
     
     
       <category term="Python基础" scheme="https://ismxue.github.io/tags/Python%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计算机操作系统</title>
+    <link href="https://ismxue.github.io/2020/08/29/ji-suan-ji-ji-chu/ji-suan-ji-cao-zuo-xi-tong/"/>
+    <id>https://ismxue.github.io/2020/08/29/ji-suan-ji-ji-chu/ji-suan-ji-cao-zuo-xi-tong/</id>
+    <published>2020-08-29T11:43:25.000Z</published>
+    <updated>2020-10-25T06:25:59.117Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;进程死锁&quot;&gt;&lt;a href=&quot;#进程死锁&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="计算机基础" scheme="https://ismxue.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="计算机基础" scheme="https://ismxue.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
@@ -435,111 +545,6 @@
     
     
       <category term="LeetCode" scheme="https://ismxue.github.io/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>54. 螺旋矩阵</title>
-    <link href="https://ismxue.github.io/2020/08/20/leetcode/54-luo-xuan-ju-zhen/"/>
-    <id>https://ismxue.github.io/2020/08/20/leetcode/54-luo-xuan-ju-zhen/</id>
-    <published>2020-08-20T01:50:50.000Z</published>
-    <updated>2020-08-20T04:31:16.756Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;54-螺旋矩阵&quot;&gt;&lt;a href=&quot;#54-螺旋矩阵&quot; class=&quot;headerlink&quot; title=&quot;54. 螺旋矩阵&quot;&gt;&lt;/a&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://ismxue.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="LeetCode" scheme="https://ismxue.github.io/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>牛客网编程常见输入输出练习</title>
-    <link href="https://ismxue.github.io/2020/08/19/leetcode/others/niu-ke-wang-bian-cheng-chang-jian-shu-ru-shu-chu-lian-xi/"/>
-    <id>https://ismxue.github.io/2020/08/19/leetcode/others/niu-ke-wang-bian-cheng-chang-jian-shu-ru-shu-chu-lian-xi/</id>
-    <published>2020-08-19T15:11:33.000Z</published>
-    <updated>2020-08-23T06:43:01.617Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;a href=&quot;https://ac.nowcoder.com/acm/contest/5649#question&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;OJ在线编程常见输入输出练习场题目链接&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://ismxue.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="LeetCode" scheme="https://ismxue.github.io/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第四章：如何去除有序数组的重复元素</title>
-    <link href="https://ismxue.github.io/2020/08/18/labuladong/di-si-zhang-ru-he-qu-chu-you-xu-shu-zu-de-chong-fu-yuan-su/"/>
-    <id>https://ismxue.github.io/2020/08/18/labuladong/di-si-zhang-ru-he-qu-chu-you-xu-shu-zu-de-chong-fu-yuan-su/</id>
-    <published>2020-08-18T08:48:13.000Z</published>
-    <updated>2020-08-18T08:52:24.797Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/gao-pin-mian-shi-xi-lie/ru-he-qu-chu-you-xu-shu-zu-de-zhong-fu-yuan-su&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://ismxue.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="labuladong" scheme="https://ismxue.github.io/tags/labuladong/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第四章：如何高效解决接雨水问题</title>
-    <link href="https://ismxue.github.io/2020/08/17/labuladong/di-si-zhang-ru-he-gao-xiao-jie-jue-jie-yu-shui-wen-ti/"/>
-    <id>https://ismxue.github.io/2020/08/17/labuladong/di-si-zhang-ru-he-gao-xiao-jie-jue-jie-yu-shui-wen-ti/</id>
-    <published>2020-08-17T13:36:35.000Z</published>
-    <updated>2020-08-18T07:30:59.959Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;labuladong &lt;a href=&quot;https://labuladong.gitbook.io/algo/gao-pin-mian-shi-xi-lie/jie-yu-shui&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://ismxue.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="labuladong" scheme="https://ismxue.github.io/tags/labuladong/"/>
     
   </entry>
   

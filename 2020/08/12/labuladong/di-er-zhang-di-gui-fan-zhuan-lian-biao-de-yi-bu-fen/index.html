@@ -9,11 +9,11 @@
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
     <meta name="description" content="labuladong 递归反转链表的一部分
-方法1.递归反转链表 （只是说明递归方法的思想，本题优解应参考方法二）
+92. 反转链表 II方法1.递归反转链表 （只是说明递归方法的思想，本题优解应参考方法二）
 
 
 先看例题206. 反转整个链表
-对于递归算法，最重要的就是明确递归函数实现的功能（而不是跳进递归中） ，因此，rever">
+对于递归算法，最重要的就是明确递归函数实现的功能（而不是跳进递归中">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -476,7 +476,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    799
+                    839
                 </div>
                 
 
@@ -500,7 +500,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>labuladong <a href="https://labuladong.gitbook.io/algo/shu-ju-jie-gou-xi-lie/di-gui-fan-zhuan-lian-biao-de-yi-bu-fen" target="_blank" rel="noopener">递归反转链表的一部分</a></p>
-<h1 id="方法1-递归反转链表"><a href="#方法1-递归反转链表" class="headerlink" title="方法1.递归反转链表 "></a>方法1.<a href="https://leetcode-cn.com/problems/reverse-linked-list-ii/solution/pythondi-gui-jie-jue-by-clark-12/" target="_blank" rel="noopener"><del>递归反转链表</del> </a></h1><p>（只是说明递归方法的思想，本题优解应参考方法二）</p>
+<h1 id="92-反转链表-II"><a href="#92-反转链表-II" class="headerlink" title="92. 反转链表 II"></a>92. 反转链表 II</h1><h2 id="方法1-递归反转链表"><a href="#方法1-递归反转链表" class="headerlink" title="方法1.递归反转链表 "></a>方法1.<a href="https://leetcode-cn.com/problems/reverse-linked-list-ii/solution/pythondi-gui-jie-jue-by-clark-12/" target="_blank" rel="noopener"><del>递归反转链表</del> </a></h2><p>（只是说明递归方法的思想，本题优解应参考方法二）</p>
 <blockquote>
 <ul>
 <li>先看例题<a href="https://leetcode-cn.com/problems/reverse-linked-list/" target="_blank" rel="noopener">206. 反转整个链表</a><ul>
@@ -522,7 +522,7 @@
         last<span class="token operator">=</span>self<span class="token punctuation">.</span>reverseList<span class="token punctuation">(</span>head<span class="token punctuation">.</span>next<span class="token punctuation">)</span>
         head<span class="token punctuation">.</span>next<span class="token punctuation">.</span>next<span class="token operator">=</span>head
         head<span class="token punctuation">.</span>next<span class="token operator">=</span>None
-        <span class="token keyword">return</span> last ```<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        <span class="token keyword">return</span> last<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </blockquote>
 <ul>
 <li><p>先用递归实现：       反转以head开头的前n个节点</p>
@@ -552,13 +552,14 @@
       <span class="token comment" spellcheck="true"># 如果不是第一个，那么以下一个为头结点开始递归，直到触发条件</span>
       head<span class="token punctuation">.</span>next <span class="token operator">=</span> self<span class="token punctuation">.</span>reverseBetween<span class="token punctuation">(</span>head<span class="token punctuation">.</span>next<span class="token punctuation">,</span> m<span class="token number">-1</span><span class="token punctuation">,</span> n<span class="token number">-1</span><span class="token punctuation">)</span>
       <span class="token keyword">return</span> head<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="方法2-找到要翻转部分的链表-将其翻转-再与原链表拼接"><a href="#方法2-找到要翻转部分的链表-将其翻转-再与原链表拼接" class="headerlink" title="方法2. 找到要翻转部分的链表,将其翻转,再与原链表拼接"></a>方法2. <a href="https://leetcode-cn.com/problems/reverse-linked-list-ii/solution/liang-chong-fang-fa-by-powcai/" target="_blank" rel="noopener">找到要翻转部分的链表,将其翻转,再与原链表拼接</a></h1></li>
+<h2 id="方法2-找到要翻转部分的链表-将其翻转-再与原链表拼接"><a href="#方法2-找到要翻转部分的链表-将其翻转-再与原链表拼接" class="headerlink" title="方法2. 找到要翻转部分的链表,将其翻转,再与原链表拼接"></a>方法2. <a href="https://leetcode-cn.com/problems/reverse-linked-list-ii/solution/liang-chong-fang-fa-by-powcai/" target="_blank" rel="noopener">找到要翻转部分的链表,将其翻转,再与原链表拼接</a></h2></li>
 </ul>
 <blockquote>
 <ol>
 <li><a href="https://leetcode-cn.com/problems/reverse-linked-list/solution/dong-hua-yan-shi-206-fan-zhuan-lian-biao-by-user74/" target="_blank" rel="noopener">复习一下逐个反转链表元素的代码：</a><ul>
 <li>pre -&gt; cur (pre在前，cur 在后)</li>
 <li>把cur的next指向pre，然后pre和cur分别向右跳一格。（利用<strong>同步赋值语句</strong>同时实现这些功能） </li>
+<li>同步赋值表达式首先将右侧的表达式按照顺序进行计算，然后再赋值给左侧的变量</li>
 </ul>
 </li>
 </ol>
@@ -598,6 +599,7 @@
         pre<span class="token punctuation">.</span>next<span class="token punctuation">.</span>next<span class="token operator">=</span>cur
         pre<span class="token punctuation">.</span>next<span class="token operator">=</span>node
         <span class="token keyword">return</span> dummy<span class="token punctuation">.</span>next<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://i.loli.net/2021/03/01/CdLfF4M3m7KZgih.jpg" alt></p>
 
             </div>
             <hr />
@@ -1067,7 +1069,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">60.5k</span>
+            <span class="white-color">63.7k</span>
             
 
             <br>

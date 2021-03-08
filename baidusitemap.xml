@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://ismxue.github.io/2020/09/26/ji-suan-ji-ji-chu/git-shi-yong-shuo-ming/</loc>
+    <lastmod>2021-03-08</lastmod>
+  </url>  <url>
+    <loc>https://ismxue.github.io/2021/03/05/leetcode/others/hua-wei-2021-bi-shi-ji-lu/</loc>
+    <lastmod>2021-03-05</lastmod>
+  </url>  <url>
+    <loc>https://ismxue.github.io/2021/02/26/growth/du-bei-tao-yan-de-yong-qi/</loc>
+    <lastmod>2021-03-04</lastmod>
+  </url>  <url>
+    <loc>https://ismxue.github.io/2020/08/12/labuladong/di-er-zhang-di-gui-fan-zhuan-lian-biao-de-yi-bu-fen/</loc>
+    <lastmod>2021-03-01</lastmod>
+  </url>  <url>
     <loc>https://ismxue.github.io/2021/02/28/labuladong/di-ling-zhang-shou-ba-shou-dai-ni-shua-er-cha-shu-di-yi-qi/</loc>
     <lastmod>2021-02-28</lastmod>
   </url>  <url>
@@ -14,9 +26,6 @@
     <lastmod>2021-02-27</lastmod>
   </url>  <url>
     <loc>https://ismxue.github.io/2020/07/26/labuladong/di-ling-zhang-tuan-mie-leetcode-da-jia-jie-she-wen-ti/</loc>
-    <lastmod>2021-02-27</lastmod>
-  </url>  <url>
-    <loc>https://ismxue.github.io/2021/02/26/growth/du-bei-tao-yan-de-yong-qi/</loc>
     <lastmod>2021-02-27</lastmod>
   </url>  <url>
     <loc>https://ismxue.github.io/2020/11/26/growth/du-fei-bao-li-gou-tong/</loc>
@@ -48,6 +57,12 @@
   </url>  <url>
     <loc>https://ismxue.github.io/2020/09/12/python/ml/dong-shou-xue-shen-du-xue-xue-xi-pytorch-ban/</loc>
     <lastmod>2020-11-11</lastmod>
+  </url>  <url>
+    <loc>https://ismxue.github.io/2020/08/29/ji-suan-ji-ji-chu/ji-suan-ji-cao-zuo-xi-tong/</loc>
+    <lastmod>2020-10-25</lastmod>
+  </url>  <url>
+    <loc>https://ismxue.github.io/2020/09/26/ji-suan-ji-ji-chu/kuang-shen-shuo-mysql/</loc>
+    <lastmod>2020-09-29</lastmod>
   </url>  <url>
     <loc>https://ismxue.github.io/2020/07/24/labuladong/di-ling-zhang-hui-su-suan-fa-jie-ti-tao-lu-kuang-jia/</loc>
     <lastmod>2020-09-02</lastmod>
@@ -131,9 +146,6 @@
     <lastmod>2020-08-13</lastmod>
   </url>  <url>
     <loc>https://ismxue.github.io/2020/07/16/labuladong/yi-ge-han-shu-miao-sha-2sum-3sum-wen-ti/</loc>
-    <lastmod>2020-08-12</lastmod>
-  </url>  <url>
-    <loc>https://ismxue.github.io/2020/08/12/labuladong/di-er-zhang-di-gui-fan-zhuan-lian-biao-de-yi-bu-fen/</loc>
     <lastmod>2020-08-12</lastmod>
   </url>  <url>
     <loc>https://ismxue.github.io/2020/08/12/labuladong/di-san-zhang-hui-su-suan-fa-zui-jia-shi-jian-gua-hao-sheng-cheng/</loc>
